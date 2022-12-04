@@ -1,0 +1,370 @@
+{
+    "BarChartHorz": {
+        "name": "Bar Chart (Horizontal)",
+        "mark": "Bars and Rectangles",
+        "title": "Real GDP Change in the US",
+        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis"
+    },
+    "BarChartHorzInteractive": {
+        "name": "Bar Chart (Interactive)",
+        "mark": "Bars and Rectangles",
+        "title": "Real GDP Change in the US",
+        "draft": true,
+        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis"
+    },
+    "BarChartVert": {
+        "name": "Bar Chart (Vertical)",
+        "mark": "Bars and Rectangles",
+        "title": "Real GDP Change in the US",
+        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis"
+    },
+    "BoxPlot": {
+        "name": "Box Plot",
+        "mark": "Bars and Rectangles",
+        "title": "Monthly gasoline sales Jan - Dec 2020",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>"
+    },
+    "BulletChart": {
+        "name": "Bullet Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Revenue Performance & Target",
+        "about": ""
+    },
+    "DivergingBarChart": {
+        "name": "Diverging Bar Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Survey Responses by Age Group",
+        "about": ""
+    },
+    "GanttChart": {
+        "name": "Gantt Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Timeline for Event Organization",
+        "about": ""
+    },
+    "GroupedBarChart": {
+        "name": "Grouped Bar Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Olympic Medals by Country",
+        "about": ""
+    },
+    "HeatMap": {
+        "name": "Heat Map",
+        "mark": "Bars and Rectangles",
+        "title": "Twenty Years of NBA Draft Picks",
+        "about": "This chart colors each player by VORP (Value over Replacement Player), which converts the BPM rate into an estimate of each player's overall contribution to the team, measured vs. what a theoretical 'replacement player' would provide, where the 'replacement player' is defined as a player onminimum salary or not a normal vmember of a team's rotation. A VORP of -20 is used for players that did not play enough minutes. Original visualization by <a href='http://russellgoldenberg.com/' target='_blank'>Russell Goldenberg</a> at <a href='https://pudding.cool/2017/03/redraft/' target='_blank'>The Pudding</a>."
+    },
+    "Histogram": {
+        "name": "Histogram",
+        "mark": "Bars and Rectangles",
+        "title": "Car Weight Distribution",
+        "about": ""
+    },
+    "IciclePlot": {
+        "name": "Icicle Plot",
+        "mark": "Bars and Rectangles",
+        "draft": true,
+        "title": "ICU Processes",
+        "about": ""
+    },
+    "MosaicPlot": {
+        "name": "Mosaic Plot",
+        "mark": "Bars and Rectangles",
+        "title": "Share of Women in Job Levels",
+        "about": "This mosaic plot shows that the percentage of women declines as the job level goes higher. <a href='http://www.womanindata.co.uk/2017/02/workout-wednesday-week-8-marimekko.html' target='_blank'>Original visualization</a> by Emma Whyte."
+    },
+    "StackedBarChart": {
+        "name": "Stacked Bar Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Olympic medals by country",
+        "about": ""
+    },
+    "TowerChart": {
+        "name": "Tower Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Presidential Election 2020",
+        "about": "This tower chart shows the results of the 2020 presidential election.<br>Blue represents Biden, red represents Trump.<br>Each rectangle represents a state that a candidate has won.<br>The x axis represents the margin of victory for each candidate in terms of popular vote (%).<br>The y axis represents the number of electoral votes.<br>Data source: <a href='https://www.archives.gov/electoral-college/2020' target='_blank'>National Archives</a>"
+    },
+    "Treemap": {
+        "name": "Treemap",
+        "mark": "Bars and Rectangles",
+        "title": "Population of Major Countries",
+        "about": ""
+    },
+    "WaffleChart": {
+        "name": "Waffle Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Age Demographics in 100 People",
+        "about": ""
+    },
+    "WaterfallChart": {
+        "name": "Waterfall Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Monthly Changes in Account Balance",
+        "about": ""
+    },
+    "BubblePlot": {
+        "name": "Bubble Plot",
+        "mark": "Circles and Pies",
+        "title": "Habitable Planets",
+        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo."
+    },
+    "CirclePacking": {
+        "name": "Circle Packing Chart",
+        "mark": "Circles and Pies",
+        "title": "Population of Major Countries",
+        "about": ""
+    },
+    "DotPlot": {
+        "name": "Dot Plot",
+        "mark": "Circles and Pies",
+        "title": "Age Demographics of 100 People",
+        "about": ""
+    },
+    "DoughnutChart": {
+        "name": "Doughnut Chart",
+        "mark": "Circles and Pies",
+        "title": "How do Americans Spend Their Time?",
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>"
+    },
+    "PieChart": {
+        "name": "PieChart",
+        "mark": "Circles and Pies",
+        "title": "How do Americans Spend Their Time?",
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>"
+    },
+    "RadialBarChart": {
+        "name": "Radial Bar Chart",
+        "mark": "Circles and Pies",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>"
+    },
+    "RoseChart": {
+        "name": "Rose Chart",
+        "mark": "Circles and Pies",
+        "title": "Nightingale's Rose Diagram",
+        "about": "A reproduction of <a href='https://www.historyofinformation.com/detail.php?entryid=3815' target='_blank'>Florence Nightingale’s rose diagram</a>. <br>Data Source: Nightingale, F., Farr, W., & Smith, A. (1859). A contribution to the sanitary history of the British army during the late war with Russia. John W. Parker and Son."
+    },
+    "Scatterplot": {
+        "name": "Scatterplot",
+        "mark": "Circles and Pies",
+        "title": "GDP per capita vs. Life expectancy",
+        "about": ""
+    },
+    "Sunburst": {
+        "name": "Sunburst Chart",
+        "mark": "Circles and Pies",
+        "draft": true,
+        "title": "Population of Major Countries",
+        "about": ""
+    },
+    "BumpChart": {
+        "name": "Bump Chart",
+        "mark": "Lines and Paths",
+        "title": "Color popularity in new cars",
+        "about": "This bump chart shows how the rankings of new car colors change over the years in North America. The magenta color denotes 'other' colors. <br> <a href='https://public.tableau.com/profile/rody.zakovich#!/vizhome/TheUntanglingofColorPopularityamongNewCarsinNorthAmerica/TheUntanglingofColorPopularityforNewCars' target='_blank'>Original visualization</a> by Rody Zakovich"
+    },
+    "ConnectedScatterPlot": {
+        "name": "Connected Scatter Plot",
+        "mark": "Lines and Paths",
+        "title": "Driving Shifts into Reverse",
+        "about": "the shifting relationship between the price of gas and the average number of miles driven in a year, adapted from <a href='http://www.nytimes.com/imagepages/2010/05/02/business/02metrics.html' target='_blank'>Driving Shifts Into Reverse</a> by Hannah Fairfield, The New York Times (May 2, 2010)"
+    },
+    "DumbbellChart": {
+        "name": "Dumbbell Chart",
+        "mark": "Lines and Paths",
+        "title": "Partisan Reactions on Mass Shooting",
+        "about": "This infographics shows the topics mentioned by the two parties after the Orlando nightclub shooting with a focus on the differences in terms of the number of times these topics are mentioned. <br> <a href='https://public.tableau.com/profile/lindsey.poulter8872#!/vizhome/OrlandoKillings/Dashboard' target='_blank'>Original visualization</a> by Lindsey Poulter<br>Image credit: <a href='https://www.flickr.com/photos/donkeyhotey/' target='_blank'>DonkeyHotey</a>"
+    },
+    "LineGraph": {
+        "name": "Line Graph 1",
+        "mark": "Lines and Paths",
+        "title": "Temperature Forecast",
+        "about": "Monthly temperature forecast for Baltimore, MD from Aug 2021 to Aug 2022.<br>The light blue band represents the 99% confidence interval of the prediction.<br>The solid line represents the median temperature between 1981 and 2010 for each month.<br>Data source: <a href='https://www.noaa.gov/' target='_blank'>National Weather Service Forecast</a>"
+    },
+    "LineGraph2": {
+        "name": "Line Graph 2",
+        "mark": "Lines and Paths",
+        "title": "Covid Cases: Reported and Forecast",
+        "about": "Reported COVID-19 cases between 7/12/21 to 7/26/21 and forecase by four different models between 7/26/21 and 8/21/21.<br>The four models are: <a href='https://github.com/oskali/mit_cassandra' target='_blank'>MIT-Cassandra</a>, <a href='https://covid19.uclaml.org/' target='_blank'>UCLA</a>, <a href='https://systems.jhu.edu/research/public-health/predicting-covid-19-risk/' target='_blank'>JHU-CSSE</a>, and <a href='https://www.microsoft.com/en-us/ai/ai-for-health' target='_blank'>Microsoft</a>.<br>Data Source: Google Search for COVID-19 statistics and <a href='https://www.cdc.gov/coronavirus/2019-ncov/science/forecasting/forecasts-cases.html' target='_blank'>CDC</a>"
+    },
+    "LollipopChart": {
+        "name": "Lollipop Chart",
+        "mark": "Lines and Paths",
+        "title": "London Borough Crime Rate",
+        "about": "Overall crime rate (number of crimes per 1000 people) in London between May 2019 and April 2022. Data source: <a href='https://crimerate.co.uk/london' target='_blank'>crimerate.co.uk</a>"
+    },
+    "MultiLineGraph": {
+        "name": "Multi-Line Graph",
+        "mark": "Lines and Paths",
+        "title": "Stock Market",
+        "about": "Monthly Stock Prices of four companies: Amazon, Apple, IBM and Microsoft from Jan 1, 2000 to Mar 1, 2010. Original visualization was composed using d3.js on <a href='https://bl.ocks.org/d3noob/08af723fe615c08f9536f656b55755b4' target='_blank'>d3noob.org</a>"
+    },
+    "ParallelCoordinates": {
+        "name": "Parallel Coordinates",
+        "mark": "Lines and Paths",
+        "title": "Features of Cars",
+        "about": "This visualization shows the the features of 406 cars. Original visualization appeared in Robert Spence's book <a href='https://books.google.com/books?id=uOosBQAAQBAJ&dq=406+cars+visualization&source=gbs_navlinks_s' target='_blank'>Information Visualization: an Introduction</a>, page 69."
+    },
+    "RangeChart": {
+        "name": "Range Chart",
+        "mark": "Lines and Paths",
+        "title": "Boston Weather",
+        "about": "This visualization shows daily maximum and minimum temperature for a year in Boston. <br> <a href='http://weather-radials.com/' target='_blank'>Original visualization</a> by <a href='http://kekeritz.com/' target='_blank'>Timm Kekeritz</a> of Raureif was in the Polar space, we demonstrate how to create similar designs in the Cartesian space."
+    },
+    "SlopeGraph": {
+        "name": "Slope Graph",
+        "mark": "Lines and Paths",
+        "title": "Obesity and Education",
+        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo."
+    },
+    "StringlineChart": {
+        "name": "Stringline Chart",
+        "mark": "Lines and Paths",
+        "title": "Caltrain Schedule",
+        "about": "This visualization shows the Caltrian timetable following the style of <a href='https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003zP' target='_blank'>E. J. Marey's graphical schedule</a>. Each line is a train, and the slope represents the speed of the train. The lines are colored by the type of train."
+    },
+    "AreaChart": {
+        "name": "Area Chart",
+        "mark": "Polygons and Areas",
+        "title": "Bitcoin prices: 2013 to 2018",
+        "about": "This visualization shows the evolution of the bitcoin price from 2013-04-28 to 2018-04-23. The original visualization was composed using d3.js on <a href='https://www.d3-graph-gallery.com/graph/area_basic.html' target='_blank'>d3-graph-gallery.com</a>."
+    },
+    "DensityPlot": {
+        "name": "Density Plot",
+        "mark": "Polygons and Areas",
+        "title": "Car Weight Distribution",
+        "about": ""
+    },
+    "RadarChart": {
+        "name": "Radar Chart",
+        "mark": "Polygons and Areas",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>"
+    },
+    "ridgelinePlot": {
+        "name": "Ridgeline Plot",
+        "mark": "Polygons and Areas",
+        "title": "How People Perceive Probability",
+        "about": "On the /r/samplesize thread of reddit, questions like What probability would you assign to the phrase “Highly likely” were asked. Answers between 0 and 100 were recorded, and this visualization shows the distribution for each question. This idea originally comes from a <a href='https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/psychology-of-intelligence-analysis/art15.html' target='_blank'>publication of the CIA</a>. <a href='https://github.com/zonination' target='_blank'>Zoni Nation</a> <a href='https://github.com/zonination/perceptions' target='_blank'>reproduced it using R. </a> This visualization is based on an example from <a href='https://www.d3-graph-gallery.com/graph/ridgeline_basic.html' target='_blank'>d3-graph-gallery.com</a>"
+    },
+    "StackedAreaChart": {
+        "name": "Stacked Area Chart",
+        "mark": "Polygons and Areas",
+        "title": "Unemployment by Industry",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010. The original visualization was composed using d3.js on <a href='https://observablehq.com/@d3/stacked-area-chart' target='_blank'>observablehq.com</a>."
+    },
+    "StellarChart": {
+        "name": "Stellar Chart",
+        "mark": "Polygons and Areas",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>"
+    },
+    "StreamGraph": {
+        "name": "StreamGraph",
+        "mark": "Polygons and Areas",
+        "title": "Unemployment by Industry",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010. The original visualization was composed using d3.js on <a href='https://observablehq.com/@d3/streamgraph' target='_blank'>observablehq.com</a>."
+    },
+    "ViolinPlot": {
+        "name": "Violin Plot",
+        "mark": "Polygons and Areas",
+        "title": "Setosa Sepal Length Distribution",
+        "about": "This visualization shows the distribution for the sepal length of setosa, a type of iris plant. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>."
+    },
+    "DirectedAcyclicGraph": {
+        "name": "Directed Acyclic Graph",
+        "mark": "Nodes and Links",
+        "draft": true,
+        "title": "",
+        "about": ""
+    },
+    "ForceDirected": {
+        "name": "Force-Directed Graph",
+        "mark": "Nodes and Links",
+        "draft": true,
+        "title": "",
+        "about": ""
+    },
+    "SeedGraph": {
+        "name": "Graph Partitioning",
+        "mark": "Nodes and Links",
+        "draft": true,
+        "title": "",
+        "about": ""
+    },
+    "SeqSynopsis": {
+        "name": "Sequence Synopsis",
+        "mark": "Nodes and Links",
+        "draft": true,
+        "title": "",
+        "about": ""
+    },
+    "TidyTree": {
+        "name": "'Tidy' Tree",
+        "mark": "Nodes and Links",
+        "draft": true,
+        "title": "Node-link tree",
+        "about": "Node-link visualization of a tree usign the Reingold-Tilford 'tidy' layout algorithm."
+    },
+    "Isotype": {
+        "name": "Isotype",
+        "mark": "Images and Icons",
+        "title": "100 People Grouped by Age",
+        "about": ""
+    },
+    "GridAreaChart": {
+        "name": "Area Charts",
+        "mark": "Small Multiples",
+        "title": "Unemployment: 2000 to 2010",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010."
+    },
+    "MultipleBarCharts": {
+        "name": "Bar Charts",
+        "mark": "Small Multiples",
+        "title": "Unemployment Rates by State",
+        "about": "This visualization shows how the unemployment rate for each U.S. state changed from 1980 to 2015 at five-year intervals. <br>The height of bar represents the difference of unemployment rate from the national average. Data source: <a href='https://fred.stlouisfed.org/release?rid=112' target='_blank'>Federal Reserve Bank</a>."
+    },
+    "MultipleBoxPlots": {
+        "name": "Box Plots",
+        "mark": "Small Multiples",
+        "title": "Gender Pay Gap",
+        "about": "This box and whisker plot shows the disparity in annual income for women vs. men across pay grades. <br> <a href='http://www.stephen-few.com/nysi.php' target='_blank'>Original visualization from Now You See It</a> by Stephen Few."
+    },
+    "MultiplePieCharts": {
+        "name": "Pie Charts",
+        "mark": "Small Multiples",
+        "title": "Household Spending Patterns",
+        "about": "Comparing household spending patterns in the UK and New Zealand in 1980 and 2008. Data source is <a href='https://www.ieltstrainingtips.com/the-charts-below-show-household-spending-patterns-in-two-countries-between-1980-and-2008/' target='_blank'>here</a>."
+    },
+    "ScatterplotMatrix": {
+        "name": "Scatterplot Matrix",
+        "mark": "Small Multiples",
+        "title": "Iris Species: Sepal and Petal",
+        "about": "Four measurements (sepal length, sepal width, petal length, petal width) for 150 flowers representing three species of iris (Iris setosa, versicolor and virginica)"
+    },
+    "Sparklines": {
+        "name": "Sparklines",
+        "mark": "Small Multiples",
+        "title": "Stock Price Sparklines",
+        "about": ""
+    },
+    "GridStackedAreaChart": {
+        "name": "Stacked Area Charts",
+        "mark": "Small Multiples",
+        "title": "Unemployment by Industry",
+        "about": ""
+    },
+    "MultipleViolinPlots": {
+        "name": "Violin Plots",
+        "mark": "Small Multiples",
+        "title": "Iris Sepal Length Distribution",
+        "about": "This visualization shows the distributions for the sepal length of three types of iris plant: setosa, versicolor and virginica. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>."
+    },
+    "MultipleWaffleCharts": {
+        "name": "Waffle Charts",
+        "mark": "Small Multiples",
+        "title": "Distributions of cars by year",
+        "about": "This visualization shows the distributions for the sepal length of three types of iris plant: setosa, versicolor and virginica. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>."
+    }
+}

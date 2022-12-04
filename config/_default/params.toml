@@ -1,0 +1,57 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Atlas.js"
+titleSeparator = "-"
+titleAddition = "A Procedural Visualization Grammar"
+description = ""
+
+## Open Graph + Twitter Cards
+images = ["atlas.png"]
+# twitterSite = "henkverlinde"
+# twitterCreator = "henkverlinde"
+# facebookAuthor = "verlinde.henk"
+# facebookPublisher = "verlinde.henk"
+ogLocale = "en_US"
+
+## JSON-LD
+schemaType = "Organization"
+schemaLogo = "atlas.png"
+# schemaTwitter = "https://twitter.com/henkverlinde"
+schemaGitHub = "https://github.com/atlas-vis/atlas-vis.github.io"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+# Footer
+footer = "Copyright © 2021 <a href='https://hdi.cs.umd.edu'>Human-Data Interaction Group @ University of Maryland, College Park</a>. <br> Powered by <a href=\"https://gohugo.io/\">Hugo</a> and <a href=\"https://getdoks.org/\">Doks</a>"
+
+# Alert
+alert = false
+alertText = "Alert Text"
+
+# Edit Page
+docsRepo = "https://github.com/atlas-vis/atlas-vis.github.io"
+editPage = false
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = false
+  darkMode = true
+  bootStrapJs = false
+  breadCrumb = false
+  highLight = true
+  kaTex = false
