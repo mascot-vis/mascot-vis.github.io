@@ -1,13 +1,13 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Atlas.js"
+title = "Mascot.js"
 titleSeparator = "-"
 titleAddition = "A Procedural Visualization Grammar"
 description = ""
 
 ## Open Graph + Twitter Cards
-images = ["atlas.png"]
+images = ["msc.png"]
 # twitterSite = "henkverlinde"
 # twitterCreator = "henkverlinde"
 # facebookAuthor = "verlinde.henk"
@@ -16,9 +16,9 @@ ogLocale = "en_US"
 
 ## JSON-LD
 schemaType = "Organization"
-schemaLogo = "atlas.png"
+schemaLogo = "msc.png"
 # schemaTwitter = "https://twitter.com/henkverlinde"
-schemaGitHub = "https://github.com/atlas-vis/atlas-vis.github.io"
+schemaGitHub = "https://github.com/mascot-vis/mascot-vis.github.io"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -42,7 +42,7 @@ alert = false
 alertText = "Alert Text"
 
 # Edit Page
-docsRepo = "https://github.com/atlas-vis/atlas-vis.github.io"
+docsRepo = "https://github.com/mascot-vis/mascot-vis.github.io"
 editPage = false
 
 [options]

@@ -12,7 +12,7 @@ menu:
 weight: 30
 ---
 
-Atlas offers three primary operations to generate marks or glyphs by data: repeat, divide, and densify. To explain how these operations work, let's use the dataset in the [diverging bar chart example](../../tutorials/example/). The data table consists of three columns: Age Group, Response, and Percentage (percentage of people with a particular response within an age group):
+Mascot offers three primary operations to generate marks or glyphs by data: repeat, divide, and densify. To explain how these operations work, let's use the dataset in the [diverging bar chart example](../../tutorials/example/). The data table consists of three columns: Age Group, Response, and Percentage (percentage of people with a particular response within an age group):
 
 {{< figure src="data.png" width="350px" alt="Survey Response Dataset" caption="" class="border-0 mx-auto text-center" >}}
 

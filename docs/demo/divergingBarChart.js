@@ -1,10 +1,10 @@
-let scn = atlas.scene();
-let dt = await atlas.csv("csv/survey_response.csv");
+let scn = msc.scene();
+let dt = await msc.csv("csv/survey_response.csv");
 
 let rect = scn.mark("rect", {top: 100, left: 200, width: 700, height: 30, strokeWidth: 0, fillColor: "#ddd"});
 
 let collection = scn.repeat(rect, dt, {field: "Age Group"});
-collection.layout = atlas.layout("grid", {numCols: 1, rowGap: 10});
+collection.layout = msc.layout("grid", {numCols: 1, rowGap: 10});
 
 let bars = scn.divide(rect, dt, {field: "Response", orientation: "horizontal"});
 
@@ -24,4 +24,4 @@ scn.legend("fillColor", "Response", {x: 800, y: 100});
 //scn.axis("y", "Age Group", {orientation: "left", pathX: 190, pathVisible: false, tickVisible: false});
 scn.axis("y", "Age Group", {orientation: "left", pathVisible: false, tickVisible: false});
 
-// atlas.renderer("svg").render(scn, "svgElement", {collectionBounds: false});
+// msc.renderer("svg").render(scn, "svgElement", {collectionBounds: false});

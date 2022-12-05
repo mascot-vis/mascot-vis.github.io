@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let data = await atlas.csv("csv/pieChartData.csv");
+let scn = msc.scene();
+let data = await msc.csv("csv/pieChartData.csv");
 
 let ring = scn.mark("ring", {innerRadius: 70, outerRadius: 120, x: 300, y: 200, fillColor: "orange", strokeColor: "#888"});
 let donutChart = scn.divide(ring, data, {field: "category"});

@@ -12,7 +12,7 @@ menu:
 weight: 5
 ---
 
-We start this tutorial by creating a diverging bar chart (Figure 1) using Atlas. This chart visualizes ahypothetical dataset reporting people’s opinions on a subject matter, broken down by age (below 30, 30 - 50, 50 - 70, above 70) and responses (strongly agree, agree, disagree, strongly disagree). You can see a demo of this visualization [here](/gallery.html#DivergingBarChart).
+We start this tutorial by creating a diverging bar chart (Figure 1) using Mascot. This chart visualizes ahypothetical dataset reporting people’s opinions on a subject matter, broken down by age (below 30, 30 - 50, 50 - 70, above 70) and responses (strongly agree, agree, disagree, strongly disagree). You can see a demo of this visualization [here](/gallery.html#DivergingBarChart).
 
 {{< figure src="diverging_bar.png" width="800px" alt="Diverging Bar Chart" caption="Figure 1: Diverging Bar Chart" class="border-0 mx-auto text-center" >}}
 
@@ -24,7 +24,7 @@ Figure 2 shows the dataset "survey_response.csv" behind this visualization. The 
 To begin, we create a [scene](../../group/scene/), which represents a top-level container, and import the data: 
 
 ```js
-let scn = atlas.scene(), table = await atlas.csv("survey_response.csv");
+let scn = msc.scene(), table = await msc.csv("survey_response.csv");
 ```
 
 Next, let's create a rectangle in the scene and specify its properties: 
@@ -36,7 +36,7 @@ let rect = scn.mark("rectangle", {top: 100, left: 200, width: 700,
 
 Now we can't see the rectangle yet, as it has not been rendered. If you do `console.log(rect)`, you will be able to see the `rect` object in the console. To display it, let's add a line to create a renderer: 
 
-    atlas.renderer("svg", "svgEle").render(scn);
+    msc.renderer("svg", "svgEle").render(scn);
 
 Here we are creating a renderer that renders the scene to an SVG element with the DOM ID "svgEle". We can see the gray rectangle now: 
 
@@ -49,7 +49,7 @@ Next, we want to have multiple rectangles, each representing an age group. This 
 
 This will give us a collection of four rectangles, each representing an age group in the dataset. By default, the repeated rectangles will have the same properties (including position) as the original rectangle. To space them out, we can apply a grid layout with only 1 column and a vertical gap of 10 pixels between the rows:
 
-    collection.layout = atlas.layout("grid", {numCols: 1, vGap: 10});
+    collection.layout = msc.layout("grid", {numCols: 1, vGap: 10});
 
 This gives us the following visualization: 
 
@@ -63,7 +63,7 @@ which gives us the following visualization:
 
 {{< figure src="divide.png" width="350px" alt="Divide Rectangle Marks" caption="" class="border-0 mx-auto text-center" >}}
 
-When using the divide method, we don't need to pass all four rectangle marks as its argument; we only need to pass in one rectangle `rect` as an example, and Atlas will find all the "peers" of `rect` and perform divide operation on all of them. The divide method will return a collection of smaller rectangles (`bars`) as a result of dividing `rect`.
+When using the divide method, we don't need to pass all four rectangle marks as its argument; we only need to pass in one rectangle `rect` as an example, and Mascot will find all the "peers" of `rect` and perform divide operation on all of them. The divide method will return a collection of smaller rectangles (`bars`) as a result of dividing `rect`.
 
 
 ### Specify Visual Encodings

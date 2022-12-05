@@ -1,6 +1,6 @@
 {
-  "name": "@atlas-vis/atlas-vis.github.io",
-  "description": "Website for Atlas.js",
+  "name": "@mascot-vis/mascot-vis.github.io",
+  "description": "Website for Mascot.js",
   "version": "0.2.3",
   "hugo-bin": {
     "buildTags": "extended"
@@ -8,7 +8,7 @@
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/atlas-vis/atlas-vis.github.io",
+  "repository": "https://github.com/mascot-vis/mascot-vis.github.io",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

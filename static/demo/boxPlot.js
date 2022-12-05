@@ -1,4 +1,4 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 
 let line = scn.mark("line", {x1: 150, y1: 130, x2: 700, y2: 130, strokeColor: "#555", vxShape: "rect", vxWidth: 1, vxHeight: 30, vxFillColor: "#555"}),
     box = scn.mark("rect", {top: 110, left: 200, width: 400, height: 40, fillColor: "#95D0F5", strokeColor: "#111"}),
@@ -6,7 +6,7 @@ let line = scn.mark("line", {x1: 150, y1: 130, x2: 700, y2: 130, strokeColor: "#
 
 let glyph = scn.glyph(line, box, medianLine);
 
-let dt = await atlas.csv("csv/monthlySales.csv");
+let dt = await msc.csv("csv/monthlySales.csv");
 scn.attach(glyph, dt);
 
 let enc = scn.encode(line.vertices[0], {field: "Sales", channel: "x", aggregator: "min"});

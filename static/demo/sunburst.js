@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let tree = await atlas.treejson("treejson/AAAsample_ed2.json");
+let scn = msc.scene();
+let tree = await msc.treejson("treejson/AAAsample_ed2.json");
 let c = scn.mark("circle", {x: 400, y: 350, radius: 30, fillColor: "orange", strokeColor: "white"});
 let coll = scn.stratify(c, tree, {size: 40});
 scn.encode(c, {field: "value", channel: "angle"});

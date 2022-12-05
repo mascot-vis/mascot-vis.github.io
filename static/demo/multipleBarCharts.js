@@ -1,5 +1,5 @@
-let scene = atlas.scene();
-let data = await atlas.csv("csv/us_state_unemployment_final.csv");
+let scene = msc.scene();
+let data = await msc.csv("csv/us_state_unemployment_final.csv");
 let rect = scene.mark("rect", {top:100, left: 100, width: 60, height: 50, strokeColor: "#fff", strokeWidth: 1, fillColor: "#ccc"});
 
 scene.repeat(rect, data, {field: "State"});

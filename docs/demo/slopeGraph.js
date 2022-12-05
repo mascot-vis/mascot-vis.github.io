@@ -1,7 +1,7 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let line = scn.mark("line", {x1: 200, y1: 80, x2: 400, y2: 80, strokeColor: "green"});
 
-let dt = await atlas.csv("csv/obesityEducation.csv");
+let dt = await msc.csv("csv/obesityEducation.csv");
 
 scn.repeat(line, dt, {field: "State"});
 let enc = scn.encode(line.vertices[0], {field: "Obesity Percentage", channel: "y"});
@@ -17,5 +17,5 @@ scn.axis("y", "Obesity Percentage", {orientation: "left", pathX: 200});
 scn.axis("y", "BA Degree Percentage", {orientation: "right", pathX: 400});
 scn.legend("strokeColor", "Obesity vs Higher Education", {x: 460, y: 100});
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: false});	

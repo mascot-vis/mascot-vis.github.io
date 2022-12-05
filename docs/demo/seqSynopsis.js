@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let data = await atlas.graphjson("graphjson/seqsynopsis.json");
+let scn = msc.scene();
+let data = await msc.graphjson("graphjson/seqsynopsis.json");
 
 let bg = scn.mark("rect", {fillColor: "#C8E6FA", left: 100, top: 100, width: 20, strokeWidth: 0}),
     clusterSize = scn.mark("text", {x: 200, y: 70});

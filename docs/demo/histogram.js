@@ -1,5 +1,5 @@
-let scene = atlas.scene();
-let csv = await atlas.csv("csv/car-weight.csv");
+let scene = msc.scene();
+let csv = await msc.csv("csv/car-weight.csv");
 let data = csv.transform("bin", ["weight(lbs)"]);
 
 let rect = scene.mark("rect", {top:100, left: 200, width: 50, height: 200, strokeColor: "#222", strokeWidth: 0.5, fillColor: "#ccc"});

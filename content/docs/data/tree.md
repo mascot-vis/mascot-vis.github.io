@@ -15,7 +15,7 @@ toc: true
 
 The Tree class represents a hierarchical dataset. Tree objects are created by importing [JSON files in a specific format](../../../tutorials/initialize/#import-treehierarchical-data) using the [_treejson_ function](../../global/func/):
 
-    let tree = await atlas.treejson("data.json");
+    let tree = await msc.treejson("data.json");
 
 A tree is represented using two [data tables](../../data/datatable/), one for the nodes and one for the parent-child relationships (Figure 1). A unique id is assigned to each node in the node table. Atlas automatically infers the [data type](../../global/constants/#data-type) for each node attribute, and parses the values accordingly. 
 

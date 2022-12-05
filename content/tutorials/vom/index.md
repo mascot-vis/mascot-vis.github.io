@@ -11,7 +11,7 @@ menu:
     parent: "tutorials"
 weight: 10
 ---
-Every visualization created using Atlas can be described using the following object model: 
+Every visualization created using Mascot can be described using the following object model: 
 
 {{< figure src="vom.png" alt="Visualization Object Model" caption="" class="border-0 mx-auto text-center">}}
 

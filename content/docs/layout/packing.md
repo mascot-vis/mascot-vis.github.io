@@ -17,7 +17,7 @@ toc: true
 
 The PackingLayout class represents a layout that positions objects by packing them in an area. To create a PackingLayout object and apply it to a [collection](../../group/collection/), use the [_layout_ function](../../global/func/):
 
-    let pl = atlas.layout("packing", {x: 100, y: 100});
+    let pl = msc.layout("packing", {x: 100, y: 100});
     collection.layout = pl;
 
 ### Properties

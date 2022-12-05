@@ -1,2 +1,2 @@
-let scene = atlas.scene();
-let data = await atlas.graphjson("treejson/sententree_sample.json");
+let scene = msc.scene();
+let data = await msc.graphjson("treejson/sententree_sample.json");

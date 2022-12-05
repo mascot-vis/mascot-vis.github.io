@@ -15,7 +15,7 @@ toc: true
 
 The Renderer class is in charge of rendering graphical objects to a webpage. To create a renderer, use the [_renderer_ function](../../global/func/#create-objects): 
 
-    let r = atlas.renderer("svg", "domId");
+    let r = msc.renderer("svg", "domId");
 
 ### Properties
 | property |  explanation   | type | default value |

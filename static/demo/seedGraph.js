@@ -1,5 +1,5 @@
-let scene = atlas.scene();
-let data = await atlas.graphjson("graphjson/seed_graph.json");
+let scene = msc.scene();
+let data = await msc.graphjson("graphjson/seed_graph.json");
 let graphs = data.transform("partition");
 let x = 140, y = 100, timeScale, covScale, mutScale, growScale;
 graphs.sort((a, b) => a.isLinear() - b.isLinear() );
@@ -12,7 +12,7 @@ for (let g of graphs) {
         nodes.children.forEach(n => n.x = x);
         x = nodes.bounds.right + 10;
     } else {
-        nodes.layout = atlas.layout("force", {x: x, y: y, iterations: 300, repulsion: 120, linkDistance: 10});
+        nodes.layout = msc.layout("force", {x: x, y: y, iterations: 300, repulsion: 120, linkDistance: 10});
         nodes.children.forEach(n => n.x += nodes.bounds.width/2);
         x = nodes.bounds.right + nodes.bounds.width/2 + 10;
     }

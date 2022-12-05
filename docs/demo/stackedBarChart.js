@@ -1,11 +1,11 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let rect = scn.mark("rect", {top:100, left: 100, width: 20, height: 390, fillColor: "#fff"} );
 //let rect = scn.mark("rect", {top:100, left: 100, width: 400, height: 20, fillColor: "#fff"} );
-let dt = await atlas.csv("csv/olympic-medals.csv");
+let dt = await msc.csv("csv/olympic-medals.csv");
 
 let countries = scn.repeat(rect, dt, {field: "Country_Code"});
-countries.layout = atlas.layout("grid", {numRows: 1, colGap: 15, rowGap: 10});
-//countries.layout = atlas.layout("grid", {numCols: 1, colGap: 15, colGap: 10, horzCellAlignment: "right"});
+countries.layout = msc.layout("grid", {numRows: 1, colGap: 15, rowGap: 10});
+//countries.layout = msc.layout("grid", {numCols: 1, colGap: 15, colGap: 10, horzCellAlignment: "right"});
 scn.divide(rect, dt, {orientation: "vertical", field: "Medal_Type"});
 
 let htEncoding = scn.encode(rect, {field: "Count", channel: "height"});

@@ -15,7 +15,7 @@ toc: true
 
 The Network class represents a graph with nodes and links. Network objects are created by importing [JSON files in a specific format](../../../tutorials/initialize/#import-graphnetwork-data) using the [_graphjson_ function](../../global/func/):
 
-    let network = await atlas.graphjson("data.json");
+    let network = await msc.graphjson("data.json");
 
 A network is represented using two [data tables](../../data/datatable/), one for the nodes and one for the links (Figure 1). Atlas automatically infers the [data type](../../global/constants/#data-type) for each node attribute and link attribute, and parses the values accordingly. 
 

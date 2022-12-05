@@ -1,6 +1,6 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let line = scn.mark("line", {x1: 100, y1: 100, x2: 700, y2: 400, strokeColor: "#008BBE", strokeWidth: 3, vxShape: "circle", vxRadius: 3, vxFillColor: "#008BBE"});
-let dt = await atlas.csv("csv/tempForecast.csv");
+let dt = await msc.csv("csv/tempForecast.csv");
 
 let rect = scn.mark("rect", {left: 100, top: 100, width: 600, height: 300, fillColor: "#E1F1FC", strokeWidth: 0});
 let area = scn.densify(rect, dt, {field: "month", "orientation": "horizontal"});

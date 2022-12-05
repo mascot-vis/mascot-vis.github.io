@@ -1,9 +1,9 @@
-let scene = atlas.scene();
-let data = await atlas.csv("csv/unemployment-2.csv");
+let scene = msc.scene();
+let data = await msc.csv("csv/unemployment-2.csv");
 
 let rect = scene.mark("rect", {top:60, left: 100, width: 400, height: 150, strokeColor: "#aaa", strokeWidth: 1, fillColor: "#fff"});
 let industries = scene.repeat(rect, data, {field: "industry"});
-industries.layout = atlas.layout("grid", {numRows: 2, colGap: 65, rowGap: 55});
+industries.layout = msc.layout("grid", {numRows: 2, colGap: 65, rowGap: 55});
 let anyArea = scene.densify(industries.firstChild,  data, {orientation: "horizontal", field: "date"});
 scene.encode(anyArea, {channel: "fillColor", field: "industry"});
 let disEncoding = scene.encode(anyArea, {channel: "height", field: "unemployments"});

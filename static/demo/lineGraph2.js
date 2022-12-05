@@ -1,6 +1,6 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let line = scn.mark("line", {x1: 100, y1: 100, x2: 700, y2: 500, strokeColor: "#008BBE", strokeWidth: 3, vxShape: "circle", vxRadius: 5, vxFillColor: "#008BBE"});
-let dt = await atlas.csv("csv/covidCases.csv");
+let dt = await msc.csv("csv/covidCases.csv");
 scn.repeat(line, dt, {field: "Model"});
 let polyline = scn.densify(line, dt, {field: "Date"});
 scn.encode(polyline.firstVertex, {field: "Date", channel: "x"});

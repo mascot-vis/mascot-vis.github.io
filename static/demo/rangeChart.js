@@ -1,7 +1,7 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let line = scn.mark("line", {x1: 100, y1: 100, x2: 100, y2: 450, strokeColor: "#ccc"});
 
-let dt = await atlas.csv("csv/bostonWeather.csv");
+let dt = await msc.csv("csv/bostonWeather.csv");
 
 scn.repeat(line, dt, {field: "date"});
 let xEnc = scn.encode(line, {field: "date", channel: "x"});

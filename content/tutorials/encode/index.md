@@ -18,7 +18,7 @@ Visual encodings specify how values in a data field is mapped to properties of a
 scene.encode(rect, {field: "Percentage", channel: "width"});
 ```
 
-Atlas will automatically create a [scale](../../docs/encode/scale/) based on the provided parameters, the [type](../../docs/global/constants/#data-type) and value distribution of the data field, and the [type](../../docs/global/constants/#channel) and current values of the visual channel. 
+Mascot will automatically create a [scale](../../docs/encode/scale/) based on the provided parameters, the [type](../../docs/global/constants/#data-type) and value distribution of the data field, and the [type](../../docs/global/constants/#channel) and current values of the visual channel. 
 
 ### Scale Type
 

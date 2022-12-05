@@ -1,6 +1,6 @@
-let scn = atlas.scene({fillColor: "#FFFAFC"});
+let scn = msc.scene({fillColor: "#FFFAFC"});
 let circ = scn.mark("circle", {radius: 120, x: 400, y: 400, fillColor: "orange", strokeColor: "white"});
-let data = await atlas.csv("csv/nightingale.csv");
+let data = await msc.csv("csv/nightingale.csv");
 
 // let rings = scn.divide(circ, data, {field: "Type", orientation: "radial"});
 // let arcs = scn.divide(rings.firstChild, data, {field: "Month", orientation: "angular"});

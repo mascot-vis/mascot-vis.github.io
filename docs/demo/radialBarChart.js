@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let data = await atlas.csv("csv/monthlySales.csv");
+let scn = msc.scene();
+let data = await msc.csv("csv/monthlySales.csv");
 
 let ring = scn.mark("ring", {innerRadius: 50, outerRadius: 120, x: 400, y: 300, fillColor: "#1D90FF", strokeColor: "white"});
 let coll = scn.divide(ring, data, {field: "Month"});

@@ -16,7 +16,7 @@ toc: true
 The LinearGradient class represents a linear color gradient to be used for the stroke or fill color property. To create a LinearGradient object, use the [_linearGradient_ function](../../global/func/):
 
 ```js
-    let lg = atlas.linearGradient({x1: 0, y1: 0, x2: 100, y2: 0});
+    let lg = msc.linearGradient({x1: 0, y1: 0, x2: 100, y2: 0});
 ```
 
 

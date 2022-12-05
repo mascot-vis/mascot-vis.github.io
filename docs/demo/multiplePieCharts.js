@@ -1,11 +1,11 @@
-let scn = atlas.scene();
-let data = await atlas.csv("csv/household_spending.csv");
+let scn = msc.scene();
+let data = await msc.csv("csv/household_spending.csv");
 
 let circ = scn.mark("circle", {radius: 100, x: 300, y: 200, fillColor: "white"});
 let coll1 = scn.repeat(circ, data, {field: "Country"});
-coll1.layout = atlas.layout("grid", {numRows: 1, colGap: 35});
+coll1.layout = msc.layout("grid", {numRows: 1, colGap: 35});
 let coll2 = scn.repeat(coll1, data, {field: "Year"});
-coll2.layout = atlas.layout("grid", {numCols: 1, rowGap: 55});
+coll2.layout = msc.layout("grid", {numCols: 1, rowGap: 55});
 let pieChart = scn.divide(circ, data, {field: "Category"});
 let anyPie = pieChart.children[0];
 scn.encodeWithinCollection(anyPie, {field: "Category", channel: "fillColor", scheme: "schemeAccent"});

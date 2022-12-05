@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let dt = await atlas.csv("csv/elections-2020.csv");
+let scn = msc.scene();
+let dt = await msc.csv("csv/elections-2020.csv");
 let biden = dt.transform("filter", [{field: "Biden_margin", range: [0, 100]}]);
 let trump = dt.transform("filter", [{field: "Trump_margin", range: [0, 100]}]);
 let rect = scn.mark("rect", {top: 60, left: 150, width: 350, height: 500, strokeColor: "white", fillColor: "#1E71B8"});

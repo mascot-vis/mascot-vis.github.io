@@ -1,8 +1,8 @@
-let scn = atlas.scene({fillColor: "#333"});
+let scn = msc.scene({fillColor: "#333"});
 let line = scn.mark("line", {x1: 100, y1: 100, x2: 700, y2: 400, strokeColor: "green", vxShape: "circle", vxRadius: 4});
-let dt = await atlas.csv("csv/newCarColors.csv");
+let dt = await msc.csv("csv/newCarColors.csv");
 
-// let coll = scn.repeat(line, dt, {field: "Color", layout: atlas.layout("grid", {"numCols": 1})});
+// let coll = scn.repeat(line, dt, {field: "Color", layout: msc.layout("grid", {"numCols": 1})});
 scn.repeat(line, dt, {field: "Color"});
 line = scn.densify(line, dt, {field: "Year"});
 scn.setProperties(line, {curveMode: "bumpX"});

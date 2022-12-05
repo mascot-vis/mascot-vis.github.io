@@ -1,5 +1,5 @@
-let scene = atlas.scene();
-let csv = await atlas.csv("csv/iris_setosa.csv");
+let scene = msc.scene();
+let csv = await msc.csv("csv/iris_setosa.csv");
 let data = csv.transform("kde", ["sepal_length"], {min: 4, interval: 0.1, max: 6, bandwidth: 0.13});
 let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strokeColor: "white", strokeWidth: 1, fillColor: "#69B3A2"});
 let setose = scene.densify(rect, data, {orientation: "vertical", field: "sepal_length"});
@@ -20,5 +20,5 @@ scene.encode(line.vertices[1], {field: "sepal_length", channel: "y", aggregator:
 scene.encode(box.topSegment, {field: "sepal_length", channel: "y", aggregator: "percentile 75", scale: xEncoding.scale});
 scene.encode(box.bottomSegment, {field: "sepal_length", channel: "y", aggregator: "percentile 25", scale: xEncoding.scale});
 scene.encode(medianCircle, {field: "sepal_length", channel: "y", aggregator: "avg", scale: xEncoding.scale})
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scene, "svgElement", {collectionBounds: false});

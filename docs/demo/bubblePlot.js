@@ -1,5 +1,5 @@
-let scn = atlas.scene({fillColor: "#333"});
-let dt = await atlas.csv("csv/planets.csv");
+let scn = msc.scene({fillColor: "#333"});
+let dt = await msc.csv("csv/planets.csv");
 let circle = scn.mark("circle", {radius: 6, x: 200, y: 60, fillColor: "orange", strokeWidth: 1, strokeColor: "white", opacity: 0.35});
 
 let collection = scn.repeat(circle, dt, {field: "name"});
@@ -20,5 +20,5 @@ scn.gridlines("x", "hzd", {strokeColor: "#555"});
 scn.gridlines("y", "mass", {values: [0.1, 1, 10, 100, 1000, 10000], strokeColor: "#555"});
 
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: false});	

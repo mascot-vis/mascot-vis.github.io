@@ -1,9 +1,9 @@
-let scn = atlas.scene();
-let dt = await atlas.csv("csv/iris.csv");
+let scn = msc.scene();
+let dt = await msc.csv("csv/iris.csv");
 let fields = ["sepal length","sepal width","petal length","petal width"];
 
 let scatterplots = scn.group();
-let fillScale = atlas.createScale("ordinalColor");
+let fillScale = msc.createScale("ordinalColor");
 fillScale.domain = dt.getUniqueFieldValues("species");
 
 for (let row of fields) {
@@ -22,9 +22,9 @@ for (let row of fields) {
 	}
 }
 
-scn.setProperties(scatterplots, {"layout": atlas.layout("grid", {numCols: 4, colGap: 65, rowGap: 65})});
+scn.setProperties(scatterplots, {"layout": msc.layout("grid", {numCols: 4, colGap: 65, rowGap: 65})});
 scn.legend("fillColor", "species", {x: 920, y: 100});
 
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: true});	

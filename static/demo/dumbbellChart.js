@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let dt = await atlas.csv("csv/orlandoShooting.csv");
+let scn = msc.scene();
+let dt = await msc.csv("csv/orlandoShooting.csv");
 
 let line = scn.mark("line", {x1: 420, y1: 100, x2: 500, y2: 100, strokeWidth: 8}),
     topic = scn.mark("text", {x: 100, y: 100, anchor: ["left", "middle"], fontWeight: "bold"}),

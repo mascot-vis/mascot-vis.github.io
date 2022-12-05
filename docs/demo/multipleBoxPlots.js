@@ -1,18 +1,18 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 
 let line = scn.mark("line", {x1: 150, y1: 80, x2: 150, y2: 450, strokeColor: "#555", vxShape: "rect", vxWidth: 20, vxHeight: 1, vxFillColor: "#555"}),
     box = scn.mark("rect", {top: 100, left: 135, width: 30, height: 200, fillColor: "#95D0F5", strokeWidth: 0}),
     medianLine = scn.mark("line", {x1: 135, y1: 200, x2: 165, y2: 200, strokeColor: "#fff"});
 
 let glyph = scn.glyph(line, box, medianLine);
-let dt = await atlas.csv("csv/genderPayGap.csv");
+let dt = await msc.csv("csv/genderPayGap.csv");
 
 let genders = scn.repeat(glyph, dt, {field: "Gender"});
-genders.layout = atlas.layout("grid", {numRows: 1, colGap: 15});
+genders.layout = msc.layout("grid", {numRows: 1, colGap: 15});
 
 let payGrades = scn.repeat(genders, dt, {field: "Pay Grade"});
 payGrades.sortChildrenByData("Pay Grade", false, ["One", "Two", "Three", "Four", "Five"]);
-payGrades.layout = atlas.layout("grid", {numRows: 1, colGap: 45});
+payGrades.layout = msc.layout("grid", {numRows: 1, colGap: 45});
 
 
 let enc = scn.encode(line.vertices[0], {field: "Min", channel: "y"});

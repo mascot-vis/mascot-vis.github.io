@@ -12,12 +12,12 @@ menu:
 weight: 40
 ---
 
-We get a collection of graphical objects after applying repeat, divide or densify operations. These objects can be positioned using [layouts](../../docs/layout/layout/). Atlas currently provides the following types of layout: [grid](../../docs/layout/grid/), [stack](../../docs/layout/stack/), [packing](../../docs/layout/packing/) and [Treemap](../../docs/layout/treemap/). 
+We get a collection of graphical objects after applying repeat, divide or densify operations. These objects can be positioned using [layouts](../../docs/layout/layout/). Mascot currently provides the following types of layout: [grid](../../docs/layout/grid/), [stack](../../docs/layout/stack/), [packing](../../docs/layout/packing/) and [Treemap](../../docs/layout/treemap/). 
 
 To create a layout, use the _layout_ function, for example,
 
 ```js
-let tl = atlas.layout("treemap", {width: 800, height: 500});
+let tl = msc.layout("treemap", {width: 800, height: 500});
 ```
 
 A layout can only be applied to a collection:

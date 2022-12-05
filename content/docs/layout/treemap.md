@@ -17,7 +17,7 @@ toc: true
 
 The TreemapLayout class represents a layout that positions objects using the treemap algorithm. To create a TreemapLayout object and apply it to a [collection](../../group/collection/), use the [_layout_ function](../../global/func/):
 
-    let tl = atlas.layout("treemap", {width: 800, height: 500});
+    let tl = msc.layout("treemap", {width: 800, height: 500});
     collection.layout = tl;
 
 ### Properties

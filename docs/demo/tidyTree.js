@@ -1,10 +1,10 @@
-let scene = atlas.scene();
-let tree = await atlas.treejson("treejson/emergency_unit.json");
+let scene = msc.scene();
+let tree = await msc.treejson("treejson/emergency_unit.json");
 let node = scene.mark("text", {x: 100, y: 100, fontSize: "12.5px", fontWeight: "bold"}),
     link = scene.mark("link", {sourceAnchor: ["center", "bottom"], targetAnchor: ["center", "top"], strokeColor: "#eee", sourceOffset: [0, 2], targetOffset: [0, -2], mode: "curveVertical"});
 let [nodes, links] = scene.repeat([node, link], tree);
 scene.encode(node, {field: "event", channel: "text"});
-nodes.layout = atlas.layout("tidytree", {width: 300, height: 500, orientation: "vertical"});
+nodes.layout = msc.layout("tidytree", {width: 300, height: 500, orientation: "vertical"});
 scene.encode(node, {field: "average_index", channel: "y", rangeExtent: 400, flipScale: true});
 scene.encode(link, {channel: "strokeWidth", field: "child.value", range: [1, 12]});
 

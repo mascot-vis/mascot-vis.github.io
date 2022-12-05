@@ -1,5 +1,5 @@
-let scn = atlas.scene();
-let dt = await atlas.csv("csv/stocks.csv");
+let scn = msc.scene();
+let dt = await msc.csv("csv/stocks.csv");
 //dt.parseFieldAsDate("date", "%b %Y");
 let line = scn.mark("line", {x1: 200, y1: 100, x2: 800, y2: 400, strokeColor: "green"});
 
@@ -17,5 +17,5 @@ scn.axis("y", "price", {orientation: "left"});
 scn.legend("strokeColor", "company", {x: 800, y: 100});
 
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: false});	

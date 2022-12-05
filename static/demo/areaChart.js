@@ -1,7 +1,7 @@
-let scene = atlas.scene();
-let data = await atlas.csv("csv/bitcoin-price.csv");
+let scene = msc.scene();
+let data = await msc.csv("csv/bitcoin-price.csv");
 // rect.divide first
-let fill = atlas.linearGradient({x1: 0, y1: 0, x2: 0, y2: 100});
+let fill = msc.linearGradient({x1: 0, y1: 0, x2: 0, y2: 100});
 fill.addStop(0, "#EFC030", 1.0);
 fill.addStop(80, "#EFC030", 1.0);
 fill.addStop(100, "#F9E5AF", 1.0);

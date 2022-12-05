@@ -1,12 +1,12 @@
-let scene = atlas.scene();
-let data = await atlas.graphjson("graphjson/AAAsample_ed2.json");
+let scene = msc.scene();
+let data = await msc.graphjson("graphjson/AAAsample_ed2.json");
 let node = scene.mark("text", {x: 120, y: 120}),
     link = scene.mark("link", {sourceAnchor: ["center", "bottom"], targetAnchor: ["center", "top"], sourceOffset: [0, 2], targetOffset: [0, -2], mode: "curveVertical", strokeColor: "#C8E6FA"});
 // let links = scene.repeat(link, data.linkTable); 
 // let nodes = scene.repeat(node, data.nodeTable);
 let [nodes, links] = scene.repeat([node, link], data);
 scene.encode(node, {field: "event_attribute", channel: "text"});
-nodes.layout = atlas.layout("sugiyama", {top: 100, left: 100});
+nodes.layout = msc.layout("sugiyama", {top: 100, left: 100});
 scene.encode(node, {field: "average_index", channel: "y", rangeExtent: 400, flipScale: true});
 // scene.encode(link, {channel: "source", field: "source"});
 // scene.encode(link, {channel: "target", field: "target"});

@@ -16,7 +16,7 @@ toc: true
 
 The GridLayout class represents a layout that positions objects in a grid. To create a GridLayout object and apply it to a [collection](../../group/collection/), use the [_layout_ function](../../global/func/):
 
-    let gl = atlas.layout("grid", {numCols: 2, hGap: 10});
+    let gl = msc.layout("grid", {numCols: 2, hGap: 10});
     collection.layout = gl;
 
 ### Properties

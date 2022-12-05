@@ -1,11 +1,11 @@
-let scn = atlas.scene({fillColor: "#222"});
-let dt = await atlas.csv("csv/stocks.csv");
-let dt2 = await atlas.csv("csv/stocks-March-2010.csv");
+let scn = msc.scene({fillColor: "#222"});
+let dt = await msc.csv("csv/stocks.csv");
+let dt2 = await msc.csv("csv/stocks-March-2010.csv");
 //dt.parseFieldAsDate("date", "%b %Y");
 let line = scn.mark("line", {x1: 300, y1: 100, x2: 450, y2: 150, strokeColor: "#ccc"});
 
 let collection = scn.repeat(line, dt, {field: "company"});
-collection.layout = atlas.layout("grid", {numCols: 1, rowGap : 25});
+collection.layout = msc.layout("grid", {numCols: 1, rowGap : 25});
 
 let polyLine = scn.densify(line, dt, {field: "date"});
 
@@ -31,5 +31,5 @@ let colorMapping = {"up": "green", "down": "red"};
 scn.encode(changeBg, {field: "direction", channel: "fillColor", mapping: colorMapping});
 scn.affix(glyph2, polyLine, {itemAnchor: "bottom", baseAnchor: "bottom"});
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: false});	

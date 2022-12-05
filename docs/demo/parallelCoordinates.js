@@ -1,11 +1,11 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let xPos = [100, 350, 600, 850], top = 80;
 let path = scn.mark("path", {
 	vertices: [[xPos[0], top], [xPos[1], top], [xPos[2], top], [xPos[3], top]],
 	strokeColor: "#95D0F5",
 	opacity: 0.15
 } );
-let dt = await atlas.csv("csv/cars.csv");
+let dt = await msc.csv("csv/cars.csv");
 
 let paths = scn.repeat(path, dt);
 let fields = ["cylinders", "economy(mpg)", "displacement(cc)", "power(hp)"];

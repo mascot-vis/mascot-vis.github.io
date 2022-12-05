@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Atlas</title>
+		<title>Mascot</title>
 		<script src="https://d3js.org/d3.v7.min.js"></script>
 		<script src="lib/pixi.min.js"></script>
-		<script src="dist/atlas-min.js"></script>
+		<script src="dist/mascot-min.js"></script>
 		<script src="lib/codemirror.js"></script>
 		<script src="lib/acorn.js"></script>
 		<link rel="stylesheet" href="lib/codemirror.css">
@@ -194,7 +194,7 @@
 			<div class="container">
 			  <input class="menu-btn order-0" type="checkbox" id="menu-btn">
 			  <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
-			  <a class="navbar-brand order-1 order-md-0 me-auto" href="/">Atlas.js</a>
+			  <a class="navbar-brand order-1 order-md-0 me-auto" href="/">Mascot.js</a>
 			  <!-- <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
 				<span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
 				<span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
@@ -324,7 +324,7 @@
 
 			function loadDataTable(responseText){
 				// Set the data for the csv in the script
-				let csvRegex = /atlas\.csv\("(.+)"\);/;
+				let csvRegex = /msc\.csv\("(.+)"\);/;
 				let csvPath = csvRegex.exec(responseText)[1];
 
 				// Request the csv from the server
@@ -361,7 +361,7 @@
 			}
 
 			function loadJson(responseText) {
-				let jsonRegex = /atlas\.(tree|graph)json\("(.+)"\);/;
+				let jsonRegex = /msc\.(tree|graph)json\("(.+)"\);/;
 				let jsonPath = jsonRegex.exec(responseText)[2];
 				// Request the csv from the server
 				fetch(jsonPath)
@@ -418,10 +418,10 @@
 				blocks = blocks.filter(l => l.indexOf("render") < 0);
 
 				//add renderer lines
-				let sceneName = blocks.filter(l => l.indexOf("atlas.scene(") > 0)[0].split("=")[0].replace("let", " ").trim();
+				let sceneName = blocks.filter(l => l.indexOf("msc.scene(") > 0)[0].split("=")[0].replace("let", " ").trim();
 				let r = $("input[type='radio'][name='renderer']:checked").val();
 				let ele = r == "svg" ? "svgElement" : "canvasElement";
-				let newScript = blocks.join("\n") + "\natlas.renderer('" + r + "','" + ele + "').render(" + sceneName + ");";
+				let newScript = blocks.join("\n") + "\nmsc.renderer('" + r + "','" + ele + "').render(" + sceneName + ");";
 				let csl = document.getElementById("console");
 				removeAllChildren(csl);
 				csl.style.display = "none";
@@ -462,12 +462,12 @@
 					//let s = blocks.slice(0, currentIdx).join(";\n") + ";" + blocks.slice(renderIdx).join(";\n");
 					while (currentIdx < renderIdx) {
 						let newBlock = blocks[currentIdx];
-						if (newBlock.indexOf("atlas.csv") > 0)
-						newBlock = newBlock.replace("atlas.csv", "await atlas.csv");
-						if (newBlock.indexOf("atlas.treejson") > 0)
-						newBlock = newBlock.replace("atlas.treejson", "await atlas.treejson");
-						if (newBlock.indexOf("atlas.graphjson") > 0)
-						newBlock = newBlock.replace("atlas.graphjson", "await atlas.graphjson");
+						if (newBlock.indexOf("msc.csv") > 0)
+						newBlock = newBlock.replace("msc.csv", "await msc.csv");
+						if (newBlock.indexOf("msc.treejson") > 0)
+						newBlock = newBlock.replace("msc.treejson", "await msc.treejson");
+						if (newBlock.indexOf("msc.graphjson") > 0)
+						newBlock = newBlock.replace("msc.graphjson", "await msc.graphjson");
 						code += newBlock + "\n";
 						let skip = true;
 						for (let f of frames) {

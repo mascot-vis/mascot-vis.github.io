@@ -1,10 +1,10 @@
-let scn = atlas.scene();
+let scn = msc.scene();
 let rect = scn.mark("rect", {top:100, left: 200, width: 400, height: 20, strokeWidth: 0, fillColor: "orange"} );
-let dt = await atlas.csv("csv/projectTimeline.csv");
+let dt = await msc.csv("csv/projectTimeline.csv");
 
 let bars = scn.repeat(rect, dt, {field: "Task"});
 //bind y to Task would also work
-bars.layout = atlas.layout("grid", {numCols: 1, rowGap: 5});
+bars.layout = msc.layout("grid", {numCols: 1, rowGap: 5});
 
 let enc = scn.encode(rect.leftSegment, {field: "Start Date", channel: "x"});
 scn.encode(rect.rightSegment, {field: "End Date", channel: "x", scale: enc.scale});
@@ -14,5 +14,5 @@ scn.axis("y", "Task", {orientation: "left"});
 scn.gridlines("x", "Start Date");
 
 
-// let r = atlas.renderer("svg");
+// let r = msc.renderer("svg");
 // r.render(scn, "svgElement", {collectionBounds: false});
