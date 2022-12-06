@@ -15,7 +15,7 @@ scn.encode(box.leftSegment, {field: "Sales", channel: "x", scale: enc.scale, agg
 scn.encode(box.rightSegment, {field: "Sales", channel: "x", scale: enc.scale, aggregator: "percentile 75"});
 scn.encode(medianLine, {field: "Sales", channel: "x", scale: enc.scale, aggregator: "median"});
 enc.scale.rangeExtent = 500;
-scn.axis("x", "Sales", {orientation: "bottom"});
+scn.axis("x", "Sales", {orientation: "bottom", pathY: 160});
 
 let circ = scn.mark("circle", {strokeColor: "#32A457", fillColor: "none", strokeWidth: 4, radius: 6,  y: 130, opacity: 0.75});
 scn.repeat(circ, dt);
