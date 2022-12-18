@@ -12,7 +12,7 @@ menu:
 weight: 50
 ---
 
-Visual encodings specify how values in a data field is mapped to properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a data field, and a visual channel: 
+Visual encodings specify how the values in a data field map to the properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a data field, and a visual channel: 
 
 ```js
 scene.encode(rect, {field: "Percentage", channel: "width"});

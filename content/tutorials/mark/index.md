@@ -24,7 +24,7 @@ The [types of marks](../../docs/global/constants/#mark-type) that can be created
 
 {{< figure src="paths.png" alt="Marks as Paths" caption="" class="border-0 mx-auto text-center">}}
 
-The following code creates multiple marks and group them into a box plot [glyph](../../docs/group/glyph/):
+The following code creates multiple marks and groups them into a box plot [glyph](../../docs/group/glyph/):
 
 ```js
 let line = scene.mark("line", {x1: 150, y1: 130, x2: 700, y2: 130, strokeColor: "#555", 
@@ -38,8 +38,8 @@ let glyph = scene.glyph(line, box, medianLine);
 
 When a mark or a glyph is created, it exists as a JavaScript object. You can print it to the web console using `console.log(mark)`, and inspect its properties. To render it on a webpage, we need to create a renderer. 
 
-Mascot offers three types of renderers: **svg**, **canvas**, and **webgl**. Renderers are created using the [_renderer_ function](../../docs/rendering/renderer/). For each renderer, we need to define a corresponding display in the webpage first. For an **svg** renderer, the webpage needs to have an SVG element; for **canvas** and **webgl** renderers, the webpage needs to have an HTML Canvas element. We can then [render a scene](../../docs/rendering/renderer/#methods) to the corresponding display, for example:
+Mascot offers three types of renderers: **svg**, **canvas**, and **webgl**. Renderers are created using the [_renderer_ function](../../docs/rendering/renderer/). For each renderer, we need to define a corresponding display in the webpage first. For an **svg** renderer, the webpage must have an SVG element; for **canvas** and **webgl** renderers, the webpage must have an HTML Canvas element. We can then [render a scene](../../docs/rendering/renderer/#methods) to the corresponding display, for example:
 
     msc.renderer("webgl", "canvasEle").render(scene);
 
-Remember to call the _render_ method whenever your scene is changed so that the changes are reflected in the display. 
+Remember to call the _render_ method whenever your scene is changed, so that the changes are reflected in the display. 

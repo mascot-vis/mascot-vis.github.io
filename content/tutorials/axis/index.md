@@ -20,7 +20,7 @@ In the case of small multiples, by default, Mascot will create an axis for the f
 
 {{< figure src="axis-sm.png" width="750px" alt="Multiple Area Charts" caption="" class="border-0 mx-auto text-center" >}}
 
-To add a set of axis for each area chart in the collection (assigned to a variable `industries`), we can pass the area as an `item` parameter:
+To add a set of axis for each area chart in the collection (assigned to the field `industries`), we can pass the area as an `item` parameter:
 
     for (let area of industries.children){
         scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", item: area});
@@ -31,7 +31,7 @@ which gives us the following visualization:
 
 {{< figure src="axis-sm-2.png" width="750px" alt="Multiple Area Charts" caption="" class="border-0 mx-auto text-center" >}}
 
-The `item` parameter must be the graphical object whose visual channel encodes the data field. For example, in a line graph, the item is a vertex, not a path. 
+The `item` parameter must be the visual object whose visual channel encodes the data field. For example, in a line graph, the item is a vertex, not a path. 
 
 By default, a title is automatically created for an axis if the positions of marks/collections along the axis are determined by a visual encoding (i.e., a field is specified). A title will not be created if the positions of marks/collections along the axis are determined by a layout. You can force the title to be shown by setting the [showTitle parameter](../../docs/guide/axis/#properties).
 

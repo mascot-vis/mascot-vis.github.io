@@ -45,7 +45,7 @@ Here we are creating a renderer that renders the scene to an SVG element with th
 ### Join Graphics with Data and Lay out Marks
 Next, we want to have multiple rectangles, each representing an age group. This is done by using the repeat method:
     
-    let collection = scene.repeat(rect, table, {field: "Age Group"});
+    let collection = scn.repeat(rect, table, {field: "Age Group"});
 
 This will give us a collection of four rectangles, each representing an age group in the dataset. By default, the repeated rectangles will have the same properties (including position) as the original rectangle. To space them out, we can apply a grid layout with only 1 column and a vertical gap of 10 pixels between the rows:
 
@@ -68,7 +68,7 @@ When using the divide method, we don't need to pass all four rectangle marks as 
 
 ### Specify Visual Encodings
 
-Now we can map data fields to visual channels. First let's map "Percentage" to the width of the rectangles. We need to reassign variable `rect` as one of the newly created marks and pass it as an example to the encode method:
+Now we can map data fields to visual channels. First, let's map "Percentage" to the width of the rectangles. We need to reassign variable `rect` as one of the newly created marks and pass it as an example to the encode method:
 
     rect = bars.firstChild;
     scn.encode(rect, {field: "Percentage", channel:"width"});
@@ -86,7 +86,7 @@ Here's what we have after applying these encodings:
 
 ### Apply Constraints
 
-We want to align these bars so that the blue ones are aligned to the right and the orange ones are aligned to the left. To do so, we find all the light blue bars, which represent the response "Agree", and align them to the right:
+We want to align these bars to clearly show the divergence of opinions. To do so, we find all the light blue bars representing the response "Agree", and align them to the right:
 
     let agreeBars = scn.find([{channel: "fillColor", value: "#7799cf"}]);
     scn.align(agreeBars, "right");
