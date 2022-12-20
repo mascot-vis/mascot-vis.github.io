@@ -13,7 +13,7 @@ weight: 30
 toc: true
 --- 
 <span style="font-size:1.2em">extends [Mark](../mark/)</span><br>
-<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [CirclePath](../circlepath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [PiePath](../piepath/), [RingPath](../ringpath/)</span>
+<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [CirclePath](../circlepath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
 
 The Path class represents a gemetric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 
@@ -26,7 +26,7 @@ The Path class represents a gemetric path consisting of multiple [vertices](../.
               });
 ```
 
-A straight line is also represented as a path object in Atlas. The following code returns a Path object with two vertices.
+A straight line is also represented as a path object in Mascot. The following code returns a Path object with two vertices.
 
 ```js
     let line = scene.mark("line", {x1: 0, y1: 20, x2: 300, y2: 50});

@@ -17,7 +17,7 @@ The Tree class represents a hierarchical dataset. Tree objects are created by im
 
     let tree = await msc.treejson("data.json");
 
-A tree is represented using two [data tables](../../data/datatable/), one for the nodes and one for the parent-child relationships (Figure 1). A unique id is assigned to each node in the node table. Atlas automatically infers the [data type](../../global/constants/#data-type) for each node attribute, and parses the values accordingly. 
+A tree is represented using two [data tables](../../data/datatable/), one for the nodes and one for the parent-child relationships (Figure 1). A unique id is assigned to each node in the node table. Mascot automatically infers the [data type](../../global/constants/#data-type) for each node attribute, and parses the values accordingly. 
 
 {{< figure src="../tree_import.png" alt="tree import" width="750px" caption="Figure 1: a tree dataset is parsed as two data tables" class="border-0 mx-auto text-center">}}
 

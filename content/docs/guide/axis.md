@@ -32,7 +32,7 @@ The Axis class represents an axis. To create an Axis object, use the [_axis_ met
 |**textColor**| the text color of the axis labels | Color | "#555" | 
 |**tickOffset**| the distance between the ticks and the path (Figure 1) | Number | 0 | 
 |**tickSize**| the size of the axis ticks| Number | 5 | 
-|**tickValues** | the values of the ticks on the axis<br>if not provided, Atlas will auto-generate values | Array | | 
+|**tickValues** | the values of the ticks on the axis<br>if not provided, Mascot will auto-generate values | Array | | 
 |**tickAnchor** | the [anchor](../../global/constants/#anchor) of the ticks on the axis if the items are in a grid layout<br>refer to the ridgeline plot for an example usage of this property | String | | 
 |**tickVisible**| whether to show the ticks | Boolean | true |
 |**pathVisible**| whether to show the axis path | Boolean | true |

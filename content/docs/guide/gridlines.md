@@ -29,5 +29,5 @@ The Gridlines class represents a set of grid lines for a visual encoding. To cre
 |**textColor**| the text color of gridlines | Color | "#555" | 
 |**strokeColor**| the stroke color of gridlines | Color | "#ddd" | 
 |**strokeWidth**| the stroke width of gridlines | Number | 1 | 
-|**values** | the data values represented by the grid lines,<br>if not provided, Atlas will auto-generate values | Array | | 
+|**values** | the data values represented by the grid lines,<br>if not provided, Mascot will auto-generate values | Array | | 
 {.table-striped}

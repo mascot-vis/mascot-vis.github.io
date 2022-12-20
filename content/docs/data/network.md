@@ -17,7 +17,7 @@ The Network class represents a graph with nodes and links. Network objects are c
 
     let network = await msc.graphjson("data.json");
 
-A network is represented using two [data tables](../../data/datatable/), one for the nodes and one for the links (Figure 1). Atlas automatically infers the [data type](../../global/constants/#data-type) for each node attribute and link attribute, and parses the values accordingly. 
+A network is represented using two [data tables](../../data/datatable/), one for the nodes and one for the links (Figure 1). Mascot automatically infers the [data type](../../global/constants/#data-type) for each node attribute and link attribute, and parses the values accordingly. 
 
 {{< figure src="../network_import.png" alt="network import" width="750px" caption="Figure 1: a network dataset is parsed as two data tables" class="border-0 mx-auto text-center">}}
 

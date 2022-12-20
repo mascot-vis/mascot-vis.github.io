@@ -6,6 +6,9 @@ let industries = scene.repeat(rect, data, {field: "industry"});
 industries.layout = msc.layout("grid", {numRows: 2, colGap: 65, rowGap: 55});
 let anyArea = scene.densify(industries.firstChild,  data, {orientation: "horizontal", field: "date"});
 scene.encode(anyArea, {channel: "fillColor", field: "industry"});
+//to align the area marks to top/middle, we need to set both the area marks' baseline and the grid layout's vertCellAlignment
+// scene.setProperties(anyArea, {"baseline": "middle"});
+// scene.setProperties(industries.layout, {"vertCellAlignment": "middle"});
 let disEncoding = scene.encode(anyArea, {channel: "height", field: "unemployments"});
 let htEncoding = scene.encode(anyArea, {channel: "x", field: "date"});
 disEncoding.scale.domain = [0,2500];

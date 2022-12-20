@@ -15,7 +15,7 @@ toc: true
 
 <span style="font-size:1.2em">extends [Path](../path/)</span><br>
 
-The ArcPath class represents a sector mark that is used in a [Doughnut Chart](../../../gallery.html#DoughnutChart) and a [Sunburst Chart](../../../gallery.html#Sunburst). You cannot create an ArcPath object directly, instead, you need to use the [_divide_ method](../../group/scene/#methods-join-graphics-with-data) in the [Scene](../../group/scene) class to transform a [RingPath](../ringpath/) to a collection of ArcPath objects. [Here is an explanation](../../../tutorials/join/#divide) of the divide operation. 
+The ArcPath class represents a sector mark that is used in a [Doughnut Chart](../../../gallery.html#DoughnutChart) and a [Sunburst Chart](../../../gallery.html#Sunburst). This class is also used to represent a pie mark that is used in a [pie chart](../../../gallery.html#PieChart). A pie is a special arc where the inner radius is 0. You cannot create an ArcPath object directly, instead, you need to use the [_divide_ method](../../group/scene/#methods-join-graphics-with-data) in the [Scene](../../group/scene) class to transform a [RingPath](../ringpath/) to a collection of ArcPath objects (or transform a [CirclePath](../ringpath/) to a collection of pie marks). [Here is an explanation](../../../tutorials/join/#divide) of the divide operation. 
 
 
 ### Properties
@@ -29,10 +29,13 @@ The ArcPath class represents a sector mark that is used in a [Doughnut Chart](..
 |**thickness** <img width="70px" src="../../readonly.png"> | the difference between the outer radius and inner radius | Number | 100 | 
 {.table-striped}
 
-Angles in Atlas are specified using the polar coordinate system, where 0 is at the positive x axis, and the angle increases in the counterclockwise direction. The figure below illustrates various values of startAngle and endAngle.
+Angles in Mascot are specified using the polar coordinate system, where 0 is at the positive x axis, and the angle increases in the counterclockwise direction. The figure below illustrates various values of startAngle and endAngle.
 
-{{< figure src="../arc.png" width="800px" alt="start angle and end angle for an arc" caption="" class="border-0 mx-auto text-center">}}
+{{< figure src="../arc.png" width="850px" alt="start angle and end angle for an arc" caption="" class="border-0 mx-auto text-center">}}
 
+The same applies to a pie mark as well:
+
+{{< figure src="../pie.png" width="700px" alt="start angle and end angle for a pie" caption="" class="border-0 mx-auto text-center">}}
 
 
 ### Properties inherited from Path
