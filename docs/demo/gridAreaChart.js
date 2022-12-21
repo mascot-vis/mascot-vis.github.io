@@ -10,7 +10,7 @@ scene.encode(anyArea, {channel: "fillColor", field: "industry"});
 // scene.setProperties(anyArea, {"baseline": "middle"});
 // scene.setProperties(industries.layout, {"vertCellAlignment": "middle"});
 let disEncoding = scene.encode(anyArea, {channel: "height", field: "unemployments"});
-let htEncoding = scene.encode(anyArea, {channel: "x", field: "date"});
+scene.encode(anyArea.firstVertexPair, {channel: "x", field: "date"});
 disEncoding.scale.domain = [0,2500];
 disEncoding.scale.rangeExtent = 200;
 for (let area of industries.children){

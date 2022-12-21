@@ -13,11 +13,9 @@ scene.setProperties(areas.layout, {vertCellAlignment: "middle"});
 
 scene.encode(anyArea, {channel: "fillColor", field: "industry"});
 let disEncoding = scene.encode(anyArea, {channel: "height", field: "unemployments"});
-let htEncoding = scene.encode(anyArea, {channel: "x", field: "date"});
+scene.encode(anyArea.firstVertexPair, {channel: "x", field: "date"});
 disEncoding.scale.domain = [0,8000];
 disEncoding.scale.rangeExtent = 450;
-scene.axis("x", "date", {orientation: "bottom", pathY: 525, labelFormat: "%m/%y"})// scene.axis("distance", "unemployments", {"orientation": "left", "x-coordinate": 90})
+scene.axis("x", "date", {orientation: "bottom", pathY: 525, labelFormat: "%m/%y"});
+scene.axis("height", "unemployments", {"orientation": "left"});
 scene.legend("fillColor", "industry", {x: 680, y: 100});
-
-// let r = msc.renderer("svg");
-// r.render(scene, "svgElement", {collectionBounds: false})

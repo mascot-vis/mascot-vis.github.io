@@ -4,7 +4,7 @@ let data = csv.transform("kde", ["weight(lbs)"], {min: 1500, interval: 100, band
 
 let rect = scene.mark("rect", {top:60, left: 200, width: 700, height: 400, strokeColor: "#222", strokeWidth: 1, fillColor: "orange", opacity: 0.75});
 let pg = scene.densify(rect, data, {orientation: "horizontal", field: "weight(lbs)"});
-scene.encode(pg, {channel: "x", field: "weight(lbs)"});
+scene.encode(pg.firstVertexPair, {channel: "x", field: "weight(lbs)"});
 scene.encode(pg, {channel: "height", field: "weight(lbs)_density"});
 pg.curveMode = "basis";
 

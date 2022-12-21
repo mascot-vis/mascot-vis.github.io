@@ -4,7 +4,7 @@ let data = csv.transform("kde", ["sepal_length"], {min: 4, interval: 0.1, max: 6
 let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strokeColor: "white", strokeWidth: 1, fillColor: "#69B3A2"});
 let setose = scene.densify(rect, data, {orientation: "vertical", field: "sepal_length"});
 scene.setProperties(setose, {baseline: "center"});
-let xEncoding = scene.encode(setose, {channel: "y", field: "sepal_length"});
+let xEncoding = scene.encode(setose.firstVertexPair, {channel: "y", field: "sepal_length"})[0];
 let htEncoding = scene.encode(setose, {channel: "width", field: "sepal_length_density"});
 xEncoding.scale.rangeExtent = 300;
 scene.setProperties(setose, {curveMode: "basis"})
