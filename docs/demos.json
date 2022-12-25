@@ -225,10 +225,16 @@
         "about": "This visualization shows the Caltrian timetable following the style of <a href='https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003zP' target='_blank'>E. J. Marey's graphical schedule</a>. Each line is a train, and the slope represents the speed of the train. The lines are colored by the type of train."
     },
     "AreaChart": {
-        "name": "Area Chart",
+        "name": "Area Chart 1",
         "mark": "Polygons and Areas",
         "title": "Bitcoin prices: 2013 to 2018",
         "about": "This visualization shows the evolution of the bitcoin price from 2013-04-28 to 2018-04-23. The original visualization was composed using d3.js on <a href='https://www.d3-graph-gallery.com/graph/area_basic.html' target='_blank'>d3-graph-gallery.com</a>."
+    },
+    "AreaChart2": {
+        "name": "Area Chart 2",
+        "mark": "Polygons and Areas",
+        "title": "NYT Net Income: 2009 - 2022",
+        "about": "This chart shows the New York Times' quarterly net income (in Millions of US $) history from 2009 to 2022. Data source: <a href='https://www.macrotrends.net/stocks/charts/NYT/new-york-times/net-income' target='_blank'>macrotrends.net</a>."
     },
     "DensityPlot": {
         "name": "Density Plot",
@@ -314,10 +320,16 @@
         "about": ""
     },
     "GridAreaChart": {
-        "name": "Area Charts",
+        "name": "Area Charts 1",
         "mark": "Small Multiples",
         "title": "Unemployment: 2000 to 2010",
         "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010."
+    },
+    "MultipleAreaCharts": {
+        "name": "Area Charts 2",
+        "mark": "Small Multiples",
+        "title": "Red and Blue America",
+        "about": "This visualization shows how the partisan voter index (PVI) for each U.S. state changed in the elections from 1980 to 2012. <a href='http://graphics.wsj.com/elections/2016/field-guide-red-blue-america/'>Original visualization</a> by Randy Yeip, Stuart A. Thompson and Will Welch."
     },
     "MultipleBarCharts": {
         "name": "Bar Charts",
