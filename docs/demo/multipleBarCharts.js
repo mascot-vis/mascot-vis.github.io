@@ -7,7 +7,7 @@ let xEnc = scene.encode(rect, {field: "MapX", channel: "x", rangeExtent: 950});
 let yEnc = scene.encode(rect, {field: "MapY", channel: "y", rangeExtent: 550});
 
 let coll = scene.divide(rect, data, {field: "Year", orientation: "horizontal"});
-scene.encode(coll.firstChild, {field: "Unemployment", channel: "height"});
+let htEnc = scene.encode(coll.firstChild, {field: "Unemployment", channel: "height"});
 // scene.encode(coll.firstChild, {field: "US Avg", channel: "fillColor", mapping: {"Above Average": "#B6293E", "Below Average": "#477EC0"}});
 scene.encode(coll.firstChild, {field: "US Avg", channel: "fillColor", mapping: {"Above Average": "#D0605E", "Below Average": "#6A9F58"}});
 

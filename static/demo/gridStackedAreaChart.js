@@ -6,9 +6,9 @@ let industries = scene.repeat(rect, data, {field: "industry"});
 industries.layout = msc.layout("grid", {numRows: 2, colGap: 15, rowGap: 30});
 let anyArea = scene.densify(industries.firstChild, data, {orientation: "horizontal", field: "date"});
 let areas = scene.divide(anyArea, data, {orientation: "vertical", field: "gender"});
-scene.encode(anyArea, {channel: "fillColor", field: "gender", mapping: {"male": "#60bdf0", "female": "#f768a1"}});
-let disEncoding = scene.encode(anyArea, {channel: "height", field: "unemployments"});
-scene.encode(anyArea.firstVertexPair, {channel: "x", field: "date", rangeExtent: 400});
+scene.encode(areas.firstChild, {channel: "fillColor", field: "gender", mapping: {"male": "#60bdf0", "female": "#f768a1"}});
+let disEncoding = scene.encode(areas.firstChild, {channel: "height", field: "unemployments"});
+scene.encode(areas.firstChild.firstVertexPair, {channel: "x", field: "date", rangeExtent: 400});
 disEncoding.scale.domain = [0,4500];
 disEncoding.scale.rangeExtent = 200;
 //to align the area marks to top/middle, we need to set the vertCellAlignment properties for both the stack and grid layouts

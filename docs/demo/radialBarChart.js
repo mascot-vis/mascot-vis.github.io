@@ -5,7 +5,7 @@ let ring = scn.mark("ring", {innerRadius: 50, outerRadius: 120, x: 400, y: 300, 
 let coll = scn.divide(ring, data, {field: "Month"});
 
 let arc = coll.firstChild;
-scn.encode(arc, {field: "Sales", channel: "outerRadius", rangeExtent: 200});
+scn.encode(arc, {field: "Sales", channel: "thickness", rangeExtent: 150});
 
 let text = scn.mark("text", {fillColor: "white", fontWeight: "bold", fontSize: "14px"});
 scn.repeat(text, data, {field: "Month"});

@@ -8,8 +8,8 @@ let coll2 = scn.repeat(coll1, data, {field: "Year"});
 coll2.layout = msc.layout("grid", {numCols: 1, rowGap: 55});
 let pieChart = scn.divide(circ, data, {field: "Category"});
 let anyPie = pieChart.children[0];
-scn.encodeWithinCollection(anyPie, {field: "Category", channel: "fillColor", scheme: "schemeAccent"});
-scn.encodeWithinCollection(anyPie, {field: "Percentage", channel: "angle"});
+scn.encode(anyPie, {field: "Category", channel: "fillColor", scheme: "schemeAccent"});
+scn.encode(anyPie, {field: "Percentage", channel: "angle"});
 
 scn.legend("fillColor", "Category", {x: 670, y: 150});
 scn.axis("x", "Country", {orientation: "top", pathVisible: false, tickVisible: false});

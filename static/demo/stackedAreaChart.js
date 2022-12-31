@@ -11,9 +11,9 @@ let anyArea = scene.densify(rect, data, {orientation: "horizontal", field: "date
 let areas = scene.divide(anyArea, data, {orientation: "vertical", field: "industry"});
 scene.setProperties(areas.layout, {vertCellAlignment: "bottom"});
 
-scene.encode(anyArea, {channel: "fillColor", field: "industry", mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
-scene.encode(anyArea, {channel: "height", field: "unemployments"});
-scene.encode(anyArea.firstVertexPair, {channel: "x", field: "date", rangeExtent: 700});
+scene.encode(areas.firstChild, {channel: "fillColor", field: "industry", mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
+scene.encode(areas.firstChild, {channel: "height", field: "unemployments"});
+scene.encode(areas.firstChild.firstVertexPair, {channel: "x", field: "date", rangeExtent: 700});
 // disEncoding.scale.domain = [0, 8000];
 // disEncoding.scale.rangeExtent = 450;
 scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y"});

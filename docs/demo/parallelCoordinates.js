@@ -11,7 +11,7 @@ let paths = scn.repeat(path, dt);
 let fields = ["cylinders", "economy(mpg)", "displacement(cc)", "power(hp)"];
 for (let i = 0; i < fields.length; i++)
 	scn.encode(path.vertices[i], {field: fields[i], channel: "y", rangeExtent: 400});
-let enc = scn.encode(path, {field: "cylinders", channel: "strokeColor", mapping: {"3": "#ffffb2", "4": "#fecc5c", "5": "#fd8d3c", "6": "#f03b20", "8": "#bd0026"}});
+let enc = scn.encode(path, {field: "cylinders", channel: "strokeColor", scheme: "interpolateBuPu"});
 scn.legend("strokeColor", "cylinders", {x: 950, y: 100});
 // scn.encode(path, {field: "year", channel: "strokeColor"});
 // scn.legend("strokeColor", "year", {x: 950, y: 100});
