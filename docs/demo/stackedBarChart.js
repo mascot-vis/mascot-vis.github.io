@@ -5,7 +5,6 @@ let dt = await msc.csv("csv/olympic-medals.csv");
 
 let countries = scn.repeat(rect, dt, {field: "Country_Code"});
 countries.layout = msc.layout("grid", {numRows: 1, colGap: 15, rowGap: 10});
-//countries.layout = msc.layout("grid", {numCols: 1, colGap: 15, colGap: 10, horzCellAlignment: "right"});
 scn.divide(rect, dt, {orientation: "vertical", field: "Medal_Type"});
 
 let htEncoding = scn.encode(rect, {field: "Count", channel: "height"});
