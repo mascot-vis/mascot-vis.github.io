@@ -200,6 +200,13 @@
         "title": "Stock Market",
         "about": "Monthly Stock Prices of four companies: Amazon, Apple, IBM and Microsoft from Jan 1, 2000 to Mar 1, 2010. Original visualization was composed using d3.js on <a href='https://bl.ocks.org/d3noob/08af723fe615c08f9536f656b55755b4' target='_blank'>d3noob.org</a>"
     },
+    "MultiLineGraph2": {
+        "name": "Multi-Line Graph 2",
+        "mark": "Lines and Paths",
+        "title": "CO2 Concentrations",
+        "draft": true,
+        "about": "Six decades of carbon dioxide concentration in the atmosphere from 1958 to 2022. Original visualization by <a href='https://blog.datawrapper.de/weekly-chart-carbon-dioxide/' target='_blank'>Gregor Aisch for Datawrapper</a>."
+    },
     "ParallelCoordinates": {
         "name": "Parallel Coordinates",
         "mark": "Lines and Paths",
@@ -259,6 +266,13 @@
         "mark": "Polygons and Areas",
         "title": "Unemployment by Industry",
         "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010. The original visualization was composed using d3.js on <a href='https://observablehq.com/@d3/stacked-area-chart' target='_blank'>observablehq.com</a>."
+    },
+    "StackedAreaChart2": {
+        "name": "Stacked Area Chart 2",
+        "mark": "Polygons and Areas",
+        "title": "Mobile OS Shares",
+        "draft": true,
+        "about": "This visualization shows the percentage usage of various moible operating systems from 2008 to 2014."
     },
     "StellarChart": {
         "name": "Stellar Chart",

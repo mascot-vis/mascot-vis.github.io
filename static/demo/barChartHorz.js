@@ -12,3 +12,5 @@ scn.encode(rect, {field: "% Change", channel: "width"});
 scn.axis("y", "Quarter", {orientation: "left", tickVisible: false, pathVisible: false});
 scn.axis("y", "Year", {orientation: "right", pathX: 370, labelFormat: "%Y", tickVisible: false, labelOffset: 220});
 scn.axis("width", "% Change", {orientation: "bottom"});
+
+msc.hitTest(scn, 200, 200);
