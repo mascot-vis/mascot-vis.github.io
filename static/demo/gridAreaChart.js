@@ -14,7 +14,7 @@ scene.encode(anyArea.firstVertexPair, {channel: "x", field: "date"});
 disEncoding.scale.domain = [0,2500];
 disEncoding.scale.rangeExtent = 200;
 for (let area of industries.children){
-    scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", item: area});
+    scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", item: area.firstVertex});
 	scene.axis("height", "unemployments", {orientation: "left", labelFormat: ".2s", item: area});
 }
 scene.legend("fillColor", "industry", {x: 980, y: 100});

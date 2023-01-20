@@ -10,9 +10,8 @@ c.layout = msc.layout("grid", {numCols: 1, rowGap: 15});
 // let c2 = scn.repeat(c, dt, {field: "Borough"});
 // c2.layout = msc.layout("grid", {numCols: 1, rowGap: 30});
 
-let enc = scn.encode(line.vertices[1], {field: "Crime Rate", channel: "x"});
+let enc = scn.encode(line.vertices[1], {field: "Crime Rate", channel: "x", rangeExtent: 400});
 scn.encode(line.vertices[1], {field: "Area", channel: "fillColor"});
-enc.scale.rangeExtent = 400;
 
 scn.axis("x", "Crime Rate", {orientation: "bottom"});
 scn.axis("y", "Borough", {orientation: "left", pathVisible: false, tickVisible: false});
