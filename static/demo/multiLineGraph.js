@@ -8,13 +8,13 @@ let collection = scn.repeat(line, dt, {field: "company"});
 let polyLine = scn.densify(line, dt, {field: "date"});
 
 let vertex = polyLine.vertices[0];
-scn.encode(vertex, {field: "date", channel: "x"});
+scn.encode(vertex, {field: "date", channel: "x", rangeExtent: 600});
 scn.encode(vertex, {field: "price", channel: "y"});
 scn.encode(polyLine, {field: "company", channel: "strokeColor"});
 
 scn.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
 scn.axis("y", "price", {orientation: "left"});
-scn.legend("strokeColor", "company", {x: 800, y: 100});
+scn.legend("strokeColor", "company", {x: 850, y: 100});
 
 
 // let r = msc.renderer("svg");
