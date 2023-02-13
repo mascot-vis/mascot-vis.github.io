@@ -383,7 +383,6 @@
     "MultipleViolinPlots": {
         "name": "Violin Plots",
         "mark": "Small Multiples",
-        "draft": true,
         "title": "Iris Sepal Length Distribution",
         "about": "This visualization shows the distributions for the sepal length of three types of iris plant: setosa, versicolor and virginica. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>."
     },

@@ -5,7 +5,7 @@ let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strok
 let species = scene.repeat(rect, data, {field: "species"})
 species.layout = msc.layout("grid", {numCols: 3, rowGap: 15, "horzCellAlignment": "center" });
 let anySpecies = scene.densify(rect, data, {orientation: "vertical", field: "sepal_length"});
-let yEnc = scene.encode(anySpecies.firstVertexPair, {channel: "y", field: "sepal_length", rangeExtent: 300})[0];
+let yEnc = scene.encode(anySpecies.firstVertexPair, {channel: "y", field: "sepal_length"})[0];
 scene.encode(anySpecies, {channel: "width", field: "sepal_length_density"});
 scene.encode(anySpecies, {channel: "fillColor", field: "species"});
 scene.setProperties(anySpecies, {curveMode: "basis", baseline: "center"})
@@ -19,6 +19,7 @@ let line = scene.mark("line", {x1: 300, y1: 20, x2: 300, y2: 480, strokeColor: "
 
 let glyph = scene.glyph(line, box, medianCircle);
 let collection = scene.repeat(glyph, csv, {field: "species"});
+collection.layout = msc.layout("grid", {numCols: 3});
 scene.encode(line.vertices[0], {field: "sepal_length", channel: "y", aggregator: "max", scale: yEnc.scale});
 scene.encode(line.vertices[1], {field: "sepal_length", channel: "y", aggregator: "min", scale: yEnc.scale});
 scene.encode(box.topSegment, {field: "sepal_length", channel: "y", aggregator: "percentile 75", scale: yEnc.scale});
