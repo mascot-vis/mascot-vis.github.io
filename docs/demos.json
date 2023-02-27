@@ -30,6 +30,13 @@
         "title": "Revenue Performance & Target",
         "about": ""
     },
+    "CalendarHeatMap": {
+        "name": "Calendar Heatmap",
+        "mark": "Bars and Rectangles",
+        "title": "Calendar Heatmap",
+        "draft": "true",
+        "about": "Original visualization: https://gist.github.com/cmgiven/018fd027d443b177e18fffb9afcdb5bd"
+    },
     "DivergingBarChart": {
         "name": "Diverging Bar Chart",
         "mark": "Bars and Rectangles",
@@ -90,6 +97,13 @@
         "mark": "Bars and Rectangles",
         "title": "Population of Major Countries",
         "about": ""
+    },
+    "TreemapBarChart": {
+        "name": "Treemap Bar Chart",
+        "mark": "Bars and Rectangles",
+        "title": "Imports and Exports to and from different continents",
+        "draft": true,
+        "about": "Original visualization https://gist.github.com/eesur/5fbda7f410d31da35e42 "
     },
     "WaffleChart": {
         "name": "Waffle Chart",
