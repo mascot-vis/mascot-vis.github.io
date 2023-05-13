@@ -546,7 +546,7 @@
 			});
 
 			$(document).ready(() => {
-				fetch("./demos/_index.json").then(resp => {
+				fetch("demos.json").then(resp => {
 					return resp.text();
 				}).then(text => {
 					metaData = JSON.parse(text);
