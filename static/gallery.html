@@ -394,7 +394,7 @@
 				$("#btmPanel").tabs("option", "active", 0);
 				if (metaData) d3.select("#infoTab").html(metaData[d].about);
 				});
-				oReq.open("GET", "demo/" + d[0].toLowerCase() + d.substring(1) + ".js");
+				oReq.open("GET", "demos/" + d[0].toLowerCase() + d.substring(1) + ".js");
 				oReq.send();
 			}
 
@@ -525,7 +525,7 @@
 					item.append("div")
 						.style("display", "block").style("height", "150px")
 						.style("background", "white")
-						.style("background-image", 'url("img/' + k + '.png")')
+						.style("background-image", 'url("demos/thumbnails/' + k + '.png")')
 						.style("background-size", "auto 100%")
 						.style("background-repeat", "no-repeat")
 						.style("background-position", "left top")
@@ -546,7 +546,7 @@
 			});
 
 			$(document).ready(() => {
-				fetch("demos.json").then(resp => {
+				fetch("demos/_index.json").then(resp => {
 					return resp.text();
 				}).then(text => {
 					metaData = JSON.parse(text);

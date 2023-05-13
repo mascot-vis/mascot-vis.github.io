@@ -1,0 +1,1547 @@
+year,type,continent,country,value,adj_value
+1995,Imports,North America,Greenland,7.6,11.81952
+1995,Imports,North America,Canada,144369.9,224524.0685
+1995,Imports,North America,St Pierre and Miquelon,3.4,5.28768
+1995,Imports,North America,Mexico,62100.4,96578.54208
+1995,Imports,North America,Guatemala,1526.8,2374.47936
+1995,Imports,North America,Belize,52.1,81.02592
+1995,Imports,North America,El Salvador,812.2,1263.13344
+1995,Imports,North America,Honduras,1441.2,2241.35424
+1995,Imports,North America,Nicaragua,238.8,371.38176
+1995,Imports,North America,Costa Rica,1843.2,2866.54464
+1995,Imports,North America,Panama,307.1,477.60192
+1995,Imports,North America,Bermuda,10.4,16.17408
+1995,Imports,North America,Bahamas,156.7,243.69984
+1995,Imports,North America,Cuba,0,0
+1995,Imports,North America,Jamaica,846.9,1317.09888
+1995,Imports,North America,Turks and Caicos Islands,5,7.776
+1995,Imports,North America,Cayman Islands,18.2,28.30464
+1995,Imports,North America,Haiti,129.9,202.02048
+1995,Imports,North America,Dominican Republic,3398.9,5285.96928
+1995,Imports,North America,Anguilla,0,0
+1995,Imports,North America,British Virgin Islands,11.2,17.41824
+1995,Imports,North America,St Kitts and Nevis,22.3,34.68096
+1995,Imports,North America,Antigua and Barbuda,2.8,4.35456
+1995,Imports,North America,Montserrat,2,3.1104
+1995,Imports,North America,Dominica,6.6,10.26432
+1995,Imports,North America,St Lucia,35.1,54.58752
+1995,Imports,North America,St Vincent and the Grenadines,7.9,12.28608
+1995,Imports,North America,Grenada,5.3,8.24256
+1995,Imports,North America,Barbados,37.7,58.63104
+1995,Imports,North America,Trinidad and Tobago,1089.2,1693.92384
+1995,Imports,North America,Netherlands Antilles,289.8,450.69696
+1995,Imports,North America,Aruba,420.7,654.27264
+1995,Imports,North America,Guadeloupe,1.2,1.86624
+1995,Imports,North America,Martinique,1.9,2.95488
+1995,Imports,South America,Colombia,3791,5895.7632
+1995,Imports,South America,Venezuela,9764,15184.9728
+1995,Imports,South America,Guyana,107.4,167.02848
+1995,Imports,South America,Suriname,100,155.52
+1995,Imports,South America,French Guiana,5.2,8.08704
+1995,Imports,South America,Ecuador,1939.7,3016.62144
+1995,Imports,South America,Peru,1034.4,1608.69888
+1995,Imports,South America,Bolivia,262.5,408.24
+1995,Imports,South America,Chile,1930.8,3002.78016
+1995,Imports,South America,Brazil,8832.9,13736.92608
+1995,Imports,South America,Paraguay,55,85.536
+1995,Imports,South America,Uruguay,167.2,260.02944
+1995,Imports,South America,Argentina,1760.8,2738.39616
+1995,Imports,South America,Falkland Islands(Islas Malvin,0.5,0.7776
+1995,Imports,Europe,Iceland,232.8,362.05056
+1995,Imports,Europe,Sweden,6256.4,9729.95328
+1995,Imports,Europe,Svalbard Jan Mayen Island,0.2,0.31104
+1995,Imports,Europe,Norway,3086.7,4800.43584
+1995,Imports,Europe,Finland,2269.9,3530.14848
+1995,Imports,Europe,Faroe Islands,8.4,13.06368
+1995,Imports,Europe,Denmark,1944.9,3024.70848
+1995,Imports,Europe,United Kingdom,26929.7,41881.06944
+1995,Imports,Europe,Ireland,4078.7,6343.19424
+1995,Imports,Europe,Netherlands,6404.9,9960.90048
+1995,Imports,Europe,Belgium,6053.9,9415.02528
+1995,Imports,Europe,Luxembourg,233.8,363.60576
+1995,Imports,Europe,Andorra,0.2,0.31104
+1995,Imports,Europe,Monaco,12.2,18.97344
+1995,Imports,Europe,France,17209.4,26764.05888
+1995,Imports,Europe,Germany,36843.9,57299.63328
+1995,Imports,Europe,Austria,1963.2,3053.16864
+1995,Imports,Europe,Czechoslovakia,0,0
+1995,Imports,Europe,Czech Republic,363.3,565.00416
+1995,Imports,Europe,Slovakia,129.5,201.3984
+1995,Imports,Europe,Hungary,547,850.6944
+1995,Imports,Europe,Liechtenstein,126.2,196.26624
+1995,Imports,Europe,Switzerland,7593.9,11810.03328
+1995,Imports,Europe,Estonia,62.1,96.57792
+1995,Imports,Europe,Latvia,82,127.5264
+1995,Imports,Europe,Lithuania,26.5,41.2128
+1995,Imports,Europe,Poland,663.6,1032.03072
+1995,Imports,Europe,USSR,0,0
+1995,Imports,Europe,Russia,4030.1,6267.61152
+1995,Imports,Europe,Belarus,45,69.984
+1995,Imports,Europe,Ukraine,405.7,630.94464
+1995,Imports,Europe,Armenia,16.3,25.34976
+1995,Imports,Europe,Azerbaijan,0.7,1.08864
+1995,Imports,Europe,Georgia,10.7,16.64064
+1995,Imports,Europe,Kazakhstan,122.9,191.13408
+1995,Imports,Europe,Kyrgyzstan,8.4,13.06368
+1995,Imports,Europe,Moldova,24.8,38.56896
+1995,Imports,Europe,Tajikistan,40.9,63.60768
+1995,Imports,Europe,Turkmenistan,1.3,2.02176
+1995,Imports,Europe,Uzbekistan,18.8,29.23776
+1995,Imports,Europe,Spain,3879.7,6033.70944
+1995,Imports,Europe,Portugal,1056.7,1643.37984
+1995,Imports,Europe,Gibraltar,4.8,7.46496
+1995,Imports,Europe,Malta,132.5,206.064
+1995,Imports,Europe,San Marino,1,1.5552
+1995,Imports,Europe,Vatican City,0.7,1.08864
+1995,Imports,Europe,Italy,16348.4,25425.03168
+1995,Imports,Europe,Yugoslavia (former),0,0
+1995,Imports,Europe,Croatia,93.8,145.87776
+1995,Imports,Europe,Slovenia,289.5,450.2304
+1995,Imports,Europe,Bosnia and Herzegovina,3.5,5.4432
+1995,Imports,Europe,Macedonia,88.8,138.10176
+1995,Imports,Europe,Serbia and Montenegro,0,0
+1995,Imports,Europe,Albania,9.4,14.61888
+1995,Imports,Europe,Greece,397.1,617.56992
+1995,Imports,Europe,Romania,222.3,345.72096
+1995,Imports,Europe,Bulgaria,188.5,293.1552
+1995,Imports,Asia,Turkey,1797.9,2796.09408
+1995,Imports,Asia,Cyprus,13.1,20.37312
+1995,Imports,Asia,Syria,61.1,95.02272
+1995,Imports,Asia,Lebanon,35,54.432
+1995,Imports,Asia,Iraq,0,0
+1995,Imports,Asia,Iran,0.2,0.31104
+1995,Imports,Asia,Israel,0,0
+1995,Imports,Asia,Israel,5708.7,8878.17024
+1995,Imports,Asia,Gaza Strip admin. by Israel,0,0
+1995,Imports,Asia,West Bank admin. by Israel,0,0
+1995,Imports,Asia,Jordan,28.9,44.94528
+1995,Imports,Asia,Kuwait,1335.5,2076.9696
+1995,Imports,Asia,Iraq-Saudi Arabia Neutral Zone,0,0
+1995,Imports,Asia,Saudi Arabia,8376.6,13027.28832
+1995,Imports,Asia,Qatar,90.9,141.36768
+1995,Imports,Asia,United Arab Emirates,459.1,713.99232
+1995,Imports,Asia,Republic of Yemen,41.5,64.5408
+1995,Imports,Asia,Oman,294.9,458.62848
+1995,Imports,Asia,Bahrain,134.3,208.86336
+1995,Imports,Asia,Afghanistan,5.4,8.39808
+1995,Imports,Asia,India,5726.3,8905.54176
+1995,Imports,Asia,Pakistan,1197,1861.5744
+1995,Imports,Asia,Nepal,96.1,149.45472
+1995,Imports,Asia,Bangladesh,1257.2,1955.19744
+1995,Imports,Asia,Sri Lanka,1259.7,1959.08544
+1995,Imports,Asia,Burma,81,125.9712
+1995,Imports,Asia,Thailand,11348.1,17648.56512
+1995,Imports,Asia,Vietnam,199,309.4848
+1995,Imports,Asia,Laos,10.2,15.86304
+1995,Imports,Asia,Cambodia,5.1,7.93152
+1995,Imports,Asia,Malaysia,17454.9,27145.86048
+1995,Imports,Asia,Singapore,18560.4,28865.13408
+1995,Imports,Asia,Indonesia,7435.3,11563.37856
+1995,Imports,Asia,Brunei,38.4,59.71968
+1995,Imports,Asia,Philippines,7006.5,10896.5088
+1995,Imports,Asia,Macau,895.3,1392.37056
+1995,Imports,Asia,Bhutan,0.1,0.15552
+1995,Imports,Asia,Maldives,12,18.6624
+1995,Imports,Asia,China,45543.2,70828.78464
+1995,Imports,Asia,Mongolia,23.2,36.08064
+1995,Imports,Asia,Korea North,0,0
+1995,Imports,Asia,Korea South,24184,37610.9568
+1995,Imports,Asia,Hong Kong,10291.3,16005.02976
+1995,Imports,Asia,Taiwan,28971.9,45057.09888
+1995,Imports,Asia,Japan,123479.3,192035.0074
+1995,Imports,Australia,Australia,3323,5167.9296
+1995,Imports,Australia,Norfolk Island,78.6,122.23872
+1995,Imports,Australia,Cocos (Keeling) Islands,0,0
+1995,Imports,Australia,Christmas Island,0,0
+1995,Imports,Australia,Heard and McDonald Islands,0.3,0.46656
+1995,Imports,Australia,Papua New Guinea,50.2,78.07104
+1995,Imports,Australia,New Zealand,1451.8,2257.83936
+1995,Imports,Australia,Cook Islands,0.8,1.24416
+1995,Imports,Australia,Tokelau,6.1,9.48672
+1995,Imports,Australia,Niue,0.1,0.15552
+1995,Imports,Australia,Samoa,0.3,0.46656
+1995,Imports,Australia,Solomon Islands,4.3,6.68736
+1995,Imports,Australia,Vanuatu,0,0
+1995,Imports,Australia,Pitcairn Islands,0,0
+1995,Imports,Australia,Kiribati,1.4,2.17728
+1995,Imports,Australia,Tuvalu,0,0
+1995,Imports,Australia,New Caledonia,40.2,62.51904
+1995,Imports,Australia,Wallis and Futuna,0,0
+1995,Imports,Australia,French Polynesia,14.4,22.39488
+1995,Imports,Australia,Marshall Islands,11.1,17.26272
+1995,Imports,Australia,Micronesia,13.2,20.52864
+1995,Imports,Australia,Palau,5.8,9.02016
+1995,Imports,Australia,Nauru,0,0
+1995,Imports,Australia,Fiji,78.1,121.46112
+1995,Imports,Australia,Tonga,6.2,9.64224
+1995,Imports,Africa,Morocco,239.4,372.31488
+1995,Imports,Africa,Algeria,1749.5,2720.8224
+1995,Imports,Africa,Tunisia,70.4,109.48608
+1995,Imports,Africa,Libya,0,0
+1995,Imports,Africa,Egypt,606.3,942.91776
+1995,Imports,Africa,Sudan,22.6,35.14752
+1995,Imports,Africa,Western Sahara,0,0
+1995,Imports,Africa,Equatorial Guinea,31,48.2112
+1995,Imports,Africa,Mauritania,5.4,8.39808
+1995,Imports,Africa,Cameroon,57.3,89.11296
+1995,Imports,Africa,Senegal,4.9,7.62048
+1995,Imports,Africa,Mali,3.6,5.59872
+1995,Imports,Africa,Guinea,98.8,153.65376
+1995,Imports,Africa,Sierra Leone,28.4,44.16768
+1995,Imports,Africa,Cote d'Ivoire,214.1,332.96832
+1995,Imports,Africa,Ghana,196.1,304.97472
+1995,Imports,Africa,Gambia,2.2,3.42144
+1995,Imports,Africa,Niger,1.4,2.17728
+1995,Imports,Africa,Togo,3.3,5.13216
+1995,Imports,Africa,Nigeria,4930.5,7667.9136
+1995,Imports,Africa,Central African Republic,0.4,0.62208
+1995,Imports,Africa,Gabon,1463.9,2276.65728
+1995,Imports,Africa,Chad,3.3,5.13216
+1995,Imports,Africa,St Helena,0,0
+1995,Imports,Africa,Burkina Faso,0.4,0.62208
+1995,Imports,Africa,Benin,10,15.552
+1995,Imports,Africa,Angola,2232.3,3471.67296
+1995,Imports,Africa,Congo (Brazzaville),206.8,321.61536
+1995,Imports,Africa,Guinea-Bissau,0,0
+1995,Imports,Africa,Cabo Verde,0.2,0.31104
+1995,Imports,Africa,Sao Tome and Principe,0.1,0.15552
+1995,Imports,Africa,Liberia,9.9,15.39648
+1995,Imports,Africa,Congo (Kinshasa),267,415.2384
+1995,Imports,Africa,Burundi,20.5,31.8816
+1995,Imports,Africa,Rwanda,1.8,2.79936
+1995,Imports,Africa,Somalia,0,0
+1995,Imports,Africa,Ethiopia,0,0
+1995,Imports,Africa,Eritrea,0.4,0.62208
+1995,Imports,Africa,Ethiopia,32.9,51.16608
+1995,Imports,Africa,Djibouti,0,0
+1995,Imports,Africa,Uganda,13.4,20.83968
+1995,Imports,Africa,Kenya,101.5,157.8528
+1995,Imports,Africa,Seychelles,2.5,3.888
+1995,Imports,Africa,British Indian Ocean Terr.,1.9,2.95488
+1995,Imports,Africa,Tanzania,22.4,34.83648
+1995,Imports,Africa,Mauritius,229.5,356.9184
+1995,Imports,Africa,Mozambique,27.5,42.768
+1995,Imports,Africa,Madagascar,57.4,89.26848
+1995,Imports,Africa,Comoros,2.2,3.42144
+1995,Imports,Africa,Reunion,0.4,0.62208
+1995,Imports,Africa,French Southern and Antarctic,0.4,0.62208
+1995,Imports,Africa,South Africa,2208,3433.8816
+1995,Imports,Africa,Namibia,11.5,17.8848
+1995,Imports,Africa,Botswana,21.3,33.12576
+1995,Imports,Africa,Zambia,32.8,51.01056
+1995,Imports,Africa,Swaziland,32.4,50.38848
+1995,Imports,Africa,Zimbabwe,97.5,151.632
+1995,Imports,Africa,Malawi,41.1,63.91872
+1995,Imports,Africa,Lesotho,62.3,96.88896
+1995,Exports,North America,Greenland,2.4,3.73248
+1995,Exports,North America,Canada,127226,197861.8752
+1995,Exports,North America,St Pierre and Miquelon,0.5,0.7776
+1995,Exports,North America,Mexico,46292.1,71993.47392
+1995,Exports,North America,Guatemala,1646.6,2560.79232
+1995,Exports,North America,Belize,99.7,155.05344
+1995,Exports,North America,El Salvador,1110.4,1726.89408
+1995,Exports,North America,Honduras,1278.9,1988.94528
+1995,Exports,North America,Nicaragua,249.8,388.48896
+1995,Exports,North America,Costa Rica,1736.6,2700.76032
+1995,Exports,North America,Panama,1389.6,2161.10592
+1995,Exports,North America,Bermuda,298.5,464.2272
+1995,Exports,North America,Bahamas,661.2,1028.29824
+1995,Exports,North America,Cuba,5.4,8.39808
+1995,Exports,North America,Jamaica,1420.2,2208.69504
+1995,Exports,North America,Turks and Caicos Islands,33.6,52.25472
+1995,Exports,North America,Cayman Islands,180.1,280.09152
+1995,Exports,North America,Haiti,550.1,855.51552
+1995,Exports,North America,Dominican Republic,3014.9,4688.77248
+1995,Exports,North America,Anguilla,14.6,22.70592
+1995,Exports,North America,British Virgin Islands,49.2,76.51584
+1995,Exports,North America,St Kitts and Nevis,43.6,67.80672
+1995,Exports,North America,Antigua and Barbuda,97,150.8544
+1995,Exports,North America,Montserrat,4.4,6.84288
+1995,Exports,North America,Dominica,26.6,41.36832
+1995,Exports,North America,St Lucia,80.8,125.66016
+1995,Exports,North America,St Vincent and the Grenadines,42.2,65.62944
+1995,Exports,North America,Grenada,26.9,41.83488
+1995,Exports,North America,Barbados,185.6,288.64512
+1995,Exports,North America,Trinidad and Tobago,689.2,1071.84384
+1995,Exports,North America,Netherlands Antilles,503.9,783.66528
+1995,Exports,North America,Aruba,247.6,385.06752
+1995,Exports,North America,Guadeloupe,69.1,107.46432
+1995,Exports,North America,Martinique,38.5,59.8752
+1995,Exports,South America,Colombia,4624.4,7191.86688
+1995,Exports,South America,Venezuela,4640.4,7216.75008
+1995,Exports,South America,Guyana,141.3,219.74976
+1995,Exports,South America,Suriname,189.7,295.02144
+1995,Exports,South America,French Guiana,441.8,687.08736
+1995,Exports,South America,Ecuador,1538.3,2392.36416
+1995,Exports,South America,Peru,1775.4,2761.10208
+1995,Exports,South America,Bolivia,213.5,332.0352
+1995,Exports,South America,Chile,3614.7,5621.58144
+1995,Exports,South America,Brazil,11439.4,17790.55488
+1995,Exports,South America,Paraguay,992.4,1543.38048
+1995,Exports,South America,Uruguay,395.8,615.54816
+1995,Exports,South America,Argentina,4189.2,6515.04384
+1995,Exports,South America,Falkland Islands(Islas Malvin,0.3,0.46656
+1995,Exports,Europe,Iceland,170.5,265.1616
+1995,Exports,Europe,Sweden,3079.7,4789.54944
+1995,Exports,Europe,Svalbard Jan Mayen Island,1.1,1.71072
+1995,Exports,Europe,Norway,1292.9,2010.71808
+1995,Exports,Europe,Finland,1249.7,1943.53344
+1995,Exports,Europe,Faroe Islands,0.4,0.62208
+1995,Exports,Europe,Denmark,1517.7,2360.32704
+1995,Exports,Europe,United Kingdom,28856.5,44877.6288
+1995,Exports,Europe,Ireland,4108.7,6389.85024
+1995,Exports,Europe,Netherlands,16557.6,25750.37952
+1995,Exports,Europe,Belgium,12465.6,19386.50112
+1995,Exports,Europe,Luxembourg,374.2,581.95584
+1995,Exports,Europe,Andorra,16.5,25.6608
+1995,Exports,Europe,Monaco,9.6,14.92992
+1995,Exports,Europe,France,14245.2,22154.13504
+1995,Exports,Europe,Germany,22394.3,34827.61536
+1995,Exports,Europe,Austria,2017,3136.8384
+1995,Exports,Europe,Czechoslovakia,0,0
+1995,Exports,Europe,Czech Republic,362.8,564.22656
+1995,Exports,Europe,Slovakia,61,94.8672
+1995,Exports,Europe,Hungary,295.2,459.09504
+1995,Exports,Europe,Liechtenstein,15.1,23.48352
+1995,Exports,Europe,Switzerland,6227.4,9684.85248
+1995,Exports,Europe,Estonia,139.1,216.32832
+1995,Exports,Europe,Latvia,89.5,139.1904
+1995,Exports,Europe,Lithuania,52.2,81.18144
+1995,Exports,Europe,Poland,776.1,1206.99072
+1995,Exports,Europe,USSR,0,0
+1995,Exports,Europe,Russia,2823.4,4390.95168
+1995,Exports,Europe,Belarus,47.9,74.49408
+1995,Exports,Europe,Ukraine,223.4,347.43168
+1995,Exports,Europe,Armenia,70.3,109.33056
+1995,Exports,Europe,Azerbaijan,35.6,55.36512
+1995,Exports,Europe,Georgia,95.2,148.05504
+1995,Exports,Europe,Kazakhstan,80.9,125.81568
+1995,Exports,Europe,Kyrgyzstan,24.6,38.25792
+1995,Exports,Europe,Moldova,10.2,15.86304
+1995,Exports,Europe,Tajikistan,17.6,27.37152
+1995,Exports,Europe,Turkmenistan,34.3,53.34336
+1995,Exports,Europe,Uzbekistan,63.4,98.59968
+1995,Exports,Europe,Spain,5526,8594.0352
+1995,Exports,Europe,Portugal,898.1,1396.72512
+1995,Exports,Europe,Gibraltar,18.4,28.61568
+1995,Exports,Europe,Malta,106.7,165.93984
+1995,Exports,Europe,San Marino,5.7,8.86464
+1995,Exports,Europe,Vatican City,0.3,0.46656
+1995,Exports,Europe,Italy,8861.6,13781.56032
+1995,Exports,Europe,Yugoslavia (former),0,0
+1995,Exports,Europe,Croatia,140,217.728
+1995,Exports,Europe,Slovenia,109.6,170.44992
+1995,Exports,Europe,Bosnia and Herzegovina,28.3,44.01216
+1995,Exports,Europe,Macedonia,21.2,32.97024
+1995,Exports,Europe,Serbia and Montenegro,2.1,3.26592
+1995,Exports,Europe,Albania,13.5,20.9952
+1995,Exports,Europe,Greece,1518.7,2361.88224
+1995,Exports,Europe,Romania,253.2,393.77664
+1995,Exports,Europe,Bulgaria,131.8,204.97536
+1995,Exports,Asia,Turkey,2768,4304.7936
+1995,Exports,Asia,Cyprus,257.8,400.93056
+1995,Exports,Asia,Syria,223.4,347.43168
+1995,Exports,Asia,Lebanon,592.2,920.98944
+1995,Exports,Asia,Iraq,0.2,0.31104
+1995,Exports,Asia,Iran,277.4,431.41248
+1995,Exports,Asia,Israel,0,0
+1995,Exports,Asia,Israel,5621,8741.7792
+1995,Exports,Asia,Gaza Strip admin. by Israel,0.1,0.15552
+1995,Exports,Asia,West Bank admin. by Israel,0.3,0.46656
+1995,Exports,Asia,Jordan,335.3,521.45856
+1995,Exports,Asia,Kuwait,1437.4,2235.44448
+1995,Exports,Asia,Iraq-Saudi Arabia Neutral Zone,0,0
+1995,Exports,Asia,Saudi Arabia,6155,9572.256
+1995,Exports,Asia,Qatar,226,351.4752
+1995,Exports,Asia,United Arab Emirates,2006.3,3120.19776
+1995,Exports,Asia,Republic of Yemen,185.3,288.17856
+1995,Exports,Asia,Oman,222,345.2544
+1995,Exports,Asia,Bahrain,255.1,396.73152
+1995,Exports,Asia,Afghanistan,4,6.2208
+1995,Exports,Asia,India,3295.8,5125.62816
+1995,Exports,Asia,Pakistan,941.3,1463.90976
+1995,Exports,Asia,Nepal,9.8,15.24096
+1995,Exports,Asia,Bangladesh,325,505.44
+1995,Exports,Asia,Sri Lanka,279.1,434.05632
+1995,Exports,Asia,Burma,16.2,25.19424
+1995,Exports,Asia,Thailand,6665,10365.408
+1995,Exports,Asia,Vietnam,252.3,392.37696
+1995,Exports,Asia,Laos,1.6,2.48832
+1995,Exports,Asia,Cambodia,26.9,41.83488
+1995,Exports,Asia,Malaysia,8816.1,13710.79872
+1995,Exports,Asia,Singapore,15333,23845.8816
+1995,Exports,Asia,Indonesia,3359.6,5224.84992
+1995,Exports,Asia,Brunei,190.1,295.64352
+1995,Exports,Asia,Philippines,5294.8,8234.47296
+1995,Exports,Asia,Macau,29.9,46.50048
+1995,Exports,Asia,Bhutan,0.5,0.7776
+1995,Exports,Asia,Maldives,1.1,1.71072
+1995,Exports,Asia,China,11753.7,18279.35424
+1995,Exports,Asia,Mongolia,13.9,21.61728
+1995,Exports,Asia,Korea North,11.6,18.04032
+1995,Exports,Asia,Korea South,25379.9,39470.82048
+1995,Exports,Asia,Hong Kong,14231.5,22132.8288
+1995,Exports,Asia,Taiwan,19289.6,29999.18592
+1995,Exports,Asia,Japan,64342.7,100065.767
+1995,Exports,Australia,Australia,10789.1,16779.20832
+1995,Exports,Australia,Norfolk Island,1.2,1.86624
+1995,Exports,Australia,Cocos (Keeling) Islands,0.5,0.7776
+1995,Exports,Australia,Christmas Island,4.5,6.9984
+1995,Exports,Australia,Heard and McDonald Islands,0,0
+1995,Exports,Australia,Papua New Guinea,50.8,79.00416
+1995,Exports,Australia,New Zealand,1691.3,2630.30976
+1995,Exports,Australia,Cook Islands,0.9,1.39968
+1995,Exports,Australia,Tokelau,0.1,0.15552
+1995,Exports,Australia,Niue,31.5,48.9888
+1995,Exports,Australia,Samoa,7.3,11.35296
+1995,Exports,Australia,Solomon Islands,2.7,4.19904
+1995,Exports,Australia,Vanuatu,1.1,1.71072
+1995,Exports,Australia,Pitcairn Islands,2.2,3.42144
+1995,Exports,Australia,Kiribati,2.3,3.57696
+1995,Exports,Australia,Tuvalu,0.3,0.46656
+1995,Exports,Australia,New Caledonia,22.3,34.68096
+1995,Exports,Australia,Wallis and Futuna,0,0
+1995,Exports,Australia,French Polynesia,82.3,127.99296
+1995,Exports,Australia,Marshall Islands,31.8,49.45536
+1995,Exports,Australia,Micronesia,23.3,36.23616
+1995,Exports,Australia,Palau,8.3,12.90816
+1995,Exports,Australia,Nauru,0.5,0.7776
+1995,Exports,Australia,Fiji,31.8,49.45536
+1995,Exports,Australia,Tonga,7.5,11.664
+1995,Exports,Africa,Morocco,517.4,804.66048
+1995,Exports,Africa,Algeria,774.1,1203.88032
+1995,Exports,Africa,Tunisia,214.9,334.21248
+1995,Exports,Africa,Libya,0,0
+1995,Exports,Africa,Egypt,2985.1,4642.42752
+1995,Exports,Africa,Sudan,43.5,67.6512
+1995,Exports,Africa,Western Sahara,0,0
+1995,Exports,Africa,Equatorial Guinea,5.2,8.08704
+1995,Exports,Africa,Mauritania,43.2,67.18464
+1995,Exports,Africa,Cameroon,45.6,70.91712
+1995,Exports,Africa,Senegal,67.9,105.59808
+1995,Exports,Africa,Mali,23.1,35.92512
+1995,Exports,Africa,Guinea,66.5,103.4208
+1995,Exports,Africa,Sierra Leone,18.1,28.14912
+1995,Exports,Africa,Cote d'Ivoire,173.3,269.51616
+1995,Exports,Africa,Ghana,167.2,260.02944
+1995,Exports,Africa,Gambia,6.1,9.48672
+1995,Exports,Africa,Niger,39.6,61.58592
+1995,Exports,Africa,Togo,18.5,28.7712
+1995,Exports,Africa,Nigeria,602.9,937.63008
+1995,Exports,Africa,Central African Republic,6.3,9.79776
+1995,Exports,Africa,Gabon,54.5,84.7584
+1995,Exports,Africa,Chad,10.8,16.79616
+1995,Exports,Africa,St Helena,0.3,0.46656
+1995,Exports,Africa,Burkina Faso,14.7,22.86144
+1995,Exports,Africa,Benin,34,52.8768
+1995,Exports,Africa,Angola,259.7,403.88544
+1995,Exports,Africa,Congo (Brazzaville),54.8,85.22496
+1995,Exports,Africa,Guinea-Bissau,0.8,1.24416
+1995,Exports,Africa,Cabo Verde,7.5,11.664
+1995,Exports,Africa,Sao Tome and Principe,1.8,2.79936
+1995,Exports,Africa,Liberia,41.7,64.85184
+1995,Exports,Africa,Congo (Kinshasa),77.1,119.90592
+1995,Exports,Africa,Burundi,2.9,4.51008
+1995,Exports,Africa,Rwanda,38.3,59.56416
+1995,Exports,Africa,Somalia,8.1,12.59712
+1995,Exports,Africa,Ethiopia,0,0
+1995,Exports,Africa,Eritrea,16.5,25.6608
+1995,Exports,Africa,Ethiopia,147.7,229.70304
+1995,Exports,Africa,Djibouti,8.5,13.2192
+1995,Exports,Africa,Uganda,22.1,34.36992
+1995,Exports,Africa,Kenya,114,177.2928
+1995,Exports,Africa,Seychelles,7.2,11.19744
+1995,Exports,Africa,British Indian Ocean Terr.,1.8,2.79936
+1995,Exports,Africa,Tanzania,66.2,102.95424
+1995,Exports,Africa,Mauritius,24.6,38.25792
+1995,Exports,Africa,Mozambique,49.3,76.67136
+1995,Exports,Africa,Madagascar,9.8,15.24096
+1995,Exports,Africa,Comoros,0.6,0.93312
+1995,Exports,Africa,Reunion,3.7,5.75424
+1995,Exports,Africa,French Southern and Antarctic,0,0
+1995,Exports,Africa,South Africa,2750.5,4277.5776
+1995,Exports,Africa,Namibia,26.5,41.2128
+1995,Exports,Africa,Botswana,35.7,55.52064
+1995,Exports,Africa,Zambia,48.9,76.04928
+1995,Exports,Africa,Swaziland,3.2,4.97664
+1995,Exports,Africa,Zimbabwe,122.1,189.88992
+1995,Exports,Africa,Malawi,17.8,27.68256
+1995,Exports,Africa,Lesotho,1.8,2.79936
+2005,Imports,North America,Greenland,17.255599,20.94139495
+2005,Imports,North America,Canada,290384.2932,352410.3782
+2005,Imports,North America,St Pierre and Miquelon,1.094378,1.328137141
+2005,Imports,North America,Mexico,170108.6141,206443.8141
+2005,Imports,North America,Guatemala,3137.382263,3807.527114
+2005,Imports,North America,Belize,98.265102,119.2545278
+2005,Imports,North America,El Salvador,1988.765718,2413.566075
+2005,Imports,North America,Honduras,3749.243099,4550.081425
+2005,Imports,North America,Nicaragua,1180.787602,1433.003834
+2005,Imports,North America,Costa Rica,3415.279262,4144.782912
+2005,Imports,North America,Panama,327.060069,396.9200997
+2005,Imports,North America,Bermuda,87.276753,105.9190674
+2005,Imports,North America,Bahamas,699.936003,849.4423332
+2005,Imports,North America,Cuba,0.009079,0.011018274
+2005,Imports,North America,Jamaica,375.57236,455.7946161
+2005,Imports,North America,Turks and Caicos Islands,9.434412,11.4496024
+2005,Imports,North America,Cayman Islands,53.497875,64.9250211
+2005,Imports,North America,Haiti,447.217315,542.7429335
+2005,Imports,North America,Dominican Republic,4603.684143,5587.031076
+2005,Imports,North America,Anguilla,3.754737,4.556748823
+2005,Imports,North America,British Virgin Islands,33.579607,40.75221106
+2005,Imports,North America,St Kitts and Nevis,49.718541,60.33842136
+2005,Imports,North America,Antigua and Barbuda,4.414365,5.357273364
+2005,Imports,North America,Montserrat,0.953906,1.157660322
+2005,Imports,North America,Dominica,3.344243,4.058573305
+2005,Imports,North America,St Lucia,32.396909,39.31688876
+2005,Imports,North America,St Vincent and the Grenadines,15.650342,18.99325505
+2005,Imports,North America,Grenada,5.852881,7.103056382
+2005,Imports,North America,Barbados,31.903789,38.71843833
+2005,Imports,North America,Trinidad and Tobago,7890.88378,9576.376555
+2005,Imports,North America,Netherlands Antilles,922.413941,1119.441559
+2005,Imports,North America,Aruba,2919.735672,3543.391212
+2005,Imports,North America,Guadeloupe,2.128806,2.583518962
+2005,Imports,North America,Martinique,22.236488,26.98620184
+2005,Imports,South America,Colombia,8849.380048,10739.60763
+2005,Imports,South America,Venezuela,33978.13481,41235.8644
+2005,Imports,South America,Guyana,119.931261,145.5485783
+2005,Imports,South America,Suriname,165.346376,200.6643619
+2005,Imports,South America,French Guiana,0.121285,0.147191476
+2005,Imports,South America,Ecuador,5758.679346,6988.733254
+2005,Imports,South America,Peru,5119.15577,6212.607442
+2005,Imports,South America,Bolivia,293.216045,355.8469922
+2005,Imports,South America,Chile,6664.333836,8087.835543
+2005,Imports,South America,Brazil,24435.51938,29654.94632
+2005,Imports,South America,Paraguay,51.645596,62.67709531
+2005,Imports,South America,Uruguay,732.311644,888.7334112
+2005,Imports,South America,Argentina,4583.613305,5562.673107
+2005,Imports,South America,Falkland Islands(Islas Malvin,9.261546,11.23981223
+2005,Imports,Europe,Iceland,268.97508,326.4281571
+2005,Imports,Europe,Sweden,13820.97724,16773.13798
+2005,Imports,Europe,Svalbard Jan Mayen Island,0.039576,0.048029434
+2005,Imports,Europe,Norway,6776.30892,8223.728505
+2005,Imports,Europe,Finland,4341.679942,5269.062778
+2005,Imports,Europe,Faroe Islands,4.276273,5.189684913
+2005,Imports,Europe,Denmark,5144.20165,6243.003122
+2005,Imports,Europe,United Kingdom,51032.62111,61933.18897
+2005,Imports,Europe,Ireland,28733.08026,34870.4662
+2005,Imports,Europe,Netherlands,14862.04151,18036.57358
+2005,Imports,Europe,Belgium,13022.90274,15804.59477
+2005,Imports,Europe,Luxembourg,388.834493,471.8895407
+2005,Imports,Europe,Andorra,0.673148,0.816932413
+2005,Imports,Europe,Monaco,37.485881,45.49286518
+2005,Imports,Europe,France,33842.05751,41070.721
+2005,Imports,Europe,Germany,84750.87138,102853.6575
+2005,Imports,Europe,Austria,6102.944725,7406.533718
+2005,Imports,Europe,Czech Republic,2192.863031,2661.258574
+2005,Imports,Europe,Slovakia,960.730063,1165.942004
+2005,Imports,Europe,Hungary,2561.172978,3108.239526
+2005,Imports,Europe,Liechtenstein,295.705721,358.868463
+2005,Imports,Europe,Switzerland,12999.88108,15776.65568
+2005,Imports,Europe,Estonia,511.379949,620.6107061
+2005,Imports,Europe,Latvia,362.159252,439.5164682
+2005,Imports,Europe,Lithuania,633.912046,769.315659
+2005,Imports,Europe,Poland,1948.58625,2364.804273
+2005,Imports,Europe,Russia,15306.67384,18576.17937
+2005,Imports,Europe,Belarus,345.161433,418.8879151
+2005,Imports,Europe,Ukraine,1098.029235,1332.56828
+2005,Imports,Europe,Armenia,46.191425,56.05791338
+2005,Imports,Europe,Azerbaijan,45.361225,55.05038266
+2005,Imports,Europe,Georgia,194.384289,235.9047731
+2005,Imports,Europe,Kazakhstan,1101.145431,1336.350095
+2005,Imports,Europe,Kyrgyzstan,4.618689,5.60524097
+2005,Imports,Europe,Moldova,50.224656,60.95264252
+2005,Imports,Europe,Tajikistan,241.029155,292.5129825
+2005,Imports,Europe,Turkmenistan,135.325351,164.230846
+2005,Imports,Europe,Uzbekistan,95.627811,116.0539114
+2005,Imports,Europe,Spain,8614.64214,10454.7297
+2005,Imports,Europe,Portugal,2328.674933,2826.079899
+2005,Imports,Europe,Gibraltar,4.637081,5.627561502
+2005,Imports,Europe,Malta,282.653662,343.0284842
+2005,Imports,Europe,San Marino,1.389972,1.686870019
+2005,Imports,Europe,Vatican City,0.282286,0.34258229
+2005,Imports,Europe,Italy,31009.26008,37632.83803
+2005,Imports,Europe,Croatia,364.277603,442.087299
+2005,Imports,Europe,Slovenia,413.019469,501.2404276
+2005,Imports,Europe,Bosnia and Herzegovina,70.462111,85.51281791
+2005,Imports,Europe,Macedonia,48.149502,58.43423563
+2005,Imports,Europe,Serbia and Montenegro,54.632827,66.30239885
+2005,Imports,Europe,Albania,37.18875,45.132267
+2005,Imports,Europe,Greece,883.73016,1072.494922
+2005,Imports,Europe,Romania,1207.584718,1465.524814
+2005,Imports,Europe,Bulgaria,454.262612,551.2931059
+2005,Imports,Asia,Turkey,5182.052179,6288.938524
+2005,Imports,Asia,Cyprus,30.536194,37.05872504
+2005,Imports,Asia,Syria,323.599119,392.7198908
+2005,Imports,Asia,Lebanon,86.370988,104.819831
+2005,Imports,Asia,Iraq,9053.695686,10987.56508
+2005,Imports,Asia,Iran,174.457417,211.7215213
+2005,Imports,Asia,Israel,16830.46608,20425.45364
+2005,Imports,Asia,Gaza Strip admin. by Israel,1.443661,1.75202699
+2005,Imports,Asia,West Bank admin. by Israel,1.604198,1.946854693
+2005,Imports,Asia,Jordan,1266.84986,1537.44899
+2005,Imports,Asia,Kuwait,4334.781445,5260.690762
+2005,Imports,Asia,Saudi Arabia,27192.64204,33000.99038
+2005,Imports,Asia,Qatar,447.861094,543.5242237
+2005,Imports,Asia,United Arab Emirates,1468.316627,1781.949059
+2005,Imports,Asia,Republic of Yemen,278.635079,338.1515319
+2005,Imports,Asia,Oman,555.043525,673.6008219
+2005,Imports,Asia,Bahrain,431.61192,523.8042261
+2005,Imports,Asia,Afghanistan,67.310191,81.6876478
+2005,Imports,Asia,India,18804.16965,22820.74029
+2005,Imports,Asia,Pakistan,3253.181975,3948.061645
+2005,Imports,Asia,Nepal,111.212077,134.9669766
+2005,Imports,Asia,Bangladesh,2693.035035,3268.267318
+2005,Imports,Asia,Sri Lanka,2082.938898,2527.854647
+2005,Imports,Asia,Burma,0.0615,0.0746364
+2005,Imports,Asia,Thailand,19889.75578,24138.20761
+2005,Imports,Asia,Vietnam,6631.158734,8047.57424
+2005,Imports,Asia,Laos,4.166156,5.056046922
+2005,Imports,Asia,Cambodia,1766.956953,2144.378958
+2005,Imports,Asia,Malaysia,33685.15957,40880.30965
+2005,Imports,Asia,Singapore,15110.08962,18337.60477
+2005,Imports,Asia,Indonesia,12014.34419,14580.6081
+2005,Imports,Asia,East Timor,0.084963,0.103111097
+2005,Imports,Asia,Brunei,562.742346,682.9441111
+2005,Imports,Asia,Philippines,9250.433389,11226.32596
+2005,Imports,Asia,Macau,1249.02212,1515.813245
+2005,Imports,Asia,Bhutan,0.615516,0.746990218
+2005,Imports,Asia,Maldives,5.496456,6.670499002
+2005,Imports,Asia,China,243470.1048,295475.3192
+2005,Imports,Asia,Mongolia,143.645404,174.3280623
+2005,Imports,Asia,Korea North,0.003252,0.003946627
+2005,Imports,Asia,Korea South,43781.44106,53133.15687
+2005,Imports,Asia,Hong Kong,8891.705575,10790.97389
+2005,Imports,Asia,Taiwan,34825.82882,42264.62586
+2005,Imports,Asia,Japan,138003.6962,167481.2857
+2005,Imports,Australia,Australia,7342.17895,8910.468374
+2005,Imports,Australia,Norfolk Island,0.17315,0.21013484
+2005,Imports,Australia,Cocos (Keeling) Islands,0.484315,0.587764684
+2005,Imports,Australia,Christmas Island,0.417613,0.506815137
+2005,Imports,Australia,Heard and McDonald Islands,0.016396,0.019898186
+2005,Imports,Australia,Papua New Guinea,58.451246,70.93643215
+2005,Imports,Australia,New Zealand,3155.239797,3829.199018
+2005,Imports,Australia,Cook Islands,1.744825,2.11751962
+2005,Imports,Australia,Tokelau,10.800762,13.10780476
+2005,Imports,Australia,Niue,0.138878,0.168542341
+2005,Imports,Australia,Samoa,7.937575,9.63304102
+2005,Imports,Australia,Solomon Islands,1.351564,1.64025807
+2005,Imports,Australia,Vanuatu,2.489141,3.020821518
+2005,Imports,Australia,Pitcairn Islands,1.040512,1.262765363
+2005,Imports,Australia,Kiribati,1.104581,1.340519502
+2005,Imports,Australia,Tuvalu,0.056868,0.069015005
+2005,Imports,Australia,New Caledonia,27.174251,32.97867101
+2005,Imports,Australia,Wallis and Futuna,0.022469,0.027268378
+2005,Imports,Australia,French Polynesia,60.124235,72.9667716
+2005,Imports,Australia,Marshall Islands,17.205126,20.88014091
+2005,Imports,Australia,Micronesia,1.557731,1.890462342
+2005,Imports,Australia,Palau,0.484544,0.588042598
+2005,Imports,Australia,Nauru,0.148786,0.18056669
+2005,Imports,Australia,Fiji,169.460711,205.6575189
+2005,Imports,Australia,Tonga,5.350431,6.493283062
+2005,Imports,Africa,Morocco,445.793996,541.0155935
+2005,Imports,Africa,Algeria,10446.43785,12677.79698
+2005,Imports,Africa,Tunisia,263.768113,320.1089819
+2005,Imports,Africa,Libya,1590.341099,1930.037958
+2005,Imports,Africa,Egypt,2091.236887,2537.925086
+2005,Imports,Africa,Sudan,13.574271,16.47373529
+2005,Imports,Africa,Western Sahara,0,0
+2005,Imports,Africa,Equatorial Guinea,1561.137497,1894.596466
+2005,Imports,Africa,Mauritania,0.825319,1.001607138
+2005,Imports,Africa,Cameroon,158.161864,191.9452382
+2005,Imports,Africa,Senegal,3.662962,4.445370683
+2005,Imports,Africa,Mali,3.649953,4.429582961
+2005,Imports,Africa,Guinea,74.733573,90.69666419
+2005,Imports,Africa,Sierra Leone,9.312822,11.30204078
+2005,Imports,Africa,Cote d'Ivoire,1197.97516,1453.862654
+2005,Imports,Africa,Ghana,158.409617,192.2459112
+2005,Imports,Africa,Gambia,0.427153,0.518392881
+2005,Imports,Africa,Niger,65.51339,79.5070501
+2005,Imports,Africa,Togo,6.439273,7.814701713
+2005,Imports,Africa,Nigeria,24239.35673,29416.88333
+2005,Imports,Africa,Central African Republic,5.696947,6.913814879
+2005,Imports,Africa,Gabon,2815.602273,3417.014919
+2005,Imports,Africa,Chad,1498.086294,1818.077526
+2005,Imports,Africa,St Helena,3.269267,3.967582431
+2005,Imports,Africa,Burkina Faso,2.084203,2.529388761
+2005,Imports,Africa,Benin,0.513184,0.622800102
+2005,Imports,Africa,Angola,8484.361601,10296.62124
+2005,Imports,Africa,Congo (Brazzaville),1622.90154,1969.553309
+2005,Imports,Africa,Guinea-Bissau,0.120677,0.146453607
+2005,Imports,Africa,Cabo Verde,2.62425,3.1847898
+2005,Imports,Africa,Sao Tome and Principe,0.216017,0.262158231
+2005,Imports,Africa,Liberia,90.827263,110.2279664
+2005,Imports,Africa,Congo (Kinshasa),263.558216,319.8542509
+2005,Imports,Africa,Burundi,4.423229,5.368030714
+2005,Imports,Africa,Rwanda,6.301468,7.647461565
+2005,Imports,Africa,Somalia,0.307638,0.373349477
+2005,Imports,Africa,Eritrea,1.269401,1.540545054
+2005,Imports,Africa,Ethiopia,61.802253,75.00321424
+2005,Imports,Africa,Djibouti,1.101206,1.336423602
+2005,Imports,Africa,Uganda,25.769069,31.27334214
+2005,Imports,Africa,Kenya,348.019269,422.3561849
+2005,Imports,Africa,Seychelles,5.883749,7.140517786
+2005,Imports,Africa,British Indian Ocean Terr.,0.432984,0.525469382
+2005,Imports,Africa,Tanzania,33.695475,40.89282846
+2005,Imports,Africa,Mauritius,221.85071,269.2380217
+2005,Imports,Africa,Mozambique,11.905754,14.44882305
+2005,Imports,Africa,Madagascar,323.631165,392.7587818
+2005,Imports,Africa,Comoros,1.447044,1.756132598
+2005,Imports,Africa,Reunion,5.835528,7.081996781
+2005,Imports,Africa,French Southern and Antarctic,0.05164,0.062670304
+2005,Imports,Africa,South Africa,5885.639948,7142.812641
+2005,Imports,Africa,Namibia,129.590672,157.2712395
+2005,Imports,Africa,Botswana,178.164424,216.220345
+2005,Imports,Africa,Zambia,31.70289,38.4746273
+2005,Imports,Africa,Swaziland,198.886296,241.3684088
+2005,Imports,Africa,Zimbabwe,94.328983,114.4776538
+2005,Imports,Africa,Malawi,115.50192,140.1731301
+2005,Imports,Africa,Lesotho,403.608048,489.8187271
+2005,Exports,North America,Greenland,5.085009,6.171166922
+2005,Exports,North America,Canada,211898.6894,257160.2494
+2005,Exports,North America,St Pierre and Miquelon,0.980031,1.189365622
+2005,Exports,North America,Mexico,120247.5801,145932.4633
+2005,Exports,North America,Guatemala,2835.38039,3441.017641
+2005,Exports,North America,Belize,217.562773,264.0341813
+2005,Exports,North America,El Salvador,1854.286657,2250.362287
+2005,Exports,North America,Honduras,3253.813808,3948.828437
+2005,Exports,North America,Nicaragua,625.460463,759.0588179
+2005,Exports,North America,Costa Rica,3598.560177,4367.212631
+2005,Exports,North America,Panama,2162.020485,2623.828061
+2005,Exports,North America,Bermuda,490.497944,595.2683048
+2005,Exports,North America,Bahamas,1786.740047,2168.387721
+2005,Exports,North America,Cuba,369.034678,447.8604852
+2005,Exports,North America,Jamaica,1700.769277,2064.053595
+2005,Exports,North America,Turks and Caicos Islands,237.752693,288.5366682
+2005,Exports,North America,Cayman Islands,680.670387,826.0615817
+2005,Exports,North America,Haiti,709.620597,861.1955565
+2005,Exports,North America,Dominican Republic,4718.733392,5726.654845
+2005,Exports,North America,Anguilla,32.186758,39.06184951
+2005,Exports,North America,British Virgin Islands,124.856685,151.5260729
+2005,Exports,North America,St Kitts and Nevis,94.069439,114.1626712
+2005,Exports,North America,Antigua and Barbuda,190.447421,231.1269901
+2005,Exports,North America,Montserrat,4.848606,5.884268242
+2005,Exports,North America,Dominica,61.540001,74.68494521
+2005,Exports,North America,St Lucia,135.389135,164.3082542
+2005,Exports,North America,St Vincent and the Grenadines,45.411401,55.11127625
+2005,Exports,North America,Grenada,82.440305,100.0495541
+2005,Exports,North America,Barbados,394.92009,479.2750212
+2005,Exports,North America,Trinidad and Tobago,1416.748479,1719.365954
+2005,Exports,North America,Netherlands Antilles,1137.633614,1380.632154
+2005,Exports,North America,Aruba,558.924451,678.3107137
+2005,Exports,North America,Guadeloupe,54.512655,66.15655811
+2005,Exports,North America,Martinique,34.95999,42.42744386
+2005,Exports,South America,Colombia,5462.357164,6629.116654
+2005,Exports,South America,Venezuela,6420.897723,7792.401477
+2005,Exports,South America,Guyana,176.704601,214.4487038
+2005,Exports,South America,Suriname,245.701079,298.1828295
+2005,Exports,South America,French Guiana,26.993942,32.75984801
+2005,Exports,South America,Ecuador,1963.825872,2383.299078
+2005,Exports,South America,Peru,2309.446378,2802.744124
+2005,Exports,South America,Bolivia,219.479092,266.3598261
+2005,Exports,South America,Chile,5133.523351,6230.043939
+2005,Exports,South America,Brazil,15371.71785,18655.11678
+2005,Exports,South America,Paraguay,895.819607,1087.166675
+2005,Exports,South America,Uruguay,356.676188,432.8622218
+2005,Exports,South America,Argentina,4121.861182,5002.29073
+2005,Exports,South America,Falkland Islands(Islas Malvin,9.049418,10.98237368
+2005,Exports,Europe,Iceland,512.019513,621.386881
+2005,Exports,Europe,Sweden,3715.36862,4508.971357
+2005,Exports,Europe,Svalbard Jan Mayen Island,5.677609,6.890346282
+2005,Exports,Europe,Norway,1941.882004,2356.668
+2005,Exports,Europe,Finland,2254.052992,2735.518711
+2005,Exports,Europe,Faroe Islands,2.528152,3.068165267
+2005,Exports,Europe,Denmark,1918.423705,2328.199008
+2005,Exports,Europe,United Kingdom,38568.08305,46806.22558
+2005,Exports,Europe,Ireland,8446.771993,10251.00249
+2005,Exports,Europe,Netherlands,26467.74458,32121.25482
+2005,Exports,Europe,Belgium,18690.60657,22682.92013
+2005,Exports,Europe,Luxembourg,711.38307,863.3344938
+2005,Exports,Europe,Andorra,10.549473,12.80284043
+2005,Exports,Europe,Monaco,16.776668,20.36016428
+2005,Exports,Europe,France,22258.62805,27013.071
+2005,Exports,Europe,Germany,34183.65627,41485.28525
+2005,Exports,Europe,Austria,2544.481273,3087.982473
+2005,Exports,Europe,Czech Republic,1053.557481,1278.597359
+2005,Exports,Europe,Slovakia,149.800634,181.7980494
+2005,Exports,Europe,Hungary,1023.258213,1241.826167
+2005,Exports,Europe,Liechtenstein,19.7165,23.9279444
+2005,Exports,Europe,Switzerland,10717.52806,13006.79206
+2005,Exports,Europe,Estonia,145.425805,176.4887569
+2005,Exports,Europe,Latvia,177.537085,215.4590064
+2005,Exports,Europe,Lithuania,390.027824,473.3377672
+2005,Exports,Europe,Poland,1267.748385,1538.53944
+2005,Exports,Europe,Russia,3962.270261,4808.611189
+2005,Exports,Europe,Belarus,34.942759,42.40653232
+2005,Exports,Europe,Ukraine,532.954308,646.7933482
+2005,Exports,Europe,Armenia,65.483218,79.47043336
+2005,Exports,Europe,Azerbaijan,132.462798,160.7568517
+2005,Exports,Europe,Georgia,213.886826,259.573052
+2005,Exports,Europe,Kazakhstan,538.286932,653.2650207
+2005,Exports,Europe,Kyrgyzstan,31.140901,37.79259745
+2005,Exports,Europe,Moldova,40.069837,48.62875418
+2005,Exports,Europe,Tajikistan,28.7867,34.93553912
+2005,Exports,Europe,Turkmenistan,215.170092,261.1304237
+2005,Exports,Europe,Uzbekistan,73.826609,89.59597268
+2005,Exports,Europe,Spain,6839.116578,8299.951879
+2005,Exports,Europe,Portugal,1131.865366,1373.631808
+2005,Exports,Europe,Gibraltar,163.257568,198.1293845
+2005,Exports,Europe,Malta,193.709217,235.0855058
+2005,Exports,Europe,San Marino,4.676009,5.674804522
+2005,Exports,Europe,Vatican City,24.181227,29.34633709
+2005,Exports,Europe,Italy,11524.32529,13985.92117
+2005,Exports,Europe,Croatia,158.621993,192.5036507
+2005,Exports,Europe,Slovenia,233.830317,283.7764727
+2005,Exports,Europe,Bosnia and Herzegovina,17.573793,21.32755518
+2005,Exports,Europe,Macedonia,31.556267,38.29668563
+2005,Exports,Europe,Serbia and Montenegro,132.49633,160.7975461
+2005,Exports,Europe,Albania,18.513925,22.46849938
+2005,Exports,Europe,Greece,1192.248494,1446.912772
+2005,Exports,Europe,Romania,608.858767,738.9109996
+2005,Exports,Europe,Bulgaria,267.93442,325.1652121
+2005,Exports,Asia,Turkey,4238.966194,5144.409373
+2005,Exports,Asia,Cyprus,84.179247,102.1599342
+2005,Exports,Asia,Syria,155.049379,188.1679264
+2005,Exports,Asia,Lebanon,465.688546,565.1596194
+2005,Exports,Asia,Iraq,1373.986265,1667.469731
+2005,Exports,Asia,Iran,95.773068,116.2301953
+2005,Exports,Asia,Israel,9737.340849,11817.23685
+2005,Exports,Asia,Gaza Strip admin. by Israel,0.23112,0.280487232
+2005,Exports,Asia,West Bank admin. by Israel,3.720993,4.515797105
+2005,Exports,Asia,Jordan,644.195347,781.7954731
+2005,Exports,Asia,Kuwait,1974.875551,2396.708969
+2005,Exports,Asia,Saudi Arabia,6805.402418,8259.036374
+2005,Exports,Asia,Qatar,986.642413,1197.389232
+2005,Exports,Asia,United Arab Emirates,8119.527357,9853.8584
+2005,Exports,Asia,Republic of Yemen,219.04852,265.8372839
+2005,Exports,Asia,Oman,570.72512,692.6320056
+2005,Exports,Asia,Bahrain,350.78451,425.7120813
+2005,Exports,Asia,Afghanistan,262.153213,318.1491393
+2005,Exports,Asia,India,7918.602428,9610.015907
+2005,Exports,Asia,Pakistan,1251.63194,1518.980522
+2005,Exports,Asia,Nepal,24.704668,29.98158508
+2005,Exports,Asia,Bangladesh,319.769758,388.0725783
+2005,Exports,Asia,Sri Lanka,197.631294,239.8453384
+2005,Exports,Asia,Burma,5.464172,6.631319139
+2005,Exports,Asia,Thailand,7256.616259,8806.629492
+2005,Exports,Asia,Vietnam,1193.152202,1448.009512
+2005,Exports,Asia,Laos,9.807849,11.90280555
+2005,Exports,Asia,Cambodia,69.652929,84.53079463
+2005,Exports,Asia,Malaysia,10460.83317,12695.26713
+2005,Exports,Asia,Singapore,20466.07346,24837.62675
+2005,Exports,Asia,Indonesia,3053.913961,3706.229983
+2005,Exports,Asia,East Timor,8.685474,10.54069125
+2005,Exports,Asia,Brunei,49.614155,60.21173851
+2005,Exports,Asia,Philippines,6895.406023,8368.26475
+2005,Exports,Asia,Macau,101.575899,123.272511
+2005,Exports,Asia,Bhutan,3.05218,3.704125648
+2005,Exports,Asia,Maldives,9.25555,11.23253548
+2005,Exports,Asia,China,41192.01012,49990.62349
+2005,Exports,Asia,Mongolia,21.879286,26.55270149
+2005,Exports,Asia,Korea North,5.757048,6.986753453
+2005,Exports,Asia,Korea South,27571.60598,33460.90101
+2005,Exports,Asia,Hong Kong,16351.02861,19843.60832
+2005,Exports,Asia,Taiwan,21614.49693,26231.35347
+2005,Exports,Asia,Japan,54680.57985,66360.3517
+2005,Exports,Australia,Australia,15588.51968,18918.22748
+2005,Exports,Australia,Norfolk Island,0.391532,0.475163235
+2005,Exports,Australia,Cocos (Keeling) Islands,1.048051,1.271914694
+2005,Exports,Australia,Christmas Island,2.00592,2.434384512
+2005,Exports,Australia,Heard and McDonald Islands,0.160607,0.194912655
+2005,Exports,Australia,Papua New Guinea,55.347872,67.17017746
+2005,Exports,Australia,New Zealand,2592.076963,3145.744602
+2005,Exports,Australia,Cook Islands,1.372809,1.666041002
+2005,Exports,Australia,Tokelau,79.822527,96.87261877
+2005,Exports,Australia,Niue,0.607643,0.737435545
+2005,Exports,Australia,Samoa,14.538961,17.64448307
+2005,Exports,Australia,Solomon Islands,2.297431,2.788162262
+2005,Exports,Australia,Vanuatu,9.138578,11.09057826
+2005,Exports,Australia,Pitcairn Islands,0.45629,0.553753544
+2005,Exports,Australia,Kiribati,2.411608,2.926727469
+2005,Exports,Australia,Tuvalu,0.04246,0.051529456
+2005,Exports,Australia,New Caledonia,38.403106,46.60600944
+2005,Exports,Australia,Wallis and Futuna,0.408737,0.496043223
+2005,Exports,Australia,French Polynesia,111.838384,135.7270628
+2005,Exports,Australia,Marshall Islands,75.48435,91.60780716
+2005,Exports,Australia,Micronesia,25.349268,30.76387164
+2005,Exports,Australia,Palau,12.22524,14.83655126
+2005,Exports,Australia,Nauru,1.62475,1.9717966
+2005,Exports,Australia,Fiji,28.177593,34.19632686
+2005,Exports,Australia,Tonga,9.685131,11.75387498
+2005,Exports,Africa,Morocco,480.792527,583.4898108
+2005,Exports,Africa,Algeria,1106.190448,1342.472728
+2005,Exports,Africa,Tunisia,261.16652,316.9516887
+2005,Exports,Africa,Libya,83.841985,101.750633
+2005,Exports,Africa,Egypt,3159.259288,3834.077072
+2005,Exports,Africa,Sudan,108.105454,131.196779
+2005,Exports,Africa,Western Sahara,0.028656,0.034776922
+2005,Exports,Africa,Equatorial Guinea,281.472431,341.5949423
+2005,Exports,Africa,Mauritania,86.135221,104.5337042
+2005,Exports,Africa,Cameroon,117.313887,142.3721333
+2005,Exports,Africa,Senegal,141.499953,171.724343
+2005,Exports,Africa,Mali,32.421928,39.34725182
+2005,Exports,Africa,Guinea,93.59706,113.589392
+2005,Exports,Africa,Sierra Leone,37.829353,45.9097028
+2005,Exports,Africa,Cote d'Ivoire,124.242832,150.7811009
+2005,Exports,Africa,Ghana,337.389713,409.4561557
+2005,Exports,Africa,Gambia,30.604418,37.14152168
+2005,Exports,Africa,Niger,78.511944,95.28209524
+2005,Exports,Africa,Togo,27.928388,33.89389168
+2005,Exports,Africa,Nigeria,1619.788459,1965.775274
+2005,Exports,Africa,Central African Republic,14.781003,17.93822524
+2005,Exports,Africa,Gabon,99.105857,120.2748681
+2005,Exports,Africa,Chad,53.752155,65.23361531
+2005,Exports,Africa,St Helena,2.732629,3.316318554
+2005,Exports,Africa,Burkina Faso,25.11081,30.47447902
+2005,Exports,Africa,Benin,72.278749,87.71748979
+2005,Exports,Africa,Angola,929.046776,1127.491167
+2005,Exports,Africa,Congo (Brazzaville),104.056096,126.2824781
+2005,Exports,Africa,Guinea-Bissau,2.100355,2.548990828
+2005,Exports,Africa,Cabo Verde,9.871825,11.98044682
+2005,Exports,Africa,Sao Tome and Principe,10.153283,12.32202425
+2005,Exports,Africa,Liberia,69.32032,84.12714035
+2005,Exports,Africa,Congo (Kinshasa),64.968131,78.84532378
+2005,Exports,Africa,Burundi,8.121178,9.855861621
+2005,Exports,Africa,Rwanda,10.534162,12.784259
+2005,Exports,Africa,Somalia,8.831504,10.71791325
+2005,Exports,Africa,Eritrea,31.058711,37.69285167
+2005,Exports,Africa,Ethiopia,455.635812,552.9596214
+2005,Exports,Africa,Djibouti,47.571125,57.7323173
+2005,Exports,Africa,Uganda,62.573652,75.93938407
+2005,Exports,Africa,Kenya,573.365497,695.8363672
+2005,Exports,Africa,Seychelles,17.912292,21.73835757
+2005,Exports,Africa,British Indian Ocean Terr.,0.806112,0.978297523
+2005,Exports,Africa,Tanzania,96.44391,117.0443292
+2005,Exports,Africa,Mauritius,30.860179,37.45191323
+2005,Exports,Africa,Mozambique,62.825299,76.24478287
+2005,Exports,Africa,Madagascar,28.205237,34.22987562
+2005,Exports,Africa,Comoros,0.295219,0.358277778
+2005,Exports,Africa,Reunion,3.78591,4.594580376
+2005,Exports,Africa,French Southern and Antarctic,0.273678,0.332135621
+2005,Exports,Africa,South Africa,3906.946741,4741.470565
+2005,Exports,Africa,Namibia,112.249178,136.2256024
+2005,Exports,Africa,Botswana,67.272144,81.64147396
+2005,Exports,Africa,Zambia,29.113109,35.33166908
+2005,Exports,Africa,Swaziland,11.856893,14.38952534
+2005,Exports,Africa,Zimbabwe,45.540976,55.26852847
+2005,Exports,Africa,Malawi,28.049237,34.04055402
+2005,Exports,Africa,Lesotho,4.015033,4.872644049
+2015,Imports,North America,Greenland,3.800273,3.800273
+2015,Imports,North America,Canada,296155.599,296155.599
+2015,Imports,North America,St Pierre and Miquelon,0.18562,0.18562
+2015,Imports,North America,Mexico,296407.9011,296407.9011
+2015,Imports,North America,Guatemala,4120.351959,4120.351959
+2015,Imports,North America,Belize,75.287339,75.287339
+2015,Imports,North America,El Salvador,2531.699424,2531.699424
+2015,Imports,North America,Honduras,4755.934545,4755.934545
+2015,Imports,North America,Nicaragua,3188.301535,3188.301535
+2015,Imports,North America,Costa Rica,4488.341429,4488.341429
+2015,Imports,North America,Panama,408.293396,408.293396
+2015,Imports,North America,Bermuda,108.704684,108.704684
+2015,Imports,North America,Bahamas,452.744256,452.744256
+2015,Imports,North America,Cuba,0,0
+2015,Imports,North America,Jamaica,305.978402,305.978402
+2015,Imports,North America,Turks and Caicos Islands,14.710225,14.710225
+2015,Imports,North America,Cayman Islands,97.496341,97.496341
+2015,Imports,North America,Haiti,950.091535,950.091535
+2015,Imports,North America,Dominican Republic,4665.266745,4665.266745
+2015,Imports,North America,Anguilla,5.583883,5.583883
+2015,Imports,North America,British Virgin Islands,16.491398,16.491398
+2015,Imports,North America,St Kitts and Nevis,56.753359,56.753359
+2015,Imports,North America,Antigua and Barbuda,6.856395,6.856395
+2015,Imports,North America,Montserrat,2.271534,2.271534
+2015,Imports,North America,Dominica,1.683203,1.683203
+2015,Imports,North America,St Lucia,29.00446,29.00446
+2015,Imports,North America,St Vincent and the Grenadines,1.768076,1.768076
+2015,Imports,North America,Grenada,9.215032,9.215032
+2015,Imports,North America,Barbados,68.174291,68.174291
+2015,Imports,North America,Trinidad and Tobago,4314.344265,4314.344265
+2015,Imports,North America,Sint Maarten,51.873445,51.873445
+2015,Imports,North America,Curacao,335.229109,335.229109
+2015,Imports,North America,Aruba,54.90185,54.90185
+2015,Imports,North America,Guadeloupe,4.123528,4.123528
+2015,Imports,North America,Martinique,37.46278,37.46278
+2015,Imports,South America,Colombia,14074.81661,14074.81661
+2015,Imports,South America,Venezuela,15564.23275,15564.23275
+2015,Imports,South America,Guyana,431.099884,431.099884
+2015,Imports,South America,Suriname,146.224404,146.224404
+2015,Imports,South America,French Guiana,0.042924,0.042924
+2015,Imports,South America,Ecuador,7467.258698,7467.258698
+2015,Imports,South America,Peru,5053.337195,5053.337195
+2015,Imports,South America,Bolivia,1006.481438,1006.481438
+2015,Imports,South America,Chile,8772.414027,8772.414027
+2015,Imports,South America,Brazil,27468.23032,27468.23032
+2015,Imports,South America,Paraguay,162.023098,162.023098
+2015,Imports,South America,Uruguay,604.746068,604.746068
+2015,Imports,South America,Argentina,3950.849545,3950.849545
+2015,Imports,South America,Falkland Islands(Islas Malvin,14.273948,14.273948
+2015,Imports,Europe,Iceland,316.534176,316.534176
+2015,Imports,Europe,Sweden,9878.966413,9878.966413
+2015,Imports,Europe,Svalbard Jan Mayen Island,0.028231,0.028231
+2015,Imports,Europe,Norway,4760.200206,4760.200206
+2015,Imports,Europe,Finland,4506.071121,4506.071121
+2015,Imports,Europe,Faroe Islands,97.897991,97.897991
+2015,Imports,Europe,Denmark,7760.022813,7760.022813
+2015,Imports,Europe,United Kingdom,57962.25131,57962.25131
+2015,Imports,Europe,Ireland,39336.18067,39336.18067
+2015,Imports,Europe,Netherlands,16835.61486,16835.61486
+2015,Imports,Europe,Belgium,19482.27263,19482.27263
+2015,Imports,Europe,Luxembourg,639.038795,639.038795
+2015,Imports,Europe,Andorra,4.863157,4.863157
+2015,Imports,Europe,Monaco,58.818337,58.818337
+2015,Imports,Europe,France,47815.32286,47815.32286
+2015,Imports,Europe,Germany,124820.4692,124820.4692
+2015,Imports,Europe,Austria,11311.97506,11311.97506
+2015,Imports,Europe,Czech Republic,4497.634904,4497.634904
+2015,Imports,Europe,Slovakia,2299.822999,2299.822999
+2015,Imports,Europe,Hungary,5721.266311,5721.266311
+2015,Imports,Europe,Liechtenstein,310.294941,310.294941
+2015,Imports,Europe,Switzerland,31396.66041,31396.66041
+2015,Imports,Europe,Estonia,503.50072,503.50072
+2015,Imports,Europe,Latvia,302.969587,302.969587
+2015,Imports,Europe,Lithuania,1059.366349,1059.366349
+2015,Imports,Europe,Poland,5637.927607,5637.927607
+2015,Imports,Europe,Russia,16366.16158,16366.16158
+2015,Imports,Europe,Belarus,158.249733,158.249733
+2015,Imports,Europe,Ukraine,850.788858,850.788858
+2015,Imports,Europe,Armenia,62.46349,62.46349
+2015,Imports,Europe,Azerbaijan,507.148173,507.148173
+2015,Imports,Europe,Georgia,181.150349,181.150349
+2015,Imports,Europe,Kazakhstan,816.099815,816.099815
+2015,Imports,Europe,Kyrgyzstan,15.803561,15.803561
+2015,Imports,Europe,Moldova,43.920552,43.920552
+2015,Imports,Europe,Tajikistan,31.123801,31.123801
+2015,Imports,Europe,Turkmenistan,55.976778,55.976778
+2015,Imports,Europe,Uzbekistan,9.715446,9.715446
+2015,Imports,Europe,Spain,14129.84151,14129.84151
+2015,Imports,Europe,Portugal,3271.009123,3271.009123
+2015,Imports,Europe,Gibraltar,1.82442,1.82442
+2015,Imports,Europe,Malta,241.219869,241.219869
+2015,Imports,Europe,San Marino,8.517198,8.517198
+2015,Imports,Europe,Vatican City,1.218395,1.218395
+2015,Imports,Europe,Italy,44159.01154,44159.01154
+2015,Imports,Europe,Croatia,576.891578,576.891578
+2015,Imports,Europe,Slovenia,678.110689,678.110689
+2015,Imports,Europe,Bosnia and Herzegovina,78.282267,78.282267
+2015,Imports,Europe,Macedonia,203.357353,203.357353
+2015,Imports,Europe,Serbia,272.617662,272.617662
+2015,Imports,Europe,Kosovo,2.38298,2.38298
+2015,Imports,Europe,Montenegro,2.108687,2.108687
+2015,Imports,Europe,Albania,160.081219,160.081219
+2015,Imports,Europe,Greece,1356.447796,1356.447796
+2015,Imports,Europe,Romania,2148.841567,2148.841567
+2015,Imports,Europe,Bulgaria,597.694693,597.694693
+2015,Imports,Asia,Turkey,7880.91386,7880.91386
+2015,Imports,Asia,Cyprus,31.98822,31.98822
+2015,Imports,Asia,Syria,6.544106,6.544106
+2015,Imports,Asia,Lebanon,93.219618,93.219618
+2015,Imports,Asia,Iraq,4353.472677,4353.472677
+2015,Imports,Asia,Iran,10.766314,10.766314
+2015,Imports,Asia,Israel,24477.02161,24477.02161
+2015,Imports,Asia,Gaza Strip admin. by Israel,0.012534,0.012534
+2015,Imports,Asia,West Bank admin. by Israel,5.435229,5.435229
+2015,Imports,Asia,Jordan,1491.618691,1491.618691
+2015,Imports,Asia,Kuwait,4684.750276,4684.750276
+2015,Imports,Asia,Saudi Arabia,22080.78482,22080.78482
+2015,Imports,Asia,Qatar,1354.237789,1354.237789
+2015,Imports,Asia,United Arab Emirates,2468.033306,2468.033306
+2015,Imports,Asia,Republic of Yemen,48.270876,48.270876
+2015,Imports,Asia,Oman,906.993161,906.993161
+2015,Imports,Asia,Bahrain,902.425581,902.425581
+2015,Imports,Asia,Afghanistan,23.454045,23.454045
+2015,Imports,Asia,India,44791.64405,44791.64405
+2015,Imports,Asia,Pakistan,3701.018609,3701.018609
+2015,Imports,Asia,Nepal,86.959805,86.959805
+2015,Imports,Asia,Bangladesh,5991.251839,5991.251839
+2015,Imports,Asia,Sri Lanka,2889.92219,2889.92219
+2015,Imports,Asia,Burma,143.796881,143.796881
+2015,Imports,Asia,Thailand,28631.93281,28631.93281
+2015,Imports,Asia,Vietnam,38019.69623,38019.69623
+2015,Imports,Asia,Laos,45.189001,45.189001
+2015,Imports,Asia,Cambodia,3025.433126,3025.433126
+2015,Imports,Asia,Malaysia,33970.67872,33970.67872
+2015,Imports,Asia,Singapore,18267.48494,18267.48494
+2015,Imports,Asia,Indonesia,19601.54814,19601.54814
+2015,Imports,Asia,East Timor,3.302038,3.302038
+2015,Imports,Asia,Brunei,19.402766,19.402766
+2015,Imports,Asia,Philippines,10233.69067,10233.69067
+2015,Imports,Asia,Macau,121.919528,121.919528
+2015,Imports,Asia,Bhutan,3.398158,3.398158
+2015,Imports,Asia,Maldives,21.737873,21.737873
+2015,Imports,Asia,China,483244.7019,483244.7019
+2015,Imports,Asia,Mongolia,17.222375,17.222375
+2015,Imports,Asia,Korea North,0,0
+2015,Imports,Asia,Korea South,71758.69672,71758.69672
+2015,Imports,Asia,Hong Kong,6795.630644,6795.630644
+2015,Imports,Asia,Taiwan,40907.5936,40907.5936
+2015,Imports,Asia,Japan,131364.1476,131364.1476
+2015,Imports,Australia,Australia,10894.02186,10894.02186
+2015,Imports,Australia,Norfolk Island,1.217241,1.217241
+2015,Imports,Australia,Cocos (Keeling) Islands,3.809085,3.809085
+2015,Imports,Australia,Christmas Island,2.12084,2.12084
+2015,Imports,Australia,Heard and McDonald Islands,0.006734,0.006734
+2015,Imports,Australia,Papua New Guinea,90.809528,90.809528
+2015,Imports,Australia,New Zealand,4292.770709,4292.770709
+2015,Imports,Australia,Cook Islands,0.84788,0.84788
+2015,Imports,Australia,Tokelau,1.848379,1.848379
+2015,Imports,Australia,Niue,0.531806,0.531806
+2015,Imports,Australia,Samoa,4.220542,4.220542
+2015,Imports,Australia,Solomon Islands,3.521953,3.521953
+2015,Imports,Australia,Vanuatu,3.67132,3.67132
+2015,Imports,Australia,Pitcairn Islands,0.012162,0.012162
+2015,Imports,Australia,Kiribati,2.728752,2.728752
+2015,Imports,Australia,Tuvalu,0.228118,0.228118
+2015,Imports,Australia,New Caledonia,47.038156,47.038156
+2015,Imports,Australia,Wallis and Futuna,0.093303,0.093303
+2015,Imports,Australia,French Polynesia,43.030557,43.030557
+2015,Imports,Australia,Marshall Islands,29.067047,29.067047
+2015,Imports,Australia,Micronesia,0.717108,0.717108
+2015,Imports,Australia,Palau,0.544832,0.544832
+2015,Imports,Australia,Nauru,0.52087,0.52087
+2015,Imports,Australia,Fiji,202.639037,202.639037
+2015,Imports,Australia,Tonga,2.442895,2.442895
+2015,Imports,Africa,Morocco,1011.85636,1011.85636
+2015,Imports,Africa,Algeria,3371.552526,3371.552526
+2015,Imports,Africa,Tunisia,546.271256,546.271256
+2015,Imports,Africa,Libya,155.103895,155.103895
+2015,Imports,Africa,Egypt,1405.853699,1405.853699
+2015,Imports,Africa,Sudan,8.973253,8.973253
+2015,Imports,Africa,South Sudan,0.192583,0.192583
+2015,Imports,Africa,Western Sahara,0.044063,0.044063
+2015,Imports,Africa,Equatorial Guinea,163.14305,163.14305
+2015,Imports,Africa,Mauritania,1.173847,1.173847
+2015,Imports,Africa,Cameroon,132.053379,132.053379
+2015,Imports,Africa,Senegal,71.965108,71.965108
+2015,Imports,Africa,Mali,4.504283,4.504283
+2015,Imports,Africa,Guinea,79.616516,79.616516
+2015,Imports,Africa,Sierra Leone,39.58921,39.58921
+2015,Imports,Africa,Cote d'Ivoire,1027.88557,1027.88557
+2015,Imports,Africa,Ghana,309.36766,309.36766
+2015,Imports,Africa,Gambia,0.896754,0.896754
+2015,Imports,Africa,Niger,4.184625,4.184625
+2015,Imports,Africa,Togo,14.211452,14.211452
+2015,Imports,Africa,Nigeria,1915.80016,1915.80016
+2015,Imports,Africa,Central African Republic,3.12467,3.12467
+2015,Imports,Africa,Gabon,337.024529,337.024529
+2015,Imports,Africa,Chad,1303.322183,1303.322183
+2015,Imports,Africa,St Helena,15.340188,15.340188
+2015,Imports,Africa,Burkina Faso,3.592979,3.592979
+2015,Imports,Africa,Benin,4.94488,4.94488
+2015,Imports,Africa,Angola,2806.494883,2806.494883
+2015,Imports,Africa,Congo (Brazzaville),304.303884,304.303884
+2015,Imports,Africa,Guinea-Bissau,0.05184,0.05184
+2015,Imports,Africa,Cabo Verde,2.21905,2.21905
+2015,Imports,Africa,Sao Tome and Principe,0.773369,0.773369
+2015,Imports,Africa,Liberia,44.940717,44.940717
+2015,Imports,Africa,Congo (Kinshasa),153.738045,153.738045
+2015,Imports,Africa,Burundi,8.427001,8.427001
+2015,Imports,Africa,Rwanda,45.643909,45.643909
+2015,Imports,Africa,Somalia,0.896112,0.896112
+2015,Imports,Africa,Eritrea,0.106871,0.106871
+2015,Imports,Africa,Ethiopia,310.269077,310.269077
+2015,Imports,Africa,Djibouti,35.463684,35.463684
+2015,Imports,Africa,Uganda,64.123855,64.123855
+2015,Imports,Africa,Kenya,573.095415,573.095415
+2015,Imports,Africa,Seychelles,5.83899,5.83899
+2015,Imports,Africa,British Indian Ocean Terr.,15.818366,15.818366
+2015,Imports,Africa,Tanzania,104.93518,104.93518
+2015,Imports,Africa,Mauritius,395.664813,395.664813
+2015,Imports,Africa,Mozambique,96.026702,96.026702
+2015,Imports,Africa,Madagascar,319.783011,319.783011
+2015,Imports,Africa,Mayotte,0.095927,0.095927
+2015,Imports,Africa,Comoros,1.211821,1.211821
+2015,Imports,Africa,Reunion,16.967288,16.967288
+2015,Imports,Africa,French Southern and Antarctic,0.013953,0.013953
+2015,Imports,Africa,South Africa,7314.612701,7314.612701
+2015,Imports,Africa,Namibia,85.353831,85.353831
+2015,Imports,Africa,Botswana,211.913954,211.913954
+2015,Imports,Africa,Zambia,47.114386,47.114386
+2015,Imports,Africa,Swaziland,21.49843,21.49843
+2015,Imports,Africa,Zimbabwe,67.166669,67.166669
+2015,Imports,Africa,Malawi,61.395881,61.395881
+2015,Imports,Africa,Lesotho,331.955607,331.955607
+2015,Exports,North America,Greenland,8.076839,8.076839
+2015,Exports,North America,Canada,280609.0056,280609.0056
+2015,Exports,North America,St Pierre and Miquelon,0.227459,0.227459
+2015,Exports,North America,Mexico,235745.1375,235745.1375
+2015,Exports,North America,Guatemala,5806.713895,5806.713895
+2015,Exports,North America,Belize,285.240264,285.240264
+2015,Exports,North America,El Salvador,3240.284878,3240.284878
+2015,Exports,North America,Honduras,5214.668234,5214.668234
+2015,Exports,North America,Nicaragua,1267.532561,1267.532561
+2015,Exports,North America,Costa Rica,6079.415736,6079.415736
+2015,Exports,North America,Panama,7663.548283,7663.548283
+2015,Exports,North America,Bermuda,600.945255,600.945255
+2015,Exports,North America,Bahamas,2386.461864,2386.461864
+2015,Exports,North America,Cuba,180.215206,180.215206
+2015,Exports,North America,Jamaica,1716.030814,1716.030814
+2015,Exports,North America,Turks and Caicos Islands,279.728597,279.728597
+2015,Exports,North America,Cayman Islands,684.947958,684.947958
+2015,Exports,North America,Haiti,1140.574185,1140.574185
+2015,Exports,North America,Dominican Republic,7113.829302,7113.829302
+2015,Exports,North America,Anguilla,47.602633,47.602633
+2015,Exports,North America,British Virgin Islands,259.758571,259.758571
+2015,Exports,North America,St Kitts and Nevis,149.707108,149.707108
+2015,Exports,North America,Antigua and Barbuda,677.657633,677.657633
+2015,Exports,North America,Montserrat,6.640011,6.640011
+2015,Exports,North America,Dominica,67.312046,67.312046
+2015,Exports,North America,St Lucia,510.811024,510.811024
+2015,Exports,North America,St Vincent and the Grenadines,84.722498,84.722498
+2015,Exports,North America,Grenada,90.420149,90.420149
+2015,Exports,North America,Barbados,595.966307,595.966307
+2015,Exports,North America,Trinidad and Tobago,2511.195111,2511.195111
+2015,Exports,North America,Sint Maarten,741.201231,741.201231
+2015,Exports,North America,Curacao,522.079698,522.079698
+2015,Exports,North America,Aruba,1167.632524,1167.632524
+2015,Exports,North America,Guadeloupe,100.959536,100.959536
+2015,Exports,North America,Martinique,119.577165,119.577165
+2015,Exports,South America,Colombia,16286.7799,16286.7799
+2015,Exports,South America,Venezuela,8345.880233,8345.880233
+2015,Exports,South America,Guyana,368.129666,368.129666
+2015,Exports,South America,Suriname,443.643313,443.643313
+2015,Exports,South America,French Guiana,1073.642767,1073.642767
+2015,Exports,South America,Ecuador,5794.812688,5794.812688
+2015,Exports,South America,Peru,8725.607473,8725.607473
+2015,Exports,South America,Bolivia,931.431709,931.431709
+2015,Exports,South America,Chile,15445.13797,15445.13797
+2015,Exports,South America,Brazil,31650.62387,31650.62387
+2015,Exports,South America,Paraguay,1514.300292,1514.300292
+2015,Exports,South America,Uruguay,1295.148749,1295.148749
+2015,Exports,South America,Argentina,9341.210651,9341.210651
+2015,Exports,South America,Falkland Islands(Islas Malvin,2.917708,2.917708
+2015,Exports,Europe,Iceland,415.45785,415.45785
+2015,Exports,Europe,Sweden,3940.8105,3940.8105
+2015,Exports,Europe,Svalbard Jan Mayen Island,0.380164,0.380164
+2015,Exports,Europe,Norway,3570.63315,3570.63315
+2015,Exports,Europe,Finland,1558.146898,1558.146898
+2015,Exports,Europe,Faroe Islands,2.336863,2.336863
+2015,Exports,Europe,Denmark,2202.093582,2202.093582
+2015,Exports,Europe,United Kingdom,56114.61886,56114.61886
+2015,Exports,Europe,Ireland,8930.773509,8930.773509
+2015,Exports,Europe,Netherlands,40196.15629,40196.15629
+2015,Exports,Europe,Belgium,34159.97966,34159.97966
+2015,Exports,Europe,Luxembourg,1394.17473,1394.17473
+2015,Exports,Europe,Andorra,3.336817,3.336817
+2015,Exports,Europe,Monaco,71.128048,71.128048
+2015,Exports,Europe,France,30103.5212,30103.5212
+2015,Exports,Europe,Germany,49970.80411,49970.80411
+2015,Exports,Europe,Austria,4024.435888,4024.435888
+2015,Exports,Europe,Czech Republic,1976.037865,1976.037865
+2015,Exports,Europe,Slovakia,379.469169,379.469169
+2015,Exports,Europe,Hungary,1715.278037,1715.278037
+2015,Exports,Europe,Liechtenstein,35.930552,35.930552
+2015,Exports,Europe,Switzerland,22185.27991,22185.27991
+2015,Exports,Europe,Estonia,288.143789,288.143789
+2015,Exports,Europe,Latvia,294.787977,294.787977
+2015,Exports,Europe,Lithuania,527.67763,527.67763
+2015,Exports,Europe,Poland,3715.441301,3715.441301
+2015,Exports,Europe,Russia,7087.111574,7087.111574
+2015,Exports,Europe,Belarus,59.235752,59.235752
+2015,Exports,Europe,Ukraine,862.088348,862.088348
+2015,Exports,Europe,Armenia,50.24617,50.24617
+2015,Exports,Europe,Azerbaijan,477.316108,477.316108
+2015,Exports,Europe,Georgia,340.502111,340.502111
+2015,Exports,Europe,Kazakhstan,510.479071,510.479071
+2015,Exports,Europe,Kyrgyzstan,32.003481,32.003481
+2015,Exports,Europe,Moldova,16.163682,16.163682
+2015,Exports,Europe,Tajikistan,18.985373,18.985373
+2015,Exports,Europe,Turkmenistan,80.839805,80.839805
+2015,Exports,Europe,Uzbekistan,137.962928,137.962928
+2015,Exports,Europe,Spain,10310.27052,10310.27052
+2015,Exports,Europe,Portugal,942.466275,942.466275
+2015,Exports,Europe,Gibraltar,1972.99261,1972.99261
+2015,Exports,Europe,Malta,490.660579,490.660579
+2015,Exports,Europe,San Marino,5.011879,5.011879
+2015,Exports,Europe,Vatican City,2.226547,2.226547
+2015,Exports,Europe,Italy,16204.22609,16204.22609
+2015,Exports,Europe,Croatia,331.976272,331.976272
+2015,Exports,Europe,Slovenia,346.040192,346.040192
+2015,Exports,Europe,Bosnia and Herzegovina,27.586061,27.586061
+2015,Exports,Europe,Macedonia,30.678977,30.678977
+2015,Exports,Europe,Serbia,126.25142,126.25142
+2015,Exports,Europe,Kosovo,19.743318,19.743318
+2015,Exports,Europe,Montenegro,11.133957,11.133957
+2015,Exports,Europe,Albania,30.952665,30.952665
+2015,Exports,Europe,Greece,725.699147,725.699147
+2015,Exports,Europe,Romania,753.718827,753.718827
+2015,Exports,Europe,Bulgaria,289.09201,289.09201
+2015,Exports,Asia,Turkey,9502.498123,9502.498123
+2015,Exports,Asia,Cyprus,101.831614,101.831614
+2015,Exports,Asia,Syria,3.072304,3.072304
+2015,Exports,Asia,Lebanon,1272.487166,1272.487166
+2015,Exports,Asia,Iraq,1971.478767,1971.478767
+2015,Exports,Asia,Iran,281.512074,281.512074
+2015,Exports,Asia,Israel,13538.69482,13538.69482
+2015,Exports,Asia,Gaza Strip admin. by Israel,0.183934,0.183934
+2015,Exports,Asia,West Bank admin. by Israel,0.903282,0.903282
+2015,Exports,Asia,Jordan,1358.977191,1358.977191
+2015,Exports,Asia,Kuwait,2739.289578,2739.289578
+2015,Exports,Asia,Saudi Arabia,19738.98459,19738.98459
+2015,Exports,Asia,Qatar,4222.426394,4222.426394
+2015,Exports,Asia,United Arab Emirates,23003.59562,23003.59562
+2015,Exports,Asia,Republic of Yemen,158.039977,158.039977
+2015,Exports,Asia,Oman,2355.271013,2355.271013
+2015,Exports,Asia,Bahrain,1270.662445,1270.662445
+2015,Exports,Asia,Afghanistan,478.851271,478.851271
+2015,Exports,Asia,India,21451.87992,21451.87992
+2015,Exports,Asia,Pakistan,1837.506933,1837.506933
+2015,Exports,Asia,Nepal,36.405446,36.405446
+2015,Exports,Asia,Bangladesh,942.540067,942.540067
+2015,Exports,Asia,Sri Lanka,361.920786,361.920786
+2015,Exports,Asia,Burma,227.140755,227.140755
+2015,Exports,Asia,Thailand,11230.56974,11230.56974
+2015,Exports,Asia,Vietnam,7087.524038,7087.524038
+2015,Exports,Asia,Laos,24.584007,24.584007
+2015,Exports,Asia,Cambodia,391.045876,391.045876
+2015,Exports,Asia,Malaysia,12277.22614,12277.22614
+2015,Exports,Asia,Singapore,28472.07098,28472.07098
+2015,Exports,Asia,Indonesia,7120.940688,7120.940688
+2015,Exports,Asia,East Timor,2.690584,2.690584
+2015,Exports,Asia,Brunei,133.449998,133.449998
+2015,Exports,Asia,Philippines,7907.893167,7907.893167
+2015,Exports,Asia,Macau,542.354584,542.354584
+2015,Exports,Asia,Bhutan,2.64104,2.64104
+2015,Exports,Asia,Maldives,35.143208,35.143208
+2015,Exports,Asia,China,116071.7696,116071.7696
+2015,Exports,Asia,Mongolia,69.161103,69.161103
+2015,Exports,Asia,Korea North,4.751721,4.751721
+2015,Exports,Asia,Korea South,43445.54748,43445.54748
+2015,Exports,Asia,Hong Kong,37167.02295,37167.02295
+2015,Exports,Asia,Taiwan,25860.08634,25860.08634
+2015,Exports,Asia,Japan,62442.64646,62442.64646
+2015,Exports,Australia,Australia,25035.79015,25035.79015
+2015,Exports,Australia,Norfolk Island,0.350312,0.350312
+2015,Exports,Australia,Cocos (Keeling) Islands,0.55762,0.55762
+2015,Exports,Australia,Christmas Island,1.551179,1.551179
+2015,Exports,Australia,Heard and McDonald Islands,0.913419,0.913419
+2015,Exports,Australia,Papua New Guinea,207.793894,207.793894
+2015,Exports,Australia,New Zealand,3631.061903,3631.061903
+2015,Exports,Australia,Cook Islands,4.249826,4.249826
+2015,Exports,Australia,Tokelau,0.341222,0.341222
+2015,Exports,Australia,Niue,0.071371,0.071371
+2015,Exports,Australia,Samoa,22.71966,22.71966
+2015,Exports,Australia,Solomon Islands,5.861309,5.861309
+2015,Exports,Australia,Vanuatu,5.867876,5.867876
+2015,Exports,Australia,Pitcairn Islands,0.017405,0.017405
+2015,Exports,Australia,Kiribati,7.320835,7.320835
+2015,Exports,Australia,Tuvalu,0.625636,0.625636
+2015,Exports,Australia,New Caledonia,88.651277,88.651277
+2015,Exports,Australia,Wallis and Futuna,0.376841,0.376841
+2015,Exports,Australia,French Polynesia,120.047865,120.047865
+2015,Exports,Australia,Marshall Islands,53.912135,53.912135
+2015,Exports,Australia,Micronesia,40.032614,40.032614
+2015,Exports,Australia,Palau,25.693198,25.693198
+2015,Exports,Australia,Nauru,1.73365,1.73365
+2015,Exports,Australia,Fiji,56.904585,56.904585
+2015,Exports,Australia,Tonga,13.817538,13.817538
+2015,Exports,Africa,Morocco,1625.204959,1625.204959
+2015,Exports,Africa,Algeria,1875.734479,1875.734479
+2015,Exports,Africa,Tunisia,602.412017,602.412017
+2015,Exports,Africa,Libya,242.951645,242.951645
+2015,Exports,Africa,Egypt,4752.983685,4752.983685
+2015,Exports,Africa,Sudan,59.514997,59.514997
+2015,Exports,Africa,South Sudan,19.613532,19.613532
+2015,Exports,Africa,Western Sahara,0.032113,0.032113
+2015,Exports,Africa,Equatorial Guinea,161.964373,161.964373
+2015,Exports,Africa,Mauritania,126.280667,126.280667
+2015,Exports,Africa,Cameroon,224.961698,224.961698
+2015,Exports,Africa,Senegal,196.428411,196.428411
+2015,Exports,Africa,Mali,72.426079,72.426079
+2015,Exports,Africa,Guinea,135.350114,135.350114
+2015,Exports,Africa,Sierra Leone,77.325724,77.325724
+2015,Exports,Africa,Cote d'Ivoire,266.335569,266.335569
+2015,Exports,Africa,Ghana,949.913963,949.913963
+2015,Exports,Africa,Gambia,37.899622,37.899622
+2015,Exports,Africa,Niger,71.493157,71.493157
+2015,Exports,Africa,Togo,311.819809,311.819809
+2015,Exports,Africa,Nigeria,3437.952784,3437.952784
+2015,Exports,Africa,Central African Republic,34.309874,34.309874
+2015,Exports,Africa,Gabon,203.872443,203.872443
+2015,Exports,Africa,Chad,56.591528,56.591528
+2015,Exports,Africa,St Helena,3.720487,3.720487
+2015,Exports,Africa,Burkina Faso,53.875343,53.875343
+2015,Exports,Africa,Benin,631.462518,631.462518
+2015,Exports,Africa,Angola,1166.161667,1166.161667
+2015,Exports,Africa,Congo (Brazzaville),249.220232,249.220232
+2015,Exports,Africa,Guinea-Bissau,2.13532,2.13532
+2015,Exports,Africa,Cabo Verde,7.32166,7.32166
+2015,Exports,Africa,Sao Tome and Principe,0.853963,0.853963
+2015,Exports,Africa,Liberia,135.807551,135.807551
+2015,Exports,Africa,Congo (Kinshasa),136.189374,136.189374
+2015,Exports,Africa,Burundi,5.650192,5.650192
+2015,Exports,Africa,Rwanda,14.28771,14.28771
+2015,Exports,Africa,Somalia,45.026584,45.026584
+2015,Exports,Africa,Eritrea,3.497538,3.497538
+2015,Exports,Africa,Ethiopia,1555.249376,1555.249376
+2015,Exports,Africa,Djibouti,144.711021,144.711021
+2015,Exports,Africa,Uganda,88.315069,88.315069
+2015,Exports,Africa,Kenya,943.436657,943.436657
+2015,Exports,Africa,Seychelles,18.542809,18.542809
+2015,Exports,Africa,British Indian Ocean Terr.,0.581016,0.581016
+2015,Exports,Africa,Tanzania,172.803054,172.803054
+2015,Exports,Africa,Mauritius,58.435311,58.435311
+2015,Exports,Africa,Mozambique,264.203995,264.203995
+2015,Exports,Africa,Madagascar,54.553731,54.553731
+2015,Exports,Africa,Mayotte,5.697333,5.697333
+2015,Exports,Africa,Comoros,1.507078,1.507078
+2015,Exports,Africa,Reunion,6.905271,6.905271
+2015,Exports,Africa,French Southern and Antarctic,8.026602,8.026602
+2015,Exports,Africa,South Africa,5458.29362,5458.29362
+2015,Exports,Africa,Namibia,127.603603,127.603603
+2015,Exports,Africa,Botswana,39.04197,39.04197
+2015,Exports,Africa,Zambia,84.170835,84.170835
+2015,Exports,Africa,Swaziland,28.521751,28.521751
+2015,Exports,Africa,Zimbabwe,37.834783,37.834783
+2015,Exports,Africa,Malawi,37.201602,37.201602
+2015,Exports,Africa,Lesotho,0.881897,0.881897
+1985,Imports,North America,Canada,69006.4,152007.2979
+1985,Imports,North America,Mexico,19131.7,42143.30876
+1985,Imports,North America,Guatemala,409,900.9452
+1985,Imports,North America,El Salvador,395.6,871.42768
+1985,Imports,North America,Honduras,375.4,826.93112
+1985,Imports,North America,Costa Rica,501.3,1104.26364
+1985,Imports,North America,Panama,410.6,904.46968
+1985,Imports,North America,Bahamas,626.3,1379.61364
+1985,Imports,North America,Jamaica,272.7,600.70356
+1985,Imports,North America,Haiti,389.6,858.21088
+1985,Imports,North America,Dominican Republic,982.3,2163.81044
+1985,Imports,North America,Trinidad and Tobago,1258.4,2772.00352
+1985,Imports,North America,Netherlands Antilles,808,1779.8624
+1985,Imports,South America,Colombia,1330.7,2931.26596
+1985,Imports,South America,Venezuela,6537.1,14399.92388
+1985,Imports,South America,Ecuador,1836.5,4045.4422
+1985,Imports,South America,Peru,1086.6,2393.56248
+1985,Imports,South America,Chile,745.2,1641.52656
+1985,Imports,South America,Brazil,7526.2,16578.71336
+1985,Imports,South America,Paraguay,23.6,51.98608
+1985,Imports,South America,Uruguay,556.6,1226.07848
+1985,Imports,South America,Argentina,1069.3,2355.45404
+1985,Imports,Europe,Iceland,247.8,545.85384
+1985,Imports,Europe,Sweden,4123.7,9083.68636
+1985,Imports,Europe,Norway,1164.3,2564.72004
+1985,Imports,Europe,Finland,895.2,1971.94656
+1985,Imports,Europe,Denmark,1664.4,3666.34032
+1985,Imports,Europe,United Kingdom,14937.2,32903.66416
+1985,Imports,Europe,Ireland,901.1,1984.94308
+1985,Imports,Europe,Netherlands,4081.3,8990.28764
+1985,Imports,Europe,Belgium,3355.2,7390.83456
+1985,Imports,Europe,France,9482,20886.9496
+1985,Imports,Europe,Germany,20239.2,44582.90976
+1985,Imports,Europe,Austria,833.7,1836.47436
+1985,Imports,Europe,Hungary,218.3,480.87124
+1985,Imports,Europe,Switzerland,3476.1,7657.15308
+1985,Imports,Europe,Poland,220.2,485.05656
+1985,Imports,Europe,USSR,408.5,899.8438
+1985,Imports,Europe,Spain,2515.2,5540.48256
+1985,Imports,Europe,Portugal,546,1202.7288
+1985,Imports,Europe,Italy,9673.8,21309.44664
+1985,Imports,Europe,Yugoslavia (former),542.2,1194.35816
+1985,Imports,Europe,Greece,394.7,869.44516
+1985,Imports,Asia,Turkey,601.9,1325.86532
+1985,Imports,Asia,Iran,725.1,1597.25028
+1985,Imports,Asia,Israel,2122.5,4675.443
+1985,Imports,Asia,Kuwait,184,405.3152
+1985,Imports,Asia,Saudi Arabia,1907.1,4200.95988
+1985,Imports,Asia,United Arab Emirates,671,1478.0788
+1985,Imports,Asia,Bahrain,83.3,183.49324
+1985,Imports,Asia,India,2294.7,5054.76516
+1985,Imports,Asia,Pakistan,273.9,603.34692
+1985,Imports,Asia,Bangladesh,196,431.7488
+1985,Imports,Asia,Sri Lanka,281.9,620.96932
+1985,Imports,Asia,Thailand,1428.3,3146.25924
+1985,Imports,Asia,Malaysia,2299.9,5066.21972
+1985,Imports,Asia,Singapore,4259.9,9383.70772
+1985,Imports,Asia,Indonesia,4568.9,10064.37292
+1985,Imports,Asia,Philippines,2145,4725.006
+1985,Imports,Asia,Macau,341.9,753.13732
+1985,Imports,Asia,China,3861.7,8506.55276
+1985,Imports,Asia,Korea South,10013.3,22057.29724
+1985,Imports,Asia,Hong Kong,8396.4,18495.58992
+1985,Imports,Asia,Taiwan,16396.3,36117.76964
+1985,Imports,Asia,Japan,68782.9,151514.9721
+1985,Imports,Australia,Australia,2836.3,6247.80164
+1985,Imports,Australia,New Zealand,857,1887.7996
+1985,Imports,Africa,Algeria,2333,5139.1324
+1985,Imports,Africa,Egypt,79.1,174.24148
+1985,Imports,Africa,Cote d'Ivoire,524.8,1156.02944
+1985,Imports,Africa,Nigeria,3001.9,6612.58532
+1985,Imports,Africa,Gabon,501.9,1105.58532
+1985,Imports,Africa,Angola,1053.6,2320.87008
+1985,Imports,Africa,Congo (Brazzaville),609.3,1342.16604
+1985,Imports,Africa,Congo (Kinshasa),400.7,882.66196
+1985,Imports,Africa,South Africa,2070.9,4561.77852
+1985,Exports,North America,Canada,47251,104084.5028
+1985,Exports,North America,Mexico,13634.7,30034.51716
+1985,Exports,North America,Guatemala,404.6,891.25288
+1985,Exports,North America,El Salvador,445.5,981.3474
+1985,Exports,North America,Honduras,307.9,678.24212
+1985,Exports,North America,Costa Rica,421.7,928.92076
+1985,Exports,North America,Panama,674.8,1486.44944
+1985,Exports,North America,Bahamas,786.3,1732.06164
+1985,Exports,North America,Jamaica,404.3,890.59204
+1985,Exports,North America,Haiti,395.9,872.08852
+1985,Exports,North America,Dominican Republic,742,1634.4776
+1985,Exports,North America,Trinidad and Tobago,503.7,1109.55036
+1985,Exports,North America,Netherlands Antilles,427.5,941.697
+1985,Exports,South America,Colombia,1467.7,3233.04956
+1985,Exports,South America,Venezuela,3399.4,7488.19832
+1985,Exports,South America,Ecuador,591.1,1302.07508
+1985,Exports,South America,Peru,495.9,1092.36852
+1985,Exports,South America,Chile,682.2,1502.75016
+1985,Exports,South America,Brazil,3139.6,6915.91088
+1985,Exports,South America,Paraguay,98.9,217.85692
+1985,Exports,South America,Uruguay,64.3,141.64004
+1985,Exports,South America,Argentina,721.3,1588.87964
+1985,Exports,Europe,Iceland,38,83.7064
+1985,Exports,Europe,Sweden,1924.9,4240.16972
+1985,Exports,Europe,Norway,665.9,1466.84452
+1985,Exports,Europe,Finland,437.7,964.16556
+1985,Exports,Europe,Denmark,705.7,1554.51596
+1985,Exports,Europe,United Kingdom,11272.8,24831.72384
+1985,Exports,Europe,Ireland,1341.8,2955.71704
+1985,Exports,Europe,Netherlands,7269,16012.1532
+1985,Exports,Europe,Belgium,4917.7,10832.70956
+1985,Exports,Europe,France,6095.6,13427.38768
+1985,Exports,Europe,Germany,9050.2,19935.78056
+1985,Exports,Europe,Austria,441.2,971.87536
+1985,Exports,Europe,Hungary,94.5,208.1646
+1985,Exports,Europe,Switzerland,2287.7,5039.34556
+1985,Exports,Europe,Poland,237.9,524.04612
+1985,Exports,Europe,USSR,2422.8,5336.94384
+1985,Exports,Europe,Spain,2524.1,5560.08748
+1985,Exports,Europe,Portugal,694.5,1529.8446
+1985,Exports,Europe,Italy,4625.2,10188.39056
+1985,Exports,Europe,Yugoslavia (former),594.7,1310.00516
+1985,Exports,Europe,Greece,497.8,1096.55384
+1985,Exports,Asia,Turkey,1294.6,2851.74488
+1985,Exports,Asia,Iran,73.9,162.78692
+1985,Exports,Asia,Israel,2579.6,5682.34288
+1985,Exports,Asia,Kuwait,550.6,1212.86168
+1985,Exports,Asia,Saudi Arabia,4474.3,9855.98804
+1985,Exports,Asia,United Arab Emirates,596.5,1313.9702
+1985,Exports,Asia,Bahrain,107,235.6996
+1985,Exports,Asia,India,1641.9,3616.77732
+1985,Exports,Asia,Pakistan,1041.7,2294.65676
+1985,Exports,Asia,Bangladesh,218.9,482.19292
+1985,Exports,Asia,Sri Lanka,72.8,160.36384
+1985,Exports,Asia,Thailand,849.1,1870.39748
+1985,Exports,Asia,Malaysia,1539.2,3390.54976
+1985,Exports,Asia,Singapore,3475.6,7656.05168
+1985,Exports,Asia,Indonesia,795,1751.226
+1985,Exports,Asia,Philippines,1379.3,3038.32204
+1985,Exports,Asia,Macau,1.1,2.42308
+1985,Exports,Asia,China,3855.7,8493.33596
+1985,Exports,Asia,Korea South,5956.3,13120.53764
+1985,Exports,Asia,Hong Kong,2785.9,6136.78052
+1985,Exports,Asia,Taiwan,4700,10353.16
+1985,Exports,Asia,Japan,22630.9,49851.34652
+1985,Exports,Australia,Australia,5440.4,11984.11312
+1985,Exports,Australia,New Zealand,727.5,1602.537
+1985,Exports,Africa,Algeria,430.1,947.42428
+1985,Exports,Africa,Egypt,2322.6,5116.22328
+1985,Exports,Africa,Cote d'Ivoire,69.7,153.53516
+1985,Exports,Africa,Nigeria,675.7,1488.43196
+1985,Exports,Africa,Gabon,91.2,200.89536
+1985,Exports,Africa,Angola,136.9,301.56332
+1985,Exports,Africa,Congo (Brazzaville),19.4,42.73432
+1985,Exports,Africa,Congo (Kinshasa),101.5,223.5842
+1985,Exports,Africa,South Africa,1205,2654.374
