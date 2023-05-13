@@ -55,7 +55,7 @@
         "title": "Olympic Medals by Country",
         "about": ""
     },
-    "HeatMap": {
+    "Heatmap": {
         "name": "Heat Map",
         "mark": "Bars and Rectangles",
         "title": "Twenty Years of NBA Draft Picks",
@@ -178,7 +178,7 @@
         "title": "Color popularity in new cars",
         "about": "This bump chart shows how the rankings of new car colors change over the years in North America. The magenta color denotes 'other' colors. <br> <a href='https://public.tableau.com/profile/rody.zakovich#!/vizhome/TheUntanglingofColorPopularityamongNewCarsinNorthAmerica/TheUntanglingofColorPopularityforNewCars' target='_blank'>Original visualization</a> by Rody Zakovich"
     },
-    "ConnectedScatterPlot": {
+    "ConnectedScatterplot": {
         "name": "Connected Scatter Plot",
         "mark": "Lines and Paths",
         "title": "Driving Shifts into Reverse",

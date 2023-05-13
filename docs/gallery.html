@@ -509,7 +509,10 @@
 						category = m;
 						list = d3.select("#demoList").append("ul").attr("class", "demos");
 					}
-					list.append("li").text(json[k].name).on("click", ()=>{window.location.hash = k;});
+					list.append("li").text(json[k].name).on("click", () => {
+						document.getElementById("gallery").style.visibility = "hidden";
+						window.location.hash = k;
+					});
 				}
 			}
 
@@ -530,8 +533,8 @@
 						.style("background-repeat", "no-repeat")
 						.style("background-position", "left top")
 						.on("click", () => {
-						document.getElementById("gallery").style.visibility = "hidden";
-						window.location.hash = k;
+							document.getElementById("gallery").style.visibility = "hidden";
+							window.location.hash = k;
 						});
 					item.append("div").style("display", "block").style("background", "#FAFAFA").style("font-size", "11.5px")
 						.style("font-family", "Arial").style("font-weight", 600).style("text-align", "left").style("color", "#222")
