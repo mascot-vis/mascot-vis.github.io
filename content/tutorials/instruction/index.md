@@ -20,7 +20,7 @@ Add the following code to the &lt;head&gt; element in your HTML document:
 <script src="https://mascot-vis.github.io/dist/mascot-min.js"></script>
 ```
 
-[Download sample code](https://mascot-vis.github.io/sampleWebApp.zip) showing how to include Mascot.js in a simple web application. 
+[Download a demo web app](https://mascot-vis.github.io/sampleWebApp.zip) showing how to use Mascot.js to create a multi-line graph chart. 
 
 ### Using Mascot.js in an ES6 module
 To get the latest version, include "mascot-vis" as a dependency in your package.json file, or do:
