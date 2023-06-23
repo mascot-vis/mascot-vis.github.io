@@ -1,0 +1,219 @@
+{
+ "nodes": [
+  {
+   "id": 1,
+   "event_attribute": "",
+   "Pattern": "",
+   "value": 22,
+   "median_index": 0,
+   "average_index": 0
+  },
+  {
+   "id": 3,
+   "event_attribute": "Sugar to treat",
+   "Pattern": "Sugar to treat",
+   "value": 22,
+   "median_index": 3.5,
+   "average_index": 3.954545454545454
+  },
+  {
+   "id": 5,
+   "event_attribute": "Lunch",
+   "Pattern": "Sugar to treat-Lunch",
+   "value": 21,
+   "median_index": 7.0,
+   "average_index": 7.095238095238095
+  },
+  {
+   "id": 7,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast",
+   "value": 21,
+   "median_index": 9.0,
+   "average_index": 9.80952380952381
+  },
+  {
+   "id": 9,
+   "event_attribute": "Lunch",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch",
+   "value": 21,
+   "median_index": 13.0,
+   "average_index": 13.047619047619047
+  },
+  {
+   "id": 11,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast",
+   "value": 19,
+   "median_index": 15.0,
+   "average_index": 14.631578947368421
+  },
+  {
+   "id": 13,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Breakfast",
+   "value": 16,
+   "median_index": 18.0,
+   "average_index": 17.4375
+  },
+  {
+   "id": 15,
+   "event_attribute": "Sugar to treat",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Breakfast-Sugar to treat",
+   "value": 11,
+   "median_index": 19.0,
+   "average_index": 17.818181818181817
+  },
+  {
+   "id": 17,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Breakfast-Sugar to treat-Breakfast",
+   "value": 9,
+   "median_index": 19.0,
+   "average_index": 20.22222222222222
+  },
+  {
+   "id": 19,
+   "event_attribute": "Dinner",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Breakfast-Sugar to treat-Breakfast-Dinner",
+   "value": 7,
+   "median_index": 21.0,
+   "average_index": 22.571428571428573
+  },
+  {
+   "id": 21,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Breakfast-Sugar to treat-Breakfast-Dinner-Breakfast",
+   "value": 6,
+   "median_index": 25.0,
+   "average_index": 26.0
+  },
+  {
+   "id": 23,
+   "event_attribute": "Dinner",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Dinner-Breakfast-Sugar to treat-Breakfast-Dinner-Breakfast",
+   "value": 6,
+   "median_index": 12.0,
+   "average_index": 12.666666666666666
+  },
+  {
+   "id": 25,
+   "event_attribute": "Breakfast",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Lunch-Breakfast-Dinner-Breakfast-Sugar to treat-Breakfast-Dinner-Breakfast-Breakfast",
+   "value": 5,
+   "median_index": 32.0,
+   "average_index": 30.8
+  },
+  {
+   "id": 27,
+   "event_attribute": "Dinner",
+   "Pattern": "Sugar to treat-Lunch-Breakfast-Dinner-Lunch-Breakfast-Breakfast",
+   "value": 5,
+   "median_index": 13.0,
+   "average_index": 12.0
+  },
+  {
+   "id": 32,
+   "event_attribute": -2,
+   "Pattern": "",
+   "value": 5,
+   "median_index": 33.0,
+   "average_index": 32.0
+  },
+  {
+   "id": 33,
+   "event_attribute": -2,
+   "Pattern": "",
+   "value": 5,
+   "median_index": 21.0,
+   "average_index": 22.8
+  }
+ ],
+ "links": [
+  {
+   "source": 1,
+   "target": 3,
+   "count": 22
+  },
+  {
+   "source": 3,
+   "target": 5,
+   "count": 21
+  },
+  {
+   "source": 5,
+   "target": 7,
+   "count": 21
+  },
+  {
+   "source": 7,
+   "target": 9,
+   "count": 16
+  },
+  {
+   "source": 7,
+   "target": 27,
+   "count": 5
+  },
+  {
+   "source": 9,
+   "target": 11,
+   "count": 19
+  },
+  {
+   "source": 11,
+   "target": 23,
+   "count": 6
+  },
+  {
+   "source": 11,
+   "target": 13,
+   "count": 10
+  },
+  {
+   "source": 23,
+   "target": 13,
+   "count": 6
+  },
+  {
+   "source": 13,
+   "target": 15,
+   "count": 11
+  },
+  {
+   "source": 13,
+   "target": 33,
+   "count": 5
+  },
+  {
+   "source": 15,
+   "target": 17,
+   "count": 9
+  },
+  {
+   "source": 17,
+   "target": 19,
+   "count": 7
+  },
+  {
+   "source": 19,
+   "target": 21,
+   "count": 6
+  },
+  {
+   "source": 21,
+   "target": 25,
+   "count": 5
+  },
+  {
+   "source": 25,
+   "target": 32,
+   "count": 5
+  },
+  {
+   "source": 27,
+   "target": 9,
+   "count": 5
+  }
+ ]
+}
