@@ -30,13 +30,6 @@
         "title": "Revenue Performance & Target",
         "about": ""
     },
-    "CalendarHeatMap": {
-        "name": "Calendar Heatmap",
-        "mark": "Bars and Rectangles",
-        "title": "Calendar Heatmap",
-        "draft": "true",
-        "about": "Original visualization: https://gist.github.com/cmgiven/018fd027d443b177e18fffb9afcdb5bd"
-    },
     "DivergingBarChart": {
         "name": "Diverging Bar Chart",
         "mark": "Bars and Rectangles",
@@ -70,9 +63,8 @@
     "IciclePlot": {
         "name": "Icicle Plot",
         "mark": "Bars and Rectangles",
-        "draft": true,
-        "title": "ICU Processes",
-        "about": ""
+        "title": "Mascot.js file system",
+        "about": "A visualization of the folders and files in the Mascot code repository (version 1.12.1). The size of each rectangle represents the file size."
     },
     "MosaicPlot": {
         "name": "Mosaic Plot",
@@ -101,8 +93,7 @@
     "TreemapBarChart": {
         "name": "Treemap Bar Chart",
         "mark": "Bars and Rectangles",
-        "title": "Imports and Exports to and from different continents",
-        "draft": true,
+        "title": "Imports and Exports",
         "about": "Original visualization https://gist.github.com/eesur/5fbda7f410d31da35e42 "
     },
     "WaffleChart": {
@@ -168,9 +159,8 @@
     "Sunburst": {
         "name": "Sunburst Chart",
         "mark": "Circles and Pies",
-        "draft": true,
-        "title": "Population of Major Countries",
-        "about": ""
+        "title": "Mascot.js file system",
+        "about": "A visualization of the folders and files in the Mascot code repository (version 1.12.1). The size of each rectangle represents the file size."
     },
     "BumpChart": {
         "name": "Bump Chart",
@@ -305,18 +295,23 @@
         "title": "Setosa Sepal Length Distribution",
         "about": "This visualization shows the distribution for the sepal length of setosa, a type of iris plant. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>."
     },
+    "ArcDiagram": {
+        "name": "Arc Diagram",
+        "mark": "Nodes and Links",
+        "title": "Arc Diagram",
+        "about": "An arc diagram showing the connections between Les Miserables characters, ordered first by group, then alphabetically."
+    },
     "DirectedAcyclicGraph": {
         "name": "Directed Acyclic Graph",
         "mark": "Nodes and Links",
-        "draft": true,
-        "title": "",
-        "about": ""
+        "draft": false,
+        "title": "UMD vs. UNC Basketball Game",
+        "about": "This visualization shows a visual summary of a set of event sequences in a basketball game in the form of a directed acyclic graph, computed using the SentenTree algorithm."
     },
     "ForceDirected": {
         "name": "Force-Directed Graph",
         "mark": "Nodes and Links",
-        "draft": true,
-        "title": "",
+        "title": "Les Miserables Characters",
         "about": ""
     },
     "SeedGraph": {
@@ -336,7 +331,6 @@
     "TidyTree": {
         "name": "'Tidy' Tree",
         "mark": "Nodes and Links",
-        "draft": true,
         "title": "Node-link tree",
         "about": "Node-link visualization of a tree usign the Reingold-Tilford 'tidy' layout algorithm."
     },
@@ -369,6 +363,12 @@
         "mark": "Small Multiples",
         "title": "Gender Pay Gap",
         "about": "This box and whisker plot shows the disparity in annual income for women vs. men across pay grades. <br> <a href='http://www.stephen-few.com/nysi.php' target='_blank'>Original visualization from Now You See It</a> by Stephen Few."
+    },
+    "MultipleCalendarHeatMaps": {
+        "name": "Calendar Heatmap",
+        "mark": "Small Multiples",
+        "title": "Calendar Heatmaps",
+        "about": "Original visualization: https://gist.github.com/cmgiven/018fd027d443b177e18fffb9afcdb5bd"
     },
     "MultiplePieCharts": {
         "name": "Pie Charts",

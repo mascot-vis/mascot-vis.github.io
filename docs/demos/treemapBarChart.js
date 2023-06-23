@@ -1,6 +1,6 @@
 let scn = msc.scene();
 let dt = await msc.csv("datasets/csv/treemapdata.csv");
-let rect = scn.mark("rect", { top: 100, left: 60, width: 200, height: 800, fillColor: "#84BC66", strokeWidth: 0.5, strokeColor: "#ddd" });
+let rect = scn.mark("rect", { top: 100, left: 90, width: 200, height: 800, fillColor: "#84BC66", strokeWidth: 0.5, strokeColor: "#fff" });
 let types = scn.repeat(rect, dt, { field: "type" });
 types.layout = msc.layout("grid", { numRows: 1, colGap: 10 });
 let years = scn.repeat(types, dt, { field: "year" });
