@@ -7,6 +7,7 @@
     <div class="col-lg-9 col-xl-8 text-center mb-3">
       <p class="lead mt-n2">{{ .Params.lead | safeHTML }}</p>
       <a class="btn banner-button btn-lg px-4 mt-2 mb-4" href="dist/mascot-min.js" role="button" download>Version {{ .Site.Data.doks.version }}</a>
+      <p class="mt-n3">Supported Browser: Google Chrome</p>
     </div>
   </div>
 </section>
@@ -19,8 +20,7 @@
         <p>Mascot, short for <b>Ma</b>nipulable <b>S</b>emantic <b>Co</b>mponen<b>t</b>s, is a data visualization framework designed to support the construction, transformation, and analysis of expressive charts from a graphics-centric perspective.
           <!-- Inspired by graphic design tools such as Figma and Adobe XD,
           Mascot helps you create expressive charts by manipulating graphical objects with data.  -->
-        </p>
-        <p>Mascot provides high-level abstractions for both the <i>structures</i> of a visualization and the <i>procedures</i> to generate and modify the visualization:
+        Mascot provides high-level abstractions for both the <i>structures</i> of a visualization and the <i>procedures</i> to generate and modify the visualization:
           <ul class="ms-5">
             <li>Structures are defined through <i>semantic components</i> such as mark, glyph, collection, layout, and encoding;</li>
             <li>Procedures are expressed in terms of <i>operations</i> that manipulate the semantic components, e.g., repeat, divide, and densify</li>
