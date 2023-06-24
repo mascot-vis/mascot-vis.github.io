@@ -174,6 +174,12 @@
         "title": "Driving Shifts into Reverse",
         "about": "the shifting relationship between the price of gas and the average number of miles driven in a year, adapted from <a href='http://www.nytimes.com/imagepages/2010/05/02/business/02metrics.html' target='_blank'>Driving Shifts Into Reverse</a> by Hannah Fairfield, The New York Times (May 2, 2010)"
     },
+    "CyclePlot": {
+        "name": "Cycle Plot",
+        "mark": "Lines and Paths",
+        "title": "CO2 Concentration Cycle Plot",
+        "about": "Six decades of carbon dioxide concentration in the atmosphere from 1958 to 2022, with mean concentration for each decade."
+    },
     "DumbbellChart": {
         "name": "Dumbbell Chart",
         "mark": "Lines and Paths",
