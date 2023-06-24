@@ -1,0 +1,12 @@
+let scn = msc.scene();
+let tree = await msc.treejson("datasets/treejson/mascot_1.12.1.json");
+let c = scn.mark("circle", {x: 400, y: 400, radius: 30, fillColor: "orange", strokeColor: "white"});
+let coll = scn.stratify(c, tree, {size: 70});
+scn.encode(c, {field: "size", channel: "angle"});
+scn.encode(c, {field: "filetype", channel: "fillColor", scheme: "schemePaired"});
+// let text = scn.mark("text", {fillColor: "black", fontWeight: "bold", fontSize: "12px"});
+// scn.repeat(text, tree.nodeTable);
+// scn.encode(text, {channel: "text", field: "event_attribute"});
+// scn.affix(text, coll.firstChild, "radialDistance", {itemAnchor: "top", baseAnchor: "top", offset: -10});
+// scn.affix(text, coll.firstChild, "angle");
+scn.legend("fillColor", "filetype", {x: 700, y: 100});

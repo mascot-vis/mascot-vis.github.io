@@ -394,7 +394,7 @@
 				$("#btmPanel").tabs("option", "active", 0);
 				if (metaData) d3.select("#infoTab").html(metaData[d].about);
 				});
-				oReq.open("GET", "demos/" + d[0].toLowerCase() + d.substring(1) + ".js");
+				oReq.open("GET", "demos/static/" + d[0].toLowerCase() + d.substring(1) + ".js");
 				oReq.send();
 			}
 
@@ -549,7 +549,7 @@
 			});
 
 			$(document).ready(() => {
-				fetch("demos.json").then(resp => {
+				fetch("demos_static.json").then(resp => {
 					return resp.text();
 				}).then(text => {
 					metaData = JSON.parse(text);
