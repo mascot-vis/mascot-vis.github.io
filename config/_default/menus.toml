@@ -67,8 +67,13 @@
 
 [[main]]
   name = "Gallery"
-  url = "/gallery.html"
+  url = "/showcase/"
   weight = 5
+
+# [[main]]
+#   name = "Gallery"
+#   url = "/gallery.html"
+#   weight = 5
 
 # [[main]]
 #   name = "Blog"

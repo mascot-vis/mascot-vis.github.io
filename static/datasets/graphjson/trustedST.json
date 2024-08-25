@@ -1,0 +1,33 @@
+{
+    "nodes": [
+        {"id": "p1", "name": "VMWare:ABC", "node": "Processor"},
+        {"id": "p2", "name": "DockerContainer:XYZ", "node": "Processor"},
+        {"id": "p3", "name": "DockerContainer:PRS", "node": "Processor"},
+        {"id": "p4", "name": "MicrosoftDefender", "node": "Processor"},
+        {"id": "p5", "name": "DockerContainer:SQL Server", "node": "DB"},
+        {"id": "p10", "name": "Process032", "node": "DB"},
+        {"id": "p11", "name": "Process019", "node": "DB"},
+        {"id": "p12", "name": "Process121", "node": "DB"},
+        {"id": "p13", "name": "Process88", "node": "DB"},
+        {"id": "p6", "name": "CheckPoint", "node": "Firewall"},
+        {"id": "p14", "name": "CheckPoint2", "node": "Firewall"},
+        {"id": "p7", "name": "Splunk", "node": "ThreatHunter"},
+        {"id": "p8", "name": "DockerContainer:HTTP Server", "node": "Web"},
+        {"id": "p9", "name": "SecurityOnion", "node": "NIDS_NIPS"}
+    ],
+    "links": [
+        {"source": "p1", "target": "p4", "value": 1},
+        {"source": "p8", "target": "p4", "value": 1},
+        {"source": "p1", "target": "p9", "value": 1},
+        {"source": "p2", "target": "p3", "value": 1},
+        {"source": "p3", "target": "p5", "value": 1},
+        {"source": "p4", "target": "p8", "value": 1},
+        {"source": "p5", "target": "p9", "value": 1},
+        {"source": "p6", "target": "p7", "value": 1},
+        {"source": "p6", "target": "p2", "value": 1},
+        {"source": "p6", "target": "p3", "value": 1},
+        {"source": "p8", "target": "p7", "value": 1},
+        {"source": "p1", "target": "p7", "value": 1},
+        {"source": "p2", "target": "p7", "value": 1}
+    ]
+}

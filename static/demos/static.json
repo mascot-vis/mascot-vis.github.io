@@ -5,13 +5,6 @@
         "title": "Real GDP Change in the US",
         "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis"
     },
-    "BarChartHorzInteractive": {
-        "name": "Bar Chart (Interactive)",
-        "mark": "Bars and Rectangles",
-        "title": "Real GDP Change in the US",
-        "draft": true,
-        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis"
-    },
     "BarChartVert": {
         "name": "Bar Chart (Vertical)",
         "mark": "Bars and Rectangles",
@@ -34,7 +27,7 @@
         "name": "Diverging Bar Chart",
         "mark": "Bars and Rectangles",
         "title": "Survey Responses by Age Group",
-        "about": ""
+        "about": ""    
     },
     "GanttChart": {
         "name": "Gantt Chart",
@@ -94,6 +87,7 @@
         "name": "Treemap Bar Chart",
         "mark": "Bars and Rectangles",
         "title": "Imports and Exports",
+        "draft": true,
         "about": "Original visualization https://gist.github.com/eesur/5fbda7f410d31da35e42 "
     },
     "WaffleChart": {
@@ -190,7 +184,7 @@
         "name": "Line Graph 1",
         "mark": "Lines and Paths",
         "title": "Temperature Forecast",
-        "about": "Monthly temperature forecast for Baltimore, MD from Aug 2021 to Aug 2022.<br>The light blue band represents the 99% confidence interval of the prediction.<br>The solid line represents the median temperature between 1981 and 2010 for each month.<br>Data source: <a href='https://www.noaa.gov/' target='_blank'>National Weather Service Forecast</a>"
+        "about": "Daily temperature in Boston for 2015.<br>The light blue band indicates the range between the maximum and minimum temperatures.<br>The solid line represents the daily mean temperature."
     },
     "LineGraph2": {
         "name": "Line Graph 2",
@@ -307,6 +301,18 @@
         "title": "Arc Diagram",
         "about": "An arc diagram showing the connections between Les Miserables characters, ordered first by group, then alphabetically."
     },
+    "Dendrogram": {
+        "name": "Dendrogram (Vertical)",
+        "mark": "Nodes and Links",
+        "title": "Les Miserables Characters",
+        "about": ""
+    },
+    "Dendrogram1": {
+        "name": "Dendrogram (Radial)",
+        "mark": "Nodes and Links",
+        "title": "Les Miserables Characters",
+        "about": ""
+    },
     "DirectedAcyclicGraph": {
         "name": "Directed Acyclic Graph",
         "mark": "Nodes and Links",
@@ -320,11 +326,24 @@
         "title": "Les Miserables Characters",
         "about": ""
     },
+    "EdgeBundling": {
+        "name": "Hierarchical Edge Bundling",
+        "mark": "Nodes and Links",
+        "title": "Les Miserables Characters",
+        "about": ""
+    },
     "SeedGraph": {
         "name": "Graph Partitioning",
         "mark": "Nodes and Links",
         "draft": true,
         "title": "",
+        "about": ""
+    },
+    "SemanticSubstrates": {
+        "name": "Semantic Substrates",
+        "mark": "Nodes and Links",
+        "title": "",
+        "draft": true,
         "about": ""
     },
     "SeqSynopsis": {
@@ -338,7 +357,8 @@
         "name": "'Tidy' Tree",
         "mark": "Nodes and Links",
         "title": "Node-link tree",
-        "about": "Node-link visualization of a tree usign the Reingold-Tilford 'tidy' layout algorithm."
+        "about": "Node-link visualization of a tree usign the Reingold-Tilford 'tidy' layout algorithm.",
+        "draft": true
     },
     "Isotype": {
         "name": "Isotype",
@@ -375,6 +395,12 @@
         "mark": "Small Multiples",
         "title": "Calendar Heatmaps",
         "about": "Original visualization: https://gist.github.com/cmgiven/018fd027d443b177e18fffb9afcdb5bd"
+    },
+    "MultipleLineGraphs": {
+        "name": "Line Graphs",
+        "mark": "Small Multiples",
+        "title": "Stock Market",
+        "about": "Monthly Stock Prices of four companies: Amazon, Apple, IBM and Microsoft from Jan 1, 2000 to Mar 1, 2010."
     },
     "MultiplePieCharts": {
         "name": "Pie Charts",

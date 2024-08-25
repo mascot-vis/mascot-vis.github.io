@@ -1,22 +1,33 @@
 let scn = msc.scene();
-let line = scn.mark("line", {x1: 100, y1: 100, x2: 700, y2: 400, strokeColor: "#008BBE", strokeWidth: 3, vxShape: "circle", vxRadius: 3, vxFillColor: "#008BBE"});
-let dt = await msc.csv("datasets/csv/tempForecast.csv");
+let line = scn.mark("line", {x1: 100, y1: 100, x2: 700, y2: 400, strokeColor: "#008BBE", strokeWidth: 2, vxShape: "circle", vxRadius: 1, vxFillColor: "#008BBE"});
+// let dt = await msc.csv("/datasets/csv/tempForecast.csv");
+let dt = await msc.csv("/datasets/csv/bostonWeather.csv");
 
-let rect = scn.mark("rect", {left: 100, top: 100, width: 600, height: 300, fillColor: "#E1F1FC", strokeWidth: 0});
-let area = scn.densify(rect, dt, {field: "month", "orientation": "horizontal"});
-let vp = area.firstVertexPair;
-let xEncs = scn.encode(vp, {field: "month", channel: "x", rangeExtent: 600});
-let yEnc = scn.encode(vp[0], {field: "upper", channel: "y", includeZero: true});
-scn.encode(vp[1], {field: "lower", channel: "y", scale: yEnc.scale});
+let rect = scn.mark("rect", {left: 100, top: 100, width: 600, height: 300, fillColor: "#E3F3FC", strokeWidth: 0});
+// let area = scn.densify(rect, dt, {attribute: "month", "orientation": "horizontal"});
+let area = scn.densify(rect, dt, {attribute: "date", "orientation": "horizontal"});
+area.curveMode = "natural";
 
-let polyLine = scn.densify(line, dt, {field: "month"});
+//area.topLeftVertex.fillColor = "red";
+// area.bottomLeftVertex.fillColor = "red";
+// area.topRightVertex.fillColor = "red";
+// area.bottomRightVertex.fillColor = "red";
+
+let xEnc = scn.encode(area.topLeftVertex, {attribute: "date", channel: "x", rangeExtent: 600});
+scn.encode(area.bottomLeftVertex, {attribute: "date", channel: "x", shareScale: xEnc});
+xEnc.rangeExtent = 800;
+let yEnc = scn.encode(area.topLeftVertex, {attribute: "maxTemp", channel: "y", includeZero: true});
+scn.encode(area.bottomLeftVertex, {attribute: "minTemp", channel: "y", shareScale: yEnc});
+
+let polyLine = scn.densify(line, dt, {attribute: "date"});
 polyLine.curveMode = "natural";
 let vertex = polyLine.firstVertex;
 
-scn.encode(vertex, {field: "month", channel: "x", scale: xEncs[0].scale});
-scn.encode(vertex, {field: "median", channel: "y", scale: yEnc.scale});
+scn.encode(vertex, {attribute: "date", channel: "x", shareScale: xEnc});
+scn.encode(vertex, {attribute: "meanTemp", channel: "y", shareScale: yEnc});
 
-yEnc.scale.rangeExtent = 300;
-
-scn.axis("x", "month", {orientation: "bottom", pathY: 400});
-scn.axis("y", "median", {orientation: "left"});
+scn.axis("x", "date", {orientation: "bottom", labelFormat: "%b %d"});
+scn.axis("y", "meanTemp", {orientation: "left"});
+scn.gridlines("x", "date");
+scn.gridlines("y", "meanTemp");
+yEnc.rangeExtent = 400;

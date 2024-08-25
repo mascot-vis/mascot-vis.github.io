@@ -1,11 +1,10 @@
 let scn = msc.scene();
-let data = await msc.csv("datasets/csv/pieChartData.csv");
+let data = await msc.csv("/datasets/csv/pieChartData.csv");
 
-let ring = scn.mark("ring", {innerRadius: 70, outerRadius: 120, x: 300, y: 200, fillColor: "orange", strokeColor: "#888"});
-let donutChart = scn.divide(ring, data, {field: "category"});
+let ring = scn.mark("ring", {innerRadius: 70, outerRadius: 120, x: 280, y: 200, fillColor: "orange", strokeColor: "#888"});
+let {newMark:arc, collection:arcs} = scn.divide(ring, data, {attribute: "category"});
 
-let arc = donutChart.firstChild;
-scn.encode(arc, {field: "category", channel: "fillColor",scheme: "schemeSet3"});
-scn.encode(arc, {field: "minutes", channel: "angle"});
+scn.encode(arc, {attribute: "category", channel: "fillColor", scheme: "schemeSet3"});
+scn.encode(arc, {attribute: "minutes", channel: "angle"});
 
 scn.legend("fillColor", "category", {x: 450, y: 80});
