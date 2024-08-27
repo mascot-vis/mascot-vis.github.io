@@ -1,16 +1,18 @@
 let scn = msc.scene();
 let circle = scn.mark("circle", {radius: 240, x: 400, y: 300, fillColor:"red", opacity:0.75});
-let dt = await msc.csv("datasets/csv/monthlySales.csv");
+let dt = await msc.csv("/datasets/csv/monthlySales.csv");
 
-let polygon = scn.densify(circle, dt, {field: "Month"});
-scn.encode(polygon.firstVertex, {field: "Sales", channel: "radialDistance"});
+let polygon = scn.densify(circle, dt, {attribute: "Month"});
+scn.encode(polygon.firstVertex, {attribute: "Sales", channel: "radialDistance"});
 
 let polarAngles = polygon.vertices.map(d => d.polarAngle);
 polarAngles.push(polarAngles[0] + (polarAngles[0] < polarAngles[1] ? 360 : - 360));
 let newVertices = [];
 for (let i = 0; i < polarAngles.length - 1; i++) {
     let deg = (polarAngles[i] + polarAngles[i+1])/2;
-    newVertices.push(msc.polarToCartesian(polygon.x, polygon.y, 45, deg));
+    let x = 50 * Math.cos(deg * Math.PI/180),
+		y = 50 * Math.sin(deg * Math.PI/180);
+    newVertices.push([x + polygon.x, polygon.y - y]);
 }
 newVertices.forEach((d,i) => polygon.addVertex(d[0], d[1], 1 + i * 2));
 

@@ -1,0 +1,48 @@
+{
+    "select_scatterplot": {
+        "name": "Select points (Scatterplot)",
+        "type": "Select",
+        "title": "GDP per capita vs. Life expectancy",
+        "about": ""
+    },
+    "brush_scatterplot": {
+        "name": "Brush 2D region (Scatterplot)",
+        "type": "Select",
+        "title": "GDP per capita vs. Life expectancy",
+        "about": ""
+    },
+    "flowSelect_DAG": {
+        "name": "Flow select nodes (Directed Graph)",
+        "type": "Select",
+        "title": "",
+        "about": ""
+    },
+    "brush_slopeGraph": {
+        "name": "Brushable Slope Graph",
+        "type": "Select",
+        "title": "Obesity and Education",
+        "draft": false,
+        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo."
+    },
+    "parameter_edgeBundling": {
+        "name": "Edge Bundle Strength",
+        "type": "Reconfigure",
+        "title": "Character Connections",
+        "draft": false,
+        "about": ""
+    },
+    "zoom_bubblePlot": {
+        "name": "Zommable Bubble Plot",
+        "type": "Pan & Zoom",
+        "draft": true,
+        "title": "Habitable Planets",
+        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo."
+    },
+    "RC_VIS1": {
+        "name": "RC_VIS",
+        "type": "RC-VIS",
+        "title": "Character Connections",
+        "draft": false,
+        "about": ""
+    }
+}

@@ -1,9 +1,9 @@
 let scn = msc.scene();
-let dt = await msc.csv("datasets/csv/sketch.csv");
+let dt = await msc.csv("/datasets/csv/sketch.csv");
 let circle = scn.mark("circle", {radius: 6, x: 100, y: 80, fillColor: "orange", strokeWidth: 0});
 let collection = scn.repeat(circle, dt);
-let xEncoding = scn.encode(circle, {field: "x", channel: "x"});
-let yEncoding = scn.encode(circle, {field: "y", channel: "y"});
+let xEncoding = scn.encode(circle, {attribute: "x", channel: "x"});
+let yEncoding = scn.encode(circle, {attribute: "y", channel: "y"});
 xEncoding.scale.domain = [1, 7];
 yEncoding.scale.domain = [0, 10];
 xEncoding.scale.rangeExtent = 450;

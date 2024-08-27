@@ -5,15 +5,16 @@ let path = scn.mark("path", {
 	strokeColor: "#95D0F5",
 	opacity: 0.15
 } );
-let dt = await msc.csv("datasets/csv/cars.csv");
+let dt = await msc.csv("/datasets/csv/cars.csv");
 
 let paths = scn.repeat(path, dt);
-let fields = ["cylinders", "economy(mpg)", "displacement(cc)", "power(hp)"];
-for (let i = 0; i < fields.length; i++)
-	scn.encode(path.vertices[i], {field: fields[i], channel: "y", rangeExtent: 400});
-let enc = scn.encode(path, {field: "cylinders", channel: "strokeColor", scheme: "interpolateBuPu"});
+let attributes = ["cylinders", "economy(mpg)", "displacement(cc)", "power(hp)"];
+for (let i = 0; i < attributes.length; i++)
+	scn.encode(path.vertices[i], {attribute: attributes[i], channel: "y", rangeExtent: 400});
+let enc = scn.encode(path, {attribute: "cylinders", channel: "strokeColor", scheme: "interpolateBuPu"});
 scn.legend("strokeColor", "cylinders", {x: 950, y: 100});
-// scn.encode(path, {field: "year", channel: "strokeColor"});
+// scn.encode(path, {attribute: "year", channel: "strokeColor"});
 // scn.legend("strokeColor", "year", {x: 950, y: 100});
-for (let i = 0; i < fields.length; i++)
-	scn.axis("y", fields[i], {orientation: "left", pathX: xPos[i], titleAnchor: ["center", "top"], rotateTitle: false, titlePosition: [xPos[i], top - 20]});	
+for (let i = 0; i < attributes.length; i++)
+	scn.axis("y", attributes[i], {orientation: "left", pathX: xPos[i], rotateTitle: false, titleOffset: 0});	
+//, titleAnchor: ["center", "top"],  titlePosition: [xPos[i], top - 20]

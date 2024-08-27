@@ -15,8 +15,8 @@ scn.encode(trumpRect, {attribute: "Trump_margin", channel: "width", shareScale: 
 scn.sortChildren(trumpWins, "width");
 scn.align([bidenWins, trumpWins], "y", "bottom");
 scn.affix(bidenWins, trumpWins, "x", {elementAnchor: "right", baseAnchor: "left"});
-// scn.axis("width", "Trump_margin", {orientation: "bottom"});
-// scn.axis("width", "Biden_margin", {orientation: "bottom", flip: true});
+scn.axis("width", "Trump_margin", {orientation: "bottom", tickValues: [0, 10, 20, 30, 40]});
+scn.axis("width", "Biden_margin", {orientation: "bottom", flip: true});
 // let y = trumpWins.bounds.bottom - htEncoding.scale.map(270);
 // scn.mark("line", {x1: 50, y1: y, x2: 760, y2: y, strokeWidth: 3, strokeColor: "orange"});
 // scn.mark("text", {x: 760, y: y, anchor: ["right", "bottom"], text: "270 electoral votes required to win", fontSize: "16pt", fillColor: "#c87259"});
