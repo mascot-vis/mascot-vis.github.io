@@ -236,17 +236,17 @@
       </div>
       <div id="infoTab" style="padding: 15px"></div>
       <div id="codeControls">
-        Renderer:
-        <input type="radio" id="SVG" name="renderer" value="svg" checked />
-        <label for="SVG">SVG</label>
-        <!-- <input type="radio" id="Canvas" name="renderer" value="Canvas">
-				<label for="Canvas">Canvas</label> -->
-        <input type="radio" id="WebGL" name="renderer" value="webgl" />
-        <label for="WebGL">WebGL</label>
+          Renderer:
+          <input type="radio" id="SVG" name="renderer" value="svg" checked />
+          <label for="SVG">SVG</label>
+          <!-- <input type="radio" id="Canvas" name="renderer" value="Canvas">
+          <label for="Canvas">Canvas</label> -->
+          <input type="radio" id="WebGL" name="renderer" value="webgl" disabled/>
+          <label for="WebGL">WebGL</label>
         <button style="margin-left: 40px" onclick="window.loadScript()">run</button>
-        <!-- <button onclick="window.stepThrough()">play</button>
-        <button onclick="window.save()">save</button> -->
-        <button onclick="window.showDepGraph()">show graph</button>
+        <button onclick="window.stepThrough()">play</button>
+        <!-- <button onclick="window.save()">save</button> 
+        <button onclick="window.showDepGraph()">show graph</button>-->
       </div>
     </div>
     <div id="gallery"></div>
