@@ -1,5 +1,5 @@
 ---
-title: "Showcase"
+title: "Gallery"
 description: "We do not use cookies and we do not collect any personal data."
 date: 2020-08-27T19:23:18+02:00
 lastmod: 2020-08-27T19:23:18+02:00
@@ -22,6 +22,10 @@ body {
     overflow:hidden;
 }
 </style>
+
+<script>
+    console.log("testing JS in md");
+</script>
 
 <iframe src="/gallery-static.html" style="width: 100%; height: calc(100vh - 86px); margin-top:3px;border: 1px solid #ccc;" allowfullscreen></iframe>
 

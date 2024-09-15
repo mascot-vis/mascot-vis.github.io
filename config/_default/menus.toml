@@ -67,11 +67,11 @@
 
 [[main]]
   name = "Gallery"
-  url = "/showcase/"
+  url = "/gallery/"
   weight = 5
 
 # [[main]]
-#   name = "Gallery"
+#   name = "Interactive Chart Gallery"
 #   url = "/gallery.html"
 #   weight = 5
 
