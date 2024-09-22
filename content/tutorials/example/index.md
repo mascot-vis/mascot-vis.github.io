@@ -21,37 +21,48 @@ Figure 2 shows the dataset "survey_response.csv" behind this visualization. The 
 {{< figure src="data.png" width="350px" alt="Survey Response Dataset" caption="Figure 2: survey_response.csv" class="border-0 mx-auto text-center" >}}
 
 ### Initialize Scene and Import Data
-To begin, we create a [scene](../../group/scene/), which represents a top-level container, and import the data: 
+
+To begin, we create a [scene](../../group/scene/), which represents a top-level container, and import the data:
 
 ```js
-let scn = msc.scene(), table = await msc.csv("survey_response.csv");
+let scn = msc.scene();
+let table = await msc.csv("survey_response.csv");
 ```
 
-Next, let's create a rectangle in the scene and specify its properties: 
+<span style="color:red;font-weight:bold">IMPORTANT</span>: Note that to declare the 'table' object, you need to put the above line of code and any other code that handles the `table` object in an asychronous function, or use the [Promise.then()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) method to handle the `table` object. For more information, see [here](../../tutorials/initialize/#import-csv-data).
+
+Next, let's create a rectangle in the scene and specify its properties:
 
 ```js
-let rect = scn.mark("rectangle", {top: 100, left: 200, width: 700, 
-                        height: 30, strokeWidth: 0, fillColor: "#ddd"});
+let rect = scn.mark("rectangle", {
+  top: 100,
+  left: 200,
+  width: 700,
+  height: 30,
+  strokeWidth: 0,
+  fillColor: "#ddd",
+});
 ```
 
-Now we can't see the rectangle yet, as it has not been rendered. If you do `console.log(rect)`, you will be able to see the `rect` object in the console. To display it, let's add a line to create a renderer: 
+Now we can't see the rectangle yet, as it has not been rendered. If you do `console.log(rect)`, you will be able to see the `rect` object in the console. To display it, let's add a line to create a renderer:
 
     msc.renderer("svg", "svgEle").render(scn);
 
-Here we are creating a renderer that renders the scene to an SVG element with the DOM ID "svgEle". We can see the gray rectangle now: 
+Here we are creating a renderer that renders the scene to an SVG element with the DOM ID "svgEle". We can see the gray rectangle now:
 
 {{< figure src="rect.png" width="350px" alt="Rectangle Mark" caption="" class="border-0 mx-auto text-center" >}}
 
 ### Join Graphics with Data and Lay out Marks
+
 Next, we want to have multiple rectangles, each representing an age group. This is done by using the repeat method:
-    
+
     let collection = scn.repeat(rect, table, {field: "Age Group"});
 
 This will give us a collection of four rectangles, each representing an age group in the dataset. By default, the repeated rectangles will have the same properties (including position) as the original rectangle. To space them out, we can apply a grid layout with only 1 column and a vertical gap of 10 pixels between the rows:
 
     collection.layout = msc.layout("grid", {numCols: 1, vGap: 10});
 
-This gives us the following visualization: 
+This gives us the following visualization:
 
 {{< figure src="repeat.png" width="350px" alt="Repeat and Lay out Rectangle Marks" caption="" class="border-0 mx-auto text-center" >}}
 
@@ -65,7 +76,6 @@ which gives us the following visualization:
 
 When using the divide method, we don't need to pass all four rectangle marks as its argument; we only need to pass in one rectangle `rect` as an example, and Mascot will find all the "peers" of `rect` and perform divide operation on all of them. The divide method will return a collection of smaller rectangles (`bars`) as a result of dividing `rect`.
 
-
 ### Specify Visual Encodings
 
 Now we can map data fields to visual channels. First, let's map "Percentage" to the width of the rectangles. We need to reassign variable `rect` as one of the newly created marks and pass it as an example to the encode method:
@@ -78,7 +88,6 @@ And we can map "Response" to the fill color with a self-defined mapping:
     let colorMapping = {"Strongly agree": "#1e71b8", "Agree": "#7799cf", "Disagree": "#e29d6f",
                         "Strongly disagree": "#da7c43"};
     scn.encode(rect, {field: "Response", channel: "fillColor", mapping: colorMapping});
-
 
 Here's what we have after applying these encodings:
 
@@ -99,7 +108,7 @@ We can then create some text marks and affix them at the center of the rectangle
     scn.repeat(text, dt);
     scn.encode(text, {field: "Percentage", channel: "text"});
     scn.affix(text, rect, "x");
-    scn.affix(text, rect, "y");  
+    scn.affix(text, rect, "y");
 
 {{< figure src="text.png" width="420px" alt="Encode" caption="" class="border-0 mx-auto text-center" >}}
 
@@ -108,8 +117,13 @@ We can then create some text marks and affix them at the center of the rectangle
 Finally, let's add a legend and an axis (labels only):
 
 ```js
-scn.legend("fillColor", "Response", {x: 800, y: 100});
-scn.axis("y", "Age Group", {orientation: "left", x: 190, pathVisible: false, tickVisible: false});
+scn.legend("fillColor", "Response", { x: 800, y: 100 });
+scn.axis("y", "Age Group", {
+  orientation: "left",
+  x: 190,
+  pathVisible: false,
+  tickVisible: false,
+});
 ```
 
 Viola! We have the visualization in Figure 1.
