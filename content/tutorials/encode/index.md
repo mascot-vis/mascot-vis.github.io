@@ -12,13 +12,13 @@ menu:
 weight: 50
 ---
 
-Visual encodings specify how the values in a data field map to the properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a data field, and a visual channel: 
+Visual encodings specify how the values in a data attribute map to the properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a data attribute, and a visual channel: 
 
 ```js
-scene.encode(rect, {field: "Percentage", channel: "width"});
+scene.encode(rect, {attribute: "Percentage", channel: "width"});
 ```
 
-Mascot will automatically create a [scale](../../docs/encode/scale/) based on the provided parameters, the [type](../../docs/global/constants/#data-type) and value distribution of the data field, and the [type](../../docs/global/constants/#channel) and current values of the visual channel. 
+Mascot will automatically create a [scale](../../docs/encode/scale/) based on the provided parameters, the [type](../../docs/global/constants/#data-type) and value distribution of the data attribute, and the [type](../../docs/global/constants/#channel) and current values of the visual channel. 
 
 ### Scale Type
 
@@ -26,7 +26,7 @@ Mascot will automatically create a [scale](../../docs/encode/scale/) based on th
 
 The following describes the heuristics for automatically choosing the scale type based on an encoding specification:
 
-| field type | channel | scale type |
+| attribute type | channel | scale type |
 | --- | --- | --- |
 | integer or number | "width", "height", "x", "y", "angle", "radialDistance", "radius" | linear |
 | date | "width", "height", "x", "y", "radialDistance", "radius"  | time |

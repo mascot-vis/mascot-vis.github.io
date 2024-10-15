@@ -1,5 +1,5 @@
 ---
-title: "3. Create and Render Glyphs"
+title: "3. Create and Render Marks/Glyphs"
 description: ""
 lead: ""
 date: 2020-10-13T15:21:01+02:00
