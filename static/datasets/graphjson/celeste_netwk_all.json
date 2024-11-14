@@ -1,0 +1,623 @@
+{
+    "nodes": [
+        {
+            "id": "switch1",
+            "name": "switch1",
+            "type": "Node",
+            "OS": "Cumulus",
+            "platform": "ARM",
+            "numPorts": 0
+        },
+        {
+            "id": "switch2",
+            "name": "switch2",
+            "type": "Node",
+            "OS": "FSOS",
+            "platform": "ARM",
+            "numPorts": 0
+        },
+        {
+            "id": "firewall",
+            "name": "firewall",
+            "type": "Node",
+            "OS": "Gaia",
+            "platform": "MIPS",
+            "numPorts": 1
+        },
+        {
+            "id": "router",
+            "name": "router",
+            "type": "Node",
+            "OS": "iOS",
+            "platform": "CISCO",
+            "numPorts": 0
+        },
+        {
+            "id": "workstation1",
+            "name": "workstation1",
+            "type": "Node",
+            "OS": "Windows11",
+            "platform": "AMD64",
+            "numPorts": 12
+        },
+        {
+            "id": "dbServer",
+            "name": "dbServer",
+            "type": "Node",
+            "OS": "Linux",
+            "platform": "AMD64",
+            "numPorts": 1
+        },
+        {
+            "id": "webServer",
+            "name": "webServer",
+            "type": "Node",
+            "OS": "Windows11",
+            "platform": "AMD64",
+            "numPorts": 2
+        },
+        {
+            "id": "threathunter",
+            "name": "threathunter",
+            "type": "Node",
+            "OS": "Linux",
+            "platform": "Intel64",
+            "numPorts": 3
+        },
+        {
+            "id": "nids/nips",
+            "name": "nids/nips",
+            "type": "Node",
+            "OS": "Linux",
+            "platform": "AMD64",
+            "numPorts": 1
+        },
+        {
+            "id": "VMWare",
+            "name": "VMWare",
+            "type": "Virtualization",
+            "node": "workstation1",
+            "version": "Workstation17Pro",
+            "numPorts": 5
+        },
+        {
+            "id": "DockerContainer1",
+            "name": "DockerContainer1",
+            "type": "Virtualization",
+            "node": "workstation1",
+            "version": "Desktop 4.19.0",
+            "numPorts": 4
+        },
+        {
+            "id": "DockerContainer2",
+            "name": "DockerContainer2",
+            "type": "Virtualization",
+            "node": "workstation1",
+            "version": "Desktop 4.19.0",
+            "numPorts": 2
+        },
+        {
+            "id": "DockerContainer3",
+            "name": "DockerContainer3",
+            "type": "Virtualization",
+            "node": "dbServer",
+            "version": "Desktop 4.19.0",
+            "numPorts": 1
+        },
+        {
+            "id": "DockerContainer4",
+            "name": "DockerContainer4",
+            "type": "Virtualization",
+            "node": "webServer",
+            "version": "Desktop 4.19.0",
+            "numPorts": 2
+        },
+        {
+            "id": "ABC",
+            "name": "ABC",
+            "type": "Application",
+            "node": "workstation1",
+            "virtualization": "VMWare",
+            "version": "1.0.0",
+            "numPorts": 3
+        },
+        {
+            "id": "DEF",
+            "name": "DEF",
+            "type": "Application",
+            "node": "workstation1",
+            "virtualization": "VMWare",
+            "version": "3.5.0",
+            "numPorts": 2
+        },
+        {
+            "id": "XYZ",
+            "name": "XYZ",
+            "type": "Application",
+            "node": "workstation1",
+            "virtualization": "DockerContainer1",
+            "version": "2.3.0",
+            "numPorts": 4
+        },
+        {
+            "id": "PRS",
+            "name": "PRS",
+            "type": "Application",
+            "node": "workstation1",
+            "virtualization": "DockerContainer2",
+            "version": "9.3.0",
+            "numPorts": 2
+        },
+        {
+            "id": "MicrosoftDefender",
+            "name": "MicrosoftDefender",
+            "type": "Application",
+            "node": "workstation1",
+            "virtualization": "none",
+            "version": "Platform4",
+            "numPorts": 1
+        },
+        {
+            "id": "SQLServer",
+            "name": "SQLServer",
+            "type": "Application",
+            "node": "dbServer",
+            "virtualization": "DockerContainer3",
+            "version": "2.3.0",
+            "numPorts": 1
+        },
+        {
+            "id": "CheckPoint",
+            "name": "CheckPoint",
+            "type": "Application",
+            "node": "firewall",
+            "virtualization": "none",
+            "version": "R80.20",
+            "numPorts": 1
+        },
+        {
+            "id": "SecurityOnion",
+            "name": "SecurityOnion",
+            "type": "Application",
+            "node": "nids/nips",
+            "virtualization": "none",
+            "version": "2.4.80",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk",
+            "name": "Splunk",
+            "type": "Application",
+            "node": "threathunter",
+            "virtualization": "none",
+            "version": "3.0.0",
+            "numPorts": 3
+        },
+        {
+            "id": "HTTPServer",
+            "name": "HTTPServer",
+            "type": "Application",
+            "node": "webServer",
+            "virtualization": "DockerContainer4",
+            "version": "x.x",
+            "numPorts": 2
+        },
+        {
+            "id": "ABC_135",
+            "port": 135,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "135",
+            "numPorts": 1
+        },
+        {
+            "id": "ABC_139",
+            "port": 139,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "139",
+            "numPorts": 1
+        },
+        {
+            "id": "ABC_445",
+            "port": 445,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "445",
+            "numPorts": 1
+        },
+        {
+            "id": "DEF_11000",
+            "port": 11000,
+            "app": "DEF",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11000",
+            "numPorts": 1
+        },
+        {
+            "id": "DEF_11089",
+            "port": 11089,
+            "app": "DEF",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11089",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_135",
+            "port": 135,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "135",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_139",
+            "port": 139,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "139",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_445",
+            "port": 445,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "445",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_8080",
+            "port": 8080,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "8080",
+            "numPorts": 1
+        },
+        {
+            "id": "PRS_11000",
+            "port": 11000,
+            "app": "PRS",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11000",
+            "numPorts": 1
+        },
+        {
+            "id": "PRS_1434",
+            "port": 1434,
+            "app": "PRS",
+            "protocol": "UDP",
+            "action": "connect",
+            "type": "Port",
+            "name": "1434",
+            "numPorts": 1
+        },
+        {
+            "id": "MicrosoftDefender_0",
+            "port": 0,
+            "app": "MicrosoftDefender",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "SQLServer_1434",
+            "port": 1434,
+            "app": "SQLServer",
+            "protocol": "UDP",
+            "action": "listen",
+            "type": "Port",
+            "name": "1434",
+            "numPorts": 1
+        },
+        {
+            "id": "CheckPoint_0",
+            "port": 0,
+            "app": "CheckPoint",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "SecurityOnion_0",
+            "port": 0,
+            "app": "SecurityOnion",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_8000",
+            "port": 8000,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8000",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_8089",
+            "port": 8089,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8089",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_9997",
+            "port": 9997,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "9997",
+            "numPorts": 1
+        },
+        {
+            "id": "HTTPServer_80",
+            "port": 80,
+            "app": "HTTPServer",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "80",
+            "numPorts": 1
+        },
+        {
+            "id": "HTTPServer_8080",
+            "port": 8080,
+            "app": "HTTPServer",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8080",
+            "numPorts": 1
+        }
+    ],
+    "links": [
+        {
+            "source": "workstation1",
+            "target": "VMWare",
+            "type": "intraNode"
+        },
+        {
+            "source": "workstation1",
+            "target": "DockerContainer1",
+            "type": "intraNode"
+        },
+        {
+            "source": "workstation1",
+            "target": "DockerContainer2",
+            "type": "intraNode"
+        },
+        {
+            "source": "dbServer",
+            "target": "DockerContainer3",
+            "type": "intraNode"
+        },
+        {
+            "source": "webServer",
+            "target": "DockerContainer4",
+            "type": "intraNode"
+        },
+        {
+            "source": "VMWare",
+            "target": "ABC",
+            "type": "intraNode"
+        },
+        {
+            "source": "VMWare",
+            "target": "DEF",
+            "type": "intraNode"
+        },
+        {
+            "source": "DockerContainer1",
+            "target": "XYZ",
+            "type": "intraNode"
+        },
+        {
+            "source": "DockerContainer2",
+            "target": "PRS",
+            "type": "intraNode"
+        },
+        {
+            "source": "workstation1",
+            "target": "MicrosoftDefender",
+            "type": "intraNode"
+        },
+        {
+            "source": "DockerContainer3",
+            "target": "SQLServer",
+            "type": "intraNode"
+        },
+        {
+            "source": "firewall",
+            "target": "CheckPoint",
+            "type": "intraNode"
+        },
+        {
+            "source": "nids/nips",
+            "target": "SecurityOnion",
+            "type": "intraNode"
+        },
+        {
+            "source": "threathunter",
+            "target": "Splunk",
+            "type": "intraNode"
+        },
+        {
+            "source": "DockerContainer4",
+            "target": "HTTPServer",
+            "type": "intraNode"
+        },
+        {
+            "source": "ABC",
+            "target": "ABC_135",
+            "type": "intraNode"
+        },
+        {
+            "source": "ABC",
+            "target": "ABC_139",
+            "type": "intraNode"
+        },
+        {
+            "source": "ABC",
+            "target": "ABC_445",
+            "type": "intraNode"
+        },
+        {
+            "source": "DEF",
+            "target": "DEF_11000",
+            "type": "intraNode"
+        },
+        {
+            "source": "DEF",
+            "target": "DEF_11089",
+            "type": "intraNode"
+        },
+        {
+            "source": "XYZ",
+            "target": "XYZ_135",
+            "type": "intraNode"
+        },
+        {
+            "source": "XYZ",
+            "target": "XYZ_139",
+            "type": "intraNode"
+        },
+        {
+            "source": "XYZ",
+            "target": "XYZ_445",
+            "type": "intraNode"
+        },
+        {
+            "source": "XYZ",
+            "target": "XYZ_8080",
+            "type": "intraNode"
+        },
+        {
+            "source": "PRS",
+            "target": "PRS_11000",
+            "type": "intraNode"
+        },
+        {
+            "source": "PRS",
+            "target": "PRS_1434",
+            "type": "intraNode"
+        },
+        {
+            "source": "MicrosoftDefender",
+            "target": "MicrosoftDefender_0",
+            "type": "intraNode"
+        },
+        {
+            "source": "SQLServer",
+            "target": "SQLServer_1434",
+            "type": "intraNode"
+        },
+        {
+            "source": "CheckPoint",
+            "target": "CheckPoint_0",
+            "type": "intraNode"
+        },
+        {
+            "source": "SecurityOnion",
+            "target": "SecurityOnion_0",
+            "type": "intraNode"
+        },
+        {
+            "source": "Splunk",
+            "target": "Splunk_8000",
+            "type": "intraNode"
+        },
+        {
+            "source": "Splunk",
+            "target": "Splunk_8089",
+            "type": "intraNode"
+        },
+        {
+            "source": "Splunk",
+            "target": "Splunk_9997",
+            "type": "intraNode"
+        },
+        {
+            "source": "HTTPServer",
+            "target": "HTTPServer_80",
+            "type": "intraNode"
+        },
+        {
+            "source": "HTTPServer",
+            "target": "HTTPServer_8080",
+            "type": "intraNode"
+        },
+        {
+            "source": "threathunter",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "dbServer",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "webServer",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "switch2",
+            "target": "nids/nips",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "nids/nips",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "firewall",
+            "type": "interNode"
+        },
+        {
+            "source": "router",
+            "target": "firewall",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "workstation1",
+            "type": "interNode"
+        }
+    ]
+}

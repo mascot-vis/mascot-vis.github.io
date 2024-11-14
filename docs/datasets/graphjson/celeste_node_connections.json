@@ -1,0 +1,100 @@
+{
+    "nodes": [
+        {
+            "id": "firewall",
+            "name": "firewall",
+            "type": "Node",
+            "numPorts": 1
+        },
+        {
+            "id": "switch1",
+            "name": "switch1",
+            "type": "Node",
+            "numPorts": 1
+        },
+        {
+            "id": "switch2",
+            "name": "switch2",
+            "type": "Node",
+            "numPorts": 1
+        },
+        {
+            "id": "router",
+            "name": "router",
+            "type": "Node",
+            "numPorts": 1
+        },
+        {
+            "id": "workstation1",
+            "name": "workstation1",
+            "type": "Node",
+            "numPorts": 12
+        },
+        {
+            "id": "dbServer",
+            "name": "dbServer",
+            "type": "Node",
+            "numPorts": 1
+        },
+        {
+            "id": "webServer",
+            "name": "webServer",
+            "type": "Node",
+            "numPorts": 2
+        },
+        {
+            "id": "threathunter",
+            "name": "threathunter",
+            "type": "Node",
+            "numPorts": 3
+        },
+        {
+            "id": "nids-nips",
+            "name": "nids-nips",
+            "type": "Node",
+            "numPorts": 1
+        }
+    ],
+    "links": [
+        {
+            "source": "threathunter",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "dbServer",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "webServer",
+            "target": "switch2",
+            "type": "interNode"
+        },
+        {
+            "source": "switch2",
+            "target": "nids-nips",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "nids-nips",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "firewall",
+            "type": "interNode"
+        },
+        {
+            "source": "router",
+            "target": "firewall",
+            "type": "interNode"
+        },
+        {
+            "source": "switch1",
+            "target": "workstation1",
+            "type": "interNode"
+        }
+    ]
+}

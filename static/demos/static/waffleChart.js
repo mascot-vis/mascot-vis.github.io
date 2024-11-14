@@ -2,7 +2,7 @@ let scene = msc.scene();
 let dt = await msc.csv("/datasets/csv/waffle.csv");
 
 
-let rect = scene.mark("rect", {top:100, left: 200, width: 20, height: 20, strokeWidth: 0, opacity: 0.8});
+let rect = scene.mark("rect", {top:100, left: 200, width: 20, height: 20, fillColor: "blue", strokeWidth: 0, opacity: 0.8});
 let c = scene.repeat(rect, dt);
 c.layout = msc.layout("grid", {numCols: 10, rowGap: 2, colGap: 2});
 scene.encode(rect, {"attribute": "Age Bin", channel: "fillColor"});

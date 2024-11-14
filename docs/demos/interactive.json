@@ -24,10 +24,45 @@
         "draft": false,
         "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo."
     },
+    "celeste": {
+        "name": "Celeste: Topology",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": false,
+        "about": ""
+    },
+    "celeste_1": {
+        "name": "Celeste_1",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": true,
+        "about": ""
+    },
+    "celeste_2": {
+        "name": "Celeste: Chord",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": false,
+        "about": ""
+    },
+    "celeste_infographics": {
+        "name": "Celeste: Infographics",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": false,
+        "about": ""
+    },
     "parameter_edgeBundling": {
         "name": "Edge Bundle Strength",
         "type": "Reconfigure",
         "title": "Character Connections",
+        "draft": false,
+        "about": ""
+    },
+    "encode_scatterPlot": {
+        "name": "Change axis attribute",
+        "type": "Encode",
+        "title": "Country Statistics",
         "draft": false,
         "about": ""
     },
@@ -42,6 +77,13 @@
         "name": "RC_VIS",
         "type": "RC-VIS",
         "title": "Character Connections",
+        "draft": false,
+        "about": ""
+    },
+    "IP_Theft": {
+        "name": "IP_Theft",
+        "type": "RC-VIS",
+        "title": "Infographic",
         "draft": false,
         "about": ""
     }

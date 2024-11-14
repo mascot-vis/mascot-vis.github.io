@@ -1,0 +1,260 @@
+{
+    "nodes": [
+        {
+            "id": "ABC_135",
+            "port": 135,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "135",
+            "numPorts": 1
+        },
+        {
+            "id": "ABC_139",
+            "port": 139,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "139",
+            "numPorts": 1
+        },
+        {
+            "id": "ABC_445",
+            "port": 445,
+            "app": "ABC",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "445",
+            "numPorts": 1
+        },
+        {
+            "id": "DEF_11000",
+            "port": 11000,
+            "app": "DEF",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11000",
+            "numPorts": 1
+        },
+        {
+            "id": "DEF_11089",
+            "port": 11089,
+            "app": "DEF",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11089",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_135",
+            "port": 135,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "135",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_139",
+            "port": 139,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "139",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_445",
+            "port": 445,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "445",
+            "numPorts": 1
+        },
+        {
+            "id": "XYZ_8080",
+            "port": 8080,
+            "app": "XYZ",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "8080",
+            "numPorts": 1
+        },
+        {
+            "id": "PRS_11000",
+            "port": 11000,
+            "app": "PRS",
+            "protocol": "TCP",
+            "action": "connect",
+            "type": "Port",
+            "name": "11000",
+            "numPorts": 1
+        },
+        {
+            "id": "PRS_1434",
+            "port": 1434,
+            "app": "PRS",
+            "protocol": "UDP",
+            "action": "connect",
+            "type": "Port",
+            "name": "1434",
+            "numPorts": 1
+        },
+        {
+            "id": "MicrosoftDefender_0",
+            "port": 0,
+            "app": "MicrosoftDefender",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "SQLServer_1434",
+            "port": 1434,
+            "app": "SQLServer",
+            "protocol": "UDP",
+            "action": "listen",
+            "type": "Port",
+            "name": "1434",
+            "numPorts": 1
+        },
+        {
+            "id": "CheckPoint_0",
+            "port": 0,
+            "app": "CheckPoint",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "SecurityOnion_0",
+            "port": 0,
+            "app": "SecurityOnion",
+            "protocol": "all",
+            "action": "listen",
+            "type": "Port",
+            "name": "0",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_8000",
+            "port": 8000,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8000",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_8089",
+            "port": 8089,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8089",
+            "numPorts": 1
+        },
+        {
+            "id": "Splunk_9997",
+            "port": 9997,
+            "app": "Splunk",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "9997",
+            "numPorts": 1
+        },
+        {
+            "id": "HTTPServer_80",
+            "port": 80,
+            "app": "HTTPServer",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "80",
+            "numPorts": 1
+        },
+        {
+            "id": "HTTPServer_8080",
+            "port": 8080,
+            "app": "HTTPServer",
+            "protocol": "TCP",
+            "action": "listen",
+            "type": "Port",
+            "name": "8080",
+            "numPorts": 1
+        }
+    ],
+    "links": [
+        {
+            "source": "ABC_135",
+            "target": "XYZ_135",
+            "protocol": "TCP",
+            "port": 135
+        },
+        {
+            "source": "ABC_139",
+            "target": "XYZ_139",
+            "protocol": "TCP",
+            "port": 139
+        },
+        {
+            "source": "ABC_445",
+            "target": "XYZ_445",
+            "protocol": "TCP",
+            "port": 445
+        },
+        {
+            "source": "DEF_11000",
+            "target": "PRS_11000",
+            "protocol": "TCP",
+            "port": 11000
+        },
+        {
+            "source": "XYZ_8080",
+            "target": "HTTPServer_8080",
+            "protocol": "TCP",
+            "port": 8080
+        },
+        {
+            "source": "PRS_1434",
+            "target": "SQLServer_1434",
+            "protocol": "UDP",
+            "port": 1434
+        },
+        {
+            "source": "MicrosoftDefender_0",
+            "target": "CheckPoint_0",
+            "protocol": "all",
+            "port": 0
+        },
+        {
+            "source": "MicrosoftDefender_0",
+            "target": "SecurityOnion_0",
+            "protocol": "all",
+            "port": 0
+        },
+        {
+            "source": "CheckPoint_0",
+            "target": "SecurityOnion_0",
+            "protocol": "all",
+            "port": 0
+        }
+    ]
+}

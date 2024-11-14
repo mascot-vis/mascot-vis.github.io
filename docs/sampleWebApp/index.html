@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mascot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://mascot-vis.github.io/lib/pixi.min.js"></script>
+    <script src="https://mascot-vis.github.io/dist/mascot-min.js"></script> 
+    <style>
+        #svgEle {
+            width: 100%;
+            height: 99%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <svg id="svgEle"></svg>
+    <script>
+        let scn = msc.scene();
+        msc.csv("data/stocks.csv").then((dt)=> {
+            let line = scn.mark("line", {x1: 200, y1: 100, x2: 800, y2: 400, strokeColor: "green"});
+            let collection = scn.repeat(line, dt, {attribute: "company"});
+            let polyLine = scn.densify(line, dt, {attribute: "date"});
+            let vertex = polyLine.vertices[0];
+            scn.encode(vertex, {attribute: "date", channel: "x", rangeExtent: 600});
+            scn.encode(vertex, {attribute: "price", channel: "y"});
+            scn.encode(polyLine, {attribute: "company", channel: "strokeColor"});
+            scn.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
+            scn.axis("y", "price", {orientation: "left"});
+            scn.legend("strokeColor", "company", {x: 850, y: 100});
+            msc.renderer('svg','svgEle').render(scn);
+        })
+    </script>
+</body>

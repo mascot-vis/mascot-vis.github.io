@@ -1,0 +1,16 @@
+start,end,event
+01/01/2023, 01/01/2023, 
+01/15/2023, 01/15/2023, External Active Reconnaissance
+03/01/2023, 03/01/2023, Vulnerability Exploitation
+03/01/2023, 03/01/2023, External Passive Reconnaissance
+03/05/2023, 03/05/2023, External Passive Reconnaissance: discover email exchanges between TechInnovate and subcontractor 
+03/08/2023, 03/10/2023, Unsuccessful Active Reconnaissance
+03/10/2023, 03/10/2023, Social Engineering Delivery
+03/10/2023, 03/10/2023, Social Engineering Delivery
+03/10/2023, 03/10/2023, Social Engineering Delivery
+03/10/2023, 03/10/2023, Social Engineering Delivery
+03/11/2023, 03/11/2023, Social Engineering Installation
+04/24/2023, 04/24/2023, Persistence Command & Control: Establish Persistence Presence
+05/01/2023, 05/12/2023, Actions on Objectives Internal Reconnaissance: Explore TechInnovate Internal Network
+06/01/2023, 07/01/2023, Actions on Objectives Lateral Movement: Gain Access to Critical Nodes
+09/01/2023, 09/01/2023, Data Exfiltration: Steal sensitive data & source code & research documents

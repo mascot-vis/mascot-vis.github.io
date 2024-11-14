@@ -349,9 +349,9 @@
     "SeqSynopsis": {
         "name": "Sequence Synopsis",
         "mark": "Nodes and Links",
-        "draft": true,
-        "title": "",
-        "about": ""
+        "draft": false,
+        "title": "Sequence Synopsis",
+        "about": "Sequential patterns mined using the Sequence Synopsis approached described in <a href='https://lliquid.github.io/homepage/files/ss_vast17.pdf'>this paper</a>"
     },
     "TidyTree": {
         "name": "'Tidy' Tree",
