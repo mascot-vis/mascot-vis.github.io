@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Arts & Photography",
+    "children": [
+      {
+    "id": 2,
+    "name": "Architecture",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 3,
+    "name": "Graphic Design",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 4,
+    "name": "Music",
+    "children": [
+      {
+        "id": 5,
+        "name": "Songbooks",
+        "children": [
+
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Instruments & Performers",
+        "children": [
+          {
+        "id": 7,
+        "name": "Brass",
+        "children": [
+
+        ]
+          },
+          {
+        "id": 8,
+        "name": "Woodwinds",
+        "children": [
+
+        ]
+          }
+        ]
+      }
+    ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Comics & Graphic Novels",
+    "children": [
+      {
+    "id": 10,
+    "name": "Comic Strips",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 11,
+    "name": "Graphic Novels",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 12,
+    "name": "Manga",
+    "children": [
+
+    ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Comic Strips",
+    "children": [
+
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mystery, Thriller and Suspense",
+    "children": [
+      {
+    "id": 15,
+    "name": "Mystery",
+    "children": [
+      {
+        "id": 16,
+        "name": "Hard Boiled",
+        "children": [
+
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Police Procedurals",
+        "children": [
+          {
+        "id": 18,
+        "name": "British Detectives",
+        "children": [
+
+        ]
+          },
+          {
+        "id": 19,
+        "name": "FBI Agents",
+        "children": [
+
+        ]
+          },
+          {
+        "id": 20,
+        "name": "Police Officers",
+        "children": [
+
+        ]
+          }
+        ]
+      }
+    ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Nonfiction",
+    "children": [
+      {
+    "id": 22,
+    "name": "Biographies and Memoirs",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 23,
+    "name": "Business & Investing",
+    "children": [
+
+    ]
+      },
+      {
+    "id": 24,
+    "name": "Computers & Technology",
+    "children": [
+      {
+        "id": 25,
+        "name": "Databases",
+        "children": [
+
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Hardware",
+        "children": [
+
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Software",
+        "children": [
+
+        ]
+      }
+    ]
+      }
+    ]
+  }
+]

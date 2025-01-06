@@ -1,0 +1,38 @@
+let scn = msc.scene();
+let dt = await msc.csv("/datasets/csv/treemapdata.csv");
+let rect = scn.mark("rect", { top: 100, left: 90, width: 200, height: 800, fillColor: "#84BC66", strokeWidth: 0.5, strokeColor: "#fff" });
+let types = scn.repeat(rect, dt, { attribute: "type" });
+types.layout = msc.layout("grid", { numRows: 1, colGap: 10 });
+let years = scn.repeat(types, dt, { attribute: "year" });
+years.layout = msc.layout("grid", { numRows: 1, colGap: 45 });
+years.sortChildrenByData('year');
+let continents = scn.divide(rect, dt, { attribute: "continent", orientation: "vertical" });
+let countries = scn.divide(continents.firstChild, dt, { attribute: "country", orientation: "horizontal" });
+scn.setProperties(continents, { layout: msc.layout("treemap", { width: 85 }) });
+scn.encode(continents, { attribute: "value", channel: "height", rangeExtent: 370 });
+scn.encode(countries.firstChild, { attribute: "value", channel: "area" });
+let colorMapping = { "Asia": "#66c2a5", 'North America': "#fc8d62", "Europe": "#8da0cb", "South America": "#e78ac3", "Africa": "#a6d854", "Australia": "#ffd92f" };
+scn.encode(countries.firstChild, { attribute: "continent", channel: "fillColor", mapping: colorMapping });
+scn.legend("fillColor", "continent", { x: 900, y: 100 });
+scn.axis("x", "type", { orientation: "bottom", tickVisible: false, pathVisible: false });
+scn.axis("x", "year", { orientation: "bottom", pathY: 510, labelFormat: "%Y", tickVisible: false, labelOffset: 20 });
+scn.axis("height", "value", { orientation: "left" });
+msc.renderer('svg', 'svgElement').render(scn);
+
+//alternative method, cannot create y axis however
+// let rect = scn.mark("rect", { top: 100, left: 60, width: 200, height: 800, fillColor: "#84BC66", strokeWidth: 0.32 });
+// let types = scn.repeat(rect, dt, { attribute: "type" });
+// types.layout = msc.layout("grid", { numRows: 1, colGap: 10 });
+// let years = scn.repeat(types, dt, { attribute: "year" });
+// years.layout = msc.layout("grid", { numRows: 1, colGap: 45 });
+// let continents = scn.divide(rect, dt, { attribute: "continent", orientation: "vertical" });
+// let countries = scn.divide(continents.firstChild, dt, { attribute: "country", orientation: "horizontal" });
+// scn.encode(countries.firstChild, { attribute: "value", channel: "area" });
+// continents.layout = msc.layout("treemap", { width: 85 });
+// let colorMapping = { "Asia": "#66c2a5", 'North America': "#fc8d62", "Europe": "#8da0cb", "South America": "#e78ac3", "Africa": "#a6d854", "Australia": "#ffd92f" };
+// scn.encode(countries.firstChild, { attribute: "continent", channel: "fillColor", mapping: colorMapping });
+// scn.setProperties(continents, { layout: msc.layout("treemap", { width: 85 }) });
+// scn.legend("fillColor", "continent", { x: 900, y: 100 });
+// scn.axis("x", "type", { orientation: "bottom", tickVisible: false, pathVisible: false });
+// scn.axis("x", "year", { orientation: "bottom", pathY: 430, labelFormat: "%Y", tickVisible: false, labelOffset: 30 });
+// scn.axis("y", "'value'", { orientation: "left", tickVisible: true, pathVisible: true });

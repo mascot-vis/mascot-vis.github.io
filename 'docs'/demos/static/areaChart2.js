@@ -1,0 +1,10 @@
+let scene = msc.scene();
+let data = await msc.csv("/datasets/csv/nyt_netIncome.csv");
+let rect = scene.mark("rect", {top:100, left: 100, width: 500, height: 250, strokeColor: "none", strokeWidth: 0.25, fillColor: "#ccc"});
+let area = scene.densify(rect, data, {orientation: "horizontal", attribute: "Date"});
+scene.encode(area, {channel: "height", attribute: "Net Income"});
+scene.encode(area.topLeftVertex, {channel: "x", attribute: "Date"});
+scene.encode(area.bottomLeftVertex, {channel: "x", attribute: "Date"});
+scene.encode(area, {channel: "fillGradient", attribute: "Net Income", scheme: "interpolateRdYlBu"});
+scene.axis("x", "Date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
+scene.axis("height", "Net Income", {orientation: "left", labelFormat: ".2s"});

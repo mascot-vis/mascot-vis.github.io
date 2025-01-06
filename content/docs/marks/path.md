@@ -13,7 +13,7 @@ weight: 30
 toc: true
 --- 
 <span style="font-size:1.2em">extends [Mark](../mark/)</span><br>
-<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [CirclePath](../circlepath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
+<span style="font-size:1.2em">Subclasses: [Arc](../arcpath/), [Area](../areapath/), [BezierCurve](), [Line](), [PointText](), [Polygon](../polygonpath/), [Rect](../rectpath/), [Ring](../ringpath/) </span>
 
 The Path class represents a gemetric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 
@@ -35,26 +35,35 @@ A straight line is also represented as a path object in Mascot. The following co
 ### Properties
 | property |  explanation  | type | default value |
 | --- | --- | --- | --- |
+|**type** | Specifies the type of the element | String | ElementType.Path | 
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the path | [Rectangle](../../basic/rectangle/) | |
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the path bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the path bounds | Number | |
 |**curveMode**| how the segments are drawn, [possible values](../../global/constants/#curvemode) | String | "linear" |
-|**vertices** <img width="70px" src="../../readonly.png">| the vertices along the path | Array of [Vertex](../../basic/vertex/) |  | 
-|**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array of [Segment](../../basic/segment/) | 
+|**vertices** | the vertices along the path | Array of [Vertex](../../basic/vertex/) |  | 
+|**segments** | the segments on the path | Array of [Segment](../../basic/segment/) | 
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
+|**lastVertex** <img width="70px" src="../../readonly.png">| returns the last vertex of the path | [Vertex](../../basic/vertex/) |
 |**firstSegment** <img width="70px" src="../../readonly.png">| returns the first segment of the path | [Segment](../../basic/segment/) |
+|**lastSegment** <img width="70px" src="../../readonly.png">| returns the first segment of the path | [Segment](../../basic/segment/) |
 |**fillColor**| the fill color of the path if it is closed | Color | undefined | 
-|**strokeColor** | the stroke color of the path | Color | "#ccc" | 
+|**strokeColor** <img width="70px" src="../../readonly.png">| the stroke color of the path | Color | "#ccc" | 
 |**strokeDash** | the dashes and gaps for the path stroke | String | "none" | 
-|**strokeWidth** | the stroke width of the path in pixels | Number | 1| 
-|**vxShape**| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined | 
-|**vxWidth**| the width of the vertices on this path | Number | 0 | 
-|**vxHeight**| the height of the vertices on this path | Number | 0 |
-|**vxRadius**| the radius of the vertices on this path if the shape is "circle" | Number | 0 |  
-|**vxFillColor**| the fill color of the vertices on this path | Color | "#555" | 
-|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaa" | 
-|**vxStrokeWidth** | the stroke width of the vertices on this path in pixels | Number | 0 | 
-|**vxOpacity** | the opacity of the vertices on this path | Number | 1 | 
+|**strokeWidth** <img width="70px" src="../../readonly.png">| the stroke width of the path in pixels | Number | 1| 
+|**vxShape** <img width="70px" src="../../readonly.png">| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined | 
+|**vxWidth** <img width="70px" src="../../readonly.png">| the width of the vertices on this path | Number | 0 | 
+|**vxHeight** <img width="70px" src="../../readonly.png">| the height of the vertices on this path | Number | 0 |
+|**vxRadius** <img width="70px" src="../../readonly.png">| the radius of the vertices on this path if the shape is "circle" | Number | 0 |  
+|**vxFillColor** <img width="70px" src="../../readonly.png">| the fill color of the vertices on this path | Color | "#555" | 
+|**vxStrokeColor** <img width="70px" src="../../readonly.png">| the stroke color of the vertices on this path | Color | "#aaa" | 
+|**vxStrokeWidth** <img width="70px" src="../../readonly.png">| the stroke width of the vertices on this path in pixels | Number | 0 | 
+|**vxOpacity** <img width="70px" src="../../readonly.png">| the opacity of the vertices on this path | Number | 1 | 
+|**sourceAnchor** <img width="70px" src="../../readonly.png">| the source anchor for connections | String |  | 
+|**targetAnchor** <img width="70px" src="../../readonly.png">| the target anchor for connections | String |  | 
+|**sourceOffset** <img width="70px" src="../../readonly.png">| the offset for the source connection point | Number | 0 | 
+|**targetOffset** <img width="70px" src="../../readonly.png">| the offset for the target connection point | Number | 0 | 
+|**closed**| returns whether the path is closed | Boolean | false | 
+
 {.table-striped}
 
 ### Properties inherited from Mark
