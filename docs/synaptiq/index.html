@@ -7,10 +7,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="mascot.js"></script>
     <script src="lib/codemirror.js"></script>
-    <script src="lib/dagre.min.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css" />
     <script src="lib/javascript.js"></script>
-    <script src="js/depGraphVis.js"></script>
     <style>
         html {
             margin: 0px;
@@ -104,17 +102,6 @@
             background-color: #cddde9;
             padding: 10px 20px;
         }
-        #depGraphVis {
-            width: calc(100% - 213px);
-            height: 99%;
-            overflow-y: scroll;
-            background: #fafafa;
-            position: absolute;
-            top: 0;
-            right: 0;
-            border: 1px solid #000;
-            z-index: 1000;
-        }
     </style>
 </head>
 <body>
@@ -128,7 +115,6 @@
     <div id="btmPanel">
         <textarea id="scriptEditor"></textarea>
     </div>
-    <svg id="depGraphVis"></svg>
     <script type="module">
         const editor = CodeMirror.fromTextArea(
             document.getElementById("scriptEditor"),
@@ -171,7 +157,6 @@
                     else { return response.text(); }
                 })
                 .then(data => {
-                    document.getElementById("depGraphVis").style.visibility = "hidden";
                     loadDemo(d, data);
                 })
                 .catch(error => { console.error('Error fetching the file:', error); });
@@ -252,19 +237,6 @@
             })
             .catch(error => { console.error('Error fetching the file:', error); });
       }
-
-        window.showDepGraph = function() {
-            let code = editor.getValue();
-            let demo = window.location.hash.replace("#", "");
-            //let scn = code.split("=")[0].replace("let", "").trim();
-            code += "return scn._depGraph;";
-            console.log(code);
-            code = makeAsync(code);
-            let dg = eval(code);
-            dg.then(r => {
-                visualizeDepGraph(r);
-            });
-        }
 
         function removeAllChildren(e) {
             while (e.firstChild) {
