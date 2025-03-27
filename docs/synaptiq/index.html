@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mascot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="mascot.js"></script>
+    <script src="lib/codemirror.js"></script>
+    <script src="lib/dagre.min.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css" />
+    <script src="lib/javascript.js"></script>
+    <script src="js/depGraphVis.js"></script>
+    <style>
+        html {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: #f2f2f2;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            width:100%;
+            height:100%;
+        }
+        #svgElement {
+            width: calc(100% - 203px);
+            height: calc(100% - 20px);
+            margin: 0;
+            padding: 20px 0 0 20px;
+            position: absolute;
+            top: 0;
+            left: 182px;
+            background: white;
+            border: #ccc 0px solid;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        #demoList {
+            width: 152px;
+            height: 98%;
+            border: 0px solid #ccc;
+            background: #f2f2f2;
+            padding: 0px 5px 5px 25px;
+            position: absolute;
+            left: 0px;
+            top: 20px;
+            list-style: none;
+            font-size: 12px;
+            overflow-y: hidden;
+            margin: 0px 0;
+        }
+        #demoList li {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        #demoList li:hover {
+            cursor: pointer;
+            color: blue;
+        }
+        #ctrlPanel {
+            width: 270px;
+            height: calc(100% - 50px);
+            position: absolute;
+            right: 0px;
+            top: 50px;
+            background-color: #cddde9;
+            padding: 20px 20px;
+        }
+        #btmPanel {
+            width: calc(100% - 182px);
+            height: 250px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            border: #ccc 1px solid;
+        }
+        #scriptEditor {
+            width: 100%;
+            height: calc(100% - 80px);
+        }
+        .CodeMirror {
+            width: 100%;
+            height: 100%;
+            resize: none;
+            border: none;
+            padding: 0px;
+            font-family: Courier;
+            font-size: 12.5px;
+            overflow-x: hidden;
+        }
+        #codeControls {
+            width: 270px;
+            height: 50px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            background-color: #cddde9;
+            padding: 10px 20px;
+        }
+        #depGraphVis {
+            width: calc(100% - 213px);
+            height: 99%;
+            overflow-y: scroll;
+            background: #fafafa;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 1px solid #000;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <ul id="demoList"></ul>
+    <svg id="svgElement"></svg>
+    <div id="codeControls">
+        Benchmark: <button onclick="window.benchmarkInitialization()">Initialization</button>
+        <button onclick="window.benchmark()">Interaction</button>
+    </div>
+    <div id="ctrlPanel"></div>    
+    <div id="btmPanel">
+        <textarea id="scriptEditor"></textarea>
+    </div>
+    <svg id="depGraphVis"></svg>
+    <script type="module">
+        const editor = CodeMirror.fromTextArea(
+            document.getElementById("scriptEditor"),
+            { lineNumbers: true }
+        );
+
+        function loadCtrls(d) {
+            fetch("interaction/" + d + "_ui.js")
+                .then(response => {
+                    if (!response.ok) { return undefined; }
+                    else { return response.text(); }
+                })
+                .then(data => {
+                    document.getElementById('ctrlPanel').innerHTML = '';
+                    if (data) eval(data);
+                    loadScript(d);
+                })
+                .catch(error => { console.error('Error fetching the file:', error); });
+        }
+
+        let requestAnimationFrame = function (f) {
+            return setTimeout(f, 1000);
+        };
+
+        window.requestAnimFrame = (function() {
+            return  window.requestAnimationFrame       || 
+            window.webkitRequestAnimationFrame || 
+            window.mozRequestAnimationFrame    || 
+            window.oRequestAnimationFrame      || 
+            window.msRequestAnimationFrame     || 
+            function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+            };
+        })();
+
+        function loadScript(d) {
+            fetch("interaction/" + d + ".js")
+                .then(response => {
+                    if (!response.ok) { return undefined; }
+                    else { return response.text(); }
+                })
+                .then(data => {
+                    document.getElementById("depGraphVis").style.visibility = "hidden";
+                    loadDemo(d, data);
+                })
+                .catch(error => { console.error('Error fetching the file:', error); });
+        }
+    
+        function loadDemo(demo, scpt) {
+            let read = "const response = await fetch('enrichedSVG/" + demo + ".json');\n" + 
+                        "const json = await response.json();\n",
+                ingest = "let scn = msc.deserialize(json);\n",
+                render = "\nlet renderer = msc.renderer('svg', 'svgElement');\n" + 
+                            "renderer.clear();\n" + 
+                            "renderer.render(scn);\n";
+            let script = read + ingest + scpt + render;
+            editor.setValue(script);
+            let p = "(async () => {" + script + "})();"
+            eval(p);
+        }
+
+        function refresh() {
+            let demo = window.location.hash.replace("#", "");
+            document.getElementById("svgElement").innerHTML = "";
+            if (demo && demo != "") {
+                loadCtrls(demo);
+            }
+        }
+
+        function populateList(json) {
+            for (let k of json) {
+                let n = k.split(".")[0];
+                d3.select("#demoList").append("li")
+                    .text(n)
+                    .on("click", () => {
+                        window.location.hash = n;
+                        refresh();
+                    });
+            }
+        }
+
+        window.onload = function () {
+            fetch("enrichedSVG/list.json")
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) => {
+                    let names = JSON.parse(text);
+                    populateList(names);
+                    refresh();
+                });
+        };
+
+        window.benchmarkInitialization = function() {
+            let demo = window.location.hash.replace("#", "");
+            let script = "let tt = 0;\n" + 
+                "for (let i = 0; i < 10; i++) {" + 
+                "const response = await fetch('enrichedSVG/" + demo + ".msc');\n" + 
+                "const json = await response.json();\n" + 
+                "const startTime = performance.now();\n" + 
+                "let scn = msc.deserialize(json);\n" + 
+                "const endTime = performance.now();\n" + 
+                "tt += endTime - startTime;}" +  
+                "alert(`Execution Time: ${(tt/10).toFixed(3)} ms`)";
+            eval(makeAsync(script));
+        }
+
+        window.benchmark = function(d) {
+            let script = editor.getValue();
+            fetch("interaction/" + window.location.hash.replace("#", "") + "_benchmark.js")
+            .then(response => {
+                if (!response.ok) { return undefined; }
+                else { return response.text(); }
+            })
+            .then(data => {
+                script += data;
+                let svg = document.getElementById("svgElement");
+                removeAllChildren(svg);
+                console.log(script);
+                eval(makeAsync(script));
+            })
+            .catch(error => { console.error('Error fetching the file:', error); });
+      }
+
+        window.showDepGraph = function() {
+            let code = editor.getValue();
+            let demo = window.location.hash.replace("#", "");
+            //let scn = code.split("=")[0].replace("let", "").trim();
+            code += "return scn._depGraph;";
+            console.log(code);
+            code = makeAsync(code);
+            let dg = eval(code);
+            dg.then(r => {
+                visualizeDepGraph(r);
+            });
+        }
+
+        function removeAllChildren(e) {
+            while (e.firstChild) {
+                e.firstChild.remove();
+            }
+        }
+
+        function makeAsync(s) {
+            let c =
+            "try {\n" +
+            s +
+            "\n} catch (err) {console.log(err.name ? err.name + ': ' + err.message : undefined, 0, 0, 0, err);}";
+            return "(async () => {" + c + "})();";
+        }
+    </script>
+</body>
+</html>
