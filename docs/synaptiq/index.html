@@ -209,9 +209,10 @@
 
         window.benchmarkInitialization = function() {
             let demo = window.location.hash.replace("#", "");
+            if (demo === "") return;
             let script = "let tt = 0;\n" + 
                 "for (let i = 0; i < 10; i++) {" + 
-                "const response = await fetch('enrichedSVG/" + demo + ".msc');\n" + 
+                "const response = await fetch('enrichedSVG/" + demo + ".json');\n" + 
                 "const json = await response.json();\n" + 
                 "const startTime = performance.now();\n" + 
                 "let scn = msc.deserialize(json);\n" + 
@@ -232,7 +233,6 @@
                 script += data;
                 let svg = document.getElementById("svgElement");
                 removeAllChildren(svg);
-                console.log(script);
                 eval(makeAsync(script));
             })
             .catch(error => { console.error('Error fetching the file:', error); });
