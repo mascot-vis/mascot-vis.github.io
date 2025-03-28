@@ -28,11 +28,3 @@ let tgs = [];
 for (let [i, t] of triggers.entries()) {
     tgs.push(scn.activate(t, responder, evalFns[i],  highlighter));
 }
-// let tg1 = scn.activate(obesitytrigger, responder, evalFn,  highlighter);
-
-// let eduTrigger = { target: rightAxis, event: "brushY" },
-//     evalFn2 = (ctx, compnt) => {
-//         let yInt = ctx.get("yInterval");
-//         return !yInt || (compnt.vertices[1].y >= yInt[0] && compnt.vertices[1].y <= yInt[1])
-//     };
-// let tg2 = scn.activate(eduTrigger, responder, evalFn2, highlighter);
