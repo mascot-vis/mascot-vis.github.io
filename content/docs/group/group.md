@@ -33,6 +33,7 @@ The Group class represents a group of graphical objects (i.e., [marks](../../mar
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the group bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the group bounds | Number | |
 |**visibility**| whether the group is visible ("visible" or "hidden") | String | "visible" |
+|**sortBy**| defines how children should be ordered | Object | {} |
 {.table-striped}
 
 ### Methods
@@ -46,4 +47,5 @@ The Group class represents a group of graphical objects (i.e., [marks](../../mar
 | **getScene**() | returns the scene in which this group resides | [Scene](../../group/scene) |
 | **sortChildren**<br>(channel, reverse) | sort the children by a visual channel<br>channel (String): the channel to sort the children by<br> reverse: (Boolean, optional) setting to true will sort in descending order;<br>default is false. | void |
 | **sortChildrenByData**<br>(field, reverse, order) | sort the children by a data field<br>field (String): the data field to sort the children by<br>reverse (Boolean, optional): setting to true will sort in descending order;<br>default is false.<br>order (Array, optional): an array of field values in ascending order | void |
+|**removeChildAt**(i)| removes the child at the specified index | void |
 {.table-striped}

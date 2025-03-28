@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "Coal",
+      "col": 1
+    },
+    {
+      "id": "Electricity",
+      "col": 2
+    },
+    {
+      "id": "Natural Gas",
+      "col": 1
+    },
+    {
+      "id": "Solar",
+      "col": 1
+    },
+    {
+      "id": "Wind",
+      "col": 1
+    },
+    {
+      "id": "Residential",
+      "col": 3
+    },
+    {
+      "id": "Commercial",
+      "col": 3
+    },
+    {
+      "id": "Industrial",
+      "col": 3
+    },
+    {
+      "id": "Heating",
+      "col": 4
+    },
+    {
+      "id": "Lighting",
+      "col": 4
+    },
+    {
+      "id": "Appliances",
+      "col": 4
+    },
+    {
+      "id": "Machinery",
+      "col": 4
+    },
+    {
+      "id": "Processes",
+      "col": 4
+    }
+  ],
+  "links": [
+    {
+      "source": "Coal",
+      "target": "Electricity",
+      "value": 800
+    },
+    {
+      "source": "Natural Gas",
+      "target": "Electricity",
+      "value": 600
+    },
+    {
+      "source": "Solar",
+      "target": "Electricity",
+      "value": 200
+    },
+    {
+      "source": "Wind",
+      "target": "Electricity",
+      "value": 400
+    },
+    {
+      "source": "Electricity",
+      "target": "Residential",
+      "value": 1000
+    },
+    {
+      "source": "Electricity",
+      "target": "Commercial",
+      "value": 600
+    },
+    {
+      "source": "Electricity",
+      "target": "Industrial",
+      "value": 400
+    },
+    {
+      "source": "Residential",
+      "target": "Heating",
+      "value": 400
+    },
+    {
+      "source": "Residential",
+      "target": "Lighting",
+      "value": 300
+    },
+    {
+      "source": "Residential",
+      "target": "Appliances",
+      "value": 300
+    },
+    {
+      "source": "Commercial",
+      "target": "Heating",
+      "value": 200
+    },
+    {
+      "source": "Commercial",
+      "target": "Lighting",
+      "value": 250
+    },
+    {
+      "source": "Commercial",
+      "target": "Appliances",
+      "value": 150
+    },
+    {
+      "source": "Industrial",
+      "target": "Machinery",
+      "value": 300
+    },
+    {
+      "source": "Industrial",
+      "target": "Processes",
+      "value": 100
+    }
+  ]
+}

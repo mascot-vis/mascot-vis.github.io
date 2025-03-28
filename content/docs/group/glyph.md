@@ -34,6 +34,11 @@ The Glyph class represents a group of primitive [marks](../../marks/mark/). To c
 |**visibility**| whether the group is visible ("visible" or "hidden") | String | "visible" |
 {.table-striped}
 
+### Properties specifc to Glyph
+| property |  explanation | type | default value |
+| --- | --- | --- | --- |
+|**classId** <img width="70px" src="../../readonly.png">| A unique identifier for the Glyph instance that serves as its classification ID | String | |
+
 ### Methods inherited from Group
 | method |  explanation   | return type |
 | --- | --- | --- |

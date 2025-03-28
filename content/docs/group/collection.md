@@ -24,13 +24,21 @@ The Collection class represents a group of [marks](../../marks/mark/), [glyphs](
 |**dataScope**| the [data scope](../../data/datascope/) of the group | [DataScope](../../data/datascope/) | undefined |
 |**layout**| the [layout](../../layout/layout/) of the group children | [Layout](../../layout/layout/) | undefined |
 |**children** <img width="70px" src="../../readonly.png">| the graphical objects in the group | Array | [] |
-|**firstChild** <img width="70px" src="../../readonly.png">| the first child in the group | [Mark](../../marks/mark/) or [Group](../group/) | |
-|**lastChild** <img width="70px" src="../../readonly.png">| the last child in the group | [Mark](../../marks/mark/) or [Group](../group/) | |
+<!-- |**firstChild** <img width="70px" src="../../readonly.png">| the first child in the group | [Mark](../../marks/mark/) or [Group](../group/) | | -->
+<!--|**lastChild** <img width="70px" src="../../readonly.png">| the last child in the group | [Mark](../../marks/mark/) or [Group](../group/) | | -->
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the group | [Rectangle](../../basic/rectangle/) | |
-|**center** <img width="70px" src="../../readonly.png">| the center of the group bounds | [Point](../../basic/point/) | |
+<!--|**center** <img width="70px" src="../../readonly.png">| the center of the group bounds | [Point](../../basic/point/) | | -->
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the group bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the group bounds | Number | |
 |**visibility**| whether the group is visible ("visible" or "hidden") | String | "visible" |
+|**sortBy**| defines how children should be ordered | Object | {} |
+{.table-striped}
+
+### Properties specifc to Collection
+| property |  explanation   | type | default value |
+| --- | --- | --- | --- |
+|**classId** <img width="70px" src="../../readonly.png">| A unique identifier for the Collection instance that serves as its classification ID | String | |
+|**childrenOrder**| Specifies the order in which the children of the Collection are arranged, based on a given attribute and sorting order. | Object | { "attribute": "MSCRowID", "direction": "asc" } |
 {.table-striped}
 
 ### Methods inherited from Group
@@ -44,4 +52,16 @@ The Collection class represents a group of [marks](../../marks/mark/), [glyphs](
 | **getScene**() | returns the scene in which this group resides | [Scene](../../group/scene) |
 | **sortChildren**<br>(channel, reverse) | sort the children by a visual channel<br>channel (String): the channel to sort the children by<br> reverse: (Boolean, optional) setting to true will sort in descending order;<br>default is false. | void |
 | **sortChildrenByData**<br>(field, reverse, order) | sort the children by a data field<br>field (String): the data field to sort the children by<br>reverse (Boolean, optional): setting to true will sort in descending order;<br>default is false.<br>order (Array, optional): an array of field values in ascending order | void |
+{.table-striped}
+
+### Methods overrriden by Collecton
+| method |  explanation   | return type |
+| --- | --- | --- |
+| **contains**(x, y) | Determines whether a given point (x, y) lies within the boundaries of the element | Boolean |
+{.table-striped}
+
+### Methods specific to Collecton
+| method |  explanation   | return type |
+| --- | --- | --- |
+| **getSVGPathData**() | 	Generates the SVG path data string for the Collection object by aggregating the path data of its children | String |
 {.table-striped}

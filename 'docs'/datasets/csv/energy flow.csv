@@ -1,0 +1,16 @@
+Source,Target,Value
+Coal,Electricity,800
+Natural Gas,Electricity,600
+Solar,Electricity,200
+Wind,Electricity,400
+Electricity,Residential,1000
+Electricity,Commercial,600
+Electricity,Industrial,400
+Residential,Heating,400
+Residential,Lighting,300
+Residential,Appliances,300
+Commercial,Heating,200
+Commercial,Lighting,250
+Commercial,Appliances,150
+Industrial,Machinery,300
+Industrial,Processes,100
