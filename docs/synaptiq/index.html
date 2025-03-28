@@ -223,8 +223,10 @@
         }
 
         window.benchmark = function(d) {
+            let demo = window.location.hash.replace("#", "");
+            if (demo === "") return;
             let script = editor.getValue();
-            fetch("interaction/" + window.location.hash.replace("#", "") + "_benchmark.js")
+            fetch("interaction/" + demo + "_benchmark.js")
             .then(response => {
                 if (!response.ok) { return undefined; }
                 else { return response.text(); }
