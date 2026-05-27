@@ -23,7 +23,12 @@ The Mark class represents a primitive building block of a visualization. There a
 | --- | --- | --- | --- |
 |**id** <img width="70px" src="../../readonly.png">| the unique id of the mark | String |  | 
 |**type** <img width="70px" src="../../readonly.png"> | the type of the mark | String | | 
+|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the mark | [Rectangle](../../basic/rectangle/) | |
 |**dataScope**| the [data scope](../../data/datascope/) of the mark | [DataScope](../../data/datascope/) | undefined |
+|**fillColor**| the fill color of the mark | Color | undefined |
+|**strokeColor** | the stroke color of the mark | Color | undefined |
+|**strokeDash** | the dashes and gaps for the mark stroke | String | undefined |
+|**strokeWidth** | the stroke width of the mark in pixels | Number | undefined |
 |**opacity**| the opacity of the mark (between 0 and 1) | Number | 1 |
 |**visibility**| whether the mark is visible ("visible" or "hidden") | String | "visible" |
 {.table-striped}

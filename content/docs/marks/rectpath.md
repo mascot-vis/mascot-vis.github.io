@@ -1,5 +1,5 @@
 ---
-title: "RectPath"
+title: "Rect"
 description: ""
 lead: ""
 date: 2020-11-12T13:26:54+01:00
@@ -15,7 +15,7 @@ toc: true
 
 <span style="font-size:1.2em">extends [Path](../path/)</span><br>
 
-The RectPath class represents a rectangular mark. To create a RectPath object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
+The Rect class represents a rectangular mark. To create a Rect object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 
 
 ```js
@@ -43,7 +43,6 @@ The RectPath class represents a rectangular mark. To create a RectPath object, u
 ### Properties inherited from Path
 | property |  explanation  | type | default value |
 | --- | --- | --- | --- |
-|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the path | [Rectangle](../../basic/rectangle/) | |
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the path bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the path bounds | Number | |
 |**curveMode**| how the segments are drawn  | String | "linear" |
@@ -51,11 +50,6 @@ The RectPath class represents a rectangular mark. To create a RectPath object, u
 |**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array | | 
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
 |**firstSegment** <img width="70px" src="../../readonly.png"> | returns the first segment of the path | [Segment](../../basic/segment/) |
-|**fillColor**| the fill color of the path if it is closed | Color | "#fff" |
-|**strokeColor** | the stroke color of the path | Color | "#ccc" | 
-|**strokeDash** | the dashes and gaps for the path stroke | String | "none" | 
-|**strokeWidth** | the stroke width of the path in pixels | Number | 1| 
-|**opacity** | the opacity value of the path (between 0 and 1) | Number | 1 |
 |**vxShape**| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined | 
 |**vxWidth**| the width of the vertices on this path | Number | 0 | 
 |**vxHeight**| the height of the vertices on this path | Number | 0 |
@@ -69,11 +63,16 @@ The RectPath class represents a rectangular mark. To create a RectPath object, u
 ### Properties inherited from Mark
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**id** <img width="70px" src="../../readonly.png">| the unique id of the path | String |  | 
-|**type** <img width="70px" src="../../readonly.png"> | the type of the path | String | "rect" | 
-|**dataScope**| the [data scope](../../data/datascope/) of the path | [DataScope](../../data/datascope/) | undefined |
-|**opacity** | the opacity value of the path (between 0 and 1) | Number | 1 |
-|**visibility**| whether the path is visible ("visible" or "hidden") | String | "visible" |
+|**id** <img width="70px" src="../../readonly.png">| the unique id of the mark | String |  |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the mark | String | "rect" |
+|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the mark | [Rectangle](../../basic/rectangle/) | |
+|**dataScope**| the [data scope](../../data/datascope/) of the mark | [DataScope](../../data/datascope/) | undefined |
+|**fillColor**| the fill color of the mark | Color | "#fff" |
+|**strokeColor** | the stroke color of the mark | Color | "#ccc" |
+|**strokeDash** | the dashes and gaps for the mark stroke | String | "none" |
+|**strokeWidth** | the stroke width of the mark in pixels | Number | 1 |
+|**opacity** | the opacity value of the mark (between 0 and 1) | Number | 1 |
+|**visibility**| whether the mark is visible ("visible" or "hidden") | String | "visible" |
 {.table-striped}
 
 ### Methods
