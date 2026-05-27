@@ -26,52 +26,52 @@ The Rect class represents a rectangular mark. To create a Rect object, use the _
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**left** | the x coordinate of the left hand side of the rectangle | Number | 0 | 
-|**top** | the y coordinate of the top of the rectangle | Number | 0 | 
-|**right** <img width="70px" src="../../readonly.png"> | the x coordinate of the right hand side of the rectangle | Number |  | 
-|**bottom** <img width="70px" src="../../readonly.png"> | the y coordinate of the bottom of the rectangle | Number |  | 
-|**width** | the width of the rectangle | Number | 100 | 
-|**height** | the height of the rectangle | Number |  100 | 
-|**area** <img width="70px" src="../../readonly.png">| the area of the rectangle | Number |  | 
-|**topSegment** <img width="70px" src="../../readonly.png"> | the top segment of the rectangle | [Segment](../../basic/segment/) |  | 
-|**rightSegment** <img width="70px" src="../../readonly.png"> | the right segment of the rectangle | [Segment](../../basic/segment/) |  | 
-|**bottomSegment** <img width="70px" src="../../readonly.png"> | the bottom segment of the rectangle | [Segment](../../basic/segment/) |  | 
-|**leftSegment** <img width="70px" src="../../readonly.png"> | the left segment of the rectangle | [Segment](../../basic/segment/) |  | 
+|**area** <img width="70px" src="../../readonly.png">| the area of the rectangle | Number |  |
+|**bottom** <img width="70px" src="../../readonly.png"> | the y coordinate of the bottom of the rectangle | Number |  |
+|**bottomSegment** <img width="70px" src="../../readonly.png"> | the bottom segment of the rectangle | [Segment](../../basic/segment/) |  |
+|**height** | the height of the rectangle | Number |  100 |
+|**left** | the x coordinate of the left hand side of the rectangle | Number | 0 |
+|**leftSegment** <img width="70px" src="../../readonly.png"> | the left segment of the rectangle | [Segment](../../basic/segment/) |  |
+|**right** <img width="70px" src="../../readonly.png"> | the x coordinate of the right hand side of the rectangle | Number |  |
+|**rightSegment** <img width="70px" src="../../readonly.png"> | the right segment of the rectangle | [Segment](../../basic/segment/) |  |
+|**top** | the y coordinate of the top of the rectangle | Number | 0 |
+|**topSegment** <img width="70px" src="../../readonly.png"> | the top segment of the rectangle | [Segment](../../basic/segment/) |  |
+|**width** | the width of the rectangle | Number | 100 |
 {.table-striped}
 
 
 ### Properties inherited from Path
 | property |  explanation  | type | default value |
 | --- | --- | --- | --- |
+|**curveMode**| how the segments are drawn  | String | "linear" |
+|**firstSegment** <img width="70px" src="../../readonly.png"> | returns the first segment of the path | [Segment](../../basic/segment/) |
+|**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
+|**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array | |
+|**vertices** <img width="70px" src="../../readonly.png">| the vertices along the path | Array |  |
+|**vxFillColor**| the fill color of the vertices on this path | Color | "#555555" |
+|**vxHeight**| the height of the vertices on this path | Number | 0 |
+|**vxOpacity** | the opacity of the vertices on this path | Number | 1 |
+|**vxRadius**| the radius of the vertices on this path if the shape is "circle" | Number | 0 |
+|**vxShape**| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined |
+|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaaaaa" |
+|**vxStrokeWidth** | the stroke width of the vertices on this path in pixels | Number | 0 |
+|**vxWidth**| the width of the vertices on this path | Number | 0 |
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the path bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the path bounds | Number | |
-|**curveMode**| how the segments are drawn  | String | "linear" |
-|**vertices** <img width="70px" src="../../readonly.png">| the vertices along the path | Array |  | 
-|**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array | | 
-|**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
-|**firstSegment** <img width="70px" src="../../readonly.png"> | returns the first segment of the path | [Segment](../../basic/segment/) |
-|**vxShape**| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined | 
-|**vxWidth**| the width of the vertices on this path | Number | 0 | 
-|**vxHeight**| the height of the vertices on this path | Number | 0 |
-|**vxRadius**| the radius of the vertices on this path if the shape is "circle" | Number | 0 |  
-|**vxFillColor**| the fill color of the vertices on this path | Color | "#555555" |
-|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaaaaa" |
-|**vxStrokeWidth** | the stroke width of the vertices on this path in pixels | Number | 0 | 
-|**vxOpacity** | the opacity of the vertices on this path | Number | 1 | 
 {.table-striped}
 
 ### Properties inherited from Mark
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**id** <img width="70px" src="../../readonly.png">| the unique id of the mark | String |  |
-|**type** <img width="70px" src="../../readonly.png"> | the type of the mark | String | "rect" |
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the mark | [Rectangle](../../basic/rectangle/) | |
 |**dataScope**| the [data scope](../../data/datascope/) of the mark | [DataScope](../../data/datascope/) | undefined |
 |**fillColor**| the fill color of the mark | Color | "#fff" |
+|**id** <img width="70px" src="../../readonly.png">| the unique id of the mark | String |  |
+|**opacity** | the opacity value of the mark (between 0 and 1) | Number | 1 |
 |**strokeColor** | the stroke color of the mark | Color | "#ccc" |
 |**strokeDash** | the dashes and gaps for the mark stroke | String | "none" |
 |**strokeWidth** | the stroke width of the mark in pixels | Number | 1 |
-|**opacity** | the opacity value of the mark (between 0 and 1) | Number | 1 |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the mark | String | "rect" |
 |**visibility**| whether the mark is visible ("visible" or "hidden") | String | "visible" |
 {.table-striped}
 
