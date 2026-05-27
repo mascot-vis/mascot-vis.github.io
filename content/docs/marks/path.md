@@ -13,7 +13,7 @@ weight: 30
 toc: true
 ---
 <span style="font-size:1.2em">extends [Mark](../mark/)</span><br>
-<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
+<span style="font-size:1.2em">Subclasses: [Rect](../rectpath/), [Area](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
 
 The Path class represents a geometric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 
@@ -35,7 +35,6 @@ A straight line is also represented as a path object in Mascot. The following co
 ### Properties
 | property |  explanation  | type | default value |
 | --- | --- | --- | --- |
-|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the path | [Rectangle](../../basic/rectangle/) | |
 |**x** <img width="70px" src="../../readonly.png">| the x coordinate of the center of the path bounds | Number | |
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the center of the path bounds | Number | |
 |**curveMode**| how the segments are drawn, [possible values](../../global/constants/#curvemode) | String | "linear" |
@@ -43,10 +42,6 @@ A straight line is also represented as a path object in Mascot. The following co
 |**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array of [Segment](../../basic/segment/) | 
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
 |**firstSegment** <img width="70px" src="../../readonly.png">| returns the first segment of the path | [Segment](../../basic/segment/) |
-|**fillColor**| the fill color of the path if it is closed | Color | "none" |
-|**strokeColor** | the stroke color of the path | Color | "#ccc" | 
-|**strokeDash** | the dashes and gaps for the path stroke | String | "none" | 
-|**strokeWidth** | the stroke width of the path in pixels | Number | 1| 
 |**vxShape**| the shape of the vertices on this path<br>possible values: "rect", "circle" | String | undefined | 
 |**vxWidth**| the width of the vertices on this path | Number | 0 | 
 |**vxHeight**| the height of the vertices on this path | Number | 0 |
@@ -62,7 +57,12 @@ A straight line is also represented as a path object in Mascot. The following co
 | --- | --- | --- | --- |
 |**id** <img width="70px" src="../../readonly.png">| the unique id of the path | String |  | 
 |**type** <img width="70px" src="../../readonly.png"> | the type of the path | String | "path" | 
+|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the path | [Rectangle](../../basic/rectangle/) | |
 |**dataScope**| the [data scope](../../data/datascope/) of the path | [DataScope](../../data/datascope/) | undefined |
+|**fillColor**| the fill color of the path if it is closed | Color | "none" |
+|**strokeColor** | the stroke color of the path | Color | "#ccc" |
+|**strokeDash** | the dashes and gaps for the path stroke | String | "none" |
+|**strokeWidth** | the stroke width of the path in pixels | Number | 1 |
 |**opacity** | the opacity value of the path (between 0 and 1) | Number | 1 |
 |**visibility**| whether the path is visible ("visible" or "hidden") | String | "visible" |
 {.table-striped}
@@ -71,6 +71,7 @@ A straight line is also represented as a path object in Mascot. The following co
 | method |  explanation   | return type |
 | ---- | --- | --- |
 | **addVertex**(x, y, i) | adds a vertex at the specified index with specified coordinates<br> x (Number): x coordinate<br> y (Number): y coordinate<br>i (Number): index to add the vertex | void |
+| **resize**(wd, ht, xRef, yRef) | change the width and height of the path<br>wd (Number): width<br>ht (Number): height<br>xRef (String, optional): horizontal reference point<br>yRef (String, optional): vertical reference point | void |
 | **getSVGPathData**() | returns a string to be used as the d parameter in an SVG path element | String |
 | **sortVertices**<br>(channel, descending) | sort the vertices by a visual channel<br>channel (String): the channel to sort the vertices by<br>descending (Boolean, optional): setting to true will sort in descending order;<br>default is false. | void |
 | **sortVerticesByData**<br>(field, descending, order) | sort the vertices by a data field<br>field (String): the data field to sort the vertices by<br>descending (Boolean, optional): setting to true will sort in descending order;<br>default is false.<br>order (Array, optional): an array of field values in ascending order | void |
