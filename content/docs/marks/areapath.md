@@ -27,7 +27,7 @@ The AreaPath class represents an enclosed area mark that is used in visualizatio
 |**height** <img width="70px" src="../../readonly.png">| the height of the area | Number |  | 
 |**left** <img width="70px" src="../../readonly.png">| the x coordinate of the first vertex | Number |  | 
 |**top** <img width="70px" src="../../readonly.png">| the y coordinate of the first vertex | Number |  | 
-|**orientation** <img width="70px" src="../../readonly.png">| the orientation of the area | String |  | 
+|**orientation**| the orientation of the area | String |  |
 |**baseline** | the [anchor](../../global/constants/#anchor) used to evenly distribute the width or height of the area | String |  | 
 |**firstVertexPair** <img width="70px" src="../../readonly.png">| the first pair of the vertices (highlighted in red in the figure above) | Array of [Vertex](../../basic/vertex/) |  | 
 {.table-striped}
@@ -44,7 +44,7 @@ The AreaPath class represents an enclosed area mark that is used in visualizatio
 |**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array | | 
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
 |**firstSegment** <img width="70px" src="../../readonly.png"> | returns the first segment of the path | [Segment](../../basic/segment/) |
-|**fillColor**| the fill color of the path if it is closed | Color | undefined | 
+|**fillColor**| the fill color of the path if it is closed | Color | "none" |
 |**strokeColor** | the stroke color of the path | Color | "#ccc" | 
 |**strokeDash** | the dashes and gaps for the path stroke | String | "none" | 
 |**strokeWidth** | the stroke width of the path in pixels | Number | 1| 
@@ -53,8 +53,8 @@ The AreaPath class represents an enclosed area mark that is used in visualizatio
 |**vxWidth**| the width of the vertices on this path | Number | 0 | 
 |**vxHeight**| the height of the vertices on this path | Number | 0 |
 |**vxRadius**| the radius of the vertices on this path if the shape is "circle" | Number | 0 |  
-|**vxFillColor**| the fill color of the vertices on this path | Color | "#555" | 
-|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaa" | 
+|**vxFillColor**| the fill color of the vertices on this path | Color | "#555555" |
+|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaaaaa" |
 |**vxStrokeWidth** | the stroke width of the vertices on this path in pixels | Number | 0 | 
 |**vxOpacity** | the opacity of the vertices on this path | Number | 1 | 
 {.table-striped}
@@ -74,12 +74,3 @@ The AreaPath class represents an enclosed area mark that is used in visualizatio
 | ---- | --- | --- |
 | **getSVGPathData**() | returns a string to be used as the d parameter in an SVG path element | String |
 {.table-striped}
-
-### Methods inherited from Mark
-| method |  explanation   | return type |
-| --- | --- | --- |
-| **contains**(x, y) | whether this mark contains a point<br>x (Number): x coordinate of the point<br>y (Number): y coordinate of the point | Boolean |
-| **getScene**() | returns the scene in which this mark resides | [Scene](../../group/scene) |
-| **duplicate**() | returns a copy of this mark | [RectPath](../areapath/) |
-{.table-striped}
-

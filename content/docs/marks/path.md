@@ -11,16 +11,16 @@ menu:
     parent: "marks"
 weight: 30
 toc: true
---- 
+---
 <span style="font-size:1.2em">extends [Mark](../mark/)</span><br>
-<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [CirclePath](../circlepath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
+<span style="font-size:1.2em">Subclasses: [RectPath](../rectpath/), [AreaPath](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
 
-The Path class represents a gemetric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
+The Path class represents a geometric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 
 ```js
     let path = scene.mark("path", {
                   vertices: [
-		                [200, 50], [350, 50], [500, 50]
+                        [200, 50], [350, 50], [500, 50]
                   ],
                   strokeColor: "#95D0F5"
               });
@@ -43,7 +43,7 @@ A straight line is also represented as a path object in Mascot. The following co
 |**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array of [Segment](../../basic/segment/) | 
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
 |**firstSegment** <img width="70px" src="../../readonly.png">| returns the first segment of the path | [Segment](../../basic/segment/) |
-|**fillColor**| the fill color of the path if it is closed | Color | undefined | 
+|**fillColor**| the fill color of the path if it is closed | Color | "none" |
 |**strokeColor** | the stroke color of the path | Color | "#ccc" | 
 |**strokeDash** | the dashes and gaps for the path stroke | String | "none" | 
 |**strokeWidth** | the stroke width of the path in pixels | Number | 1| 
@@ -51,8 +51,8 @@ A straight line is also represented as a path object in Mascot. The following co
 |**vxWidth**| the width of the vertices on this path | Number | 0 | 
 |**vxHeight**| the height of the vertices on this path | Number | 0 |
 |**vxRadius**| the radius of the vertices on this path if the shape is "circle" | Number | 0 |  
-|**vxFillColor**| the fill color of the vertices on this path | Color | "#555" | 
-|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaa" | 
+|**vxFillColor**| the fill color of the vertices on this path | Color | "#555555" |
+|**vxStrokeColor** | the stroke color of the vertices on this path | Color | "#aaaaaa" |
 |**vxStrokeWidth** | the stroke width of the vertices on this path in pixels | Number | 0 | 
 |**vxOpacity** | the opacity of the vertices on this path | Number | 1 | 
 {.table-striped}
@@ -72,16 +72,8 @@ A straight line is also represented as a path object in Mascot. The following co
 | ---- | --- | --- |
 | **addVertex**(x, y, i) | adds a vertex at the specified index with specified coordinates<br> x (Number): x coordinate<br> y (Number): y coordinate<br>i (Number): index to add the vertex | void |
 | **getSVGPathData**() | returns a string to be used as the d parameter in an SVG path element | String |
-| **sortVertices**<br>(channel, reverse) | sort the vertices by a visual channel<br>channel (String): the channel to sort the vertices by (type String)<br> reverse (Boolean, optional): setting to true will sort in descending order;<br>default is false. | void |
-| **sortVerticesByData**<br>(field, reverse, order) | sort the vertices by a data field<br>field (String): the data field to sort the vertices by (type String)<br>reverse (Boolean, optional): setting to true will sort in descending order;<br>default is false.<br>order (Boolean, optional): an array of field values in ascending order | void |
-{.table-striped}
-
-### Methods inherited from Mark
-| method |  explanation   | return type |
-| --- | --- | --- |
-| **contains**(x, y) | whether this path contains a point<br>x (Number): x coordinate of the point<br>y (Number): y coordinate of the point | Boolean |
-| **getScene**() | returns the scene in which this mark resides | [Scene](../../group/scene) |
-| **duplicate**() | returns a copy of this mark | [Path](../path/) | 
+| **sortVertices**<br>(channel, descending) | sort the vertices by a visual channel<br>channel (String): the channel to sort the vertices by<br>descending (Boolean, optional): setting to true will sort in descending order;<br>default is false. | void |
+| **sortVerticesByData**<br>(field, descending, order) | sort the vertices by a data field<br>field (String): the data field to sort the vertices by<br>descending (Boolean, optional): setting to true will sort in descending order;<br>default is false.<br>order (Array, optional): an array of field values in ascending order | void |
 {.table-striped}
 
 <!-- ## Hyas?
