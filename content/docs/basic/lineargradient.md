@@ -24,12 +24,12 @@ The LinearGradient class represents a linear color gradient to be used for the s
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**id**| the unique id of the gradient | String | |
+|**stops**| the color stops along the gradient | Array | [] |
 |**type**| the type of the gradient | String | "LinearGradient" |
 |**x1**| the x coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
-|**y1**| the y coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
 |**x2**| the x coordinate of the end of the gradient, between 0 and 100 | Number | 100 |
+|**y1**| the y coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
 |**y2**| the y coordinate of the end of the gradient, between 0 and 100 | Number | 0 |
-|**stops**| the color stops along the gradient | Array | [] |
 {.table-striped}
 
 ### Methods

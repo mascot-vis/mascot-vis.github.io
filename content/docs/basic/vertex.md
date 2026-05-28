@@ -22,21 +22,21 @@ The properties of a vertex can be set individually. You can also set the propert
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**id** <img width="70px" src="../../readonly.png">| the unique id of the vertex | String |  | 
-|**type** <img width="70px" src="../../readonly.png"> | the type of the vertex | String | "vertex" | 
-|**x**| the x coordinate of the vertex center | Number | 0 | 
-|**y**| the y coordinate of the vertex center | Number | 0 | 
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the vertex | [Rectangle](../rectangle/)  |
 |**dataScope**| the [data scope](../../data/datascope/) of the vertex | [DataScope](../../data/datascope/) | undefined |
-|**parent** <img width="70px" src="../../readonly.png">| the parent mark of the vertex | [Path](../../mark/path/) | |
-|**shape** | the shape of the vertex, currently supporting "**rect**" and "**circle**" | String | undefined |
-|**width** | the width of the vertex shape | Number | 0 |
-|**height** | the height of the vertex shape | Number | 0 |
-|**radius** | the radius of the vertex if the shape is "circle" | Number | 0 |
 |**fillColor** | the fill color of the vertex shape | Color | "#555" |
+|**height** | the height of the vertex shape | Number | 0 |
+|**id** <img width="70px" src="../../readonly.png">| the unique id of the vertex | String |  | 
 |**opacity** | the opacity of the vertex shape | Number | 1 |
-|**strokeWidth** | the stroke width of the vertex shape | Number | 0 |
+|**parent** <img width="70px" src="../../readonly.png">| the parent mark of the vertex | [Path](../../mark/path/) | |
+|**radius** | the radius of the vertex if the shape is "circle" | Number | 0 |
+|**shape** | the shape of the vertex, currently supporting "**rect**" and "**circle**" | String | undefined |
 |**strokeColor** | the stroke color of the vertex shape | Color | "#aaa" |
+|**strokeWidth** | the stroke width of the vertex shape | Number | 0 |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the vertex | String | "vertex" | 
+|**width** | the width of the vertex shape | Number | 0 |
+|**x**| the x coordinate of the vertex center | Number | 0 | 
+|**y**| the y coordinate of the vertex center | Number | 0 | 
 {.table-striped}
 
 ### Methods
