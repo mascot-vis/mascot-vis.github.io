@@ -23,15 +23,18 @@ The LinearGradient class represents a linear color gradient to be used for the s
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**x1**| the x coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
-|**y1**| the y coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
-|**x2**| the x coordinate of the end of the gradient, between 0 and 100 | Number | 100 |
-|**y2**| the y coordinate of the end of the gradient, between 0 and 100 | Number | 0 |
+|**id**| the unique id of the gradient | String | |
 |**stops**| the color stops along the gradient | Array | [] |
+|**type**| the type of the gradient | String | "LinearGradient" |
+|**x1**| the x coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
+|**x2**| the x coordinate of the end of the gradient, between 0 and 100 | Number | 100 |
+|**y1**| the y coordinate of the start of the gradient, between 0 and 100 | Number | 0 |
+|**y2**| the y coordinate of the end of the gradient, between 0 and 100 | Number | 0 |
 {.table-striped}
 
 ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **addStop**(offset, color, opacity)| adds a color stop to the gradient<br>offset (Number): the position of the stop as a number between 0 and 100<br>color (String): the color of the stop<br>opacity (Number): the opacity of the stop as a number between 0 and 1 | void |
+| **addStop**(offset, color, opacity)| adds a color stop to the gradient<br><br>offset (Number): the position of the stop as a number between 0 and 100<br>color (String): the color of the stop<br>opacity (Number): the opacity of the stop as a number between 0 and 1 | void |
+| **toJSON**() | returns a JSON representation of the gradient<br><br>`type` (String): the type of the gradient<br>`id` (String): the unique id of the gradient<br>`x1` (Number): x coordinate of the start<br>`y1` (Number): y coordinate of the start<br>`x2` (Number): x coordinate of the end<br>`y2` (Number): y coordinate of the end<br>`stops` (Array): array of stop objects | Object |
 {.table-striped}
