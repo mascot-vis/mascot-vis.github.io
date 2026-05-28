@@ -26,15 +26,15 @@ The properties of a vertex can be set individually. You can also set the propert
 |**type** <img width="70px" src="../../readonly.png"> | the type of the vertex | String | "vertex" | 
 |**x**| the x coordinate of the vertex center | Number | 0 | 
 |**y**| the y coordinate of the vertex center | Number | 0 | 
-|**center** <img width="70px" src="../../readonly.png">| get the center point of the vertex | [Point](../point/)  |
+|**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the vertex | [Rectangle](../rectangle/)  |
 |**dataScope**| the [data scope](../../data/datascope/) of the vertex | [DataScope](../../data/datascope/) | undefined |
 |**parent** <img width="70px" src="../../readonly.png">| the parent mark of the vertex | [Path](../../mark/path/) | |
 |**shape** | the shape of the vertex, currently supporting "**rect**" and "**circle**" | String | undefined |
 |**width** | the width of the vertex shape | Number | 0 |
 |**height** | the height of the vertex shape | Number | 0 |
 |**radius** | the radius of the vertex if the shape is "circle" | Number | 0 |
-|**fillColor** | the fill color of the vertex shape | Color | undefined |
-|**opacity** | the opacity of the vertex shape | Number | undefined |
+|**fillColor** | the fill color of the vertex shape | Color | "#555" |
+|**opacity** | the opacity of the vertex shape | Number | 1 |
 |**strokeWidth** | the stroke width of the vertex shape | Number | 0 |
 |**strokeColor** | the stroke color of the vertex shape | Color | "#aaa" |
 {.table-striped}
@@ -42,6 +42,7 @@ The properties of a vertex can be set individually. You can also set the propert
 ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **translate**(dx, dy) | move the vertex by the given parameters<br>dx (Number): number of pixels to move in the x direction<br> dy (Number): number of pixels to move in the y direction | void |
+| *none* |  |  |
+{.table-striped}
 <!-- | **clone**() | returns a copy of this vertex | [Vertex](../vertex/) | -->
 
