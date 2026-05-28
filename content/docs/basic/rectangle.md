@@ -13,7 +13,7 @@ weight: 7
 toc: true
 ---
 
-The Rectangle class represents an abstract rectangular area. It is different from a [rectangle mark](../../mark/rectpath/).
+The Rectangle class represents an abstract rectangular area. It is different from a [Rect](../../marks/rectpath/).
 
 ### Properties
 | property |  explanation   | type | default value |
