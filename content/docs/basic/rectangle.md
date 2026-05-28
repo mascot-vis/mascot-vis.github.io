@@ -32,8 +32,14 @@ The Rectangle class represents an abstract rectangular area. It is different fro
 
 ### Methods
 | method |  explanation  | return type |
-| --- | --- | --- | --- |
-|**contains**(x, y) | check if a point with the specified x and y coordinates (type Number)<br>is inside this rectangle | Boolean |  | 
-|**union**(rect) | returns the union of this rectangle and the parameter rect (type [Rectangle](../rectangle/)) | [Rectangle](../rectangle/) |  | 
-|**clone**() | returns a copy of this rectangle | [Rectangle](../rectangle/) |  | 
+| --- | --- | --- |
+| **translate**(dx, dy) | shifts the rectangle by dx (type Number) horizontally and dy (type Number) vertically | void |
+| **toJSON**() | returns an object with the rectangle's center coordinates and dimensions: `{ x, y, width, height }` | Object |
+| **union**(rect) | returns the union of this rectangle and the parameter `rect` (type [Rectangle](../rectangle/)) | [Rectangle](../rectangle/) |
+| **clone**() | returns a copy of this rectangle | [Rectangle](../rectangle/) |
+| **setWidth**(v, ref) | sets the width to v (type Number). Grows/shrinks from the left edge by default; pass `BoundsAnchor.RIGHT` as `ref` to anchor from the right edge, or `BoundsAnchor.CENTER` to grow/shrink symmetrically | void |
+| **setHeight**(v, ref) | sets the height to v (type Number). Grows/shrinks from the bottom edge by default; pass `BoundsAnchor.TOP` as `ref` to anchor from the top edge, or `BoundsAnchor.MIDDLE` to grow/shrink symmetrically | void |
+| **contains**(x, y) | check if a point with the specified x and y coordinates (type Number)
+is inside this rectangle | Boolean |
+| **intersects**(r) | returns `true` if this rectangle overlaps with `rect` (type [Rectangle](../rectangle/)) | Boolean |
 {.table-striped}
