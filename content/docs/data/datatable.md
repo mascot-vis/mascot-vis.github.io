@@ -23,18 +23,17 @@ Mascot automatically infers the [data type](../../global/constants/#data-type) f
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**name** | the name of the data table, derived from the file name | String | | 
-|**fields** <img width="70px" src="../../readonly.png">| the name of fields (columns) in the data table | Array | | 
-| **nonNumericFields** <img width="70px" src="../../readonly.png">| the name of non-numeric fields (columns) in the data table | Array | | 
+|**attributes** <img width="70px" src="../../readonly.png">| the name of attributes (columns) in the data table | Array | | 
+| **nonNumericAttributes** <img width="70px" src="../../readonly.png">| the name of non-numeric attributes (columns) in the data table | Array | | 
 {.table-striped}
 
 ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **getFieldType**(f) | returns the type of the specified field | [Data Type](../../global/constants/#data-type) |
-| **getFieldSummary**(f) | returns a summary of the specified field | Object | 
-| **getFieldValues**(f) | returns an array of values for the specified field | Array | 
+| **getAttributeType**(f) | returns the type of the specified attribute | [Data Type](../../global/constants/#data-type) |
+| **getAttributeSummary**(f) | returns a summary of the specified attribute | Object | 
+| **getAttributeValues**(f) | returns an array of values for the specified attribute | Array | 
 | **getRowCount**() | returns the number of rows in the table | Number | 
-| **getUniqueFieldValues**(f) | returns an array of unique values for the specified field | Array | 
-| **hasField**(f) | returns true of the specified field exists in the data table | Boolean |
-| **transform**(type, fields, paramas) | returns a new data table as a result of [specified transformation](../datatransform/)<br>type (String): [type of transformation](../../global/constants/#data-table-transformation)<br>fields (Array): array of fields to be transformed<br>params (Object): [parameters for the transformation](../../data/datatransform/)<br>e.g., `let table2 = table.transform('kde', ['col1'], {min: 3, interval: 0.1, max: 8, bandwidth: 0.25})` | [DataTable](../data/datatable/) |
+| **getUniqueAttributeValues**(f) | returns an array of unique values for the specified attribute | Array | 
+| **hasAttribute**(f) | returns true of the specified attribute exists in the data table | Boolean |
 {.table-striped}

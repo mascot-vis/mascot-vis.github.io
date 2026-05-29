@@ -24,15 +24,14 @@ The StackLayout class represents a layout that positions objects by stacking the
 | --- | --- | --- | --- |
 |**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "stack" | 
 |**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
-|**baseline**| the baseline of stacking | String |  |
 |**orientation**| the orientation of stacking | String | undefined |
+|**gap**| the gap between stacked items | Number | 0 |
 |**horzCellAlignment**| the horizontal [alignment](../../global/constants/#anchor) of item in each cell | String | "left" |
 |**vertCellAlignment**| the vertical [alignment](../../global/constants/#anchor) of item in each cell | String | "bottom" |
 {.table-striped}
 
-### Methods inherited from Layout
+### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **clone**() <img width="70px" src="../../overrides.png"> | returns a copy of this layout | void |
-| **run**() <img width="70px" src="../../overrides.png"> | apply this layout | void |
+| **clone**() | returns a copy of this layout | [StackLayout](../stack/) |
 {.table-striped}

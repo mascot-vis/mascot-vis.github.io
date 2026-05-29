@@ -25,15 +25,14 @@ The PackingLayout class represents a layout that positions objects by packing th
 | --- | --- | --- | --- |
 |**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "packing" | 
 |**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
-|**x**| the x coordinate of the center of the enclosing area | Number |  |
-|**y**| the y coordinate of the center of the enclosing area | Number |  |
+|**x**| the x coordinate of the center of the enclosing area | Number | 400 |
+|**y**| the y coordinate of the center of the enclosing area | Number | 400 |
 |**width**| the width of the enclosing area | Number |  |
 |**height**| the height of the enclosing area | Number |  |
 {.table-striped}
 
-### Methods inherited from Layout
+### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **clone**() <img width="70px" src="../../overrides.png"> | returns a copy of this layout | void |
-| **run**() <img width="70px" src="../../overrides.png"> | apply this layout | void |
+| **clone**() | returns a copy of this layout | [PackingLayout](../packing/) |
 {.table-striped}

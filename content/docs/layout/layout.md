@@ -12,12 +12,13 @@ menu:
 weight: 600
 toc: true
 ---
-<span style="font-size:1.2em">Subclasses: [GridLayout](../grid/), [StackLayout](../stack/), [PackingLayout](../packing/), [TreemapLayout](../treemap/)</span>
+## Layout
 
-The Layout class is an abstract class representing layout algorithms used to position children in a [group](../../group/group/). You cannot create a layout object, you can only create instances of its subclasses. 
+<span style="font-size:1.2em">Subclasses: [GridLayout](../grid/), [StackLayout](../stack/), [PackingLayout](../packing/), [TreemapLayout](../treemap/), [CircularLayout](../circular/), [ClusterLayout](../cluster/), [DirectedGraphLayout](../directedgraph/), [ForceLayout](../force/), [StrataLayout](../strata/), [TidyTreeLayout](../tidytree/)</span>
+
+The Layout class is an abstract class representing layout algorithms used to position children in a [group](../../group/group/). You cannot create a layout object, you can only create instances of its subclasses.
 
 ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **clone**() | returns a copy of this layout | void |
-| **run**() | apply this layout | void |
+| *none* |  | |

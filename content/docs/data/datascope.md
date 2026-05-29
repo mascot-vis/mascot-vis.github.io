@@ -19,17 +19,17 @@ The DataScope class represents data that is joined with a graphical object (i.e.
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**dataTable** <img width="70px" src="../../readonly.png">| the data table from which this data scope is created | [DataTable](../datatable) |  | 
-|**filters** <img width="70px" src="../../readonly.png"> | returns field values used to filter a data table<br>into the current data scope  | Dictionary |  |
-|**fields** <img width="70px" src="../../readonly.png">| the field names in the filters | Array of Strings |  | 
+|**filters** <img width="70px" src="../../readonly.png"> | returns attribute values used to filter a data table<br>into the current data scope  | Dictionary |  |
+|**attributes** <img width="70px" src="../../readonly.png">| the attribute names in the filters | Array of Strings |  | 
 {.table-striped}
 
 ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
 |**clone**() | returns a copy of the data scope | [DataScope](../datascope/) | 
-|**aggregateNumericalField**(f, aggr) | aggregate the values of the specified numeric field in this data scope<br>f (String): field<br>aggr (String): [aggregator](../../global/constants/#aggregator) | Number |
-|**getFieldType**(f) | returns the type of the specified field in this data scope | [Data Type](../../global/constants/#data-type) | 
-|**getFieldValue**(f) | returns the value of the specified field in this data scope | | 
-| **hasField**(f) | returns true of the specified field exists in the data scope | Boolean |
+|**aggregateNumericalAttribute**(f, aggr) | aggregate the values of the specified numeric attribute in this data scope<br>f (String): attribute<br>aggr (String): [aggregator](../../global/constants/#aggregator) | Number |
+|**getAttributeType**(f) | returns the type of the specified attribute in this data scope | [Data Type](../../global/constants/#data-type) | 
+|**getAttrVal**(f) | returns the value of the specified attribute in this data scope | | 
+| **hasAttribute**(f) | returns true of the specified attribute exists in the data scope | Boolean |
 |**isEmpty**() | returns true if the data scope contains no tuples | Boolean |
 {.table-striped}
