@@ -5,7 +5,10 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
         {{ end -}}
       </ul>
@@ -15,7 +18,10 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
         {{ end -}}
       </ul>
@@ -25,7 +31,36 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "encode") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "rendering") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
         {{ end -}}
       </ul>
@@ -38,7 +73,10 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
         {{ end -}}
       </ul>
@@ -48,7 +86,10 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
         {{ end -}}
       </ul>
@@ -58,7 +99,36 @@
     <li class="mb-1">
       <h3>{{ .Name }}</h3>
       <ul class="list-unstyled">
-        {{ range sort .Children "Weight" -}}
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "encode") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "rendering") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort (where .Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+        {{ range sort (where .Children "HasChildren" false) "Weight" -}}
           {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
         {{ end -}}
       </ul>

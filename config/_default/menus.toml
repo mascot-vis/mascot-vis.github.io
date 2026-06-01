@@ -5,13 +5,13 @@
   url = "/docs/global/func/"
 
 [[docs]]
-  name = "Visual Elements"
+  name = "Visual Components"
   weight = 10
   identifier = "visual-elements"
   url = "/docs/basic/"
 
 [[docs]]
-  name = "Basic"
+  name = "Primitives"
   weight = 11
   identifier = "basic"
   parent = "visual-elements"
@@ -32,17 +32,24 @@
   url = "/docs/group/"
 
 [[docs]]
-  name = "Guides"
+  name = "Reference Elements"
   weight = 14
   identifier = "guide"
   parent = "visual-elements"
   url = "/docs/guide/"
 
 [[docs]]
-  name = "Data"
+  name = "Data Components"
   weight = 20
   identifier = "data"
   url = "/docs/data/"
+
+[[docs]]
+  name = "Datasets"
+  weight = 21
+  identifier = "datasets"
+  parent = "data"
+  url = "/docs/data/datatable/"
 
 [[docs]]
   name = "Operations"
@@ -51,24 +58,22 @@
   url = "/docs/operations/"
 
 [[docs]]
-  name = "Encode"
+  name = "Encoding"
   weight = 31
   identifier = "encode"
-  parent = "operations"
   url = "/docs/encode/"
 
 [[docs]]
   name = "Layouts"
   weight = 32
   identifier = "layout"
-  parent = "operations"
+  parent = "visual-elements"
   url = "/docs/layout/"
 
 [[docs]]
   name = "Rendering"
   weight = 33
   identifier = "rendering"
-  parent = "operations"
   url = "/docs/rendering/"
 
 [[tutorials]]
