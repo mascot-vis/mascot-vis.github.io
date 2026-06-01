@@ -88,11 +88,3 @@ toc: true
 "packing"<br>
 "treemap"<br>
 
-### Scale Type
-"linear"<br>
-"point"<br>
-"ordinal"<br>
-"ordinalColor"<br>
-"log"<br>
-"time"<br>
-"sequentialColor"<br>

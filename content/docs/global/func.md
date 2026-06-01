@@ -18,11 +18,9 @@ Top-level functions are defined in the msc namespace.
 ### Create Objects
 | function |  explanation  |  return type |
 | --- | --- | --- |
-| **msc.scene**(params) | create a [scene](../../group/scene/)<br>params (Object, optional): contains the following parameter<ul><li>fillColor: background color of the scene</li></ul> | [Scene](../../group/scene/) |
 | async **msc.csv**(url) | import a CSV file as a [data table](../../data/datatable/)<br>url (String): path to the file | Promise |
 | async **msc.csvFromString**(data, name) | import CSV data in a string as a [data table](../../data/datatable/)<br>data (String): CSV data in a string<br>name (String): name of the data | Promise |
-| **msc.layout**(type, params)| create a [layout](../../layout/layout/)<br>type: [layout type](../../global/constants/#layout-type)<br>params (Object): contains layout properties  | [Layout](../../layout/layout/) |
-| **msc.linearGradient**(params)| create a [linear gradient](../../basic/lineargradient/)<br>params (Object): contains x1, y1, x2 and y2 properties  | [LinearGradient](../../basic/lineargradient/) |
+
 | **msc.renderer**(type, domId) | create a renderer<br>type (String): type of renderer,<BR>possible values: "svg", "webgl"<br>domId (String): ID of the SVG or Canvas element | [Renderer](../../rendering/renderer/) |
 {.table-striped}
 

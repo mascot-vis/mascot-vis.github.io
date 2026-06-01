@@ -23,7 +23,7 @@ An Encoding object records information about a visual encoding. When a mark's vi
 |**field** <img width="70px" src="../../readonly.png">| the data field | String | | 
 |**aggregator**| [aggregator](../../global/constants/#aggregator) for data values | String |  "sum" | 
 |**scale**| the scale of the encoding | [Scale](../scale/) | | 
-|**scaleType**| the [type of scale](../../global/constants/#scale-type) | String | depends on<br>field and channel | 
+|**scaleType**| the [type of scale](../../encode/scale/#scale-type) | String | depends on<br>field and channel | 
 |**includeZero**| whether the scale domain includes 0 | Boolean | false |
 |**rangeExtent**| the extent of the scale range | Number | |
 |**mapping**| user defined mapping between field values and visual properties | Object |  |
