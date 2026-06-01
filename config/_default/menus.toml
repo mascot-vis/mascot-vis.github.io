@@ -1,57 +1,74 @@
 [[docs]]
-  name = ""
-  weight = 1
+  name = "Global"
+  weight = 99
   identifier = "global"
   url = "/docs/global/func/"
 
 [[docs]]
-  name = "Basic"
+  name = "Visual Elements"
   weight = 10
+  identifier = "visual-elements"
+  url = "/docs/basic/"
+
+[[docs]]
+  name = "Basic"
+  weight = 11
   identifier = "basic"
+  parent = "visual-elements"
   url = "/docs/basic/"
 
 [[docs]]
   name = "Marks"
-  weight = 20
+  weight = 12
   identifier = "marks"
+  parent = "visual-elements"
   url = "/docs/marks/"
 
+[[docs]]
+  name = "Groups"
+  weight = 13
+  identifier = "group"
+  parent = "visual-elements"
+  url = "/docs/group/"
+
+[[docs]]
+  name = "Guides"
+  weight = 14
+  identifier = "guide"
+  parent = "visual-elements"
+  url = "/docs/guide/"
 
 [[docs]]
   name = "Data"
-  weight = 25
+  weight = 20
   identifier = "data"
   url = "/docs/data/"
 
 [[docs]]
-  name = "Groups"
+  name = "Operations"
   weight = 30
-  identifier = "group"
-  url = "/docs/group/"
-
+  identifier = "operations"
+  url = "/docs/operations/"
 
 [[docs]]
   name = "Encode"
-  weight = 35
+  weight = 31
   identifier = "encode"
+  parent = "operations"
   url = "/docs/encode/"
 
 [[docs]]
   name = "Layouts"
-  weight = 40
+  weight = 32
   identifier = "layout"
+  parent = "operations"
   url = "/docs/layout/"
 
 [[docs]]
-  name = "Guides"
-  weight = 50
-  identifier = "guide"
-  url = "/docs/guide/"
-
-[[docs]]
   name = "Rendering"
-  weight = 60
+  weight = 33
   identifier = "rendering"
+  parent = "operations"
   url = "/docs/rendering/"
 
 [[tutorials]]

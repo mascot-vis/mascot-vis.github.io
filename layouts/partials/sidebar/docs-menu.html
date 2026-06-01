@@ -1,43 +1,67 @@
 {{ if .Site.Params.options.collapsibleSidebar -}}
   <ul class="list-unstyled collapsible-sidebar">
   {{ $currentPage := . -}}
-  {{ range $index, $element := .Site.Menus.docs -}}
-  {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
-  {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "visual-elements") 0 -}}
     <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-{{ .Identifier }}" aria-expanded="{{ if $active }}true{{ else }}false{{ end }}">
-        {{ .Name }}
-      </button>
-      {{ if .HasChildren -}}
-      <div class="collapse{{ if $active }} show{{ end }}" id="section-{{ .Identifier }}">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        {{ range .Children -}}
-          {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
-          {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
-          <li><a class="docs-link rounded{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
         {{ end -}}
-        </ul>
-      </div>
-      {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "data") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "operations") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" true) }}
+        {{ end -}}
+      </ul>
     </li>
   {{ end -}}
   </ul>
 {{ else -}}
   {{ $currentPage := . -}}
-  {{ range .Site.Menus.docs -}}
-    {{ if ne .Name ""}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "visual-elements") 0 -}}
+    <li class="mb-1">
       <h3>{{ .Name }}</h3>
-    {{ else }}
-      <h4>{{ .Name }}</h4>
-    {{end}}
-    {{ if .HasChildren -}}
-    <ul class="list-unstyled">
-      {{ range .Children -}}
-        {{- $active := or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) -}}
-        {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
-        <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-      {{ end -}}
-    </ul>
-    {{ end -}}
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "data") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+  {{ with index (where $.Site.Menus.docs "Identifier" "operations") 0 -}}
+    <li class="mb-1">
+      <h3>{{ .Name }}</h3>
+      <ul class="list-unstyled">
+        {{ range sort .Children "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" false) }}
+        {{ end -}}
+      </ul>
+    </li>
   {{ end -}}
 {{ end -}}
