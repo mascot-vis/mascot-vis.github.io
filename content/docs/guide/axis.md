@@ -20,33 +20,33 @@ The Axis class represents an axis. To create an Axis object, use the [_axis_ met
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**id** <img width="70px" src="../../readonly.png">| the unique id of the axis | String |  | 
-|**type** <img width="70px" src="../../readonly.png"> | the type of the axis | String | "axis" | 
 |**channel** <img width="70px" src="../../readonly.png">| the visual channel of the axis<br>possible values: "x", "y", "width", "height", or "radialDistance" | String | | 
 |**field** <img width="70px" src="../../readonly.png">| the data field of the axis | String | | 
+|**id** <img width="70px" src="../../readonly.png">| the unique id of the axis | String |  | 
+|**isFlipped** <img width="70px" src="../../readonly.png">| returns true if the axis is created for an encoding field<br>and the direction goes from right to left or from top to bottom | Boolean | | 
 |**item** | an example item for the axis,<br>useful in cases such as [small multiples](../../../tutorials/axis/) | [Vertex](../../basic/vertex/) or<br>[Mark](../../marks/mark/) or<br> [Group](../../group/group/) | | 
+|**labelFormat**| the formatter of the axis labels | String |  | 
+|**labelOffset**| the distance between the labels and the path (Figure 1) | Number | 15 | 
+|**labelRotation**| the degrees to rotate the axis labels | Number | 0 | 
 |**orientation**| the orientation of the axis if its channel is "x" or "y"<br>possible values: "top", "bottom", "left", or "right" | String | | 
+|**pathVisible**| whether to show the axis path | Boolean | true |
 |**pathX**| the x coordinate of the axis path if channel is "y" or "height",<br>undefined otherwise | Number | | 
 |**pathY**| the y coordinate of the axis path if channel is "x" or "width",<br>undefined otherwise| Number | | 
+|**rotateTitle**| rotate the axis title if the channel is "y" or "height" | Boolean | true | 
+|**rotation**| the degrees to rotate the entire axis if channel is "radialDistance" | Number | 0 | 
+|**showTitle**| show the axis title | Boolean | true if the axis is created<br>for an encoding field | 
 |**strokeColor** | the stroke color of the axis path and ticks | Color | "#555" | 
 |**textColor**| the text color of the axis labels | Color | "#555" | 
+|**tickAnchor** | the [anchor](../../global/constants/#anchor) of the ticks on the axis if the items are in a grid layout<br>refer to the ridgeline plot for an example usage of this property | String | | 
 |**tickOffset**| the distance between the ticks and the path (Figure 1) | Number | 0 | 
 |**tickSize**| the size of the axis ticks| Number | 5 | 
 |**tickValues** | the values of the ticks on the axis<br>if not provided, Mascot will auto-generate values | Array | | 
-|**tickAnchor** | the [anchor](../../global/constants/#anchor) of the ticks on the axis if the items are in a grid layout<br>refer to the ridgeline plot for an example usage of this property | String | | 
 |**tickVisible**| whether to show the ticks | Boolean | true |
-|**pathVisible**| whether to show the axis path | Boolean | true |
-|**labelOffset**| the distance between the labels and the path (Figure 1) | Number | 15 | 
-|**labelFormat**| the formatter of the axis labels | String |  | 
-|**labelRotation**| the degrees to rotate the axis labels | Number | 0 | 
-|**rotation**| the degrees to rotate the entire axis if channel is "radialDistance" | Number | 0 | 
 |**title**| the text for the axis title | String | | 
-|**showTitle**| show the axis title | Boolean | true if the axis is created<br>for an encoding field | 
 |**titleAnchor**| the [anchor](../../global/constants/#anchor) of the axis title | Array | | 
 |**titleOffset**| the distance between the axis title and the path (Figure 1) | Number | 40 | 
 |**titlePosition**| the position of the axis title | Array | | 
-|**rotateTitle**| rotate the axis title if the channel is "y" or "height" | Boolean | true | 
-|**isFlipped** <img width="70px" src="../../readonly.png">| returns true if the axis is created for an encoding field<br>and the direction goes from right to left or from top to bottom | Boolean | | 
+|**type** <img width="70px" src="../../readonly.png"> | the type of the axis | String | "axis" | 
 
 {.table-striped}
 
