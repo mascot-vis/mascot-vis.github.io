@@ -47,13 +47,16 @@ The Scene class represents the top-level container in a visualization. This is w
 -->
 
 ### Methods: Join Graphics with Data
+These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page.
+
+<!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
 | --- | --- | --- |
 | **attach**(item, table)| attach the entire table to a single graphical object,  <br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object<br>table ([DataTable](../../data/datatable/)): data table<br> | void |
 | **densify**(item, table, params)| [densify](/tutorials/join/#densify) a graphical object by an attribute<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object to be repeated<br>table ([DataTable](../../data/datatable/)): data table<br>params (Object, optional): containing one or more of the following: <br><ul><li>attribute (String): the attribute to densify by, defaults to tuple ID</li><li>orientation (String): the orientation to densify the item</li></ul> | [Path](../../marks/path/) |
 | **divide**(item, table, params)| [divide](/tutorials/join/#divide) a graphical object by an attribute<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object to be repeated<br>table ([DataTable](../../data/datatable/)): data table<br>params (Object, optional): containing one or more of the following: <br><ul><li>attribute (String): the attribute to divide by, defaults to tuple ID</li><li>orientation (String): the orientation to divde the item</li><li>layout ([Layout](../../layout/layout)): the layout to arrange the divided items</li></ul> | [Collection](../../group/collection/) |
 | **repeat**(item, table, params)| [repeat](/tutorials/join/#repeat) a graphical object by an attribute<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object to be repeated<br>table ([DataTable](../../data/datatable/)): data table<br>params (Object, optional): containing one or more of the following: <br><ul><li>attribute (String): the attribute to repeat by, defaults to tuple ID</li><li>layout ([Layout](../../layout/layout)): the layout to arrange the repeated items</li></ul> | [Collection](../../group/collection/) |
-{.table-striped}
+-->
 
 ### Methods: Encode
 <span style="color:red">angle </span>
@@ -77,13 +80,13 @@ The Scene class represents the top-level container in a visualization. This is w
 ### Methods: Manage and Manipulate Items
 | method |  explanation   | return type |
 | --- | --- | --- |
-| **classify**(items, attribute, parent)| group items by the specified attribute, items with the same attribute value <br>are put in the same collection <br>items (Array): an array of items <br>attribute (String): attribute to group by <br>parent ([Scene](../scene/) or [Collection](../../group/collection/)): parent of the resulting collections | Array of [Collections](../../group/collection/) |
 |**setProperties**(item, params)| set the properties for all the peers of the specified item, return an object indicating setting each property is successful. <br>item ([Mark](../../marks/mark/) or [Group](../../group/group) or [Layout](../../layout/layout)): example item<br>params (Object): property names as object keys and property values as object values | {property: Boolean} |
 | **sortChildren**(item, property, descending, orderedVals) | sort the children in a [Group](../group/) or the vertices in a [Path](../../marks/path/) by the specified property<br>item ([Group](../group/) or [Path](../../marks/path/)): object to sort<br>property (String): property to sort by<br>descending (Boolean, optional): setting to true will sort in descending order<br>orderedVals (Array, optional): an array of values in ascending order | void |
 | **translate**(item, dx, dy) | move the item by the given distance, returns an object indicating if translating along x or y is successful.<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): item to move<br>dx (Number): number of pixels to move in the x direction<br> dy (Number): number of pixels to move in the y direction | {x: Boolean, y: Boolean} |
 {.table-striped}
 
 <!-- Removed methods in the current implementation:
+| **classify**(items, attribute, parent)| group items by the specified attribute, items with the same attribute value <br>are put in the same collection <br>items (Array): an array of items <br>attribute (String): attribute to group by <br>parent ([Scene](../scene/) or [Collection](../../group/collection/)): parent of the resulting collections | Array of [Collections](../../group/collection/) |
 | **find**(predicates)| returns graphical objects in the scene that match the specified criteria<br>predicates (Array): an array of [predicates](../../global/predicate/) | Array |
 |**propagate**(item, method, ...params)| call the specified method for all the peers of the specified item<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): example item<br>method (String): name of the item's method<br>params: parameters of the item's method<br>e.g., `scene.propagate(path, "sortVertices", "x")` | void |
 -->
