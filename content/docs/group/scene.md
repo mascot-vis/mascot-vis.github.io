@@ -46,8 +46,8 @@ The Scene class represents the top-level container in a visualization. This is w
 | **group**(children)| create a new group with the specified children<br>children (Array, optional): objects to be added in the group | [Group](../../group/group/) |
 -->
 
-### Methods: Join Graphics with Data
-These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page.
+<!-- ### Methods: Join Graphics with Data
+These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page. -->
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
