@@ -15,13 +15,13 @@ toc: true
 
 These operations traverse scenes and groups to locate related elements.
 
-### msc.findElements(container, objs, includeVerticesSegments)
+### msc.findElements(container, objs, includePrimitives)
 
 Finds elements inside a container that match a set of [predicates](../../data/predicate/).
 
 - `container`: [Scene](../../group/scene/) or [Group](../../group/group/)
-- `objs` (Array, optional): array of predicate objects
-- `includeVerticesSegments` (Boolean, optional): whether vertices and segments should also be searched
+- `objs` (Array, optional): array of [predicates](../../data/predicate/)
+- `includePrimitives` (Boolean, optional): whether vertices and segments should also be searched
 - Return type: `Array`
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">

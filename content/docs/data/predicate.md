@@ -13,7 +13,7 @@ weight: 4
 toc: true
 ---
 
-A predicate is used to define an inclusion or exclusion criterion. Predicates are passed to the [_findElements_ function](../../operations/manage-elements/), which takes an array of predicate objects as its parameter.
+A predicate is used to define an inclusion or exclusion criterion. Predicates are passed to the [_findElements_ function](../../operations/manage-elements/#mscfindelementscontainer-objs-includeprimitives), which takes an array of predicate objects as its parameter. A predicate can be defined for a visual property or a data attribute.
 
 ### Point predicates
 A point predicate matches a single value. This is the default predicate type, so the `type` field can be omitted.

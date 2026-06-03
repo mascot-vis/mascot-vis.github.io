@@ -26,8 +26,8 @@ The Segment class represents a line or a curve that connects two [vertices](../v
 |**y** <img width="70px" src="../../readonly.png">| the y coordinate of the midpoint of the segment | Number  |
 {.table-striped}
 
-### Methods
+<!-- ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
 | *none* |  |  |
-{.table-striped}
+{.table-striped} -->
