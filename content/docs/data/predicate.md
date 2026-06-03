@@ -13,52 +13,70 @@ weight: 4
 toc: true
 ---
 
-A predicate is used to define an inclusion or exclusion criterion. The [_find_ method](../../group/scene/#methods-manage-items) in the [Scene](../../group/scene/) class, for example, takes an array of predicates as its parameter. 
+A predicate is used to define an inclusion or exclusion criterion. Predicates are passed to the [_findElements_ function](../../operations/manage-elements/), which takes an array of predicate objects as its parameter.
 
-### Predicates based on visual properties
-A predicate based on a visual property is defined as:
+### Point predicates
+A point predicate matches a single value. This is the default predicate type, so the `type` field can be omitted.
 
-- {channel: _channel_, value: _value_} if the criterion demands an exact match, for example, the following code will return all the objects in the scene whose fill color is red:
+- `{property: _property_, value: _value_}` matches a visual property exactly, for example, the following code will return all the text elements in the scene:
 
 ```js
-    scene.find([{channel: "fillColor", value: "red"}])
+    msc.findElements(scene, [{property: "type", value: "text"}])
 ```
 
-- {channel: _channel_, range: _[low, high]_} if the criterion demands the visual property is within the specified range, for example, the following code will return all the objects in the scene whose x position is between the range:
-  
+- `{attribute: _attribute_, value: _value_}` matches a data attribute exactly, for example, the following code will return all the circles whose data value for `Continent` is `"Asia"`:
+
 ```js
-    scene.find([{channel: "x", range: [0, 200]}])
+    msc.findElements(scene, [
+        {attribute: "Continent", value: "Asia"},
+        {property: "type", value: "circle"}
+    ])
 ```
 
-- {channel: _channel_, values: _[values]_} if the criterion demands the visual property matches any value in the specified value array, for example, the following code will return all the objects in the scene whose type is either a rectangle or a circle:
+### List predicates
+A list predicate matches any value in a list.
+
+- `{type: "list", property: _property_, value: _[values]_}` matches any one of the listed property values, for example:
 
 ```js
-    scene.find([{channel: "type", values: ["rectangle", "circle"]}])
+    msc.findElements(scene, [
+        {type: "list", property: "type", value: ["text", "rect"]}
+    ])
 ```
 
-### Predicates based on data values
-A predicate based on a data field is defined as:
-
-- {field: _field_, value: _value_} if the criterion demands an exact match, for example, the following code will return all the objects in the scene whose [data scope](../../data/datascope/) has the value "male" for the field "gender":
+- `{type: "list", attribute: _attribute_, value: _[values]_}` matches any one of the listed data values, for example:
 
 ```js
-    scene.find([{field: "gender", value: "male"}])
+    msc.findElements(scene, [
+        {type: "list", attribute: "event_attribute", value: ["_Start", "_Exit"]}
+    ])
 ```
 
-- {field: _field_, range: _[low, high]_} if the criterion demands the field value is within the specified range, for example, the following code will return all the objects in the scene whose [data scope](../../data/datascope/) has a value between 20 and 50 for the field "age":
+### Interval predicates
+An interval predicate matches values within a range.
+
+- `{type: "interval", property: _property_, value: _[low, high]_}` matches elements whose property lies within the specified range, for example:
 
 ```js
-    scene.find([{field: "age", range: [20, 50]}])
+    msc.findElements(scene, [
+        {type: "interval", property: "x", value: [0, 200]}
+    ])
 ```
 
-- {field: _field_, values: _[values]_} if the criterion demands the field value matches any value in the specified array, for example, the following code will return all the objects in the scene whose whose [data scope](../../data/datascope/) has a value related to education for the field "occupation":
+- `{type: "interval", attribute: _attribute_, value: _[low, high]_}` matches elements whose data attribute lies within the specified range, for example:
 
 ```js
-    scene.find([{field: "occupation", values: ["teacher", "professor", "lecturer"]}])
+    msc.findElements(scene, [
+        {type: "interval", attribute: "age", value: [20, 50]}
+    ])
 ```
 
-- {fields: _[field1, field2]_, operator: _operator_} if the criterion demands the values of the two specified fields satisfy the specified operator relation, for example, the following code will return all the objects in the scene whose whose [data scope](../../data/datascope/)'s "income" value is greater than the "spending" value:
+### Combining predicates
+Multiple predicates are combined with logical AND. An element must satisfy all predicates in the array to be returned.
 
 ```js
-    scene.find([{fields: ["income", "spending"], operator: ">"}])
+    msc.findElements(scene, [
+        {attribute: "name", value: "VMWare"},
+        {property: "type", value: "text"}
+    ])
 ```
