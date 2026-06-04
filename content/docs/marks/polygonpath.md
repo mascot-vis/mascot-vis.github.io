@@ -15,7 +15,7 @@ toc: true
 
 <span style="font-size:1.2em">extends [Path](../path/)</span><br>
 
-The Polygon class represents a polygon mark that is used in visualizations such as the [radar chart](../../../gallery.html#RadarChart). You cannot create a Polygon object directly, instead, you need to use the [_densify_ method](../../group/scene/#methods-join-graphics-with-data) in the [Scene](../../group/scene) class to transform a [Circle](../circlepath/) to a Polygon. [Here is an explanation](../../../tutorials/join/#densify) of the densify operation.
+The Polygon class represents a polygon mark that is used in visualizations such as the [radar chart](../../../gallery.html#RadarChart). You cannot create a Polygon object directly, instead, you need to use the [_densify_ operation](../../operations/generative/) to transform a [Circle](../circlepath/) to a Polygon. [Here is an explanation](../../../tutorials/join/#densify) of the densify operation.
 
 ### Properties
 | property |  explanation   | type | default value |

@@ -37,7 +37,7 @@ The densify operation adds vertices along the border of a mark, and replaces cur
 
 {{< figure src="densify.png" width="700px" alt="Divide" caption="" class="border-0 mx-auto text-center" >}}
 
-All three operations are defined as methods in the scene class. [The API reference](../../docs/group/scene/#methods-join-graphics-with-data) contains details about the parameters. 
+All three operations are available as standalone functions. [The API reference](../../docs/operations/generative/) contains details about the parameters.
 
 ### concatenate operations
-These three operations can be concatenated to create more complex structures. In the [diverging bar chart example](../../tutorials/example/), we applied repeat first, then divide, which gave us a stacked bar chart. When we apply repeat + densify to a line, we can create visualizations such as sparklines or multi-line graphs. We can also apply repeat multiple times and get nested collections, which are common in small multiples. It is recommended that you apply repeat first before applying divide or densify. 
+These three operations can be concatenated to create more complex structures. In the [diverging bar chart example](../../tutorials/example/), we applied repeat first, then divide, which gave us a stacked bar chart. When we apply repeat + densify to a line, we can create visualizations such as sparklines or multi-line graphs. We can also apply repeat multiple times and get nested collections, which are common in small multiples. It is recommended that you apply repeat first before applying divide or densify.

@@ -14,7 +14,7 @@ toc: true
 ---
 <span style="font-size:1.2em">extends [Group](../group/)</span><br>
 
-The Collection class represents a group of [marks](../../marks/mark/), [glyphs](../../group/glyph/), or [collections](../collection/) (i.e., nested collection). Children inside a collection have the same "type" property. Collections are created through the [_repeat_, _divide_, and _densify_ methods](../scene/#methods-join-graphics-with-data) in the [Scene](../scene/) class.
+The Collection class represents a group of [marks](../../marks/mark/), [glyphs](../../group/glyph/), or [collections](../collection/) (i.e., nested collection). Children inside a collection have the same "type" property. Collections are created through the [_repeat_, _divide_, and _densify_ operations](../../operations/generative/).
 
 ### Properties inherited from Group
 | property |  explanation   | type | default value |
