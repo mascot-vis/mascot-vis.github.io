@@ -15,7 +15,7 @@ toc: true
 
 <span style="font-size:1.2em">extends [Path](../path/)</span><br>
 
-The Area class represents an enclosed area mark that is used in visualizations such as the [area chart](../../../gallery.html#AreaChart) and the [violin plot](../../../gallery.html#ViolinPlot). You cannot create an Area object directly, instead, you need to use the [_densify_ method](../../group/scene/#methods-join-graphics-with-data) in the [Scene](../../group/scene) class to transform a [Rect](../rectpath/) to an Area. [Here is an explanation](../../../tutorials/join/#densify) of the densify operation. The figure below shows how Area objects are created from a Rect object through the densify operation.
+The Area class represents an enclosed area mark that is used in visualizations such as the [area chart](../../../gallery.html#AreaChart) and the [violin plot](../../../gallery.html#ViolinPlot). You cannot create an Area object directly, instead, you need to use the [_densify_ operation](../../operations/generative/#mscdensifyelem-data-params) to transform a [Rect](../rectpath/) to an Area. [Here is an explanation](../../../tutorials/join/#densify) of the densify operation. The figure below shows how Area objects are created from a Rect object through the densify operation.
 
 {{< figure src="../area.png" width="500px" alt="Area" caption="" class="border-0 mx-auto text-center" >}}
 

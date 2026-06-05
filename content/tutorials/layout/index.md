@@ -24,9 +24,8 @@ A layout can only be applied to a collection:
 
     collection.layout = tl;
 
-You can also pass a layout as an argument when performing [repeat](../../docs/group/scene/#methods-join-graphics-with-data) or [divide](../../docs/group/scene/#methods-join-graphics-with-data) operations:
+You can also pass a layout as an argument when performing [repeat](../../docs/operations/generative/) or [divide](../../docs/operations/generative/) operations:
 
 ```js
-scene.divide(rect, table, {attribute: "col", layout: tl});
+msc.divide(rect, table, {attribute: "col", layout: tl});
 ```
-

@@ -1,0 +1,43 @@
+{{ $currentPage := .currentPage -}}
+{{ $item := .item -}}
+{{ $collapsible := .collapsible | default true -}}
+{{ $active := or ($currentPage.IsMenuCurrent "docs" $item) ($currentPage.HasMenuCurrent "docs" $item) -}}
+{{ $active = or $active (eq $currentPage.Section $item.Identifier) -}}
+
+{{ if $item.HasChildren -}}
+  {{ if $collapsible -}}
+    <li class="mb-1">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-{{ $item.Identifier }}" aria-expanded="{{ if $active }}true{{ else }}false{{ end }}">
+        {{ $item.Name }}
+      </button>
+      <div class="collapse{{ if $active }} show{{ end }}" id="section-{{ $item.Identifier }}">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          {{ range sort (where $item.Children "HasChildren" true) "Weight" -}}
+            {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" $collapsible) }}
+          {{ end -}}
+          {{ range sort (where $item.Children "HasChildren" false) "Weight" -}}
+            {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" $collapsible) }}
+          {{ end -}}
+        </ul>
+      </div>
+    </li>
+  {{ else -}}
+    <li class="mb-1">
+      <h4>{{ $item.Name }}</h4>
+      <ul class="list-unstyled">
+        {{ range sort (where $item.Children "HasChildren" true) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" $collapsible) }}
+        {{ end -}}
+        {{ range sort (where $item.Children "HasChildren" false) "Weight" -}}
+          {{ partial "sidebar/docs-menu-item.html" (dict "currentPage" $currentPage "item" . "collapsible" $collapsible) }}
+        {{ end -}}
+      </ul>
+    </li>
+  {{ end -}}
+{{ else -}}
+  {{ if $collapsible -}}
+    <li><a class="docs-link rounded{{ if $active }} active{{ end }}" href="{{ $item.URL | relURL }}">{{ $item.Name }}</a></li>
+  {{ else -}}
+    <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ $item.URL | relURL }}">{{ $item.Name }}</a></li>
+  {{ end -}}
+{{ end -}}

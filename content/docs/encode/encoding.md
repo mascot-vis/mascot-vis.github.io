@@ -27,7 +27,7 @@ An Encoding object records information about a visual encoding. When a mark's vi
 |**mapping**| user defined mapping between field values and visual properties | Object |  |
 |**rangeExtent**| the extent of the scale range | Number | |
 |**scale**| the scale of the encoding | [Scale](../scale/) | | 
-|**scaleType**| the [type of scale](../../global/constants/#scale-type) | String | depends on<br>field and channel | 
+|**scaleType**| the [type of scale](../../encode/scale/#scale-type) | String | depends on<br>field and channel | 
 |**scheme**| the color scheme  | String | |
 |**startAngle**| the start angle in degrees when encoding using the "angle" channel | Number| 90 |
 {.table-striped}

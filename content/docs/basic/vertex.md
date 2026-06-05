@@ -39,10 +39,10 @@ The properties of a vertex can be set individually. You can also set the propert
 |**y**| the y coordinate of the vertex center | Number | 0 | 
 {.table-striped}
 
-### Methods
+<!-- ### Methods
 | method |  explanation   | return type |
 | --- | --- | --- |
 | *none* |  |  |
-{.table-striped}
+{.table-striped} -->
 <!-- | **clone**() | returns a copy of this vertex | [Vertex](../vertex/) | -->
 

@@ -9,11 +9,11 @@ images: []
 menu:
   docs:
     parent: "data"
-weight: 75
+weight: 4
 toc: true
 ---
 
-The DataScope class represents data that is joined with a graphical object (i.e., [mark](../../marks/mark/) or [group](../../group/group/)). A DataScope object contains a subset of the tuples in a [data table](../datatable/). DataScope objects are created and assigned to graphical objects through the [_repeat_, _divide_, and _densify_ methods](../../group/scene/#methods-join-graphics-with-data) in the [Scene](../../group/scene/) class.
+The DataScope class represents data that is joined with a graphical object (i.e., [mark](../../marks/mark/) or [group](../../group/group/)). A DataScope object contains a subset of the tuples in a [data table](../datatable/). DataScope objects are created and assigned to graphical objects through the [_repeat_, _divide_, and _densify_ operations](../../operations/generative/).
 
 ### Properties
 | property |  explanation   | type | default value |

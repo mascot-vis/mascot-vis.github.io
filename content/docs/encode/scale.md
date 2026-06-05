@@ -22,6 +22,15 @@ A Scale object can be used in multiple encodings. For example, the scale above f
     
     let enc2 = scene.encode(line, {field: "amount", channel: "x", scale: xScale});
 
+### Scale Type
+"linear"<br>
+"point"<br>
+"ordinal"<br>
+"ordinalColor"<br>
+"log"<br>
+"time"<br>
+"sequentialColor"<br>
+
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- | 
