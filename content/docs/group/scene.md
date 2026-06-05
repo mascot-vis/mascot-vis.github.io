@@ -46,8 +46,8 @@ The Scene class represents the top-level container in a visualization. This is w
 | **group**(children)| create a new group with the specified children<br>children (Array, optional): objects to be added in the group | [Group](../../group/group/) |
 -->
 
-<!-- ### Methods: Join Graphics with Data
-These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page. -->
+### Methods: Join Graphics with Data
+These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page.
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
@@ -92,11 +92,14 @@ These operations are now documented as standalone functions on the [Join Element
 -->
 
 ### Methods: Specify Constraints
+These constraint operations are now documented as standalone functions on the [Create Element](../../operations/create-element/) page.
+
+<!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
 | --- | --- | --- |
 | **affix**(item, baseItem, channel, params)| affix items to the specified base items in x or y direction<br>item ([Mark](../../marks/mark/)): an example item<br>baseItem ([Mark](../../marks/mark/)): an example base item<br>channel (String): "x", "y", "angle", or "radialDistance"<br>params (Object, optional): additional parameters:<ul><li>itemAnchor (String): [anchor](../../global/constants/#anchor) of item,<br>defaults to "center" for "x" and "angle" channels<br>defaults to "middle" for "y" and "radialDistance" channels</li><li>baseAnchor (String): [anchor](../../global/constants/#anchor) of base item,<br>defaults to "center" for "x" and "angle" channels<br>defaults to "middle" for "y" and "radialDistance" channels</li><li>offset (Number): distance between item anchor and base item anchor, defaults to 0</li></ul> | void |
 | **align**(items, anchor)| align the items so that they have the same position for the specified anchor<br>items (Array): objects to be aligned<br>anchor (String): [anchor](../../global/constants/#anchor) to align | void |
-{.table-striped}
+-->
 
 ### Methods inherited from Group
 | method |  explanation   | return type |
