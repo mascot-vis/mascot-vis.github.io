@@ -28,7 +28,6 @@ The Scene class represents the top-level container in a visualization. This is w
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the group | [Rectangle](../../basic/rectangle/) | |
-|**center** <img width="70px" src="../../readonly.png">| the center of the group bounds | [Point](../../basic/point/) | |
 |**children** <img width="70px" src="../../readonly.png">| the graphical objects in the group | Array | [] |
 |**firstChild** <img width="70px" src="../../readonly.png">| the first child in the group | [Mark](../../marks/mark/) or [Group](../group/group/) | |
 |**id** <img width="70px" src="../../readonly.png">| the unique id of the group | String |  | 
