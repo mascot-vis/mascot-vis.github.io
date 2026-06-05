@@ -59,11 +59,14 @@ These operations are now documented as standalone functions on the [Join Element
 -->
 
 ### Methods: Encode
-<span style="color:red">angle </span>
+This operation is now a standalone function and you can find it at the [Create and Manage Encodings](../../operations/manage-encodings/) page.
+
+<!-- 
 | method |  explanation   | return type |
 | --- | --- | --- |
 | **encode**(item, params)| encode an attribute using a visual channel <br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): an example item to be encoded <br>params (Object): contains the following [properties](../../encode/encoding/#properties) <ul><li>channel (String, required): [visual channel](../../global/constants/#channel)</li><li>attribute (String, required): data attribute</li><li>aggregator (String, optional): [aggregator](../../global/constants/#aggregator), defaults to "sum"</li><li>scale ([Scale](../../encode/scale/), optional): [scale](../../encode/scale/)</li><li>scaleType (String, optional): type of scale</li><li>flipScale (Boolean, optional): whether the scale is flipped,<br>defaults to false</li><li>includeZero (Boolean, optional): whether the scale domain includes 0, defaults to false</li><li>rangeExtent (Number, optional): range extent</li><li>mapping (Object, optional): user defined mapping</li><li>scheme (String, optional): color scheme</li><li>startAngle (Number): the start angle in degrees when binding to "angle", default to 90</li><li>angleDirection (String): the direction to encode angles,<br> default to "clockwise"</li></ul> | [Encoding](../../encode/encoding/) |
 {.table-striped}
+-->
 
 <!-- Removed methods in the current implementation:
 | **encodeWithinCollection**<br>(item, params)| encode an attribute using a visual channel <br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): an example item to be encoded <br>params (Object): contains the following contains the following [properties](../../encode/encoding/#properties) <ul><li>channel (String, required): [visual channel](../../global/constants/#channel)</li><li>attribute (String, required): data attribute</li><li>aggregator (String, optional): [aggregator](../../global/constants/#aggregator), defaults to "sum"</li><li>scale ([Scale](../../encode/scale/), optional): [scale](../../encode/scale/)</li><li>scaleType (String, optional): type of scale</li><li>invertScale (Boolean, optional): whether the scale is inverted,<br>defaults to false</li><li>includeZero (Boolean, optional): whether the scale domain includes 0, defaults to false</li><li>rangeExtent (Number, optional): range extent</li><li>mapping (Object, optional): user defined mapping</li><li>scheme (String, optional): color scheme</li><li>startAngle (Number): the start angle in degrees when binding to "angle", default to 90</li><li>angleDirection (String): the direction to encode angles,<br> default to "clockwise"</li></ul> | Array of [Encodings](../../encode/encoding/) |
