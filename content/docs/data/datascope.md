@@ -19,8 +19,8 @@ The DataScope class represents data that is joined with a graphical object (i.e.
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**dataTable** <img width="70px" src="../../readonly.png">| the data table from which this data scope is created | [DataTable](../datatable) |  | 
-|**filters** <img width="70px" src="../../readonly.png"> | returns field values used to filter a data table<br>into the current data scope  | Dictionary |  |
 |**fields** <img width="70px" src="../../readonly.png">| the field names in the filters | Array of Strings |  | 
+|**filters** <img width="70px" src="../../readonly.png"> | returns field values used to filter a data table<br>into the current data scope  | Dictionary |  |
 {.table-striped}
 
 ### Methods

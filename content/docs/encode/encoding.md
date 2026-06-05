@@ -18,18 +18,18 @@ An Encoding object records information about a visual encoding. When a mark's vi
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- | 
+|**aggregator**| [aggregator](../../global/constants/#aggregator) for data values | String |  "sum" | 
+|**angleDirection**| the direction to encode angles | String | "clockwise" |
 |**channel** <img width="70px" src="../../readonly.png">| the [visual channel](../../global/constants/#channel) | String | | 
 |**dataTable** <img width="70px" src="../../readonly.png">| the [data table](../../data/datatable) used in this encoding  | String | | 
 |**field** <img width="70px" src="../../readonly.png">| the data field | String | | 
-|**aggregator**| [aggregator](../../global/constants/#aggregator) for data values | String |  "sum" | 
+|**includeZero**| whether the scale domain includes 0 | Boolean | false |
+|**mapping**| user defined mapping between field values and visual properties | Object |  |
+|**rangeExtent**| the extent of the scale range | Number | |
 |**scale**| the scale of the encoding | [Scale](../scale/) | | 
 |**scaleType**| the [type of scale](../../global/constants/#scale-type) | String | depends on<br>field and channel | 
-|**includeZero**| whether the scale domain includes 0 | Boolean | false |
-|**rangeExtent**| the extent of the scale range | Number | |
-|**mapping**| user defined mapping between field values and visual properties | Object |  |
 |**scheme**| the color scheme  | String | |
 |**startAngle**| the start angle in degrees when encoding using the "angle" channel | Number| 90 |
-|**angleDirection**| the direction to encode angles | String | "clockwise" |
 {.table-striped}
 
 ### Methods
