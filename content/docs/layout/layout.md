@@ -12,7 +12,7 @@ menu:
 weight: 600
 toc: true
 ---
-<span style="font-size:1.2em">Subclasses: [GridLayout](../grid/), [StackLayout](../stack/), [PackingLayout](../packing/), [TreemapLayout](../treemap/)</span>
+<span style="font-size:1.2em">Subclasses: [CircularLayout](../circular/), [ClusterLayout](../cluster/), [DirectedGraphLayout](../graph/), [ForceLayout](../force/), [GridLayout](../grid/), [PackingLayout](../packing/), [StackLayout](../stack/), [StrataLayout](../strata/), [TidyTreeLayout](../tidytree/), [TreemapLayout](../treemap/)</span>
 
 The Layout class is an abstract class representing layout algorithms used to position children in a [group](../../group/group/). You cannot create a layout object, you can only create instances of its subclasses. 
 

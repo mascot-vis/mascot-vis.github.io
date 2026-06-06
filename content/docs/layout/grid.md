@@ -22,16 +22,16 @@ The GridLayout class represents a layout that positions objects in a grid. To cr
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "grid" | 
-|**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
-|**numRows**| the number of rows in the grid | Number | undefined |
-|**numCols**| the number of columns in the grid | Number | undefined |
-|**rowGap**| the horizontal gap between adjacent rows in the grid | Number | 5 |
-|**colGap**| the vertical gap between adjacent columns in the grid | Number | 5 |
 |**cellBounds** <img width="70px" src="../../readonly.png">| the bounds of the grid cells | Array of [Rectangle](../../basic/rectangle/) | [] |
-|**horzCellAlignment**| the horizontal [alignment](../../global/constants/#anchor) of item in each grid cell | String | "left" |
-|**vertCellAlignment**| the vertical [alignment](../../global/constants/#anchor) of item in each grid cell | String | "bottom" |
+|**colGap**| the vertical gap between adjacent columns in the grid | Number | 5 |
 |**dir**| the direction in which the items are added to each grid cell | Array | ["l2r", "t2b"] |
+|**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
+|**horzCellAlignment**| the horizontal [alignment](../../global/constants/#anchor) of item in each grid cell | String | "left" |
+|**numCols**| the number of columns in the grid | Number | undefined |
+|**numRows**| the number of rows in the grid | Number | undefined |
+|**rowGap**| the horizontal gap between adjacent rows in the grid | Number | 5 |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "grid" | 
+|**vertCellAlignment**| the vertical [alignment](../../global/constants/#anchor) of item in each grid cell | String | "bottom" |
 
 {.table-striped}
 

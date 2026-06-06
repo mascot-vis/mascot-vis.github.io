@@ -35,9 +35,9 @@ A Scale object can be used in multiple encodings. For example, the scale above f
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- | 
 |**domain** | the domain of the scale | Array | |
+|**isFlipped** | whether the scale is flipped | Boolean | | 
 |**range** | the range of the scale<br>**Note: for position encodings**:<br>the range is not expressed in screen coordinates,<br>instead, it is in the form of `[0, r]` where r is the range extent<br>to get the range in actual screen coordinates, use [`encoding.getScaleRange`](../../encode/encoding/#methods);<br>to change the scale range for position encodings, do not directly set this property, set `rangeExtent` instead<br> | Array | |
 |**rangeExtent** | the extent of the scale range | Number | |
-|**isFlipped** | whether the scale is flipped | Boolean | | 
 |**type**| the [type of scale](../../global/constants/#scale-type) | String | |
 {.table-striped}
 

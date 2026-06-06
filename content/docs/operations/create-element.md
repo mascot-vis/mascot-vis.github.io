@@ -61,7 +61,7 @@ Creates a [linear gradient](../../basic/lineargradient/).
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
-### msc.mark(type, params)
+### scene.mark(type, params)
 
 Creates a [mark](../../marks/mark/).
 

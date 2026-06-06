@@ -22,8 +22,8 @@ Mascot automatically infers the [data type](../../global/constants/#data-type) f
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**name** | the name of the data table, derived from the file name | String | | 
 |**fields** <img width="70px" src="../../readonly.png">| the name of fields (columns) in the data table | Array | | 
+|**name** | the name of the data table, derived from the file name | String | | 
 | **nonNumericFields** <img width="70px" src="../../readonly.png">| the name of non-numeric fields (columns) in the data table | Array | | 
 {.table-striped}
 

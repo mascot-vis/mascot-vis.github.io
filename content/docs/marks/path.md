@@ -13,7 +13,7 @@ weight: 30
 toc: true
 ---
 <span style="font-size:1.2em">extends [Mark](../mark/)</span><br>
-<span style="font-size:1.2em">Subclasses: [Rect](../rectpath/), [Area](../areapath/), [PolygonPath](../polygonpath/), [ArcPath](../arcpath/), [RingPath](../ringpath/)</span>
+<span style="font-size:1.2em">Subclasses: [Rect](../rectpath/), [Area](../areapath/), [Polygon](../polygonpath/), [Arc](../arcpath/), [Ring](../ringpath/)</span>
 
 The Path class represents a geometric path consisting of multiple [vertices](../../basic/vertex/) connected by [segments](../../basic/segment). To create a path object, use the _mark_ method in the [Scene](../../group/scene) class, for example:
 

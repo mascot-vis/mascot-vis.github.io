@@ -21,7 +21,6 @@ The Glyph class represents a group of primitive [marks](../../marks/mark/). To c
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**bounds** <img width="70px" src="../../readonly.png">| the bounding rectangle of the group | [Rectangle](../../basic/rectangle/) | |
-|**center** <img width="70px" src="../../readonly.png">| the center of the group bounds | [Point](../../basic/point/) | |
 |**children** <img width="70px" src="../../readonly.png">| the graphical objects in the group | Array | [] |
 |**dataScope**| the [data scope](../../data/datascope/) of the group | [DataScope](../../data/datascope/) | undefined |
 |**firstChild** <img width="70px" src="../../readonly.png">| the first child in the group | [Mark](../../marks/mark/) | |
