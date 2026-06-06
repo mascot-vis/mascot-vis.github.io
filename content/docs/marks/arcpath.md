@@ -21,7 +21,7 @@ The Arc class represents a sector mark that is used in a [Doughnut Chart](../../
     let arc = scene.mark("arc", {x: 100, y: 100, innerRadius: 20, outerRadius: 40, startAngle: 0, endAngle: 90});
 ```
 
-You can also use the [_divide_ operation](../../operations/generative/) to transform a [Ring](../ringpath/) to a collection of Arc objects, or transform a [Circle](../circlepath/) to a collection of pie marks. [Here is an explanation](../../../tutorials/join/#divide) of the divide operation.
+You can also use the [_divide_ operation](../../operations/generative/#mscdivideelem-data-params) to transform a [Ring](../ringpath/) to a collection of Arc objects, or transform a [Circle](../circlepath/) to a collection of pie marks. [Here is an explanation](../../../tutorials/join/#divide) of the divide operation.
 
 ### Properties
 | property |  explanation   | type | default value |

@@ -1,5 +1,5 @@
 ---
-title: "PiePath"
+title: "Pie"
 description: ""
 lead: ""
 date: 2020-11-12T15:22:20+01:00
@@ -15,7 +15,7 @@ toc: true
 
 <span style="font-size:1.2em">extends [Path](../path/)</span><br>
 
-The PiePath class represents a pie mark that is used in a [pie chart](../../../gallery.html#PieChart). You cannot create a PiePath object directly, instead, you need to use the [_divide_ operation](../../operations/generative/) to transform a [Circle](../circlepath/) to a collection of pie marks. [Here is an explanation](../../../tutorials/join/#divide) of the divide operation.
+The Pie class represents a pie mark that is used in a [pie chart](../../../gallery.html#PieChart). A pie is a special arc whose inner radius is 0. You cannot create a Pie object directly, instead, you need to use the [_divide_ operation](../../operations/generative/#mscdivideelem-data-params) to transform a [Circle](../circlepath/) to a collection of pie marks. [Here is an explanation](../../../tutorials/join/#divide) of the divide operation.
 
 
 ### Properties
@@ -26,7 +26,7 @@ The PiePath class represents a pie mark that is used in a [pie chart](../../../g
 |**endAngle** | the end angle of the pie in degrees | Number | 90 | 
 {.table-striped}
 
-Angles in Atlas are specified using the polar coordinate system, where 0 is at the positive x axis, and the angle increases in the counterclockwise direction. The figure below illustrates various values of startAngle and endAngle.
+Angles in Mascot are specified using the polar coordinate system, where 0 is at the positive x axis, and the angle increases in the counterclockwise direction. The figure below illustrates various values of startAngle and endAngle.
 
 {{< figure src="../pie.png" width="800px" alt="start angle and end angle for a pie" caption="" class="border-0 mx-auto text-center">}}
 
@@ -61,7 +61,7 @@ Angles in Atlas are specified using the polar coordinate system, where 0 is at t
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
 |**id** <img width="70px" src="../../readonly.png">| the unique id of the path | String |  | 
-|**type** <img width="70px" src="../../readonly.png"> | the type of the path | String | "circle" | 
+|**type** <img width="70px" src="../../readonly.png"> | the type of the path | String | "pie" |
 |**dataScope**| the [data scope](../../data/datascope/) of the path | [DataScope](../../data/datascope/) | undefined |
 {.table-striped}
 
@@ -76,5 +76,5 @@ Angles in Atlas are specified using the polar coordinate system, where 0 is at t
 | --- | --- | --- |
 | **contains**(x, y) | whether this mark contains a point<br>x (Number): x coordinate of the point<br>y (Number): y coordinate of the point | Boolean |
 | **getScene**() | returns the scene in which this mark resides | [Scene](../../group/scene) |
-| **duplicate**() | returns a copy of this mark | [CirclePath](../circlepath/) |
+| **duplicate**() | returns a copy of this mark | [Pie](../piepath/) |
 {.table-striped}
