@@ -61,9 +61,9 @@ Creates a [linear gradient](../../basic/lineargradient/).
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
-### msc.mark(type, params)
+### scene.mark(type, params)
 
-Creates a [mark](../../marks/mark/).
+Creates a [mark](../../marks/mark/) in a [scene](../../group/scene/).
 
 - `type`: [mark type](../../global/constants/#mark-type)
 - `params` (Object): contains mark properties
