@@ -45,8 +45,8 @@ The Scene class represents the top-level container in a visualization. This is w
 | **group**(children)| create a new group with the specified children<br>children (Array, optional): objects to be added in the group | [Group](../../group/group/) |
 -->
 
-### Methods: Join Graphics with Data
-These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page.
+<!-- ### Methods: Join Graphics with Data
+These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page. -->
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
@@ -57,8 +57,8 @@ These operations are now documented as standalone functions on the [Join Element
 | **repeat**(item, table, params)| [repeat](/tutorials/join/#repeat) a graphical object by an attribute<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object to be repeated<br>table ([DataTable](../../data/datatable/)): data table<br>params (Object, optional): containing one or more of the following: <br><ul><li>attribute (String): the attribute to repeat by, defaults to tuple ID</li><li>layout ([Layout](../../layout/layout)): the layout to arrange the repeated items</li></ul> | [Collection](../../group/collection/) |
 -->
 
-### Methods: Encode
-This operation is now a standalone function and you can find it at the [Create and Manage Encodings](../../operations/manage-encodings/) page.
+<!-- ### Methods: Encode
+This operation is now a standalone function and you can find it at the [Create and Manage Encodings](../../operations/manage-encodings/) page. -->
 
 <!-- 
 | method |  explanation   | return type |
