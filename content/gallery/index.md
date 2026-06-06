@@ -21,13 +21,33 @@ body {
     height:100%;
     overflow:hidden;
 }
+
+iframe {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 3.5625rem;
+    width: 100%;
+    height: calc(100vh - 3.5625rem);
+    height: calc(100dvh - 3.5625rem);
+    margin-top: 0;
+    border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+    iframe {
+        top: 4rem;
+        height: calc(100vh - 4rem);
+        height: calc(100dvh - 4rem);
+    }
+}
 </style>
 
 <script>
     console.log("testing JS in md");
 </script>
 
-<iframe src="/gallery-static.html" style="width: 100%; height: calc(100vh - 86px); margin-top:3px;border: 1px solid #ccc;" allowfullscreen></iframe>
+<iframe src="/gallery-static.html"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
     

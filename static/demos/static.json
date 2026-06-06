@@ -127,9 +127,16 @@
         "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>"
     },
     "PieChart": {
-        "name": "PieChart",
+        "name": "Pie Chart",
         "mark": "Circles and Pies",
         "title": "How do Americans Spend Their Time?",
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>"
+    },
+    "PointRangePlot": {
+        "name": "Point-Range Plot",
+        "mark": "Circles and Pies",
+        "title": "Mean and Standard Deviation",
+        "draft": true,
         "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>"
     },
     "RadialBarChart": {
@@ -407,6 +414,12 @@
         "mark": "Small Multiples",
         "title": "Household Spending Patterns",
         "about": "Comparing household spending patterns in the UK and New Zealand in 1980 and 2008. Data source is <a href='https://www.ieltstrainingtips.com/the-charts-below-show-household-spending-patterns-in-two-countries-between-1980-and-2008/' target='_blank'>here</a>."
+    },
+    "MultipleRadarCharts": {
+        "name": "Radar Charts",
+        "mark": "Small Multiples",
+        "title": "",
+        "about": ""
     },
     "ScatterplotMatrix": {
         "name": "Scatterplot Matrix",
