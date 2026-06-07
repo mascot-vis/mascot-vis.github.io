@@ -488,7 +488,7 @@
         for (const k of keys) {
           if (json[k].draft) continue;
           const item = container.append("div").attr("class", "galleryItem");
-          const stillPath = 'demos/thumbnails/' + k + '.png';
+          const stillPath = 'demos/thumbnails/' + getDemoBaseName(k) + '.png';
           const hoverPreviewPath =
             currentMode === "interactive"
               ? stillPath.replace(/\.png$/i, ".gif")
@@ -587,9 +587,14 @@
           });
       }
 
+      function getDemoBaseName(demo) {
+        if (currentMode === "interactive") return demo;
+        return demo[0].toLowerCase() + demo.substring(1);
+      }
+
       function getDemoPath(demo) {
         if (currentMode === "interactive") return "demos/interactive/" + demo + ".js";
-        return "demos/static/" + demo[0].toLowerCase() + demo.substring(1) + ".js";
+        return "demos/static/" + getDemoBaseName(demo) + ".js";
       }
 
       function loadDemo(demo) {
