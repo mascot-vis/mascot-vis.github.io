@@ -4,9 +4,11 @@
   {{ if .HasChildren -}}
   <ul class="list-unstyled">
     {{ range .Children -}}
-      {{- $active := or ($currentPage.IsMenuCurrent "tutorials" .) ($currentPage.HasMenuCurrent "tutorials" .) -}}
-      {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
-      <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{- if not (or (eq .URL "/tutorials/instruction/")) -}}
+        {{- $active := or ($currentPage.IsMenuCurrent "tutorials" .) ($currentPage.HasMenuCurrent "tutorials" .) -}}
+        {{- $active = or $active (eq $currentPage.Section .Identifier) -}}
+        <li><a class="docs-link{{ if $active }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{- end -}}
     {{ end -}}
   </ul>
   {{ end -}}
