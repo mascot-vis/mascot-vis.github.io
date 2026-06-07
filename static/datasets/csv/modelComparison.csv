@@ -1,0 +1,41 @@
+﻿Category,Model,Task,Score
+Histogram,Our Model,Reconstruction,4.31
+Histogram,GPT-4o,Reconstruction,4.12
+Histogram,Our Model,Editing,3.27
+Histogram,GPT-4o,Editing,3.22
+Bar,Our Model,Reconstruction,4.22
+Bar,GPT-4o,Reconstruction,3.91
+Bar,Our Model,Editing,4.48
+Bar,GPT-4o,Editing,4.11
+Bar Num,Our Model,Reconstruction,4.74
+Bar Num,GPT-4o,Reconstruction,4.64
+Bar Num,Our Model,Editing,4.85
+Bar Num,GPT-4o,Editing,4.41
+Heatmap,Our Model,Reconstruction,4.55
+Heatmap,GPT-4o,Reconstruction,4.11
+Heatmap,Our Model,Editing,4.65
+Heatmap,GPT-4o,Editing,4.4
+Line,Our Model,Reconstruction,4.11
+Line,GPT-4o,Reconstruction,3.81
+Line,Our Model,Editing,3.78
+Line,GPT-4o,Editing,3.57
+Line Num,Our Model,Reconstruction,4.84
+Line Num,GPT-4o,Reconstruction,4.52
+Line Num,Our Model,Editing,4.21
+Line Num,GPT-4o,Editing,4.12
+Pie,Our Model,Reconstruction,4.72
+Pie,GPT-4o,Reconstruction,4.35
+Pie,Our Model,Editing,4.85
+Pie,GPT-4o,Editing,4.34
+Rings,Our Model,Reconstruction,4.11
+Rings,GPT-4o,Reconstruction,3.92
+Rings,Our Model,Editing,4.11
+Rings,GPT-4o,Editing,3.92
+Radar,Our Model,Reconstruction,4.18
+Radar,GPT-4o,Reconstruction,3.82
+Radar,Our Model,Editing,3.22
+Radar,GPT-4o,Editing,3.45
+Rose,Our Model,Reconstruction,3.98
+Rose,GPT-4o,Reconstruction,4.2
+Rose,Our Model,Editing,3.67
+Rose,GPT-4o,Editing,3.25
