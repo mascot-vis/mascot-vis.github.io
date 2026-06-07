@@ -44,10 +44,95 @@ iframe {
 </style>
 
 <script>
-    console.log("testing JS in md");
+    (function () {
+        function initGallerySync() {
+            const frame = document.getElementById("galleryFrame");
+            if (!frame) return;
+
+            const basePath = "/gallery-static.html";
+            let syncingFromIframe = false;
+            let syncingFromParent = false;
+
+            function buildIframeUrlFromParent() {
+                const parentUrl = new URL(window.location.href);
+                const mode = parentUrl.searchParams.get("mode");
+                const frameUrl = new URL(basePath, window.location.origin);
+
+                if (mode === "static" || mode === "interactive") {
+                    frameUrl.searchParams.set("mode", mode);
+                }
+
+                frameUrl.hash = window.location.hash || "";
+                return frameUrl.pathname + frameUrl.search + frameUrl.hash;
+            }
+
+            function syncIframeFromParent() {
+                if (syncingFromIframe) return;
+
+                const target = buildIframeUrlFromParent();
+                const current = frame.getAttribute("src") || "";
+                if (current === target) return;
+
+                syncingFromParent = true;
+                frame.setAttribute("src", target);
+                syncingFromParent = false;
+            }
+
+            function syncParentFromIframe() {
+                if (syncingFromParent) return;
+
+                try {
+                    const frameLoc = frame.contentWindow.location;
+                    if (!frameLoc || !frameLoc.pathname.endsWith("/gallery-static.html")) return;
+
+                    const parentUrl = new URL(window.location.href);
+                    const frameMode = new URLSearchParams(frameLoc.search).get("mode");
+
+                    if (frameMode === "static" || frameMode === "interactive") {
+                        parentUrl.searchParams.set("mode", frameMode);
+                    } else {
+                        parentUrl.searchParams.delete("mode");
+                    }
+
+                    parentUrl.hash = frameLoc.hash || "";
+
+                    const next = parentUrl.pathname + parentUrl.search + parentUrl.hash;
+                    const current = window.location.pathname + window.location.search + window.location.hash;
+                    if (next === current) return;
+
+                    syncingFromIframe = true;
+                    window.history.replaceState(null, "", next);
+                    syncingFromIframe = false;
+                } catch (err) {
+                    // Ignore cross-context access issues while iframe is loading.
+                }
+            }
+
+            frame.addEventListener("load", function () {
+                syncParentFromIframe();
+
+                try {
+                    frame.contentWindow.addEventListener("hashchange", syncParentFromIframe);
+                } catch (err) {
+                    // Ignore cross-context access issues while iframe is loading.
+                }
+            });
+
+            window.addEventListener("hashchange", syncIframeFromParent);
+            window.addEventListener("popstate", syncIframeFromParent);
+
+            syncIframeFromParent();
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initGallerySync);
+        } else {
+            initGallerySync();
+        }
+    })();
 </script>
 
-<iframe src="/gallery-static.html"></iframe>
+<iframe id="galleryFrame" src="/gallery-static.html"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
     
