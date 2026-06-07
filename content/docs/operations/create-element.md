@@ -1,5 +1,5 @@
 ---
-title: "Create Components"
+title: "Create Visual Components"
 description: ""
 lead: ""
 date: 2026-06-01T00:00:00+00:00
@@ -68,6 +68,16 @@ Creates a [mark](../../marks/mark/) in a [scene](../../group/scene/).
 - `type`: [mark type](../../global/constants/#mark-type)
 - `params` (Object): contains mark properties
 - Return type: [Mark](../../marks/mark/)
+
+<hr style="border: 0; border-top: 1px solid #cccccc;">
+
+### msc.renderer(type, domId)
+
+Creates a [renderer](../../rendering/renderer/).
+
+- `type` (String): type of renderer; possible values are `"svg"` and `"webgl"`
+- `domId` (String): ID of the SVG or Canvas element
+- Return type: [Renderer](../../rendering/renderer/)
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
