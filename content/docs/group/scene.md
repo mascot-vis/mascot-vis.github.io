@@ -91,7 +91,7 @@ These operations are now documented as standalone functions on the [Join Element
 -->
 
 ### Methods: Specify Constraints
-These constraint operations are now documented as standalone functions on the [Create Element](../../operations/create-element/) page.
+These constraint operations are now documented as standalone functions on the [Specify Constraints and Connections](../../operations/constraint-connection/) page.
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
