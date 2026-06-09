@@ -94,7 +94,7 @@ This operation is now a standalone function and you can find it at the [Create a
 -->
 
 ### Methods: Specify Constraints
-These constraint operations are now documented as standalone functions on the [Create Element](../../operations/create-element/) page.
+These constraint operations are now documented as standalone functions on the [Specify Constraints and Connections](../../operations/constraint-connection/) page.
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
