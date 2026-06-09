@@ -23,12 +23,12 @@ The TreemapLayout class represents a layout that positions objects using the tre
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "treemap" | 
 |**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
-|**width**| the width of the top level container | Number |  |
 |**height**| the height of the top level container | Number |  |
-|**top**| the y coordinate of the top level container | Number |  |
 |**left**| the x coordinate of the top level container | Number |  |
+|**top**| the y coordinate of the top level container | Number |  |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "treemap" | 
+|**width**| the width of the top level container | Number |  |
 {.table-striped}
 
 ### Methods inherited from Layout

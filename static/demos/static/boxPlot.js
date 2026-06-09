@@ -7,15 +7,15 @@ let line = scn.mark("line", {x1: 150, y1: 130, x2: 700, y2: 130, strokeColor: "#
 let glyph = scn.glyph(line, box, medianLine);
 
 let dt = await msc.csv("/datasets/csv/monthlySales.csv");
-scn.attach(glyph, dt);
-let enc = scn.encode(line.vertices[0], {attribute: "Sales", channel: "x", aggregator: "min"});
-scn.encode(line.vertices[1], {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "max"});
-scn.encode(box.leftSegment, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "percentile 25"});
-scn.encode(box.rightSegment, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "percentile 75"});
-scn.encode(medianLine, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "median"});
+msc.attach(glyph, dt);
+let enc = msc.encode(line.vertices[0], {attribute: "Sales", channel: "x", aggregator: "min"});
+msc.encode(line.vertices[1], {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "max"});
+msc.encode(box.leftSegment, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "percentile 25"});
+msc.encode(box.rightSegment, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "percentile 75"});
+msc.encode(medianLine, {attribute: "Sales", channel: "x", shareScale: enc, aggregator: "median"});
 enc.rangeExtent = 600;
 scn.axis("x", "Sales", {orientation: "bottom", pathY: 160, labelFormat: ".2s"});
 
 let circ = scn.mark("circle", {strokeColor: "#32A457", fillColor: "none", strokeWidth: 4, radius: 6,  y: 130, opacity: 0.75});
-scn.repeat(circ, dt);
-scn.encode(circ, {channel: "x", attribute: "Sales", shareScale: enc});
+msc.repeat(circ, dt);
+msc.encode(circ, {channel: "x", attribute: "Sales", shareScale: enc});

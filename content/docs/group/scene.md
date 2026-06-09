@@ -45,8 +45,8 @@ The Scene class represents the top-level container in a visualization. This is w
 | **group**(children)| create a new group with the specified children<br>children (Array, optional): objects to be added in the group | [Group](../../group/group/) |
 -->
 
-### Methods: Join Graphics with Data
-These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page.
+<!-- ### Methods: Join Graphics with Data
+These operations are now documented as standalone functions on the [Join Elements with Data](../../operations/generative/) page. -->
 
 <!-- Moved to standalone functions in the current implementation:
 | method |  explanation   | return type |
@@ -57,12 +57,15 @@ These operations are now documented as standalone functions on the [Join Element
 | **repeat**(item, table, params)| [repeat](/tutorials/join/#repeat) a graphical object by an attribute<br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): graphical object to be repeated<br>table ([DataTable](../../data/datatable/)): data table<br>params (Object, optional): containing one or more of the following: <br><ul><li>attribute (String): the attribute to repeat by, defaults to tuple ID</li><li>layout ([Layout](../../layout/layout)): the layout to arrange the repeated items</li></ul> | [Collection](../../group/collection/) |
 -->
 
-### Methods: Encode
-<span style="color:red">angle </span>
+<!-- ### Methods: Encode
+This operation is now a standalone function and you can find it at the [Create and Manage Encodings](../../operations/manage-encodings/) page. -->
+
+<!-- 
 | method |  explanation   | return type |
 | --- | --- | --- |
 | **encode**(item, params)| encode an attribute using a visual channel <br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): an example item to be encoded <br>params (Object): contains the following [properties](../../encode/encoding/#properties) <ul><li>channel (String, required): [visual channel](../../global/constants/#channel)</li><li>attribute (String, required): data attribute</li><li>aggregator (String, optional): [aggregator](../../global/constants/#aggregator), defaults to "sum"</li><li>scale ([Scale](../../encode/scale/), optional): [scale](../../encode/scale/)</li><li>scaleType (String, optional): type of scale</li><li>flipScale (Boolean, optional): whether the scale is flipped,<br>defaults to false</li><li>includeZero (Boolean, optional): whether the scale domain includes 0, defaults to false</li><li>rangeExtent (Number, optional): range extent</li><li>mapping (Object, optional): user defined mapping</li><li>scheme (String, optional): color scheme</li><li>startAngle (Number): the start angle in degrees when binding to "angle", default to 90</li><li>angleDirection (String): the direction to encode angles,<br> default to "clockwise"</li></ul> | [Encoding](../../encode/encoding/) |
 {.table-striped}
+-->
 
 <!-- Removed methods in the current implementation:
 | **encodeWithinCollection**<br>(item, params)| encode an attribute using a visual channel <br>item ([Mark](../../marks/mark/) or [Group](../../group/group)): an example item to be encoded <br>params (Object): contains the following contains the following [properties](../../encode/encoding/#properties) <ul><li>channel (String, required): [visual channel](../../global/constants/#channel)</li><li>attribute (String, required): data attribute</li><li>aggregator (String, optional): [aggregator](../../global/constants/#aggregator), defaults to "sum"</li><li>scale ([Scale](../../encode/scale/), optional): [scale](../../encode/scale/)</li><li>scaleType (String, optional): type of scale</li><li>invertScale (Boolean, optional): whether the scale is inverted,<br>defaults to false</li><li>includeZero (Boolean, optional): whether the scale domain includes 0, defaults to false</li><li>rangeExtent (Number, optional): range extent</li><li>mapping (Object, optional): user defined mapping</li><li>scheme (String, optional): color scheme</li><li>startAngle (Number): the start angle in degrees when binding to "angle", default to 90</li><li>angleDirection (String): the direction to encode angles,<br> default to "clockwise"</li></ul> | Array of [Encodings](../../encode/encoding/) |

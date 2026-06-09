@@ -1,5 +1,5 @@
 ---
-title: "Specify Constraints and Connections"
+title: "Create Constraint and Connection"
 description: ""
 lead: ""
 date: 2026-06-08T00:00:00+00:00

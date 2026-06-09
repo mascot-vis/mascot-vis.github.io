@@ -1,90 +1,131 @@
 {
+    "brush_slopeGraph": {
+        "name": "Brushable axis (Slope Graph)",
+        "type": "Select",
+        "title": "Obesity and Education",
+        "draft": false,
+        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo. <br><br>Interaction: Brush on either y-axis or both to highlight states within the selected value range and fade the rest. The brush can be resized and moved to adjust the selection interactively. Hover a line to emphasize it and show a tooltip with the state name."
+    },
     "select_scatterplot": {
         "name": "Select points (Scatterplot)",
         "type": "Select",
         "title": "GDP per capita vs. Life expectancy",
-        "about": ""
+        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is cumulative."
     },
     "brush_scatterplot": {
         "name": "Brush 2D region (Scatterplot)",
         "type": "Select",
         "title": "GDP per capita vs. Life expectancy",
-        "about": ""
+        "about": "Drag a rectangular brush over the scatterplot to select points in a 2D region. Selected countries stay emphasized while points outside the brushed region fade. The rectangle can be resized and moved to adjust the selection interactively."
     },
     "flowSelect_DAG": {
-        "name": "Flow select nodes (Directed Graph)",
+        "name": "Flow select (Directed Graph)",
         "type": "Select",
         "title": "",
-        "about": ""
+        "about": "Hover over a node to trace outgoing flow paths in the directed graph. Connected links are highlighted in orange so local dependency flow is easier to follow."
     },
-    "brush_slopeGraph": {
-        "name": "Brushable Slope Graph",
-        "type": "Select",
-        "title": "Obesity and Education",
-        "draft": false,
-        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo."
+    "coordinate_areaChart": {
+        "name": "Overview + detail (Area Chart)",
+        "type": "Coordinate",
+        "title": "date vs. price",
+        "about": "This demo links two coordinated views: a focus area chart and a context chart below it. Brushing the lower overview updates the time window shown in the upper detail view. The brush can be resized and moved to explore different time ranges while the area chart updates accordingly."
+    },
+    "coordinate_splom": {
+        "name": "Brush + link (SPLOM)",
+        "type": "Coordinate",
+        "title": "",
+        "about": "Brush one cell in the scatterplot matrix to define an x/y range selection. The same subset is highlighted across all other cells to support multidimensional comparison. The brush can be resized and moved to adjust the selection interactively."
     },
     "celeste": {
         "name": "Celeste: Topology",
         "type": "Select",
         "title": "Celeste",
-        "draft": false,
-        "about": ""
+        "draft": true,
+        "about": "A force-directed topology view of the Celeste system with type-based node coloring and labeled components. The layout supports interactive graph exploration as clusters and links settle into structure."
     },
     "celeste_1": {
         "name": "Celeste_1",
         "type": "Select",
         "title": "Celeste",
         "draft": true,
-        "about": ""
+        "about": "An alternate force-directed architecture graph for Celeste that emphasizes component types with color and a legend. The simulation enables interactive inspection of connectivity patterns in the system."
     },
     "celeste_2": {
         "name": "Celeste: Chord",
         "type": "Select",
         "title": "Celeste",
-        "draft": false,
-        "about": ""
+        "draft": true,
+        "about": "A chord diagram of Celeste port relationships in a circular layout. Hovering ribbons and labels highlights specific connections and reveals details through tooltip feedback."
     },
     "celeste_infographics": {
         "name": "Celeste: Infographics",
         "type": "Select",
         "title": "Celeste",
-        "draft": false,
-        "about": ""
+        "draft": true,
+        "about": "An infographic-style system walkthrough showing how data moves through Celeste services and storage layers. Visual emphasis and labeling make flow paths and component roles easy to inspect."
     },
-    "parameter_edgeBundling": {
-        "name": "Edge Bundle Strength",
+    "reconfigure_edgeBundling": {
+        "name": "Edge bundle strength",
         "type": "Reconfigure",
         "title": "Character Connections",
         "draft": false,
-        "about": ""
+        "about": "Use the slider to reconfigure edge-bundling strength in the network visualization. Adjusting the parameter changes how tightly edges are bundled together."
+    },
+    "reconfigure_gridLayout": {
+        "name": "Layout parameters (Waffle Chart)",
+        "type": "Reconfigure",
+        "title": "",
+        "about": "Interactive controls let you change waffle chart layout parameters such as column count, start corner, and fill direction. The grid recomputes immediately to show layout changes."
+    },
+    "reconfigure_rangeExtent": {
+        "name": "Scale range (Gantt Chart)",
+        "type": "Reconfigure",
+        "title": "",
+        "about": "Drag the x-axis labels or ticks to adjust the temporal range extent mapped to the x-axis in the Gantt view. The size of the bars and the axis content update accordingly."
+    },
+    "sort_lollipopChart": {
+        "name": "Mark order (Lollipop Chart)",
+        "type": "Reconfigure",
+        "title": "",
+        "about": "Choose sorting attribute and order to reorder lollipop marks interactively. The chart can be sorted by crime rate or area in ascending or descending direction."
     },
     "encode_scatterPlot": {
-        "name": "Change axis attribute",
+        "name": "Change axis attribute (Scatterplot)",
         "type": "Encode",
         "title": "Country Statistics",
         "draft": false,
-        "about": ""
+        "about": "Dropdown menus let you remap which data attributes are encoded on the x and y axes. This supports rapid exploration of different variable relationships in the same scatterplot."
     },
-    "zoom_bubblePlot": {
-        "name": "Zommable Bubble Plot",
-        "type": "Pan & Zoom",
-        "draft": true,
+    "filter_stackedAreaChart": {
+        "name": "Filter item (Stacked Area Chart)",
+        "type": "Filter",
+        "title": "",
+        "about": "Toggle category checkboxes to filter industries included in the stacked area chart. This interaction isolates subsets so trends can be compared without visual clutter."
+    },
+    "navigate_bubblePlot": {
+        "name": "Zoom and pan (Bubble Plot)",
+        "type": "Navigate",
         "title": "Habitable Planets",
-        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo."
+        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo. <br><br>Interaction: Use the mouse wheel to zoom and drag the background to pan, updating the x and y domains for exploratory navigation."
+    },
+    "derive_indexChart": {
+        "name": "Adjust baseline (Index Chart)",
+        "type": "Derive",
+        "title": "",
+        "about": "Move the pointer along the timeline to choose a baseline date, then view all series re-indexed relative to that point. The chart derives percentage change from the selected baseline for comparison."
     },
     "RC_VIS1": {
         "name": "RC_VIS",
         "type": "RC-VIS",
         "title": "Character Connections",
-        "draft": false,
-        "about": ""
+        "draft": true,
+        "about": "An edge-bundled character network with a control to tune bundling strength. Hover interactions emphasize each node's local connections while de-emphasizing the rest of the graph."
     },
     "IP_Theft": {
         "name": "IP_Theft",
         "type": "RC-VIS",
         "title": "Infographic",
-        "draft": false,
-        "about": ""
+        "draft": true,
+        "about": "A staged infographic narrative of IP theft scenarios. Use keyboard navigation to step through attack phases and reveal each sequence progressively."
     }
 }

@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Mascot</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- <script src="lib/d3.min.js"></script> -->
     <script src="lib/dagre.min.js"></script>
     <script src="lib/three.js"></script>
     <script src="lib/pixi.min.js"></script>
@@ -20,60 +19,134 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"
+      href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css"
     />
-
     <script
       type="text/javascript"
       charset="utf8"
-      src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"
+      src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"
     ></script>
 
     <style>
       html {
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         height: 100%;
         font-family: Arial;
       }
       body {
         height: 100vh;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         background: #f2f2f2;
-        overflow-x: hidden;
-        overflow-y: hidden;
+        overflow: hidden;
       }
-      #homeBtn {
+      #topTabs {
+        position: relative;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #bbb;
+        background: #e8e8e8;
+      }
+      #topActions {
         position: absolute;
-        top: 5px;
-        left: 15px;
+        left: 12px;
+        top: 7px;
+      }
+      #showGalleryBtn {
+        border: 1px solid #9aa3ad;
+        border-radius: 999px;
+        background: linear-gradient(#ffffff, #edf1f5);
+        color: #243447;
+        padding: 6px 14px;
         font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+      }
+      #showGalleryBtn:hover {
+        background: linear-gradient(#ffffff, #e3e9ef);
+        border-color: #7d8792;
+      }
+      #showGalleryBtn:active {
+        transform: translateY(1px);
+      }
+      #showGalleryBtn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+        background: linear-gradient(#f0f0f0, #e0e0e0);
+        border-color: #ccc;
+      }
+      .modeTab {
+        border: 1px solid transparent;
+        border-right: 1px solid #bbb;
+        background: #ddd;
+        padding: 0 18px;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .modeTab:last-child {
+        border-right: none;
+      }
+      .modeTab.active {
+        background: #fff;
+        border-color: #bbb;
+        border-bottom-color: #fff;
+        margin-bottom: -1px;
+        position: relative;
+        z-index: 1;
+      }
+      #demoSidebar {
+        width: 213px;
+        height: calc(100% - 43px);
+        border-right: 1px solid #ccc;
+        background: #f2f2f2;
+        float: left;
       }
       #demoList {
-        width: 152px;
-        height: 100%;
-        border: 0px solid #ccc;
-        background: #f2f2f2;
-        padding: 0px 5px 0 25px;
-        float: left;
+        width: 182px;
+        max-width: 182px;
+        height: calc(100% - 48px);
+        background: transparent;
+        padding: 0 5px 0 25px;
         list-style: none;
         font-size: 12px;
-        overflow-y: scroll;
+        overflow-y: auto;
         margin: 0;
+      }
+      #demoSearchWrap {
+        width: 182px;
+        max-width: 182px;
+        background: transparent;
+        padding: 10px 5px 8px 25px;
+        box-sizing: content-box;
+      }
+      #demoSearch {
+        width: calc(100% - 20px);
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        padding: 6px 8px;
+        font-size: 12px;
+        outline: none;
+      }
+      #demoSearch:focus {
+        border-color: #7d8792;
+        box-shadow: 0 0 0 2px rgba(125, 135, 146, 0.15);
       }
       .category {
         margin: 15px 0 10px -7px;
         font-weight: bold;
       }
       .demos {
-        margin-bottom: 0px;
-        padding: 0px 15px 0 5px;
+        margin-bottom: 10px;
+        padding: 0 15px 0 5px;
         list-style: none;
       }
       .demos li {
-        margin-top: 8px;
-        margin-bottom: 0px;
+        margin-bottom: 8px;
       }
       .demos li:hover {
         cursor: pointer;
@@ -85,60 +158,49 @@
         margin: 0;
         padding: 0;
         position: absolute;
-        top: 0;
-        left: 183px;
+        top: 43px;
+        left: 213px;
       }
       #svgElement {
-        width: calc(100% - 183px);
-        height: 99%;
+        width: calc(100% - 213px);
+        height: calc(100% - 43px);
         margin: 0;
         padding: 0;
         position: absolute;
-        top: 0;
-        left: 183px;
+        top: 43px;
+        left: 213px;
         background: white;
+        user-select: none;
       }
-      #hint {
+      #gallery,
+      #depGraphVis {
+        width: calc(100% - 213px);
+        height: calc(100% - 43px);
+        overflow-y: auto;
+        background: #fff;
         position: absolute;
-        top: 0;
-        padding: 5px;
-        left: 183px;
-        display: block;
-        background: #fffde5;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 2px 0 0 2px;
-      }
-      #gallery, #depGraphVis {
-        width: calc(100% - 183px);
-        height: 100%;
-        overflow-y: scroll;
-        background: #fafafa;
-        position: absolute;
-        top: 0;
+        top: 43px;
         right: 0;
-        border: 0px solid #000;
         z-index: 1000;
       }
       .galleryItem {
         max-width: 220px;
         min-width: 220px;
-        height: 172px;
+        height: 170px;
         vertical-align: text-bottom;
         text-align: center;
         border: 2px solid #eee;
         display: inline-block;
-        margin: 10px 15px 10px 15px;
-        /* margin: 5px 5px 5px 5px; */
+        margin: 10px 15px;
       }
       .galleryItem:hover {
-        box-shadow: 0px 0px 5px #888;
+        box-shadow: 0 0 5px #888;
         cursor: pointer;
       }
       #console {
-        width: calc(100% - 198px);
+        width: calc(100% - 228px);
         position: absolute;
-        left: 191px;
+        left: 221px;
         height: 70%;
         resize: none;
         border: none;
@@ -146,14 +208,22 @@
         padding: 60px;
       }
       #btmPanel {
-        width: calc(100% - 183px);
+        width: calc(100% - 213px);
         height: 260px;
         position: absolute;
-        bottom: 0px;
-        right: 0px;
-        border: 0px;
-        margin: 0;
-        padding: 0;
+        bottom: 0;
+        right: 0;
+      }
+      #ctrlPanel {
+        width: 250px;
+        height: calc(100% - 42px);
+        position: absolute;
+        right: 0;
+        top: 42px;
+        background-color: #cddde9;
+        padding: 40px 20px;
+        display: none;
+        z-index: 900;
       }
       .ui-tabs {
         padding: 0;
@@ -165,27 +235,19 @@
         font-size: 8.5pt !important;
         padding: 0;
       }
-      #codeTab {
-        width: 100%;
-        height: calc(100% - 34px);
-      }
-      #dataTab {
-        width: 100%;
-        height: calc(100% - 34px);
-      }
+      #codeTab,
+      #dataTab,
       #jsonTab {
         width: 100%;
-        height: calc(100% - 34px);
+        height: calc(100% - 40px);
       }
       #codeControls {
-        width: 350px;
+        width: 520px;
         height: 30px;
         position: absolute;
         top: 0;
         right: 0;
         margin: 8px 10px 0 0;
-        /* border-top: 1px solid #ccc; */
-        /* background: #f2f2f2; */
         font-size: 8.5pt;
         vertical-align: top;
       }
@@ -194,7 +256,7 @@
         height: 100%;
         resize: none;
         border: none;
-        padding: 0px;
+        padding: 0;
         font-family: Courier;
         font-size: 12.5px;
         overflow-x: hidden;
@@ -202,19 +264,30 @@
     </style>
   </head>
   <body>
-    <ul id="demoList">
-      <button style="margin-top:10px;" onclick="d3.select('#gallery').style('visibility', 'visible')">
-        Show Gallery
-      </button>
-    </ul>
-    <canvas id="canvasElement"></canvas>
-    <svg id="svgElement"></svg>
-    <div id="hint">
-      To update the demo after modifying the code, click the "run" button; to
-      see the construction process of a demo step by step, click the "play"
-      button.
+    <div id="topTabs">
+      <button class="modeTab active" data-mode="static">Static Charts</button>
+      <button class="modeTab" data-mode="interactive">Interactive Charts</button>
+      <div id="topActions">
+        <button id="showGalleryBtn" onclick="d3.select('#gallery').style('visibility', 'visible'); window.updateShowGalleryBtn();">
+          Show Gallery
+        </button>
+      </div>
     </div>
+
+    <div id="demoSidebar">
+      <div id="demoSearchWrap">
+        <input id="demoSearch" type="text" placeholder="Search ..." aria-label="Search chart type" />
+      </div>
+
+      <ul id="demoList">
+      </ul>
+    </div>
+
+    <canvas id="canvasElement"></canvas>
+    <svg id="svgElement" xmlns="http://www.w3.org/2000/svg"></svg>
     <div id="console"></div>
+    <div id="ctrlPanel"></div>
+
     <div id="btmPanel">
       <ul>
         <li><a href="#codeTab">Code</a></li>
@@ -232,52 +305,54 @@
           style="font-size: 0.75rem; width: 100%"
         ></table>
       </div>
-      <div id="jsonTab" style="overflow-y: auto">
-      </div>
+      <div id="jsonTab" style="overflow-y: auto"></div>
       <div id="infoTab" style="padding: 15px"></div>
       <div id="codeControls">
-          Renderer:
-          <input type="radio" id="SVG" name="renderer" value="svg" checked />
-          <label for="SVG">SVG</label>
-          <!-- <input type="radio" id="Canvas" name="renderer" value="Canvas">
-          <label for="Canvas">Canvas</label> -->
-          <input type="radio" id="WebGL" name="renderer" value="webgl" disabled/>
-          <label for="WebGL">WebGL</label>
-        <button style="margin-left: 40px" onclick="window.loadScript()">run</button>
-        <!-- <button onclick="window.stepThrough()">play</button>
-        <button onclick="window.save()">save</button> -->
+        <button onclick="window.loadScript()">run</button>
+        <button id="benchmarkBtn" onclick="window.benchmark()" style="display: none">
+          benchmark
+        </button>
+        <button onclick="window.save()">save</button>
         <button onclick="window.showDepGraph()">show graph</button>
+        <span style="margin-left: 10px;">Renderer:</span>
+        <input type="radio" id="SVG" name="renderer" value="svg" checked />
+        <label for="SVG">SVG</label>
+        <input type="radio" id="WebGL" name="renderer" value="webgl" disabled />
+        <label for="WebGL">WebGL</label>
       </div>
     </div>
+
     <div id="gallery"></div>
     <svg id="depGraphVis"></svg>
     <a id="download"></a>
+
     <script type="module">
-      import {JSONEditor} from './lib/jsoneditor.js'
-      var editor = CodeMirror.fromTextArea(
-        document.getElementById("scriptEditor"),
-        { lineNumbers: true }
-      );
-      var dataTable = null;
-      var metaData;
+      import { JSONEditor } from "./lib/jsoneditor.js";
+
+      let currentMode = "static";
+      let staticMetaData = {};
+      let interactiveMetaData = {};
+      let allStaticKeys = new Set();
+      let allInteractiveKeys = new Set();
+      let dataTable = null;
+
+      const editor = CodeMirror.fromTextArea(document.getElementById("scriptEditor"), {
+        lineNumbers: true,
+      });
+
+      let jsonEditor;
 
       function showError(message, source, lineno, colno, error) {
-        let csl = document.getElementById("console");
+        const csl = document.getElementById("console");
         removeAllChildren(csl);
-        var msgNode = document.createElement("div");
-        msgNode.textContent = message
-          ? message
-          : error
-          ? JSON.stringify(error)
-          : "";
+        const msgNode = document.createElement("div");
+        msgNode.textContent = message ? message : error ? JSON.stringify(error) : "";
         msgNode.style.color = "red";
         csl.appendChild(msgNode);
         if (error && error.stack) {
-          var stackNode = document.createElement("div");
-          stackNode.textContent = error.stack
-            .replace(/\n/g, "\r\n")
-            .replace(/@/g, " at ");
-          stackNode.style["white-space"] = "pre-line";
+          const stackNode = document.createElement("div");
+          stackNode.textContent = error.stack.replace(/\n/g, "\r\n").replace(/@/g, " at ");
+          stackNode.style.whiteSpace = "pre-line";
           stackNode.style.color = "#777";
           csl.appendChild(stackNode);
         }
@@ -286,68 +361,193 @@
 
       window.onerror = showError;
 
-      $(function () {
-        $("#btmPanel").resizable({
-          minHeight: 100,
-          handles: "n",
-        });
-      });
+      window.updateShowGalleryBtn = function () {
+        const btn = document.getElementById("showGalleryBtn");
+        btn.disabled = document.getElementById("gallery").style.visibility !== "hidden";
+      };
 
-      var jsonEditor;
-      $(function () {
-        $("#btmPanel").tabs({
-          activate: function (event, ui) {
-            let t = ui.newTab
-              .attr("li", "innerHTML")[0]
-              .getElementsByTagName("a")[0].innerHTML;
-            if (t == "Code") $("#codeControls").css("visibility", "visible");
-            else $("#codeControls").css("visibility", "hidden");
-          },
+      function removeAllChildren(e) {
+        while (e.firstChild) e.firstChild.remove();
+      }
+
+      function makeAsync(s) {
+        const c =
+          "try {\n" +
+          s +
+          "\n} catch (err) {showError(err.name ? err.name + ': ' + err.message : undefined, 0, 0, 0, err);}";
+        return "(async () => {" + c + "})();";
+      }
+
+      function getModeMetaData(mode) {
+        return mode === "static" ? staticMetaData : interactiveMetaData;
+      }
+
+      function setMode(mode, skipRefresh) {
+        currentMode = mode;
+
+        document.querySelectorAll(".modeTab").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.mode === mode);
         });
-        let content = {
-          text: undefined,
-          json: {}
-        }
-        jsonEditor = new JSONEditor({
-          target: document.getElementById('jsonTab'),
-          props: {
-            content,
-            readOnly: true,
-            onChange: (updatedContent, previousContent, patchResult) => {
-              // content is an object { json: JSONData } | { text: string }
-              console.log('onChange', updatedContent, previousContent, patchResult)
-              content = updatedContent
-            }
+
+        const isInteractive = mode === "interactive";
+        document.getElementById("ctrlPanel").style.display = isInteractive ? "block" : "none";
+        document.getElementById("benchmarkBtn").style.display = isInteractive ? "inline-block" : "none";
+
+        rebuildDemoList();
+        rebuildGallery();
+
+        if (!skipRefresh) refresh();
+      }
+
+      function inferModeFromHash(demoKey) {
+        if (!demoKey) return currentMode;
+        if (allStaticKeys.has(demoKey)) return "static";
+        if (allInteractiveKeys.has(demoKey)) return "interactive";
+        return currentMode;
+      }
+
+      function getModeFromQuery() {
+        const mode = new URLSearchParams(window.location.search).get("mode");
+        if (mode === "static" || mode === "interactive") return mode;
+        return null;
+      }
+
+      function setModeInUrl(mode) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("mode", mode);
+        const query = url.searchParams.toString();
+        const nextUrl = url.pathname + (query ? "?" + query : "") + url.hash;
+        window.history.replaceState(null, "", nextUrl);
+      }
+
+      function rebuildDemoList() {
+        const root = document.getElementById("demoList");
+        root.innerHTML = "";
+
+        const json = getModeMetaData(currentMode);
+        const searchValue = (document.getElementById("demoSearch")?.value || "").trim().toLowerCase();
+        let category = "";
+        let list;
+
+        for (const k of Object.keys(json)) {
+          if (json[k].draft) continue;
+
+          const group = currentMode === "static" ? json[k].mark : json[k].type;
+          const demoName = (json[k].name || "").toLowerCase();
+          const demoTitle = (json[k].title || "").toLowerCase();
+          const demoType = (group || "").toLowerCase();
+          const demoKey = k.toLowerCase();
+
+          if (
+            searchValue &&
+            !(
+              demoType.includes(searchValue) ||
+              demoName.includes(searchValue) ||
+              demoTitle.includes(searchValue) ||
+              demoKey.includes(searchValue)
+            )
+          ) {
+            continue;
           }
-        })
-      });
 
-      function loadDataTable(responseText){
-        // Set the data for the csv in the script
-        let csvRegex = /msc\.csv\("(.+)"\);/;
-        let csvPath = csvRegex.exec(responseText)[1];
+          if (group !== category) {
+            d3.select("#demoList").append("li").attr("class", "category").text(group);
+            category = group;
+            list = d3.select("#demoList").append("ul").attr("class", "demos");
+          }
 
-        // Request the csv from the server
+          list
+            .append("li")
+            .text(json[k].name)
+            .on("click", () => {
+              document.getElementById("gallery").style.visibility = "hidden";
+              window.updateShowGalleryBtn();
+              window.location.hash = k;
+            });
+        }
+
+        if (!root.children.length) {
+          d3.select("#demoList")
+            .append("li")
+            .style("margin", "14px 0")
+            .style("color", "#666")
+            .text("No demos found.");
+        }
+      }
+
+      function rebuildGallery() {
+        const json = getModeMetaData(currentMode);
+        const container = d3.select("#gallery");
+        container.html("");
+
+        let keys = Object.keys(json)
+          .map((a) => ({ sort: Math.random(), value: a }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((a) => a.value);
+
+        for (const k of keys) {
+          if (json[k].draft) continue;
+          const item = container.append("div").attr("class", "galleryItem");
+          const stillPath = 'demos/thumbnails/' + getDemoBaseName(k) + '.png';
+          const hoverPreviewPath =
+            currentMode === "interactive"
+              ? stillPath.replace(/\.png$/i, ".gif")
+              : null;
+          item
+            .append("div")
+            .style("display", "block")
+            .style("height", "150px")
+            .style("background", "white")
+            .style("background-image", 'url("' + stillPath + '")')
+            .style("background-size", "auto 100%")
+            .style("background-repeat", "no-repeat")
+            .style("background-position", "left top")
+            .on("mouseenter", function () {
+              if (hoverPreviewPath) {
+                d3.select(this).style("background-image", 'url("' + hoverPreviewPath + '")');
+              }
+            })
+            .on("mouseleave", function () {
+              d3.select(this).style("background-image", 'url("' + stillPath + '")');
+            })
+            .on("click", () => {
+              document.getElementById("gallery").style.visibility = "hidden";
+              window.updateShowGalleryBtn();
+              window.location.hash = k;
+            });
+
+          item
+            .append("div")
+            .style("display", "block")
+            .style("background", "#FAFAFA")
+            .style("font-size", "11.5px")
+            .style("font-weight", 600)
+            .style("text-align", "left")
+            .style("color", "#222")
+            .style("height", "16px")
+            .style("padding", "5px 0 0 3px")
+            .text(json[k].title || json[k].name || k);
+        }
+      }
+
+      function loadDataTable(responseText) {
+        const csvRegex = /msc\.csv\("(.+)"\);/;
+        const csvMatch = csvRegex.exec(responseText);
+        if (!csvMatch) return;
+
+        const csvPath = csvMatch[1];
         fetch(csvPath)
-          .then((resp) => {
-            return resp.text();
-          })
+          .then((resp) => resp.text())
           .then((text) => {
-            let rows = text.trim().split("\n");
-            // Destroy current table
-            if (dataTable !== null) {
-              dataTable.destroy();
-            }
-            // Set the thead for the table
+            const rows = text.trim().split("\n");
+            if (dataTable !== null) dataTable.destroy();
+
             const table = document.getElementById("dataTable");
-            let newHead = `<thead><tr>${rows[0]
+            const newHead = `<thead><tr>${rows[0]
               .split(",")
-              .reduce(
-                (acc, row) => (acc += `<th>${row}</th>`),
-                ""
-              )}</tr></thead>`;
+              .reduce((acc, col) => (acc += `<th>${col}</th>`), "")}</tr></thead>`;
             table.innerHTML = newHead;
-            // Initialize table
+
             dataTable = $("#dataTable").DataTable({
               data: rows.slice(1).map((row) => row.split(",")),
               searching: false,
@@ -355,268 +555,259 @@
               scrollCollapse: true,
               fixedColumns: true,
               info: false,
-              //responsive: true
             });
           });
       }
 
       function loadJson(responseText) {
-        let jsonRegex = /msc\.(tree|graph)JSON\("(.+)"\);/;
-        let jsonPath = jsonRegex.exec(responseText)[2];
-        // Request the csv from the server
+        const jsonRegex = /msc\.(tree|graph)json\("(.+)"\);/;
+        const jsonMatch = jsonRegex.exec(responseText);
+        if (!jsonMatch) return;
+
+        const jsonPath = jsonMatch[2];
         fetch(jsonPath)
-          .then((resp) => {
-            return resp.text();
-          })
+          .then((resp) => resp.text())
           .then((text) => {
-            let json = JSON.parse(text);
-            let content = {
-              text: undefined,
-              json: json
-            }
-            jsonEditor.set(content);
+            const json = JSON.parse(text);
+            jsonEditor.set({ text: undefined, json });
           });
       }
 
+      function loadCtrls(demo) {
+        fetch("demos/interactive/" + demo + "_UI.js")
+          .then((response) => (response.ok ? response.text() : undefined))
+          .then((data) => {
+            document.getElementById("ctrlPanel").innerHTML = "";
+            if (data) eval(data);
+            loadDemo(demo);
+          })
+          .catch((error) => {
+            console.error("Error fetching controls:", error);
+            loadDemo(demo);
+          });
+      }
 
-      function loadDemo(d) {
-        var oReq = new XMLHttpRequest();
+      function getDemoBaseName(demo) {
+        if (currentMode === "interactive") return demo;
+        return demo[0].toLowerCase() + demo.substring(1);
+      }
+
+      function getDemoPath(demo) {
+        if (currentMode === "interactive") return "demos/interactive/" + demo + ".js";
+        return "demos/static/" + getDemoBaseName(demo) + ".js";
+      }
+
+      function loadDemo(demo) {
+        const oReq = new XMLHttpRequest();
         oReq.addEventListener("load", function () {
           loadScript(this.responseText);
+
           if (this.responseText.indexOf(".csv") > 0) {
             $("#jsonTabLi").hide();
             $("#dataTabLi").show();
             loadDataTable(this.responseText);
-          } else if (this.responseText.indexOf(".json") > 0){  
+          } else if (
+            this.responseText.indexOf(".treejson") > 0 ||
+            this.responseText.indexOf(".graphjson") > 0
+          ) {
             $("#jsonTabLi").show();
             $("#dataTabLi").hide();
             loadJson(this.responseText);
           }
+
           $("#btmPanel").tabs("option", "active", 0);
-          if (metaData && metaData[d]) d3.select("#infoTab").html(metaData[d].about);
+
+          const md = getModeMetaData(currentMode);
+          if (md && md[demo]) d3.select("#infoTab").html(md[demo].about || "");
         });
-        oReq.open("GET", "demos/static/" + d[0].toLowerCase() + d.substring(1) + ".js");
+
+        oReq.open("GET", getDemoPath(demo));
         oReq.send();
       }
 
-      function removeAllChildren(e) {
-        while (e.firstChild) {
-          e.firstChild.remove();
-        }
-      }
-
-      function makeAsync(s) {
-        let c =
-          "try {\n" +
-          s +
-          "\n} catch (err) {showError(err.name ? err.name + ': ' + err.message : undefined, 0, 0, 0, err);}";
-        return "(async () => {" + c + "})();";
-      }
-
-      window.loadScript = function(s) {
-        let script = s ? s : editor.getValue();
-        let parsed = acorn.parse(script, { ecmaVersion: "latest" });
+      window.loadScript = function (s) {
+        const script = s ? s : editor.getValue();
+        const parsed = acorn.parse(script, { ecmaVersion: "latest" });
         let blocks = parsed.body.map((d) => script.substring(d.start, d.end));
 
-        //find lines with renderer and remove them
-        blocks = blocks.filter((l) => l.indexOf("render") < 0);
+        if (currentMode === "static") {
+          blocks = blocks.filter((l) => l.indexOf("render") < 0);
+        }
 
-        //add renderer lines
-        let sceneName = blocks
-          .filter((l) => l.indexOf("msc.scene(") > 0)[0]
-          .split("=")[0]
-          .replace("let", " ")
-          .trim();
-        let r = $("input[type='radio'][name='renderer']:checked").val();
-        let ele = r == "svg" ? "svgElement" : "canvasElement";
-        let newScript =
-          blocks.join("\n") +
-          "\nmsc.renderer('" +
-          r + "','" + ele +
-          "').render(" +
-          sceneName +
-          ");";
-          // ", {'bounds': true});";
-          //", {'refBounds': true});";
-        // newScript += "\nlet json = msc.serialize(" + sceneName + ");" + 
-        //               "\nlet loadedScn = msc.deserialize(json);" + 
-        //               "\nconsole.log(msc.isEqual(" + sceneName + ", loadedScn));"
-        let csl = document.getElementById("console");
+        const sceneLine = blocks.find((l) => l.indexOf("msc.scene(") > 0);
+        if (!sceneLine) return;
+
+        const sceneName = sceneLine.split("=")[0].replace("let", " ").trim();
+        const r = $("input[type='radio'][name='renderer']:checked").val();
+        const ele = r === "svg" ? "svgElement" : "canvasElement";
+
+        let newScript = blocks.join("\n");
+        if (currentMode === "static") {
+          newScript += "\nmsc.renderer('" + r + "','" + ele + "').render(" + sceneName + ");";
+        }
+
+        const csl = document.getElementById("console");
         removeAllChildren(csl);
         csl.style.display = "none";
-        //document.getElementById("gallery").style.visibility = "hidden";
+        document.getElementById("gallery").style.visibility = "hidden";
+        window.updateShowGalleryBtn();
         document.getElementById("depGraphVis").style.visibility = "hidden";
 
-        if (r == "svg") {
-          let svg = document.getElementById("svgElement");
+        if (r === "svg") {
+          const svg = document.getElementById("svgElement");
           removeAllChildren(svg);
           svg.style.display = "block";
           document.getElementById("canvasElement").style.display = "none";
         } else {
-          let canvas = document.getElementById("canvasElement");
+          const canvas = document.getElementById("canvasElement");
           canvas.style.display = "block";
           document.getElementById("svgElement").style.display = "none";
         }
 
         editor.setValue(newScript);
-        newScript = makeAsync(newScript);
-        eval(newScript);
-      }
-
-      let requestAnimationFrame = function (f) {
-        return setTimeout(f, 1000);
+        eval(makeAsync(newScript));
       };
 
-      window.stepThrough = function() {
-        let script = editor.getValue().replace(/await/g, "");
-        let parsed = acorn.parse(script, { ecmaVersion: "latest" });
+      window.benchmark = function () {
+        if (currentMode !== "interactive") return;
+        let script = editor.getValue();
+        fetch("demos/interactive/" + window.location.hash.replace("#", "") + "_benchmark.js")
+          .then((response) => (response.ok ? response.text() : undefined))
+          .then((data) => {
+            if (!data) return;
+            script += data;
+            const svg = document.getElementById("svgElement");
+            removeAllChildren(svg);
+            eval(makeAsync(script));
+          })
+          .catch((error) => {
+            console.error("Error fetching benchmark:", error);
+          });
+      };
 
-        let blocks = parsed.body.map((d) => script.substring(d.start, d.end));
-        let renderIdx = blocks.findIndex((d) => d.indexOf("renderer") > 0),
-          renderLines = blocks.slice(renderIdx).join(";\n"),
-          code = "",
-          frames = [".mark", ".divide", ".densify", ".layout", ".encode", ".align", ".affix", ".axis", ".legend", ".gridlines", ".scale.rangeExtent"];
-        let currentIdx = 0;
+      window.save = function () {
+        const code = editor.getValue();
+        const demo = window.location.hash.replace("#", "");
+        const scn = code.split("=")[0].replace("let", "").trim();
+        let out = code;
+        out += "const a = document.getElementById('download');";
+        out +=
+          currentMode === "interactive"
+            ? "let spec = " + scn + ".toJSON();"
+            : "let spec = msc.serialize(" + scn + ");";
+        out +=
+          "a.href = URL.createObjectURL(new Blob([JSON.stringify(spec, null, 2)], {type: 'application/json'}));";
+        out +=
+          "a.setAttribute('download', '" + demo + (currentMode === "interactive" ? ".alscn" : ".msc") + "');";
+        out += "a.click();";
+        eval(makeAsync(out));
+      };
 
-        let step = function (timeStamp) {
-          if (currentIdx >= renderIdx) return;
-          removeAllChildren(document.getElementById("svgElement"));
-          //let s = blocks.slice(0, currentIdx).join(";\n") + ";" + blocks.slice(renderIdx).join(";\n");
-          while (currentIdx < renderIdx) {
-            let newBlock = blocks[currentIdx];
-            if (newBlock.indexOf("msc.csv") > 0)
-              newBlock = newBlock.replace("msc.csv", "await msc.csv");
-            if (newBlock.indexOf("msc.treejson") > 0)
-              newBlock = newBlock.replace("msc.treejson", "await msc.treejson");
-            if (newBlock.indexOf("msc.graphjson") > 0)
-              newBlock = newBlock.replace("msc.graphjson", "await msc.graphjson");
-            code += newBlock + "\n";
-            let skip = true;
-            for (let f of frames) {
-              if (newBlock.indexOf(f) > 0) {
-                skip = false;
-                break;
-              }
-            }
-            if (!skip)
-              break;
-            else
-              currentIdx++;
-          } 
-          editor.setValue(code + renderLines);
-          let s = makeAsync(code + renderLines);
-          eval(s);
-          currentIdx++;
-          requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      }
-
-      window.save = function() {
+      window.showDepGraph = function () {
         let code = editor.getValue();
-        let demo = window.location.hash.replace("#", "");
-        let scn = code.split("=")[0].replace("let", "").trim();
-        code += "const a = document.getElementById('download');";
-        //code += "let spec = msc.specGenerator().run(" + scn + ");"
-        code += "let spec = " + scn + ".toJSON();"
-        code += "a.href = URL.createObjectURL(new Blob([JSON.stringify(spec, null, 2)], {type: 'application/json'}));";
-        // code += "a.setAttribute('download', '" + demo + ".json');";
-        code += "a.setAttribute('download', '" + demo + ".alscn');";
-        code += "a.click();";
-        eval(makeAsync(code));
-      }
-
-      window.showDepGraph = function() {
-        let code = editor.getValue();
-        let demo = window.location.hash.replace("#", "");
-        let scn = code.split("=")[0].replace("let", "").trim();
+        const scn = code.split("=")[0].replace("let", "").trim();
         code += "return " + scn + "._depGraph;";
-        code = makeAsync(code);
-        let dg = eval(code);
-        dg.then(r => {
-            visualizeDepGraph(r);
+        const dg = eval(makeAsync(code));
+        dg.then((r) => {
+          visualizeDepGraph(r);
         });
-      }
+      };
 
       function refresh() {
         document.getElementById("depGraphVis").style.visibility = "hidden";
-        let demo = window.location.hash.replace("#", "");
-        if (demo && demo != "") {
-          loadDemo(demo);
-          document.getElementById("gallery").style.visibility = "hidden";
-        } else if (demo == "") {
+        const demo = window.location.hash.replace("#", "");
+
+        const modeFromQuery = getModeFromQuery();
+        if (modeFromQuery && modeFromQuery !== currentMode) {
+          setMode(modeFromQuery, true);
+        }
+
+
+        if (!demo) {
           document.getElementById("gallery").style.visibility = "visible";
+          window.updateShowGalleryBtn();
+          return;
         }
-      }
 
-      function populateList(json) {
-        let category = "",
-          list;
-        for (let k of Object.keys(json)) {
-          if (json[k].draft) continue;
-          let m = json[k].mark;
-          if (m != category) {
-            d3.select("#demoList")
-              .append("li")
-              .attr("class", "category")
-              .text(m);
-            category = m;
-            list = d3.select("#demoList").append("ul").attr("class", "demos");
+        if (!modeFromQuery) {
+          const inferredMode = inferModeFromHash(demo);
+          if (inferredMode !== currentMode) {
+            setMode(inferredMode, true);
           }
-          list
-            .append("li")
-            .text(json[k].name)
-            .on("click", () => {
-              document.getElementById("gallery").style.visibility = "hidden";
-              window.location.hash = k;
-            });
         }
-      }
 
-      function populateGallery(json) {
-        let keys = Object.keys(json);
-        keys = keys
-          .map((a) => ({ sort: Math.random(), value: a }))
-          .sort((a, b) => a.sort - b.sort)
-          .map((a) => a.value);
-        for (let k of keys) {
-          if (json[k].draft) continue;
-          let item = d3.select("#gallery")
-            .append("div").attr("class", "galleryItem");
-          item.append("div")
-            .style("display", "block").style("height", "150px")
-            .style("background", "white")
-            .style("background-image", 'url("demos/thumbnails/' + k + '.png")')
-            .style("background-size", "auto 100%")
-            .style("background-repeat", "no-repeat")
-            .style("background-position", "left top")
-            .on("click", () => {
-              document.getElementById("gallery").style.visibility = "hidden";
-              window.location.hash = k;
-            });
-          item.append("div").style("display", "block").style("background", "#FAFAFA").style("font-size", "11.5px")
-            .style("font-weight", 600).style("text-align", "left").style("color", "#222")
-            .style("height", "16px").style("padding", "5px 0 0 3px").text(json[k].title);
+        const md = getModeMetaData(currentMode);
+
+        if (!md[demo]) {
+          document.getElementById("gallery").style.visibility = "visible";
+          window.updateShowGalleryBtn();
+          return;
+        }
+
+        document.getElementById("gallery").style.visibility = "hidden";
+        window.updateShowGalleryBtn();
+        if (currentMode === "interactive") {
+          loadCtrls(demo);
+        } else {
+          loadDemo(demo);
         }
       }
 
       window.onhashchange = refresh;
 
       $("input[type=radio][name=renderer]").change(function () {
-        loadScript();
+        window.loadScript();
+      });
+
+      $(function () {
+        $("#btmPanel").resizable({ minHeight: 100, handles: "n" });
+        $("#btmPanel").tabs({
+          activate: function (event, ui) {
+            const t = ui.newTab.attr("li", "innerHTML")[0].getElementsByTagName("a")[0].innerHTML;
+            if (t === "Code") $("#codeControls").css("visibility", "visible");
+            else $("#codeControls").css("visibility", "hidden");
+          },
+        });
+
+        jsonEditor = new JSONEditor({
+          target: document.getElementById("jsonTab"),
+          props: {
+            content: { text: undefined, json: {} },
+            readOnly: true,
+            onChange: (updatedContent, previousContent, patchResult) => {
+              console.log("onChange", updatedContent, previousContent, patchResult);
+            },
+          },
+        });
+      });
+
+      document.querySelectorAll(".modeTab").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          setMode(btn.dataset.mode, true);
+          setModeInUrl(btn.dataset.mode);
+          window.location.hash = "";
+        });
+      });
+
+      document.getElementById("demoSearch").addEventListener("input", () => {
+        rebuildDemoList();
       });
 
       $(document).ready(() => {
-        fetch("demos/static.json")
-          .then((resp) => {
-            return resp.text();
-          })
-          .then((text) => {
-            metaData = JSON.parse(text);
-            populateList(metaData);
-            populateGallery(metaData);
-            refresh();
-          });
+        Promise.all([
+          fetch("demos/static.json").then((r) => r.text()),
+          fetch("demos/interactive.json").then((r) => r.text()),
+        ]).then(([sText, iText]) => {
+          staticMetaData = JSON.parse(sText);
+          interactiveMetaData = JSON.parse(iText);
+          allStaticKeys = new Set(Object.keys(staticMetaData));
+          allInteractiveKeys = new Set(Object.keys(interactiveMetaData));
+
+          const modeFromQuery = getModeFromQuery();
+          setMode(modeFromQuery || "static", true);
+          refresh();
+          window.updateShowGalleryBtn();
+        });
       });
     </script>
   </body>

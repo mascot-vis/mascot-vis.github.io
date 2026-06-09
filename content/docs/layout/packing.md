@@ -23,12 +23,12 @@ The PackingLayout class represents a layout that positions objects by packing th
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "packing" | 
 |**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
+|**height**| the height of the enclosing area | Number |  |
+|**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "packing" | 
+|**width**| the width of the enclosing area | Number |  |
 |**x**| the x coordinate of the center of the enclosing area | Number |  |
 |**y**| the y coordinate of the center of the enclosing area | Number |  |
-|**width**| the width of the enclosing area | Number |  |
-|**height**| the height of the enclosing area | Number |  |
 {.table-striped}
 
 ### Methods inherited from Layout
