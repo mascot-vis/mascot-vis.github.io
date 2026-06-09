@@ -18,9 +18,9 @@ Marks and glyphs can be created using the [_mark_ method in the Scene class](../
 let circle = scene.mark("circle", {x: 50, y: 100, radius: 20});
 ```
 
-The [types of marks](../../docs/global/constants/#mark-type) that can be created this way are:  [circle](../../docs/marks/circlepath/), [line](../../docs/marks/path/), [path](../../docs/marks/path/),  [rectangle](../../docs/marks/rectpath/), [ring](../../docs/marks/ringpath/), [text](../../docs/marks/pointtext/), and [image](../../docs/marks/image/). The other types of marks can only be created through the [repeat, divide or densify operations](../../docs/operations/generative/), these include: [area](../../docs/marks/areapath/), [arc](../../docs/marks/arcpath/), [pie](../../docs/marks/piepath/), and [polygon](../../docs/marks/polygonpath/).
+Common mark types that can be created this way are [circle](../../docs/marks/circlepath/), [line](../../docs/marks/path/), [path](../../docs/marks/path/), [rect](../../docs/marks/rectpath/), [arc](../../docs/marks/arcpath/), [ring](../../docs/marks/ringpath/), [text](../../docs/marks/pointtext/), and [image](../../docs/marks/image/). Operations such as [repeat, divide, and densify](../../docs/operations/generative/) can also create marks such as [area](../../docs/marks/areapath/), [pie](../../docs/marks/piepath/), and [polygon](../../docs/marks/polygonpath/).
 
- For each type of mark, check out its [API reference](../../docs/marks/mark/) for mark properties and their default values. All types of marks except text and image are represented as paths, consisting of vertices and segments, as shown in the [object model](../../tutorials/vom/):
+For each type of mark, check out its [API reference](../../docs/marks/mark/) for mark properties and their default values. All types of marks except text and image are represented as paths, consisting of vertices and segments, as shown in the [object model](../../tutorials/vom/):
 
 {{< figure src="paths.png" alt="Marks as Paths" caption="" class="border-0 mx-auto text-center">}}
 
@@ -29,7 +29,7 @@ The following code creates multiple marks and groups them into a box plot [glyph
 ```js
 let line = scene.mark("line", {x1: 150, y1: 130, x2: 700, y2: 130, strokeColor: "#555", 
                 vertexShape: "line", vertexWidth: 1, vertexHeight: 30}),
-    box = scene.mark("rectangle", {top: 110, left: 200, width: 400, height: 40,
+    box = scene.mark("rect", {top: 110, left: 200, width: 400, height: 40,
                     fillColor: "#95D0F5", strokeColor: "#111"}),
     medianLine = scene.mark("line", {x1: 300, y1: 110, x2: 300, y2: 150, strokeColor: "#000"});
     
