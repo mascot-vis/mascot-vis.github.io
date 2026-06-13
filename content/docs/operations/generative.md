@@ -48,6 +48,8 @@ Creates a denser mark from an existing element by a data attribute.
   - `orientation`: orientation for densifying rectangle-based elements
 - Return type: [Mark](../../marks/mark/)
 
+{{< figure src="../densify.svg" alt="densify operation" width="700px" caption="The densify operation adds N vertices along a mark's boundary, replacing curves with line segments. Each vertex is a peer bound to a unique attribute value. Area marks receive 2N vertices (N per parallel edge)." class="border-0 mx-auto text-center" >}}
+
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
 ### msc.divide(elem, data, params)
@@ -61,6 +63,8 @@ Divides an element by a data attribute and returns both the new mark and the res
   - `orientation`: orientation for the divide operation
 - Return type: object containing `newMark` ([Mark](../../marks/mark/)) and `collection` ([Collection](../../group/collection/))
 
+{{< figure src="../divide.svg" alt="divide operation" width="700px" caption="The divide operation splits a mark into N peers within the same spatial area. Output structure depends on the mark type and the `orientation` parameter. N is the number of unique values in the specified attribute." class="border-0 mx-auto text-center" >}}
+
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
 ### msc.repeat(elem, data, params)
@@ -73,6 +77,8 @@ Repeats an element across a data table, tree, or network.
   - `attribute`: data attribute used to repeat the element, defaults to tuple ID
   - `layout` ([Layout](../../layout/layout/), optional): layout for repeated collections
 - Return type: [Collection](../../group/collection/) or Array of [Collections](../../group/collection/)
+
+{{< figure src="../repeat.svg" alt="repeat operation" width="700px" caption="The repeat operation produces N peers — one per unique attribute value. Peers share the same initial position and visual properties; they are shown side-by-side here for clarity." class="border-0 mx-auto text-center" >}}
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
