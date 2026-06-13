@@ -1,5 +1,5 @@
 ---
-title: "Create Components"
+title: "Create Visual Components"
 description: ""
 lead: ""
 date: 2026-06-01T00:00:00+00:00
@@ -13,32 +13,7 @@ weight: 1
 toc: true
 ---
 
-These operations instantiate new visual elements or apply lightweight composition constraints.
-
-### msc.affix(elem, base, channel, params)
-
-Affixes an element to a base element along a channel.
-
-- `elem`: [Mark](../../marks/mark/)
-- `base`: [Mark](../../marks/mark/)
-- `channel`: `"x"`, `"y"`, `"angle"`, or `"radialDistance"`
-- `params` (Object, optional):
-  - `attribute`: data attribute used to match peers when needed
-  - `baseAnchor`: [anchor](../../global/constants/#anchor) on the base element
-  - `elementAnchor`: [anchor](../../global/constants/#anchor) on the affixed element
-  - `offset`: distance between the two anchors
-- Return type: `void`
-
-<hr style="border: 0; border-top: 1px solid #cccccc;">
-
-### msc.align(elems, channel, anchor)
-
-Aligns multiple elements so they share the same position for a channel and anchor.
-
-- `elems` (Array): elements to align
-- `channel`: usually `"x"` or `"y"`
-- `anchor`: [anchor](../../global/constants/#anchor) used for alignment
-- Return type: `void`
+These operations instantiate new visual elements.
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
@@ -68,6 +43,16 @@ Creates a [mark](../../marks/mark/) in a [scene](../../group/scene/).
 - `type`: [mark type](../../global/constants/#mark-type)
 - `params` (Object): contains mark properties
 - Return type: [Mark](../../marks/mark/)
+
+<hr style="border: 0; border-top: 1px solid #cccccc;">
+
+### msc.renderer(type, domId)
+
+Creates a [renderer](../../rendering/renderer/).
+
+- `type` (String): type of renderer; possible values are `"svg"` and `"webgl"`
+- `domId` (String): ID of the SVG or Canvas element
+- Return type: [Renderer](../../rendering/renderer/)
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 

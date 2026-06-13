@@ -22,14 +22,14 @@ Sorts the children of a group or the vertices of a path by a data attribute or a
 - `elem`: [Group](../../group/group/) or [Path](../../marks/path/)
 - `property`: a data attribute name or a channel (e.g., `"x"`, `"y"`, `"width"`, `"height"`)
 - `descending` (Boolean, optional): whether to sort in descending order
-- `orderedVals` (Array, optional): ranking of string attribute values to sort by
+- `orderedVals` (Array, optional): explicit ranking of string attribute values to sort by
 - Return type: `void`
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
 ### msc.translate(elem, dx, dy)
 
-Moves an element by the given offsets along x, y axes.
+Moves an element by the given offsets along the x and y axes.
 
 - `elem`: [Mark](../../marks/mark/), [Group](../../group/group/), vertex, or segment
 - `dx` (Number): offset along the x axis

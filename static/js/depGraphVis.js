@@ -45,7 +45,10 @@ function setupGraph(g, dg) {
         for (let varId in dg._variables[varType]) {
             let v = dg._variables[varType][varId],
                 label = v.channel ? v.channel : varType;
-            label += v.element ?  ": " + v.element.type : "";
+            if (label === "property")
+                label += ": " + v.property;
+            else
+                label += v.element ?  ": " + v.element.type : "";
             temp.text(label);
             g.setNode(varId, {type: "var", label: label, width: temp.node().getBBox().width, height: temp.node().getBBox().height});
         }

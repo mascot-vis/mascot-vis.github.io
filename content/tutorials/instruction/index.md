@@ -17,7 +17,7 @@ Add the following code to the &lt;head&gt; element in your HTML document:
 ```
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://mascot-vis.github.io/lib/pixi.min.js"></script>
-<script src="https://mascot-vis.github.io/dist/mascot-min.js"></script>
+<script src="https://mascot-vis.github.io/dist/mascot-umd.js"></script>
 ```
 
 [**Download a demo web app**](https://mascot-vis.github.io/sampleWebApp.zip) showing how to use Mascot.js to create a multi-line graph chart. 

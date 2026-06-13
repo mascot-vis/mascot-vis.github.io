@@ -12,7 +12,7 @@ menu:
 weight: 40
 ---
 
-We get a collection of graphical objects after applying repeat, divide or densify operations. These objects can be positioned using [layouts](../../docs/layout/layout/). Mascot currently provides the following types of layout: [grid](../../docs/layout/grid/), [stack](../../docs/layout/stack/), [packing](../../docs/layout/packing/) and [Treemap](../../docs/layout/treemap/). 
+We often get a collection of graphical objects after applying repeat or divide operations. These collections can be positioned using [layouts](../../docs/layout/layout/). Mascot currently provides the following types of layout: [grid](../../docs/layout/grid/), [stack](../../docs/layout/stack/), [packing](../../docs/layout/packing/), and [treemap](../../docs/layout/treemap/).
 
 To create a layout, use the _layout_ function, for example,
 
@@ -24,8 +24,8 @@ A layout can only be applied to a collection:
 
     collection.layout = tl;
 
-You can also pass a layout as an argument when performing [repeat](../../docs/operations/generative/) or [divide](../../docs/operations/generative/) operations:
+You can also pass a layout as an argument when performing the [repeat](../../docs/operations/generative/#mscrepeatelem-data-params) operation:
 
 ```js
-msc.divide(rect, table, {attribute: "col", layout: tl});
+let collection = msc.repeat(rect, table, {attribute: "col", layout: tl});
 ```

@@ -1,5 +1,5 @@
 ---
-title: "0. Let's Create a Diverging Bar Chart"
+title: "Let's Create a Diverging Bar Chart"
 description: ""
 lead: ""
 date: 2020-10-13T15:21:01+02:00
@@ -28,7 +28,7 @@ let scn = msc.scene();
 let table = await msc.csv("survey_response.csv");
 ```
 
-<span style="color:red;font-weight:bold">IMPORTANT</span>: Note that to declare the 'table' object, you need to put the above line of code and any other code that handles the `table` object in an asychronous function, or use the [Promise.then()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) method to handle the `table` object. For more information, see [here](../../tutorials/initialize/#import-csv-data).
+<span style="color:red;font-weight:bold">IMPORTANT</span>: Note that to declare the `table` object, you need to put the above line of code and any other code that handles the `table` object in an asynchronous function, or use the [Promise.then()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) method to handle the `table` object. For more information, see [here](../../tutorials/initialize/#import-csv-data).
 
 Next, let's create a rectangle in the scene and specify its properties:
 
@@ -73,7 +73,7 @@ which gives us the following visualization:
 
 {{< figure src="divide.png" width="350px" alt="Divide Rectangle Marks" caption="" class="border-0 mx-auto text-center" >}}
 
-When using the divide operation, we don't need to pass all four rectangle marks as its argument; we only need to pass in one rectangle `rect` as an example, and Mascot will find all the "peers" of `rect` and perform the divide operation on all of them. The divide operation will return two visual elements as a result of dividing `rect`: a new bar (`newMark`) serving as an example of the new marks created, and a collection of new bars (`bars`).
+When using the divide operation, we do not need to pass all four rectangles as arguments; we only need to pass one rectangle, `rect`, as an example. Mascot will find all the "peers" of `rect` and perform the divide operation on all of them. The divide operation returns two visual elements as a result of dividing `rect`: a new bar (`newMark`) serving as an example of the new marks created, and a collection of new bars (`bars`).
 
 ### Specify Visual Encodings
 
@@ -124,6 +124,6 @@ scn.axis("y", "Age Group", {
 });
 ```
 
-Viola! We have the visualization in Figure 1.
+Voila! We have the visualization in Figure 1.
 
 {{< figure src="diverging_bar.png" width="560px" alt="Diverging Bar Chart" caption="" class="border-0 mx-auto text-center" >}}
