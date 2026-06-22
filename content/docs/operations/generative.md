@@ -35,6 +35,8 @@ Classifies the children of a [collection](../../group/collection/) into nested c
   - `layout` ([Layout](../../layout/layout/), optional): layout for the new nested collections
 - Return type: [Collection](../../group/collection/)
 
+{{< figure src="../classify.svg" alt="classify operation" width="700px" caption="The classify operation groups a collection's children into nested sub-collections by a data attribute. Children sharing the same attribute value get placed in the same sub-collection." class="border-0 mx-auto text-center" >}}
+
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
 ### msc.densify(elem, data, params)
@@ -91,6 +93,8 @@ Repopulates a nested [collection](../../group/collection/) using a new data tabl
 - `mapping` (Object): maps each collection level to a data attribute
 - Return type: `void`
 
+{{< figure src="../repopulate.svg" alt="repopulate operation" width="700px" caption="The repopulate operation remaps a nested collection to a new data table, mapping each nesting level to a data attribute. The output structure follows the new data and does not need to match input." class="border-0 mx-auto text-center" >}}
+
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
 ### msc.stratify(elem, tree, params)
@@ -104,3 +108,5 @@ Creates a stratified [collection](../../group/collection/) from a rect, circle, 
   - `startFromLeaf`: whether to build strata from leaves
   - `size`: thickness or size of each stratum
 - Return type: [Collection](../../group/collection/)
+
+{{< figure src="../stratify.svg" alt="stratify operation" width="700px" caption="The stratify operation turns a single rect, circle, or ring into a stratified collection from tree data i.e. an icicle, sunburst, or set of nested rings respectively. Each level of the tree becomes a strata, subdivided by branch." class="border-0 mx-auto text-center" >}}
