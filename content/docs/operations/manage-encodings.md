@@ -15,14 +15,14 @@ toc: true
 
 Manage encodings to control how data maps to marks, channels, and layout behavior.
 
-### msc.encode(elem, params)
+### msc.encode(elem, channel, attribute, params)
 
 Encodes a data attribute using a visual channel on an element.
 
 - `elem`: [Mark](../../marks/mark/) or [Group](../../group/group/)
+- `channel` (String, required): [visual channel](../../global/constants/#channel)
+- `attribute` (String, required): data attribute
 - `params` (Object): has the following [properties](../../encode/encoding/#properties)
-  - `channel` (String, required): [visual channel](../../global/constants/#channel)
-  - `attribute` (String, required): data attribute
   - `aggregator` (String, optional): [aggregator](../../global/constants/#aggregator), defaults to `"sum"`
   - `scale` ([Scale](../../encode/scale/), optional): the scale to use for the encoding
   - `scaleType` (String, optional): [type of scale](../../encode/scale/#scale-type)

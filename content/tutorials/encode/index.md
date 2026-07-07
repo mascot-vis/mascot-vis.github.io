@@ -12,10 +12,10 @@ menu:
 weight: 50
 ---
 
-Visual encodings specify how the values in a data attribute map to the properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a data attribute, and a visual channel: 
+Visual encodings specify how the values in a data attribute map to the properties of a visual channel. To specify a visual encoding, we need an example mark/glyph/collection, a visual channel, and a data attribute: 
 
 ```js
-scene.encode(rect, {attribute: "Percentage", channel: "width"});
+scene.encode(rect, "width", "Percentage");
 ```
 
 Mascot will automatically create a [scale](../../docs/encode/scale/) based on the provided parameters, the [type](../../docs/global/constants/#data-type) and value distribution of the data attribute, and the [type](../../docs/global/constants/#channel) and current values of the visual channel. 
