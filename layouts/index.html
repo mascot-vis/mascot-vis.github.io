@@ -1,80 +1,1451 @@
 {{ define "main" }}
-<section class="section mt-n5 pt-5 pb-3">
-  <div class="row justify-content-center banner-container">
-    <div class="col-lg-12 text-center">
-      <h1 class="mt-5">{{ .Title }}</h1>
+<style>
+  .home .wrap.container {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .home .content {
+    padding: 0;
+  }
+
+  .mascot-home {
+    --mh-bg: #f7f8f4;
+    --mh-surface: #ffffff;
+    --mh-ink: #172033;
+    --mh-muted: #667085;
+    --mh-line: #e5e8ef;
+    --mh-primary: #5368ff;
+    --mh-primary-dark: #3b4ee0;
+    --mh-mint: #25c6a1;
+    --mh-orange: #ff9f5a;
+    --mh-purple: #9b7bff;
+    --mh-shadow: 0 24px 70px rgba(31, 42, 68, 0.1);
+    --mh-radius: 8px;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(83, 104, 255, 0.09), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(37, 198, 161, 0.08), transparent 26%),
+      var(--mh-bg);
+    color: var(--mh-ink);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    margin-top: -1.5rem;
+    overflow: hidden;
+  }
+
+  .mascot-home *,
+  .mascot-home *::before,
+  .mascot-home *::after {
+    box-sizing: border-box;
+  }
+
+  .mascot-home a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .mh-shell {
+    width: min(1240px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .mh-section {
+    padding: 108px 0;
+  }
+
+  .mh-hero {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns: 0.92fr 1.25fr;
+    gap: 64px;
+    align-items: center;
+    padding-top: 76px;
+    padding-bottom: 80px;
+  }
+
+  .mh-eyebrow {
+    color: var(--mh-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+  }
+
+  .mascot-home h1,
+  .mascot-home h2,
+  .mascot-home h3 {
+    color: var(--mh-ink);
+    line-height: 1.08;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .mascot-home h1 {
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 800;
+  }
+
+  .mascot-home h1 span {
+    color: var(--mh-primary);
+  }
+
+  .mh-slogan {
+    color: var(--mh-muted);
+    font-size: clamp(25px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.14;
+    margin: 18px 0 0;
+    max-width: 680px;
+  }
+
+  .mh-slogan span {
+    color: var(--mh-primary);
+  }
+
+  .mascot-home h2 {
+    font-size: clamp(36px, 4.3vw, 58px);
+    font-weight: 800;
+  }
+
+  .mascot-home h3 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .mh-lede,
+  .mh-heading p,
+  .mh-copy p {
+    color: var(--mh-muted);
+    font-size: 18px;
+    max-width: 720px;
+  }
+
+  .mh-lede {
+    margin: 26px 0 30px;
+    max-width: 620px;
+  }
+
+  .mh-actions,
+  .mh-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .mh-button {
+    align-items: center;
+    border: 0;
+    border-radius: 999px;
+    display: inline-flex;
+    font: inherit;
+    font-weight: 700;
+    justify-content: center;
+    padding: 14px 22px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+
+  .mh-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .mh-button-primary {
+    background: var(--mh-primary);
+    box-shadow: 0 12px 30px rgba(83, 104, 255, 0.28);
+    color: #fff;
+  }
+
+  .mh-button-primary:hover {
+    background: var(--mh-primary-dark);
+    color: #fff;
+  }
+
+  .mh-button-secondary {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    color: var(--mh-ink);
+  }
+
+  .mh-proof,
+  .mh-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .mh-proof {
+    margin-top: 28px;
+  }
+
+  .mh-proof span,
+  .mh-pills span {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--mh-line);
+    border-radius: 999px;
+    color: #475467;
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+
+  .mh-stage {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: var(--mh-radius);
+    box-shadow: var(--mh-shadow);
+    overflow: hidden;
+    padding: 14px;
+    position: relative;
+  }
+
+  .mh-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mh-showcase-frame {
+    background: #fbfcff;
+    border-radius: var(--mh-radius);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mh-showcase-track {
+    display: flex;
+    transition: transform 0.45s ease;
+    width: 100%;
+  }
+
+  .mh-showcase-slide {
+    flex: 0 0 100%;
+    position: relative;
+  }
+
+  .mh-showcase-slide img,
+  .mh-showcase-slide video {
+    background: #f5f7fb;
+    display: block;
+    height: clamp(190px, 17vw, 270px);
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .mh-showcase-caption {
+    background: linear-gradient(180deg, rgba(16, 23, 37, 0), rgba(16, 23, 37, 0.82));
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    padding: 42px 20px 16px;
+    position: absolute;
+    right: 0;
+  }
+
+  .mh-showcase-caption strong,
+  .mh-showcase-caption span {
+    display: block;
+  }
+
+  .mh-showcase-caption strong {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .mh-showcase-caption span {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  .mh-showcase-controls {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    min-height: 32px;
+  }
+
+  .mh-showcase-arrow {
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: 999px;
+    color: var(--mh-ink);
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 20px;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    width: 32px;
+  }
+
+  .mh-showcase-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .mh-showcase-dot {
+    background: #cfd6e5;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    height: 8px;
+    padding: 0;
+    width: 8px;
+  }
+
+  .mh-showcase-dot.active {
+    background: var(--mh-primary);
+    width: 24px;
+  }
+
+  .mh-stage-toolbar,
+  .mh-builder-header {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .mh-stage-toolbar {
+    padding: 2px 2px 10px;
+  }
+
+  .mh-stage-toolbar div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mh-stage-toolbar strong {
+    font-size: 15px;
+  }
+
+  .mh-stage-toolbar span {
+    color: var(--mh-muted);
+    font-size: 12px;
+  }
+
+  .mh-chip,
+  .mh-result-badge {
+    background: #eef1ff;
+    border-radius: 999px;
+    color: var(--mh-primary);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 10px;
+    white-space: nowrap;
+  }
+
+  #mhHeroChart {
+    background: #fbfcff;
+    border-radius: var(--mh-radius);
+    display: block;
+    touch-action: none;
+    width: 100%;
+  }
+
+  .mh-tooltip {
+    background: #172033;
+    border-radius: 8px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    color: #fff;
+    font-size: 12px;
+    opacity: 0;
+    padding: 10px 12px;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, -120%);
+    transition: opacity 0.15s;
+  }
+
+  .mh-stage-hint {
+    align-items: center;
+    color: #475467;
+    display: flex;
+    font-size: 13px;
+    gap: 9px;
+    padding: 14px 4px 0;
+  }
+
+  .mh-pulse {
+    animation: mhPulse 2s infinite;
+    background: var(--mh-mint);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37, 198, 161, 0.5);
+    height: 8px;
+    width: 8px;
+  }
+
+  @keyframes mhPulse {
+    70% { box-shadow: 0 0 0 9px rgba(37, 198, 161, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 198, 161, 0); }
+  }
+
+  .mh-strip {
+    border-bottom: 1px solid var(--mh-line);
+    border-top: 1px solid var(--mh-line);
+    color: #667085;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 18px;
+    justify-content: space-between;
+    letter-spacing: 0.09em;
+    padding: 22px 28px;
+    text-transform: uppercase;
+  }
+
+  .mh-heading {
+    margin-bottom: 52px;
+  }
+
+  .mh-heading p {
+    margin: 18px 0 0;
+  }
+
+  .mh-feature-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mh-feature {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: var(--mh-radius);
+    box-shadow: 0 12px 42px rgba(31, 42, 68, 0.06);
+    padding: 26px;
+  }
+
+  .mh-feature p {
+    color: var(--mh-muted);
+    margin-bottom: 0;
+  }
+
+  .mh-mini,
+  .mh-build,
+  .mh-flow {
+    background: #f5f7fb;
+    border-radius: var(--mh-radius);
+    height: 210px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mh-mini-node {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(31, 42, 68, 0.07);
+    font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    padding: 10px 12px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .mh-n1 { left: 26px; top: 28px; }
+  .mh-n2 { right: 28px; top: 34px; }
+  .mh-n3 { bottom: 28px; left: 36px; }
+  .mh-n4 { bottom: 30px; right: 26px; }
+
+  .mh-mini svg {
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .mh-mini path {
+    fill: none;
+    stroke: #bac2d7;
+    stroke-dasharray: 6 6;
+    stroke-width: 2;
+  }
+
+  .mh-build {
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    padding: 30px 36px 34px;
+  }
+
+  .mh-seed {
+    animation: mhSeedFade 4s infinite;
+    background: var(--mh-primary);
+    border-radius: 7px;
+    height: 34px;
+    left: calc(50% - 17px);
+    position: absolute;
+    top: 28px;
+    width: 34px;
+  }
+
+  .mh-bars {
+    align-items: flex-end;
+    display: flex;
+    gap: 10px;
+    height: 120px;
+    justify-content: space-between;
+    width: 76%;
+  }
+
+  .mh-bars i {
+    animation: mhGrowBars 4s infinite;
+    background: var(--mh-primary);
+    border-radius: 7px 7px 0 0;
+    display: block;
+    height: 30%;
+    width: 18%;
+  }
+
+  .mh-bars i:nth-child(2) { animation-delay: 0.1s; height: 57%; }
+  .mh-bars i:nth-child(3) { animation-delay: 0.2s; height: 82%; }
+  .mh-bars i:nth-child(4) { animation-delay: 0.3s; height: 46%; }
+  .mh-bars i:nth-child(5) { animation-delay: 0.4s; height: 70%; }
+
+  .mh-build-axis {
+    border-top: 2px solid #9aa4ba;
+    bottom: 29px;
+    left: 42px;
+    position: absolute;
+    right: 42px;
+  }
+
+  @keyframes mhGrowBars {
+    0%, 15% { opacity: 0.15; transform: scaleY(0.08); transform-origin: bottom; }
+    42%, 100% { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+  }
+
+  @keyframes mhSeedFade {
+    0%, 14% { opacity: 1; transform: scale(1); }
+    25%, 100% { opacity: 0; transform: scale(0.4); }
+  }
+
+  .mh-flow {
+    align-items: center;
+    display: flex;
+    gap: 11px;
+    justify-content: center;
+  }
+
+  .mh-flow span {
+    animation: mhFlowGlow 3.2s infinite;
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 10px 12px;
+  }
+
+  .mh-flow span:nth-of-type(2) { animation-delay: 0.7s; }
+  .mh-flow span:nth-of-type(3) { animation-delay: 1.4s; }
+  .mh-flow b { color: #a5aec2; }
+
+  @keyframes mhFlowGlow {
+    0%, 20% { border-color: var(--mh-line); box-shadow: 0 0 0 0 rgba(83, 104, 255, 0); }
+    30%, 45% { border-color: #8d9aff; box-shadow: 0 0 0 8px rgba(83, 104, 255, 0.11); }
+    60%, 100% { border-color: var(--mh-line); box-shadow: none; }
+  }
+
+  .mh-two-column {
+    align-items: center;
+    display: grid;
+    gap: 68px;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .mh-builder,
+  .mh-tabs {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: var(--mh-radius);
+    box-shadow: var(--mh-shadow);
+    overflow: hidden;
+  }
+
+  .mh-builder-header {
+    border-bottom: 1px solid var(--mh-line);
+    font-weight: 700;
+    padding: 18px 20px;
+  }
+
+  .mh-text-button {
+    background: none;
+    border: 0;
+    color: var(--mh-primary);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .mh-builder-canvas {
+    background: #fbfcff;
+    padding: 12px 18px 0;
+  }
+
+  #mhBuilderSvg,
+  #mhExplorerSvg,
+  #mhInteractionSvg,
+  #mhCodeChart {
+    display: block;
+    width: 100%;
+  }
+
+  .mh-builder-steps,
+  .mh-tab-list {
+    display: flex;
+    gap: 8px;
+    overflow: auto;
+    padding: 16px;
+  }
+
+  .mh-builder-steps {
+    border-top: 1px solid var(--mh-line);
+  }
+
+  .mh-builder-steps button,
+  .mh-tab {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: 999px;
+    color: #667085;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    padding: 9px 12px;
+    white-space: nowrap;
+  }
+
+  .mh-builder-steps button.active,
+  .mh-tab.active {
+    background: #eef1ff;
+    border-color: #cbd2ff;
+    color: var(--mh-primary);
+    font-weight: 800;
+  }
+
+  .mh-copy p {
+    margin: 22px 0;
+  }
+
+  .mh-scene-section {
+    background: #172033;
+    color: #fff;
+    padding: 110px 0;
+  }
+
+  .mh-scene-section h2 {
+    color: #fff;
+  }
+
+  .mh-scene-section .mh-eyebrow {
+    color: #91a0ff;
+  }
+
+  .mh-explorer-layout {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 290px 1fr;
+  }
+
+  .mh-tree {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--mh-radius);
+    padding: 14px;
+  }
+
+  .mh-tree-row {
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    color: #b9c1d1;
+    display: block;
+    font: 500 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    padding: 12px 13px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .mh-tree-row:hover,
+  .mh-tree-row.active {
+    background: rgba(255, 255, 255, 0.09);
+    color: #fff;
+  }
+
+  .mh-level-1 { padding-left: 28px; }
+  .mh-level-2 { padding-left: 47px; }
+
+  .mh-explorer-vis {
+    background: #f8faff;
+    border-radius: var(--mh-radius);
+    padding: 18px;
+    position: relative;
+  }
+
+  .mh-explorer-label {
+    background: #172033;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 12px;
+    position: absolute;
+    right: 30px;
+    top: 28px;
+  }
+
+  .mh-tab-list {
+    border-bottom: 1px solid var(--mh-line);
+  }
+
+  .mh-interaction-panel {
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    min-height: 460px;
+  }
+
+  .mh-interaction-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 54px 34px;
+  }
+
+  .mh-interaction-copy p {
+    color: var(--mh-muted);
+    font-size: 17px;
+  }
+
+  .mh-flow-line {
+    background: #f5f7fb;
+    border-radius: 8px;
+    color: #536176;
+    font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    margin-top: 10px;
+    padding: 12px 14px;
+  }
+
+  #mhInteractionSvg {
+    background: #fbfcff;
+    height: 100%;
+  }
+
+  .mh-code-demo {
+    background: #101725;
+    border-radius: var(--mh-radius);
+    box-shadow: var(--mh-shadow);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .mh-code-panel {
+    padding: 20px 0 28px;
+  }
+
+  .mh-code-header {
+    align-items: center;
+    color: #aeb7c9;
+    display: flex;
+    font-size: 12px;
+    gap: 7px;
+    padding: 0 24px 18px;
+  }
+
+  .mh-code-header span {
+    background: #ff6b6b;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+  }
+
+  .mh-code-header span:nth-child(2) { background: #ffd166; }
+  .mh-code-header span:nth-child(3) { background: #38d39f; }
+  .mh-code-header b { font-weight: 600; margin-left: 8px; }
+
+  .mh-code-panel pre {
+    background: transparent;
+    color: #d9e0ee;
+    font: 14px/1.8 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    margin: 0;
+    overflow: auto;
+    padding: 0 28px;
+  }
+
+  .mh-kw { color: #bca8ff; }
+  .mh-fn { color: #6ee7c6; }
+  .mh-str { color: #ffc988; }
+  .mh-num { color: #9fb4ff; }
+
+  .mh-code-result {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    min-height: 470px;
+    position: relative;
+  }
+
+  #mhCodeChart {
+    width: 88%;
+  }
+
+  .mh-result-badge {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+  }
+
+  .mh-final {
+    padding: 100px 20px 120px;
+    text-align: center;
+  }
+
+  .mh-final h2 {
+    margin: 0 auto 30px;
+    max-width: 900px;
+  }
+
+  .mh-final-actions {
+    justify-content: center;
+  }
+
+  .mh-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+
+  .mh-reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 980px) {
+    .mh-hero,
+    .mh-two-column,
+    .mh-code-demo,
+    .mh-interaction-panel,
+    .mh-explorer-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .mh-feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #mhInteractionSvg {
+      min-height: 360px;
+    }
+
+    .mh-tree {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .mh-shell {
+      width: min(100% - 24px, 1240px);
+    }
+
+    .mascot-home h1 {
+      font-size: 62px;
+    }
+
+    .mh-slogan {
+      font-size: 28px;
+    }
+
+    .mascot-home h2 {
+      font-size: 38px;
+    }
+
+    .mh-section {
+      padding: 84px 0;
+    }
+
+    .mh-hero {
+      gap: 34px;
+      padding-top: 58px;
+    }
+
+    .mh-stage-toolbar {
+      align-items: flex-start;
+    }
+
+    .mh-chip {
+      display: none;
+    }
+
+    .mh-strip {
+      justify-content: center;
+    }
+
+    .mh-tree {
+      grid-template-columns: 1fr;
+    }
+
+    .mh-code-panel pre {
+      font-size: 12px;
+      padding: 0 18px;
+    }
+  }
+</style>
+
+<div class="mascot-home" id="top">
+  <section class="mh-hero mh-shell">
+    <div class="mh-reveal">
+      <!-- <p class="mh-eyebrow">A scene-centric grammar for data graphics</p> -->
+      <h1>Mascot</h1>
+      <p class="mh-slogan">A <span>Scene-Centric</span> Grammar for <span>Data Graphics</span></p>
+      <p class="mh-lede">
+        Build, edit, and interact with expressive data graphics by manipulating semantic scene objects.
+      </p>
+      <div class="mh-proof">
+        <span>Semantic objects</span>
+        <span>Direct manipulation</span>
+        <span>Stateful interactions</span>
+      </div>
     </div>
-    <div class="col-lg-9 col-xl-8 text-center mb-3">
-      <p class="lead mt-n2">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn banner-button btn-lg px-4 mt-2 mb-4" href="dist/mascot-umd.js" role="button" download>Version {{ .Site.Data.doks.version }}</a>
-      <p class="mt-n3">Supported Browser: Google Chrome</p>
+
+    <div class="mh-stage mh-showcase mh-reveal" aria-label="Mascot visualization showcase">
+      <div class="mh-showcase-frame">
+        <div class="mh-showcase-track" id="mhShowcaseTrack">
+          <figure class="mh-showcase-slide">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="/homepage.mov">
+            </video>
+            <figcaption class="mh-showcase-caption">
+              <strong>Construct expressive charts</strong>
+              <span>Compose marks, encodings, layouts, and guides.</span>
+            </figcaption>
+          </figure>
+          <figure class="mh-showcase-slide">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="/homepage_atlas.mov">
+            </video>
+            <figcaption class="mh-showcase-caption">
+              <strong>Navigate rich visual spaces</strong>
+              <span>Use semantic scene objects as handles for exploration.</span>
+            </figcaption>
+          </figure>
+          <figure class="mh-showcase-slide">
+            <img src="/demos/thumbnails/reconfigure_gridLayout.gif" alt="Grid layout reconfiguration demo">
+            <figcaption class="mh-showcase-caption">
+              <strong>Reconfigure layouts</strong>
+              <span>Transform chart structure without rebuilding from scratch.</span>
+            </figcaption>
+          </figure>
+          <figure class="mh-showcase-slide">
+            <img src="/demos/thumbnails/brush_scatterplot.gif" alt="Scatterplot brushing interaction demo">
+            <figcaption class="mh-showcase-caption">
+              <strong>Add direct interaction</strong>
+              <span>Brush, select, and update data graphics through the scene.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="mh-showcase-controls" aria-label="Showcase carousel controls">
+        <button class="mh-showcase-arrow" id="mhShowcasePrev" type="button" aria-label="Previous showcase item">&lsaquo;</button>
+        <div class="mh-showcase-dots" id="mhShowcaseDots" aria-label="Showcase slides"></div>
+        <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next showcase item">&rsaquo;</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="mh-strip mh-shell mh-reveal" aria-label="Mascot capabilities">
+    <span>Marks</span><span>Collections</span><span>Encodings</span><span>Layouts</span><span>Axes</span><span>Interactions</span>
+  </section>
+
+  <section class="mh-shell mh-section" id="why">
+    <div class="mh-heading mh-reveal">
+      <p class="mh-eyebrow">Why Mascot</p>
+      <h2>Work with the visualization itself.</h2>
+      <p>Instead of treating a chart as an opaque specification, Mascot exposes its meaningful parts as objects you can create, query, modify, and connect.</p>
+    </div>
+
+    <div class="mh-feature-grid">
+      <article class="mh-feature mh-reveal">
+        <div class="mh-mini" aria-hidden="true">
+          <div class="mh-mini-node mh-n1">mark</div>
+          <div class="mh-mini-node mh-n2">collection</div>
+          <div class="mh-mini-node mh-n3">encoding</div>
+          <div class="mh-mini-node mh-n4">axis</div>
+          <svg viewBox="0 0 320 180">
+            <path d="M83 61 C130 42, 166 42, 208 63"/>
+            <path d="M92 112 C142 130, 186 130, 230 104"/>
+          </svg>
+        </div>
+        <h3>Think in objects</h3>
+        <p>Reference a circle, collection, layout, or axis directly instead of translating intent into low-level graphics.</p>
+      </article>
+
+      <article class="mh-feature mh-reveal">
+        <div class="mh-build" aria-hidden="true">
+          <div class="mh-seed"></div>
+          <div class="mh-bars"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="mh-build-axis"></div>
+        </div>
+        <h3>Build by composition</h3>
+        <p>Create a mark, repeat it with data, apply a layout, then add encodings and reference elements.</p>
+      </article>
+
+      <article class="mh-feature mh-reveal">
+        <div class="mh-flow" aria-hidden="true">
+          <span>Trigger</span><b>&rarr;</b><span>Evaluate</span><b>&rarr;</b><span>Update</span>
+        </div>
+        <h3>Add interaction naturally</h3>
+        <p>Describe what initiates a behavior, what responds, when it applies, and how the scene should change.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="mh-shell mh-section mh-two-column" id="how">
+    <div class="mh-builder mh-reveal">
+      <div class="mh-builder-header">
+        <span>How Mascot builds a chart</span>
+        <button id="mhRebuildButton" class="mh-text-button" type="button">Replay</button>
+      </div>
+      <div class="mh-builder-canvas">
+        <svg id="mhBuilderSvg" viewBox="0 0 700 430" aria-label="Animated construction of a bar chart"></svg>
+      </div>
+      <div class="mh-builder-steps">
+        <button data-step="0" class="active" type="button">1. Create</button>
+        <button data-step="1" type="button">2. Repeat</button>
+        <button data-step="2" type="button">3. Encode</button>
+        <button data-step="3" type="button">4. Add axis</button>
+        <button data-step="4" type="button">5. Interact</button>
+      </div>
+    </div>
+
+    <div class="mh-copy mh-reveal">
+      <p class="mh-eyebrow">Build like components</p>
+      <h2>Start simple. Add structure one operation at a time.</h2>
+      <p>Mascot separates the pieces of a visualization from the operations that create and modify them. The result is code that mirrors how designers think.</p>
+      <div class="mh-pills">
+        <span>repeat</span><span>divide</span><span>densify</span><span>encode</span><span>layout</span><span>align</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mh-scene-section" id="scene">
+    <div class="mh-shell mh-reveal">
+      <div class="mh-heading">
+        <p class="mh-eyebrow">Scene explorer</p>
+        <h2>See the structure behind the chart.</h2>
+      </div>
+      <div class="mh-explorer-layout">
+        <div class="mh-tree" id="mhSceneTree">
+          <button data-target="scene" class="mh-tree-row active" type="button">Scene</button>
+          <button data-target="x-axis" class="mh-tree-row mh-level-1" type="button">X axis</button>
+          <button data-target="y-axis" class="mh-tree-row mh-level-1" type="button">Y axis</button>
+          <button data-target="collection" class="mh-tree-row mh-level-1" type="button">Circle collection</button>
+          <button data-target="marks" class="mh-tree-row mh-level-2" type="button">42 circle marks</button>
+          <button data-target="encoding" class="mh-tree-row mh-level-1" type="button">Color encoding</button>
+          <button data-target="legend" class="mh-tree-row mh-level-1" type="button">Legend</button>
+        </div>
+        <div class="mh-explorer-vis">
+          <svg id="mhExplorerSvg" viewBox="0 0 760 420" aria-label="Visualization with selectable semantic components"></svg>
+          <div class="mh-explorer-label" id="mhExplorerLabel">Scene</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mh-shell mh-section" id="interactions">
+    <div class="mh-heading mh-reveal">
+      <p class="mh-eyebrow">Interactive behaviors</p>
+      <h2>Go beyond hover and brush.</h2>
+      <p>Use the same semantic scene components to express exploration, persistent state, direct manipulation, and freeform interaction.</p>
+    </div>
+    <div class="mh-tabs mh-reveal">
+      <div class="mh-tab-list" role="tablist">
+        <button class="mh-tab active" data-mode="hover" type="button">Hover</button>
+        <button class="mh-tab" data-mode="stateful" type="button">Stateful</button>
+        <button class="mh-tab" data-mode="direct" type="button">Direct manipulation</button>
+        <button class="mh-tab" data-mode="lasso" type="button">Freeform selection</button>
+      </div>
+      <div class="mh-interaction-panel">
+        <div class="mh-interaction-copy">
+          <h3 id="mhInteractionTitle">Reveal details in context</h3>
+          <p id="mhInteractionBody">Hover a mark to connect visual appearance with its underlying data.</p>
+          <div class="mh-flow-line" id="mhInteractionFlow">pointer &rarr; mark &rarr; tooltip</div>
+        </div>
+        <svg id="mhInteractionSvg" viewBox="0 0 700 390" aria-label="Interactive behavior demonstration"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="mh-shell mh-section" id="code">
+    <div class="mh-code-demo mh-reveal">
+      <div class="mh-code-panel">
+        <div class="mh-code-header"><span></span><span></span><span></span><b>mascot.js</b></div>
+        <pre><code><span class="mh-kw">const</span> scene = msc.<span class="mh-fn">scene</span>();
+
+<span class="mh-kw">const</span> bar = scene.<span class="mh-fn">mark</span>(<span class="mh-str">"rect"</span>, {
+  width: <span class="mh-num">20</span>,
+  fillColor: <span class="mh-str">"#5368ff"</span>
+});
+
+<span class="mh-kw">const</span> bars = scene.<span class="mh-fn">repeat</span>(
+  bar, data, { attribute: <span class="mh-str">"category"</span> }
+);
+
+bars.layout = msc.<span class="mh-fn">layout</span>(<span class="mh-str">"grid"</span>);
+scene.<span class="mh-fn">encode</span>(bar, {
+  attribute: <span class="mh-str">"value"</span>,
+  channel: <span class="mh-str">"height"</span>
+});</code></pre>
+      </div>
+      <div class="mh-code-result">
+        <div class="mh-result-badge">Live result</div>
+        <svg id="mhCodeChart" viewBox="0 0 620 430" aria-label="Bar chart rendered from Mascot-inspired code"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="mh-shell mh-final mh-reveal">
+    <p class="mh-eyebrow">Build something expressive</p>
+    <h2>Use familiar visualization concepts without giving up control.</h2>
+    <div class="mh-final-actions">
+      <a class="mh-button mh-button-primary" href="/gallery/">Explore the gallery</a>
+      <a class="mh-button mh-button-secondary" href="/docs/global/func/">Read the docs</a>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    const NS = "http://www.w3.org/2000/svg";
+    const root = document.querySelector(".mascot-home");
+    if (!root) return;
+    const $ = (q, ctx = root) => ctx.querySelector(q);
+    const $$ = (q, ctx = root) => Array.prototype.slice.call(ctx.querySelectorAll(q));
+    const svgEl = (name, attrs = {}) => {
+      const el = document.createElementNS(NS, name);
+      Object.keys(attrs).forEach((key) => el.setAttribute(key, attrs[key]));
+      return el;
+    };
+    const clear = (node) => { while (node && node.firstChild) node.removeChild(node.firstChild); };
+    const scale = (v, a, b, c, d) => c + ((v - a) * (d - c)) / (b - a);
+    const palette = ["#5368ff", "#25c6a1", "#ff9f5a", "#9b7bff", "#ff6b8a"];
+    const countries = [
+      ["Japan", 84, 42, 3], ["Norway", 83, 74, 0], ["Spain", 83, 36, 4], ["Canada", 82, 52, 0], ["Chile", 80, 28, 1],
+      ["China", 78, 19, 2], ["Brazil", 76, 17, 1], ["Mexico", 75, 21, 3], ["India", 70, 9, 2], ["Kenya", 67, 6, 4],
+      ["Nigeria", 62, 5, 4], ["South Africa", 65, 13, 1], ["Germany", 81, 58, 0], ["France", 82, 48, 3], ["Australia", 83, 62, 0],
+      ["Thailand", 79, 18, 2], ["Peru", 77, 12, 1], ["Vietnam", 76, 11, 2], ["Ghana", 65, 7, 4], ["Egypt", 72, 14, 3]
+    ];
+    let pinned = null;
+
+    function drawHero() {
+      const grid = $("#mhGrid"), axes = $("#mhAxes"), points = $("#mhPoints"), comparison = $("#mhComparison");
+      clear(grid); clear(axes); clear(points); clear(comparison);
+      [0, 1, 2, 3, 4].forEach((i) => {
+        const y = 85 + i * 72, x = 110 + i * 118;
+        grid.append(svgEl("line", { x1: 90, y1: y, x2: 675, y2: y, stroke: "#dde3ef", "stroke-width": 1 }));
+        grid.append(svgEl("line", { x1: x, y1: 65, x2: x, y2: 400, stroke: "#e7ebf3", "stroke-width": 1 }));
+      });
+      axes.append(svgEl("line", { x1: 90, y1: 400, x2: 680, y2: 400, stroke: "#6e7890", "stroke-width": 2, "data-axis": "x" }));
+      axes.append(svgEl("line", { x1: 90, y1: 65, x2: 90, y2: 400, stroke: "#6e7890", "stroke-width": 2 }));
+      const xLabel = svgEl("text", { x: 385, y: 452, "text-anchor": "middle", fill: "#667085", "font-size": 14 });
+      xLabel.textContent = "Income per capita";
+      axes.append(xLabel);
+      const yLabel = svgEl("text", { x: 26, y: 240, transform: "rotate(-90 26 240)", "text-anchor": "middle", fill: "#667085", "font-size": 14 });
+      yLabel.textContent = "Life expectancy";
+      axes.append(yLabel);
+      countries.forEach((d, i) => {
+        const cx = scale(d[2], 4, 76, 110, 660), cy = scale(d[1], 60, 85, 385, 80);
+        const c = svgEl("circle", { cx, cy, r: 7, fill: palette[d[3]], opacity: 0.9, "data-index": i, tabindex: 0 });
+        c.style.cursor = "pointer";
+        c.addEventListener("mouseenter", (e) => showTooltip(c, d));
+        c.addEventListener("mouseleave", hideTooltip);
+        c.addEventListener("click", () => pinPoint(i));
+        points.append(c);
+      });
+      let dragging = false, startX = 0;
+      const axis = axes.querySelector('[data-axis="x"]');
+      axis.style.cursor = "ew-resize";
+      axis.addEventListener("pointerdown", (e) => {
+        dragging = true;
+        startX = e.clientX;
+        axis.setPointerCapture(e.pointerId);
+        $("#mhHintText").textContent = "Dragging the axis updates the scale, marks, ticks, and grid together.";
+      });
+      axis.addEventListener("pointermove", (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        Array.prototype.slice.call(points.children).forEach((c, i) => {
+          const base = scale(countries[i][2], 4, 76, 110, 660);
+          c.setAttribute("cx", Math.max(105, Math.min(675, base + dx * 0.35)));
+        });
+      });
+      axis.addEventListener("pointerup", () => { dragging = false; });
+    }
+
+    function pinPoint(i) {
+      pinned = i;
+      $$("#mhPoints circle").forEach((c, j) => {
+        c.setAttribute("stroke", j === i ? "#172033" : "none");
+        c.setAttribute("stroke-width", j === i ? 4 : 0);
+      });
+      $("#mhDemoState").textContent = "Pinned: " + countries[i][0];
+      $("#mhHintText").textContent = "The pinned mark is stored in interaction state. Hover another point to compare.";
+    }
+
+    function showTooltip(c, d) {
+      const t = $("#mhChartTooltip"), stage = $(".mh-stage"), rect = stage.getBoundingClientRect(), cr = c.getBoundingClientRect();
+      t.innerHTML = "<strong>" + d[0] + "</strong><br>Life expectancy: " + d[1] + "<br>Income index: " + d[2];
+      t.style.left = (cr.left - rect.left + cr.width / 2) + "px";
+      t.style.top = (cr.top - rect.top) + "px";
+      t.style.opacity = 1;
+      if (pinned !== null && pinned !== countries.indexOf(d)) drawComparison(pinned, countries.indexOf(d));
+    }
+
+    function hideTooltip() {
+      $("#mhChartTooltip").style.opacity = 0;
+      clear($("#mhComparison"));
+    }
+
+    function drawComparison(a, b) {
+      const group = $("#mhComparison");
+      clear(group);
+      const ca = $('#mhPoints circle[data-index="' + a + '"]'), cb = $('#mhPoints circle[data-index="' + b + '"]');
+      if (!ca || !cb) return;
+      const x1 = +ca.getAttribute("cx"), y1 = +ca.getAttribute("cy"), x2 = +cb.getAttribute("cx"), y2 = +cb.getAttribute("cy");
+      group.append(svgEl("line", { x1, y1, x2, y2, stroke: "#172033", "stroke-width": 2, "stroke-dasharray": "7 6" }));
+      const tx = svgEl("text", { x: (x1 + x2) / 2, y: (y1 + y2) / 2 - 10, "text-anchor": "middle", fill: "#172033", "font-size": 12, "font-weight": 700 });
+      tx.textContent = "Delta " + Math.abs(countries[a][1] - countries[b][1]) + " years";
+      group.append(tx);
+    }
+
+    function playHeroDemo() {
+      pinned = null;
+      drawHero();
+      $("#mhDemoState").textContent = "Live demo";
+      const pts = $$("#mhPoints circle");
+      $("#mhHintText").textContent = "The visualization is composed of semantic scene objects.";
+      setTimeout(() => { if (pts[2]) pts[2].setAttribute("r", 12); $("#mhHintText").textContent = "Hover reveals the data represented by a mark."; }, 700);
+      setTimeout(() => { if (pts[2]) pts[2].setAttribute("r", 7); pinPoint(4); }, 1700);
+      setTimeout(() => { drawComparison(4, 14); $("#mhHintText").textContent = "Persistent state connects separate interaction events."; }, 2600);
+      setTimeout(() => { clear($("#mhComparison")); $("#mhHintText").textContent = "Try dragging the horizontal axis or clicking a point."; }, 4300);
+    }
+
+    function initShowcase() {
+      const track = $("#mhShowcaseTrack");
+      const dotsWrap = $("#mhShowcaseDots");
+      const state = $("#mhShowcaseState");
+      const prev = $("#mhShowcasePrev");
+      const next = $("#mhShowcaseNext");
+      if (!track || !dotsWrap || !prev || !next) return;
+      const slides = $$(".mh-showcase-slide");
+      if (!slides.length) return;
+      let active = 0;
+      let timer = null;
+      const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      slides.forEach((slide, index) => {
+        const dot = document.createElement("button");
+        dot.className = "mh-showcase-dot";
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Show showcase item " + (index + 1));
+        dot.addEventListener("click", () => {
+          goTo(index);
+          restart();
+        });
+        dotsWrap.append(dot);
+      });
+
+      function goTo(index) {
+        active = (index + slides.length) % slides.length;
+        track.style.transform = "translateX(-" + (active * 100) + "%)";
+        if (state) state.textContent = (active + 1) + " / " + slides.length;
+        $$(".mh-showcase-dot", dotsWrap).forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === active);
+          dot.setAttribute("aria-current", dotIndex === active ? "true" : "false");
+        });
+      }
+
+      function restart() {
+        if (reducedMotion) return;
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => goTo(active + 1), 6000);
+      }
+
+      prev.addEventListener("click", () => {
+        goTo(active - 1);
+        restart();
+      });
+      next.addEventListener("click", () => {
+        goTo(active + 1);
+        restart();
+      });
+      goTo(0);
+      restart();
+    }
+
+    function renderBuilder(step) {
+      const svg = $("#mhBuilderSvg");
+      clear(svg);
+      const data = [34, 72, 55, 92, 48, 80];
+      const baseY = 338;
+      svg.append(svgEl("rect", { x: 18, y: 18, width: 664, height: 390, rx: 18, fill: "#f7f9fd" }));
+      const title = svgEl("text", { x: 42, y: 52, fill: "#78839a", "font-size": 13, "font-weight": 700 });
+      title.textContent = ["Create one mark", "Repeat the mark with data", "Encode value as height", "Add reference elements", "Attach an interaction"][step];
+      svg.append(title);
+      if (step === 0) {
+        svg.append(svgEl("rect", { x: 300, y: 200, width: 54, height: 54, rx: 8, fill: "#5368ff" }));
+      } else {
+        data.forEach((v, i) => {
+          const h = step >= 2 ? scale(v, 0, 100, 35, 210) : 54;
+          const r = svgEl("rect", { x: 105 + i * 82, y: baseY - h, width: 50, height: h, rx: 8, fill: "#5368ff", opacity: step === 1 ? 0.78 : 1 });
+          if (step === 4) {
+            r.style.cursor = "pointer";
+            r.addEventListener("mouseenter", () => r.setAttribute("fill", "#25c6a1"));
+            r.addEventListener("mouseleave", () => r.setAttribute("fill", "#5368ff"));
+          }
+          svg.append(r);
+        });
+      }
+      if (step >= 3) {
+        svg.append(svgEl("line", { x1: 84, y1: baseY, x2: 614, y2: baseY, stroke: "#667085", "stroke-width": 2 }));
+        svg.append(svgEl("line", { x1: 84, y1: 104, x2: 84, y2: baseY, stroke: "#667085", "stroke-width": 2 }));
+        ["A", "B", "C", "D", "E", "F"].forEach((t, i) => {
+          const x = svgEl("text", { x: 130 + i * 82, y: 365, "text-anchor": "middle", fill: "#667085", "font-size": 12 });
+          x.textContent = t;
+          svg.append(x);
+        });
+      }
+      $$(".mh-builder-steps button").forEach((b, i) => b.classList.toggle("active", i === step));
+    }
+
+    function drawExplorer() {
+      const svg = $("#mhExplorerSvg");
+      clear(svg);
+      for (let i = 0; i < 5; i++) svg.append(svgEl("line", { x1: 88, y1: 70 + i * 62, x2: 685, y2: 70 + i * 62, stroke: "#e4e8f0", "stroke-width": 1, "data-kind": "scene" }));
+      svg.append(svgEl("line", { x1: 90, y1: 344, x2: 680, y2: 344, stroke: "#667085", "stroke-width": 2, "data-kind": "x-axis" }));
+      svg.append(svgEl("line", { x1: 90, y1: 58, x2: 90, y2: 344, stroke: "#667085", "stroke-width": 2, "data-kind": "y-axis" }));
+      countries.slice(0, 15).forEach((d) => {
+        svg.append(svgEl("circle", { cx: scale(d[2], 4, 76, 115, 655), cy: scale(d[1], 60, 85, 330, 75), r: 7, fill: palette[d[3]], "data-kind": "marks" }));
+      });
+      const legend = svgEl("g", { "data-kind": "legend" });
+      palette.slice(0, 4).forEach((p, i) => {
+        legend.append(svgEl("circle", { cx: 586, cy: 82 + i * 20, r: 5, fill: p }));
+        const t = svgEl("text", { x: 599, y: 86 + i * 20, fill: "#667085", "font-size": 11 });
+        t.textContent = ["Americas", "Asia", "Europe", "Africa"][i];
+        legend.append(t);
+      });
+      svg.append(legend);
+    }
+
+    function highlightExplorer(kind) {
+      $$("#mhExplorerSvg [data-kind]").forEach((el) => {
+        const hit = kind === "scene" || (kind === "collection" && el.dataset.kind === "marks") || (kind === "encoding" && el.dataset.kind === "marks") || el.dataset.kind === kind;
+        el.style.opacity = hit ? 1 : 0.13;
+        if (hit && (kind === "marks" || kind === "collection")) el.setAttribute("stroke", "#172033");
+        else if (el.tagName === "circle") el.setAttribute("stroke", "none");
+      });
+      $("#mhExplorerLabel").textContent = kind.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    }
+
+    const interactionModes = {
+      hover: ["Reveal details in context", "Hover a mark to connect visual appearance with its underlying data.", "pointer -> mark -> tooltip"],
+      stateful: ["Remember across events", "Pin one item, then compare later hover events against the saved baseline.", "click -> state -> hover -> comparison"],
+      direct: ["Manipulate scene components", "Drag an axis to update its scale and every dependent visual component.", "drag axis -> scale -> marks + ticks"],
+      lasso: ["Draw freeform selections", "Create a polygon directly over the scene and evaluate which marks fall inside it.", "pointer path -> polygon -> selected marks"]
+    };
+
+    function drawInteraction(mode) {
+      const svg = $("#mhInteractionSvg");
+      clear(svg);
+      const copy = interactionModes[mode];
+      $("#mhInteractionTitle").textContent = copy[0];
+      $("#mhInteractionBody").textContent = copy[1];
+      $("#mhInteractionFlow").textContent = copy[2];
+      for (let i = 0; i < 4; i++) svg.append(svgEl("line", { x1: 64, y1: 80 + i * 72, x2: 640, y2: 80 + i * 72, stroke: "#e4e8f0" }));
+      svg.append(svgEl("line", { x1: 68, y1: 336, x2: 645, y2: 336, stroke: "#667085", "stroke-width": 2 }));
+      const pts = [];
+      countries.slice(0, 12).forEach((d) => {
+        const c = svgEl("circle", { cx: scale(d[2], 4, 76, 92, 620), cy: scale(d[1], 60, 85, 320, 72), r: 8, fill: palette[d[3]], opacity: 0.9 });
+        pts.push(c);
+        svg.append(c);
+      });
+      if (mode === "hover") {
+        pts[3].setAttribute("r", 13); pts[3].setAttribute("stroke", "#172033"); pts[3].setAttribute("stroke-width", 3);
+        svg.append(svgEl("rect", { x: 280, y: 78, width: 170, height: 78, rx: 8, fill: "#172033" }));
+        const t = svgEl("text", { x: 298, y: 107, fill: "white", "font-size": 13, "font-weight": 700 }); t.textContent = "Canada"; svg.append(t);
+        const s = svgEl("text", { x: 298, y: 132, fill: "#cfd6e5", "font-size": 11 }); s.textContent = "Life expectancy: 82"; svg.append(s);
+      } else if (mode === "stateful") {
+        pts[1].setAttribute("stroke", "#172033"); pts[1].setAttribute("stroke-width", 4); pts[7].setAttribute("r", 12);
+        svg.append(svgEl("line", { x1: pts[1].getAttribute("cx"), y1: pts[1].getAttribute("cy"), x2: pts[7].getAttribute("cx"), y2: pts[7].getAttribute("cy"), stroke: "#172033", "stroke-width": 2, "stroke-dasharray": "7 6" }));
+      } else if (mode === "direct") {
+        svg.append(svgEl("line", { x1: 68, y1: 336, x2: 645, y2: 336, stroke: "#5368ff", "stroke-width": 5 }));
+        svg.append(svgEl("rect", { x: 622, y: 322, width: 28, height: 28, rx: 8, fill: "#5368ff" }));
+        const label = svgEl("text", { x: 635, y: 306, "text-anchor": "middle", fill: "#5368ff", "font-size": 12, "font-weight": 700 }); label.textContent = "drag"; svg.append(label);
+      } else {
+        svg.append(svgEl("polygon", { points: "150,240 230,98 470,120 535,260 360,314", fill: "rgba(83,104,255,.12)", stroke: "#5368ff", "stroke-width": 3, "stroke-dasharray": "7 6" }));
+        pts.forEach((p, i) => { if ([1, 2, 3, 4, 6, 7, 8].indexOf(i) !== -1) { p.setAttribute("stroke", "#172033"); p.setAttribute("stroke-width", 3); } });
+      }
+    }
+
+    function drawCodeChart() {
+      const svg = $("#mhCodeChart");
+      clear(svg);
+      const vals = [36, 68, 48, 88, 57, 76];
+      svg.append(svgEl("line", { x1: 72, y1: 360, x2: 565, y2: 360, stroke: "#667085", "stroke-width": 2 }));
+      vals.forEach((v, i) => {
+        const h = scale(v, 0, 100, 40, 250);
+        svg.append(svgEl("rect", { x: 98 + i * 76, y: 360 - h, width: 48, height: h, rx: 8, fill: "#5368ff" }));
+        const t = svgEl("text", { x: 122 + i * 76, y: 386, "text-anchor": "middle", fill: "#667085", "font-size": 12 });
+        t.textContent = String.fromCharCode(65 + i);
+        svg.append(t);
+      });
+    }
+
+    function revealOnScroll() {
+      if (!("IntersectionObserver" in window)) {
+        $$(".mh-reveal").forEach((el) => el.classList.add("visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }), { threshold: 0.12 });
+      $$(".mh-reveal").forEach((el) => io.observe(el));
+    }
+
+    const playButton = $("#mhPlayDemo");
+    if (playButton) playButton.addEventListener("click", playHeroDemo);
+    $$(".mh-builder-steps button").forEach((b) => b.addEventListener("click", () => renderBuilder(+b.dataset.step)));
+    $("#mhRebuildButton").addEventListener("click", () => {
+      let s = 0;
+      renderBuilder(0);
+      const id = setInterval(() => { s += 1; renderBuilder(s); if (s === 4) clearInterval(id); }, 650);
+    });
+    $$(".mh-tree-row").forEach((b) => b.addEventListener("mouseenter", () => {
+      $$(".mh-tree-row").forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      highlightExplorer(b.dataset.target);
+    }));
+    $$(".mh-tab").forEach((t) => t.addEventListener("click", () => {
+      $$(".mh-tab").forEach((x) => x.classList.remove("active"));
+      t.classList.add("active");
+      drawInteraction(t.dataset.mode);
+    }));
+
+    initShowcase();
+    renderBuilder(0);
+    drawExplorer();
+    drawInteraction("hover");
+    drawCodeChart();
+    revealOnScroll();
+  })();
+</script>
 {{ end }}
 
-{{ define "sidebar-prefooter" }}
-<section class="section section-sm">
-  <div class="container">
-    <div class="row w-75 justify-content-center text-left mx-auto mt-3 mb-3">
-        <p>Mascot, short for <b>Ma</b>nipulable <b>S</b>emantic <b>Co</b>mponen<b>t</b>s, is a data visualization grammar designed to support the generation, transformation, and analysis of expressive charts from a graphics-centric perspective.
-          <!-- Inspired by graphic design tools such as Figma and Adobe XD,
-          Mascot helps you create expressive charts by manipulating graphical objects with data.  -->
-        Mascot provides high-level abstractions for both the <i>structure</i> of a chart and the <i>procedure</i> to construct and modify the chart structure:
-          <ul class="ms-5">
-            <li>The structure is described as <i>semantic components</i> such as mark, glyph, collection, layout, and encoding;</li>
-            <li>The procedure is expressed in terms of a series of <i>operations</i> that manipulate the semantic components, e.g., repeat, divide, and densify</li>
-          </ul>
-        </p>
-        <!-- <p>Through a procedural syntax, you have complete control over the component states and the generative process of your visualization.</p> -->
-    </div>
-    <div class="row w-50 justify-content-center mx-auto border">
-      <video width="100%" controls muted autoplay loop>
-        <source src="https://mascot-vis.github.io/homepage.mov" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="row justify-content-center text-center mt-3">
-      <div class="col-lg-5">
-        <h2 class="h4">Graphics-Centric</h2>
-        <p>Graphical objects are first-class citizens. Think in terms of their properties, transformations, layouts and constraints.</p>
-        <!-- <p>Get A+ scores on <a href="https://observatory.mozilla.org/analyze/doks.netlify.app">Mozilla Observatory</a> out of the box. Easily change the default Security Headers to suit your needs.</p> -->
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Procedural Syntax</h2>
-        <p>Apply a series of operations to generate a visualization. Ability to inspect the visualization components after any step.</p>
-        <!-- <p>Get 100 scores on <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=7731347bb8ce999eff7428a8e763b637">Google Lighthouse</a> by default. Doks removes unused css, prefetches links, and lazy loads images.</p> -->
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Flexible Rendering</h2>
-        <p>Visualization logic decoupled from rendering. Choose your preferred renderer: SVG or WebGL.</p>
-        <!-- <p>Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking.</p> -->
-      </div>
-    </div>
-    <!-- <div class="row justify-content-center text-center">
-      <div class="col-lg-5">
-        <h2 class="h4">Full text search</h2>
-        <p>Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Page layouts</h2>
-        <p>Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Dark mode</h2>
-        <p>Switch to a low-light UI with the click of a button. Change colors with variables to match your branding.</p>
-      </div>
-    </div> -->
-  </div>
-</section>
-{{ end }}
+{{ define "sidebar-prefooter" }}{{ end }}
 
-{{ define "sidebar-footer" }}
-<section class="section section-sm container-fluid">
-  <div class="row justify-content-center text-center">
-    <div class="col-lg-9">
-      {{- .Content -}}
-    </div>
-  </div>
-</section>
-{{ end }}
+{{ define "sidebar-footer" }}{{ end }}
