@@ -14,6 +14,41 @@ Use these idioms when generating Mascot.js code. They capture the order and styl
 8. Add axes, gridlines, and legends from the scene.
 9. Render with `msc.renderer("svg", "svgElement").render(scn)`.
 
+## Inspect Tables Before Choosing Fields
+
+When the natural-language request is underspecified, inspect the DataTable
+instead of guessing attribute names or types.
+
+```js
+let table = await msc.csv("/datasets/csv/sales.csv");
+
+let attrs = table.attrs();
+let measures = table.measures;
+let dimensions = table.dimensions;
+
+if (table.has("Date") && table.type("Date") === "string") {
+  table.parseDate("Date", "%Y-%m-%d");
+}
+
+let salesSummary = table.summary("Sales");
+let regions = table.unique("Region");
+```
+
+Use `table.rows(...)` for lightweight filtering or validation before building the chart:
+
+```js
+let westRows = table.rows({Region: "West"});
+let recentRows = table.rows({Year: {min: 2020}});
+let selectedRows = table.rows({Region: ["East", "West"]});
+```
+
+Use `table.summary(attr)` for min, max, extent, mean, and median. Use
+`table.unique(attr)` for distinct values. Do not use `d3.csv`, `d3.csvParse`,
+`d3.group`, `d3.rollup`, `d3.sum`, `d3.mean`, or `d3.extent` in generated code.
+
+Do not use removed helper names such as `getRowCount`, `getAttributeSummary`,
+`numericAttributes`, `categoricalAttributes`, or `parseAttributeAsDate`.
+
 ## Repeat First, Then Layout
 
 Use `msc.repeat` when each group or row should get a copy of a mark, glyph, or collection.
