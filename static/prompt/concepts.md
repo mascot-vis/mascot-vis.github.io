@@ -55,14 +55,42 @@ When an operation creates many peers from a prototype element, Mascot keeps trac
 
 ## Data
 
-Most examples use tabular data loaded with `await msc.csv(url)`. Data-driven operations bind rows or groups of rows to marks and collections.
+Most examples use tabular data loaded with `await msc.csv(url)`. Data-driven
+operations bind rows or groups of rows to marks and collections.
+
+Mascot stores tabular data in a DataTable. Use the DataTable API to inspect the
+dataset before deciding which attributes to encode:
+
+```js
+let table = await msc.csv("/datasets/csv/sales.csv");
+
+table.attrs();          // all attributes
+table.measures;         // numeric attributes
+table.dimensions;       // non-numeric attributes, sorted by unique-value count
+table.has("Sales");     // true if the attribute exists
+table.type("Sales");    // "number", "integer", "date", "string", or "boolean"
+table.summary("Sales"); // min, max, extent, mean, median, unique, etc.
+```
+
+Do not import d3 or use d3 data helpers in generated Mascot code. Data loading
+should go through `msc.csv(...)`, `msc.csvString(...)`, `msc.table(...)`,
+`msc.graphJSON(...)`, or `msc.treeJSON(...)`. Data inspection should go through
+the DataTable API.
+
+Tables also support `table.values(attr)`, `table.unique(attr)`, `table.count()`,
+`table.rows(filters)`, `table.parseDate(attr, format)`, and
+`table.addAttr(name, type, values)`. Filtering with `table.rows(...)` is useful
+for exact matches, sets, and numeric/date intervals, but chart construction
+should still use Mascot's data-driven operations instead of manually drawing one
+mark per row.
 
 Common data flow:
 
 1. Load a table.
-2. Create one prototype mark or glyph.
-3. Generate a collection from that prototype with `msc.repeat`, `msc.divide`, or `msc.densify`.
-4. Apply layout, encodings, constraints, and guides.
+2. Inspect the table when the request does not name exact fields.
+3. Create one prototype mark or glyph.
+4. Generate a collection from that prototype with `msc.repeat`, `msc.divide`, or `msc.densify`.
+5. Apply layout, encodings, constraints, and guides.
 
 ## Encoding
 
