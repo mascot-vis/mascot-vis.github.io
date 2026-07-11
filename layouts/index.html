@@ -201,7 +201,7 @@
   .mh-showcase {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0;
   }
 
   .mh-showcase-frame {
@@ -219,6 +219,7 @@
 
   .mh-showcase-slide {
     flex: 0 0 100%;
+    margin: 0;
     position: relative;
   }
 
@@ -232,13 +233,10 @@
   }
 
   .mh-showcase-caption {
-    background: linear-gradient(180deg, rgba(16, 23, 37, 0), rgba(16, 23, 37, 0.82));
-    bottom: 0;
-    color: #fff;
-    left: 0;
-    padding: 42px 20px 16px;
-    position: absolute;
-    right: 0;
+    background: #fff;
+    color: var(--mh-ink);
+    min-height: 62px;
+    padding: 12px 18px 6px;
   }
 
   .mh-showcase-caption strong,
@@ -252,7 +250,7 @@
   }
 
   .mh-showcase-caption span {
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--mh-muted);
     font-size: 13px;
     margin-top: 5px;
   }
@@ -263,6 +261,7 @@
     gap: 10px;
     justify-content: space-between;
     min-height: 32px;
+    padding: 4px 0 0;
   }
 
   .mh-showcase-arrow {
@@ -951,11 +950,11 @@
             </figcaption>
           </figure>
         </div>
-      </div>
-      <div class="mh-showcase-controls" aria-label="Showcase carousel controls">
-        <button class="mh-showcase-arrow" id="mhShowcasePrev" type="button" aria-label="Previous showcase item">&lsaquo;</button>
-        <div class="mh-showcase-dots" id="mhShowcaseDots" aria-label="Showcase slides"></div>
-        <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next showcase item">&rsaquo;</button>
+        <div class="mh-showcase-controls" aria-label="Showcase carousel controls">
+          <button class="mh-showcase-arrow" id="mhShowcasePrev" type="button" aria-label="Previous showcase item">&lsaquo;</button>
+          <div class="mh-showcase-dots" id="mhShowcaseDots" aria-label="Showcase slides"></div>
+          <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next showcase item">&rsaquo;</button>
+        </div>
       </div>
     </div>
   </section>
