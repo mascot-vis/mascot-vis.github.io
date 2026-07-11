@@ -11,31 +11,32 @@ let anyArea = msc.densify(rect, data, {orientation: "horizontal", attribute: "da
 let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "vertical", attribute: "industry"});
 msc.update(areas.layout, {vertCellAlignment: "bottom"});
 
-msc.encode(area, {channel: "fillColor", attribute: "industry", mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
-msc.encode(area, {channel: "height", attribute: "unemployments"});
-let xEnc = msc.encode(area.topLeftVertex, {channel: "x", attribute: "date", rangeExtent: 700});
-msc.encode(area.bottomLeftVertex, {channel: "x", attribute: "date", shareScale: xEnc});
+msc.encode(area, "fillColor", "industry", {mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
+msc.encode(area, "height", "unemployments");
+let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 700});
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
 
 scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y"});
 scene.axis("height", "unemployments", {orientation: "left", titleOffset: 50});
 scene.legend("fillColor", "industry", {x: 580, y: 100});
 
-let industries = ['Manufacturing', 'Leisure and hospitality', 'Business services', 'Construction'],
-    list = industries.slice();
-let trigger = { target: ["checkbox0", "checkbox1", "checkbox2", "checkbox3"], event: "change" },
-    responder = { component: area, channels: ["visibility"] },
-    evalFn =  (ctx, compnt) => {
-        if (ctx.get("checked"))
-            list.includes(ctx.get("inputValue")) || list.push(ctx.get("inputValue"));
+scene.state.set("selectedIndustries", ['Manufacturing', 'Leisure and hospitality', 'Business services', 'Construction']);
+let trigger = { source: ["checkbox0", "checkbox1", "checkbox2", "checkbox3"], event: "change" },
+    responder = { object: area, properties: ["visibility"] },
+    evalFn =  (evtCtx, stateCtx, respObj) => {
+        let list = stateCtx.get("selectedIndustries") || [];
+        if (evtCtx.get("checked"))
+            list.includes(evtCtx.get("inputValue")) || list.push(evtCtx.get("inputValue"));
         else
-            list = list.filter(d => d !== ctx.get("inputValue"));
-        return list.includes(compnt.dataScope.getAttrVal("industry"));
+            list = list.filter(d => d !== evtCtx.get("inputValue"));
+        stateCtx.set("selectedIndustries", list);
+        return list.includes(respObj.datum["industry"]);
     },
-    fn = (condMet, ctx, compnt) => {
-        if (condMet) {
-            compnt.visibility = "visible";
+    fn = (evalResult, evtCtx, stateCtx, respObj) => {
+        if (evalResult) {
+            respObj.visibility = "visible";
         } else {
-            compnt.visibility = "hidden";
+            respObj.visibility = "hidden";
         }
     };
 

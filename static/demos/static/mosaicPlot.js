@@ -5,9 +5,9 @@ let rect = scene.mark("rect", {top:160, left: 150, width: 800, height: 650, stro
 let {newMark: jobMark} = msc.divide(rect, data, {orientation: "horizontal", attribute: "Job Type"});
 let {newMark: genderMark} = msc.divide(jobMark, data, {orientation: "vertical", attribute: "Gender"});
 
-msc.encode(genderMark, {channel: "fillColor", attribute: "Gender", mapping: {"Male": "#3F73B8", "Female": "#E97075"}});
-let wdEncoding = msc.encode(genderMark, {channel: "width", attribute: "Percent Total"});
-let htEncoding = msc.encode(genderMark, {attribute: "Percent Gender", channel: "height"});
+msc.encode(genderMark, "fillColor", "Gender", {mapping: {"Male": "#3F73B8", "Female": "#E97075"}});
+let wdEncoding = msc.encode(genderMark, "width", "Percent Total");
+let htEncoding = msc.encode(genderMark, "height", "Percent Gender");
 wdEncoding.rangeExtent = 450;
 
 scene.axis("x", "Job Type", {orientation: "bottom", labelRotation: -45, titleVisible: false});

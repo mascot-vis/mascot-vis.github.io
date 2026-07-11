@@ -55,11 +55,11 @@ iframe {
 
             function buildIframeUrlFromParent() {
                 const parentUrl = new URL(window.location.href);
-                const mode = parentUrl.searchParams.get("mode");
+                const mode = parentUrl.searchParams.get("category");
                 const frameUrl = new URL(basePath, window.location.origin);
 
                 if (mode === "static" || mode === "interactive") {
-                    frameUrl.searchParams.set("mode", mode);
+                    frameUrl.searchParams.set("category", mode);
                 }
 
                 frameUrl.hash = window.location.hash || "";
@@ -86,12 +86,12 @@ iframe {
                     if (!frameLoc || !frameLoc.pathname.endsWith("/gallery-static.html")) return;
 
                     const parentUrl = new URL(window.location.href);
-                    const frameMode = new URLSearchParams(frameLoc.search).get("mode");
+                    const frameMode = new URLSearchParams(frameLoc.search).get("category");
 
                     if (frameMode === "static" || frameMode === "interactive") {
-                        parentUrl.searchParams.set("mode", frameMode);
+                        parentUrl.searchParams.set("category", frameMode);
                     } else {
-                        parentUrl.searchParams.delete("mode");
+                        parentUrl.searchParams.delete("category");
                     }
 
                     parentUrl.hash = frameLoc.hash || "";

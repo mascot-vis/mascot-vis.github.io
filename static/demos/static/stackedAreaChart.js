@@ -11,10 +11,10 @@ let anyArea = msc.densify(rect, data, {orientation: "horizontal", attribute: "da
 let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "vertical", attribute: "industry"});
 msc.update(areas.layout, {vertCellAlignment: "bottom"});
 
-msc.encode(area, {channel: "fillColor", attribute: "industry", mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
-msc.encode(area, {channel: "height", attribute: "unemployments"});
-let xEnc = msc.encode(area.topLeftVertex, {channel: "x", attribute: "date", rangeExtent: 700});
-msc.encode(area.bottomLeftVertex, {channel: "x", attribute: "date", shareScale: xEnc});
+msc.encode(area, "fillColor", "industry", {mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
+msc.encode(area, "height", "unemployments");
+let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 700});
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
 
 scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y"});
 scene.axis("height", "unemployments", {orientation: "left", titleOffset: 50});

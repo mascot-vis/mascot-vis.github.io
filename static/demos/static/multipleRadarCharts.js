@@ -4,8 +4,8 @@ let circle = scn.mark("circle", {radius: 160, x: 300, y: 320, fillColor: "none",
 let coll = msc.repeat(circle, dt, {attribute: "Model"}),
     coll2 = msc.repeat(coll, dt, {attribute: "Task", layout: msc.layout("grid", {numRows: 1, colGap: 170})});
 let polygon = msc.densify(circle, dt, {attribute: "Category"});
-msc.encode(polygon.firstVertex, {attribute: "Score", channel: "radialDistance", domain: [0, 5]});
-msc.encode(polygon, {attribute: "Model", channel: "strokeColor"});
+msc.encode(polygon.firstVertex, "radialDistance", "Score", {domain: [0, 5]});
+msc.encode(polygon, "strokeColor", "Model");
 
 for (let i = 90; i < 450; i+= 36)
     scn.axis("radialDistance", "Score", {rotation: i, labelVisible: (i - 90)%72 === 0, labelFormat: ".2s", strokeColor: "#aaa", textColor: "#aaa", titleVisible: false, tickValues: [1.0, 2.0, 3.0, 4.0, 5.0]});

@@ -4,9 +4,9 @@ let dt = await msc.csv("/datasets/csv/covidCases.csv");
 msc.repeat(line, dt, {attribute: "Model"});
 let polyline = msc.densify(line, dt, {attribute: "Date"});
 msc.update(polyline, {curveMode: "natural"});
-msc.encode(polyline.firstVertex, {attribute: "Date", channel: "x"});
-msc.encode(polyline.firstVertex, {attribute: "New Cases", channel: "y", includeZero: true});
-msc.encode(polyline, {attribute: "Model", channel: "strokeColor"});
+msc.encode(polyline.firstVertex, "x", "Date");
+msc.encode(polyline.firstVertex, "y", "New Cases", {includeZero: true});
+msc.encode(polyline, "strokeColor", "Model");
 
 let predicted = msc.findElements(scn, [{attribute: "Type", value: "Predicted"}]);
 predicted.forEach(d => {d.strokeDash = "10 6"; d.opacity = 0.7;});

@@ -28,8 +28,8 @@ medals.layout = msc.layout("grid", {numCols: 1, rowGap: 1});
 
 let bars = msc.repeat(medals, dt, {attribute: "Country_Code"});
 //todo: handle encoding before 2nd repeat
-let htEncoding = msc.encode(rect, {attribute: "Count", channel: "width"});
-msc.encode(rect, {attribute: "Medal_Type", channel: "fillColor", mapping: {"Gold": "#c9b037", "Silver": "#d7d7d7", "Bronze": "#ad8a56"}});
+let htEncoding = msc.encode(rect, "width", "Count");
+msc.encode(rect, "fillColor", "Medal_Type", {mapping: {"Gold": "#c9b037", "Silver": "#d7d7d7", "Bronze": "#ad8a56"}});
 
 bars.layout = msc.layout("grid", {numRows: 5, colGap: 40, rowGap: 55});
 

@@ -7,10 +7,10 @@ industries.layout = msc.layout("grid", {numRows: 2, colGap: 60, rowGap: 30});
 let anyArea = msc.densify(industries.firstChild, data, {orientation: "horizontal", attribute: "date"});
 let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "vertical", attribute: "gender"});
 
-msc.encode(area, {channel: "fillColor", attribute: "gender", mapping: {"male": "#60bdf0", "female": "#f768a1"}});
-let htEncoding = msc.encode(area, {channel: "height", attribute: "unemployments"});
-let xEnc = msc.encode(area.topLeftVertex, {channel: "x", attribute: "date", rangeExtent: 400});
-msc.encode(area.bottomLeftVertex, {channel: "x", attribute: "date", shareScale: xEnc});
+msc.encode(area, "fillColor", "gender", {mapping: {"male": "#60bdf0", "female": "#f768a1"}});
+let htEncoding = msc.encode(area, "height", "unemployments");
+let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 400});
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
 htEncoding.domain = [0,4500];
 htEncoding.rangeExtent = 200;
 

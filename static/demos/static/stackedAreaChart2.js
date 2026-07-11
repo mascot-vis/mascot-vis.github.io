@@ -4,9 +4,9 @@ let rect = scn.mark("rect", {top:100, left: 100, width: 500, height: 400, fillCo
 
 let os = msc.divide(rect, dt, {orientation: "vertical", attribute: "Mobile Operating System"});
 let area = msc.densify(os.firstChild, dt, {attribute: "Date", orientation: "horizontal"});
-msc.encode(area.firstVertexPair, {channel: "x", attribute: "Date", rangeExtent: 700});
-msc.encode(area, {attribute: "Percent of Usage", channel: "height", rangeExtent: 250});
-msc.encode(area, {attribute: "Mobile Operating System", channel: "fillColor"});
+msc.encode(area.firstVertexPair, "x", "Date", {rangeExtent: 700});
+msc.encode(area, "height", "Percent of Usage", {rangeExtent: 250});
+msc.encode(area, "fillColor", "Mobile Operating System");
 scn.axis("height", "Percent of Usage", {orientation: "left"});
 scn.axis("x", "Date", {orientation: "bottom"});
 scn.legend("fillColor", "Mobile Operating System", {x: 900, y: 100});

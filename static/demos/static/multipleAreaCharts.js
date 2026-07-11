@@ -6,16 +6,16 @@ msc.repeat(rect, data, {attribute: "State"});
 
 
 let area = msc.densify(rect, data, {attribute: "Year", orientation: "horizontal"});
-let xEnc = msc.encode(area, {attribute: "MapX", channel: "x", rangeExtent: 950});
-let yEnc = msc.encode(area, {attribute: "MapY", channel: "y", rangeExtent: 550});
+let xEnc = msc.encode(area, "x", "MapX", {rangeExtent: 950});
+let yEnc = msc.encode(area, "y", "MapY", {rangeExtent: 550});
 
-let xvEnc = msc.encode(area.topLeftVertex, {attribute: "Year", channel: "x"});
-msc.encode(area.bottomLeftVertex, {attribute: "Year", channel: "x", shareScale: xvEnc});
-msc.encode(area, {attribute: "PVI Score", channel: "height"});
-msc.encode(area, {channel: "fillGradient", attribute: "PVI Score", mapping: {"45": "#B6293E", "0.005": "#B6293E", "0": "white", "-0.005": "#477EC0", "-45": "#477EC0"}});
+let xvEnc = msc.encode(area.topLeftVertex, "x", "Year");
+msc.encode(area.bottomLeftVertex, "x", "Year", {shareScale: xvEnc});
+msc.encode(area, "height", "PVI Score");
+msc.encode(area, "fillGradient", "PVI Score", {mapping: {"45": "#B6293E", "0.005": "#B6293E", "0": "white", "-0.005": "#477EC0", "-45": "#477EC0"}});
 
 let text = scene.mark("text", {x: 0, y:85});
 msc.repeat(text, data, {attribute: "State"});
-msc.encode(text, {channel: "text", attribute: "State"});
+msc.encode(text, "text", "State");
 msc.affix(text, area, "x");
-msc.encode(text, {channel: "y", attribute: "MapY", rangeExtent: 550});
+msc.encode(text, "y", "MapY", {rangeExtent: 550});

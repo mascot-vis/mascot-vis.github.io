@@ -8,7 +8,7 @@ let data = await msc.csv("/datasets/csv/nightingale.csv");
 let {newMark:pie, collection:pies} = msc.divide(circ, data, {attribute: "Month", orientation: "angular"});
 let {newMark:arc, collection:arcs} = msc.divide(pie, data, {attribute: "Type", orientation: "radial"});
 
-msc.encode(arc, {attribute: "Type", channel: "fillColor", mapping: {"Disease": "#CFDFE3", "Wounds": "#EBC3BE", "Other": "#77746F"}});
-let enc = msc.encode(arc, {attribute: "Death", channel: "thickness", scaleType: "sqrt", rangeExtent: 200});
+msc.encode(arc, "fillColor", "Type", {mapping: {"Disease": "#CFDFE3", "Wounds": "#EBC3BE", "Other": "#77746F"}});
+let enc = msc.encode(arc, "thickness", "Death", {scaleType: "sqrt", rangeExtent: 200});
 enc.rangeExtent = 190;
 scn.legend("fillColor", "Type", {x: 150, y: 100});

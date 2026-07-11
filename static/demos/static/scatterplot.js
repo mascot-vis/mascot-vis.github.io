@@ -5,9 +5,9 @@ let circle = scn.mark("circle", {radius: 6, x: 100, y: 80, fillColor: "orange", 
 let collection = msc.repeat(circle, dt, { attribute: "Country" });
 
 //Country,GDP per capita,Life expectancy,Population,Continent
-let xEncoding = msc.encode(circle, { attribute: "GDP per capita", channel: "x" });
-let yEncoding = msc.encode(circle, { attribute: "Life expectancy", channel: "y" });
-let fillEncoding = msc.encode(circle, { attribute: "Continent", channel: "fillColor" });
+let xEncoding = msc.encode(circle, "x", "GDP per capita");
+let yEncoding = msc.encode(circle, "y", "Life expectancy");
+let fillEncoding = msc.encode(circle, "fillColor", "Continent");
 
 xEncoding.rangeExtent = 450;
 yEncoding.rangeExtent = 450;

@@ -4,7 +4,7 @@ let rect = scn.mark("rect", {top: 60, left: 50, width: 600, height: 800, strokeW
 
 let {newMark: continent, collection: continents} = msc.divide(rect, dt, {attribute: "Continent", orientation: "vertical"});
 let {newMark:country, collection: countries} = msc.divide(continent, dt, {attribute: "Country", orientation: "horizontal"});
-msc.encode(country, {attribute: "Population", channel: "area"});
+msc.encode(country, "area", "Population");
 scn.setLayout(continents, msc.layout("treemap", {width: 800, height: 500}));
-msc.encode(country, {attribute: "Continent", channel: "fillColor"});
+msc.encode(country, "fillColor", "Continent");
 scn.legend("fillColor", "Continent", {x: 900, y:100});

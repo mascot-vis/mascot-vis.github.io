@@ -13,18 +13,18 @@ area.curveMode = "natural";
 // area.topRightVertex.fillColor = "red";
 // area.bottomRightVertex.fillColor = "red";
 
-let xEnc = msc.encode(area.topLeftVertex, {attribute: "date", channel: "x", rangeExtent: 600});
-msc.encode(area.bottomLeftVertex, {attribute: "date", channel: "x", shareScale: xEnc});
+let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 600});
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
 xEnc.rangeExtent = 800;
-let yEnc = msc.encode(area.topLeftVertex, {attribute: "maxTemp", channel: "y", includeZero: true});
-msc.encode(area.bottomLeftVertex, {attribute: "minTemp", channel: "y", shareScale: yEnc});
+let yEnc = msc.encode(area.topLeftVertex, "y", "maxTemp", {includeZero: true});
+msc.encode(area.bottomLeftVertex, "y", "minTemp", {shareScale: yEnc});
 
 let polyLine = msc.densify(line, dt, {attribute: "date"});
 polyLine.curveMode = "natural";
 let vertex = polyLine.firstVertex;
 
-msc.encode(vertex, {attribute: "date", channel: "x", shareScale: xEnc});
-msc.encode(vertex, {attribute: "meanTemp", channel: "y", shareScale: yEnc});
+msc.encode(vertex, "x", "date", {shareScale: xEnc});
+msc.encode(vertex, "y", "meanTemp", {shareScale: yEnc});
 
 scn.axis("x", "date", {orientation: "bottom", labelFormat: "%b %d"});
 scn.axis("y", "meanTemp", {orientation: "left"});

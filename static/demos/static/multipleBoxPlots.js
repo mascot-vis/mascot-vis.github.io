@@ -15,13 +15,13 @@ msc.sortChildren(payGrades, "Pay Grade", false, ["One", "Two", "Three", "Four", 
 payGrades.layout = msc.layout("grid", {numRows: 1, colGap: 45});
 
 
-let enc = msc.encode(line.vertices[0], {attribute: "Min", channel: "y"});
-msc.encode(line.vertices[1], {attribute: "Max", channel: "y", shareScale: enc});
-msc.encode(box.topSegment, {attribute: "75-Percentile", channel: "y", shareScale: enc});
-msc.encode(box.bottomSegment, {attribute: "25-Percentile", channel: "y", shareScale: enc});
-msc.encode(medianLine, {attribute: "Median", channel: "y", shareScale: enc});
+let enc = msc.encode(line.vertices[0], "y", "Min");
+msc.encode(line.vertices[1], "y", "Max", {shareScale: enc});
+msc.encode(box.topSegment, "y", "75-Percentile", {shareScale: enc});
+msc.encode(box.bottomSegment, "y", "25-Percentile", {shareScale: enc});
+msc.encode(medianLine, "y", "Median", {shareScale: enc});
 
-msc.encode(box, {attribute: "Gender", channel: "fillColor"});
+msc.encode(box, "fillColor", "Gender");
 scn.axis("x", "Pay Grade", {orientation: "bottom", pathVisible: false, tickVisible: false, labelOffset: 35, titleVisible: false});
 scn.axis("x", "Gender", {orientation: "bottom", pathVisible: false,tickVisible: false, titleVisible: false});
 scn.axis("y", "Max", {orientation: "left", "pathX": 100, labelFormat: ".2s", title: "annual income"});

@@ -79,7 +79,7 @@
         background: linear-gradient(#f0f0f0, #e0e0e0);
         border-color: #ccc;
       }
-      .modeTab {
+      .categoryTab {
         border: 1px solid transparent;
         border-right: 1px solid #bbb;
         background: #ddd;
@@ -88,10 +88,10 @@
         cursor: pointer;
         font-weight: bold;
       }
-      .modeTab:last-child {
+      .categoryTab:last-child {
         border-right: none;
       }
-      .modeTab.active {
+      .categoryTab.active {
         background: #fff;
         border-color: #bbb;
         border-bottom-color: #fff;
@@ -265,8 +265,8 @@
   </head>
   <body>
     <div id="topTabs">
-      <button class="modeTab active" data-mode="static">Static Charts</button>
-      <button class="modeTab" data-mode="interactive">Interactive Charts</button>
+      <button class="categoryTab active" data-category="static">Static</button>
+      <button class="categoryTab" data-category="interactive">Interactive</button>
       <div id="topActions">
         <button id="showGalleryBtn" onclick="d3.select('#gallery').style('visibility', 'visible'); window.updateShowGalleryBtn();">
           Show Gallery
@@ -378,18 +378,18 @@
         return "(async () => {" + c + "})();";
       }
 
-      function getModeMetaData(mode) {
-        return mode === "static" ? staticMetaData : interactiveMetaData;
+      function getCategoryMetaData(category) {
+        return category === "static" ? staticMetaData : interactiveMetaData;
       }
 
-      function setMode(mode, skipRefresh) {
-        currentMode = mode;
+      function setCategory(category, skipRefresh) {
+        currentMode = category;
 
-        document.querySelectorAll(".modeTab").forEach((btn) => {
-          btn.classList.toggle("active", btn.dataset.mode === mode);
+        document.querySelectorAll(".categoryTab").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.category === category);
         });
 
-        const isInteractive = mode === "interactive";
+        const isInteractive = category === "interactive";
         document.getElementById("ctrlPanel").style.display = isInteractive ? "block" : "none";
         document.getElementById("benchmarkBtn").style.display = isInteractive ? "inline-block" : "none";
 
@@ -399,22 +399,22 @@
         if (!skipRefresh) refresh();
       }
 
-      function inferModeFromHash(demoKey) {
+      function inferCategoryFromHash(demoKey) {
         if (!demoKey) return currentMode;
         if (allStaticKeys.has(demoKey)) return "static";
         if (allInteractiveKeys.has(demoKey)) return "interactive";
         return currentMode;
       }
 
-      function getModeFromQuery() {
-        const mode = new URLSearchParams(window.location.search).get("mode");
-        if (mode === "static" || mode === "interactive") return mode;
+      function getCategoryFromQuery() {
+        const category = new URLSearchParams(window.location.search).get("category");
+        if (category === "static" || category === "interactive") return category;
         return null;
       }
 
-      function setModeInUrl(mode) {
+      function setCategoryInUrl(category) {
         const url = new URL(window.location.href);
-        url.searchParams.set("mode", mode);
+        url.searchParams.set("category", category);
         const query = url.searchParams.toString();
         const nextUrl = url.pathname + (query ? "?" + query : "") + url.hash;
         window.history.replaceState(null, "", nextUrl);
@@ -424,7 +424,7 @@
         const root = document.getElementById("demoList");
         root.innerHTML = "";
 
-        const json = getModeMetaData(currentMode);
+        const json = getCategoryMetaData(currentMode);
         const searchValue = (document.getElementById("demoSearch")?.value || "").trim().toLowerCase();
         let category = "";
         let list;
@@ -476,7 +476,7 @@
       }
 
       function rebuildGallery() {
-        const json = getModeMetaData(currentMode);
+        const json = getCategoryMetaData(currentMode);
         const container = d3.select("#gallery");
         container.html("");
 
@@ -489,32 +489,45 @@
           if (json[k].draft) continue;
           const item = container.append("div").attr("class", "galleryItem");
           const stillPath = 'demos/thumbnails/' + getDemoBaseName(k) + '.png';
+          const cacheStamp = Date.now();
+          const stillPreviewPath = stillPath + "?t=" + cacheStamp;
           const hoverPreviewPath =
             currentMode === "interactive"
               ? stillPath.replace(/\.png$/i, ".gif")
               : null;
-          item
+          const preview = item
             .append("div")
             .style("display", "block")
             .style("height", "150px")
             .style("background", "white")
-            .style("background-image", 'url("' + stillPath + '")')
-            .style("background-size", "auto 100%")
-            .style("background-repeat", "no-repeat")
-            .style("background-position", "left top")
+            .style("overflow", "hidden")
+            .style("position", "relative")
             .on("mouseenter", function () {
               if (hoverPreviewPath) {
-                d3.select(this).style("background-image", 'url("' + hoverPreviewPath + '")');
+                img.attr("src", hoverPreviewPath + "?t=" + Date.now());
               }
             })
             .on("mouseleave", function () {
-              d3.select(this).style("background-image", 'url("' + stillPath + '")');
+              img.attr("src", stillPreviewPath);
             })
             .on("click", () => {
               document.getElementById("gallery").style.visibility = "hidden";
               window.updateShowGalleryBtn();
               window.location.hash = k;
             });
+
+          const img = preview
+            .append("img")
+            .attr("src", stillPreviewPath)
+            .style("display", "block")
+            .style("position", "absolute")
+            .style("left", "0")
+            .style("top", "0")
+            .style("height", "100%")
+            .style("width", "100%")
+            .style("object-fit", "contain")
+            .style("object-position", "center center")
+            .style("pointer-events", "none");
 
           item
             .append("div")
@@ -617,7 +630,7 @@
 
           $("#btmPanel").tabs("option", "active", 0);
 
-          const md = getModeMetaData(currentMode);
+          const md = getCategoryMetaData(currentMode);
           if (md && md[demo]) d3.select("#infoTab").html(md[demo].about || "");
         });
 
@@ -717,9 +730,9 @@
         document.getElementById("depGraphVis").style.visibility = "hidden";
         const demo = window.location.hash.replace("#", "");
 
-        const modeFromQuery = getModeFromQuery();
+        const modeFromQuery = getCategoryFromQuery();
         if (modeFromQuery && modeFromQuery !== currentMode) {
-          setMode(modeFromQuery, true);
+          setCategory(modeFromQuery, true);
         }
 
 
@@ -730,13 +743,13 @@
         }
 
         if (!modeFromQuery) {
-          const inferredMode = inferModeFromHash(demo);
+          const inferredMode = inferCategoryFromHash(demo);
           if (inferredMode !== currentMode) {
-            setMode(inferredMode, true);
+            setCategory(inferredMode, true);
           }
         }
 
-        const md = getModeMetaData(currentMode);
+        const md = getCategoryMetaData(currentMode);
 
         if (!md[demo]) {
           document.getElementById("gallery").style.visibility = "visible";
@@ -781,10 +794,10 @@
         });
       });
 
-      document.querySelectorAll(".modeTab").forEach((btn) => {
+      document.querySelectorAll(".categoryTab").forEach((btn) => {
         btn.addEventListener("click", () => {
-          setMode(btn.dataset.mode, true);
-          setModeInUrl(btn.dataset.mode);
+          setCategory(btn.dataset.category, true);
+          setCategoryInUrl(btn.dataset.category);
           window.location.hash = "";
         });
       });
@@ -803,8 +816,8 @@
           allStaticKeys = new Set(Object.keys(staticMetaData));
           allInteractiveKeys = new Set(Object.keys(interactiveMetaData));
 
-          const modeFromQuery = getModeFromQuery();
-          setMode(modeFromQuery || "static", true);
+          const modeFromQuery = getCategoryFromQuery();
+          setCategory(modeFromQuery || "static", true);
           refresh();
           window.updateShowGalleryBtn();
         });

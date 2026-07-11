@@ -9,10 +9,10 @@ let rect = scene.mark("rect", {top:60, left: 100, width: 560, height: 450, strok
 // rect.densify first
 let anyArea = msc.densify(rect, data, {orientation: "horizontal", attribute: "date"});
 let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "vertical", attribute: "industry"});
-let htEnc = msc.encode(area, {channel: "height", attribute: "unemployments"});
-msc.encode(area, {channel: "fillColor", attribute: "industry"});
-let yEnc = msc.encode(area.topLeftVertex, {channel: "x", attribute: "date"});
-msc.encode(area.bottomLeftVertex, {channel: "x", attribute: "date", shareScale: yEnc});
+let htEnc = msc.encode(area, "height", "unemployments");
+msc.encode(area, "fillColor", "industry");
+let yEnc = msc.encode(area.topLeftVertex, "x", "date");
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: yEnc});
 // // htEnc.scale.domain = [0,8000];
 // htEnc.rangeExtent = 150;
 msc.update(areas.layout, {vertCellAlignment: "middle"});

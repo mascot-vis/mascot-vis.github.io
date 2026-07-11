@@ -10,8 +10,8 @@ let dt = await msc.csv("/datasets/csv/cars.csv");
 let paths = msc.repeat(path, dt);
 let attributes = ["cylinders", "economy(mpg)", "displacement(cc)", "power(hp)"];
 for (let i = 0; i < attributes.length; i++)
-	msc.encode(path.vertices[i], {attribute: attributes[i], channel: "y", rangeExtent: 400});
-let enc = msc.encode(path, {attribute: "cylinders", channel: "strokeColor", scheme: "interpolateBuPu"});
+	msc.encode(path.vertices[i], "y", attributes[i], {rangeExtent: 400});
+let enc = msc.encode(path, "strokeColor", "cylinders", {scheme: "interpolateBuPu"});
 scn.legend("strokeColor", "cylinders", {x: 950, y: 100});
 // msc.encode(path, {attribute: "year", channel: "strokeColor"});
 // scn.legend("strokeColor", "year", {x: 950, y: 100});

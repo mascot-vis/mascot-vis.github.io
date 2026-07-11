@@ -5,15 +5,15 @@ let dt = await msc.csv("/datasets/csv/caltrain.csv");
 msc.repeat(line, dt, {attribute: "Train"});
 let path = msc.densify(line, dt, {attribute: "Station"});
 
-let xEnc = msc.encode(path.firstVertex, {attribute: "Time", channel: "x"});
+let xEnc = msc.encode(path.firstVertex, "x", "Time");
 xEnc.rangeExtent = 700;
 
-let yEnc = msc.encode(path.firstVertex, {attribute: "Station", channel: "y"});
+let yEnc = msc.encode(path.firstVertex, "y", "Station");
 yEnc.domain = ["Gilroy", "San Martin", "Morgan Hill", "Blossom Hill", "Capitol", "Tamien", "San Jose", "College Park", "Santa Clara", "Lawrence", "Sunnyvale", "Mountain View",  "San Antonio", "California Ave", "Palo Alto", "Menlo Park", "Redwood City", "San Carlos", "Belmont", "Hillsdale", "Hayward Park", "San Mateo", "Burlingame", "Millbrae", "San Bruno", "So. San Francisco", "Bayshore", "22nd Street", "San Francisco"];
 
 msc.sortChildren(path, "x");
 
-msc.encode(path, {attribute: "Direction", channel: "strokeColor"});
+msc.encode(path, "strokeColor", "Direction");
 
 scn.axis("y", "Station", {orientation: "left", titleVisible: false, titlePosition: [95, 60]}); //, titleAnchor: ["right", "top"]
 scn.axis("x", "Time", {orientation: "bottom"});

@@ -1,4 +1,4 @@
-let continents = dt.getUniqueAttributeValues("Continent"),
+let continents = dt.unique("Continent"),
     elems = continents.map(d => msc.findElements(scene, [{attribute: "Continent", value: d}, {property: "type", value: "circle"}])[0]),
     count = 0,
     round = 0;

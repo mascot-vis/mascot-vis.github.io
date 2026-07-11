@@ -7,4 +7,4 @@ let [nodes, links] = msc.repeat([node, link], data);
 
 scene.setLayout(nodes, msc.layout("force", {x: 400, y: 300, repulsion: 80, iterations: 50}));
 //nodes.layout = msc.layout("force", {x: 400, y: 300, iterations: 300});
-msc.encode(node, {attribute: "group", channel: "fillColor"});
+msc.encode(node, "fillColor", "group");

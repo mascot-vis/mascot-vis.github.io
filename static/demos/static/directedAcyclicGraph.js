@@ -5,13 +5,13 @@ let node = scene.mark("text", {x: 120, y: 120}),
     link = scene.mark("bezierCurve", {sourceAnchor: ["center", "bottom"], targetAnchor: ["center", "top"], sourceOffset: [0, 2], targetOffset: [0, -3], orientation: "vertical", strokeColor: "#C8E6FA"});
     //link = scene.mark("bezierCurve", {sourceAnchor: ["right", "middle"], targetAnchor: ["left", "middle"], sourceOffset: [2, 0], targetOffset: [-3, 0], orientation: "horizontal", strokeColor: "#C8E6FA"});
     let [nodes, links] = msc.repeat([node, link], data);
-msc.encode(node, {attribute: "name", channel: "text"});
+msc.encode(node, "text", "name");
 nodes.layout = msc.layout("directedGraph", {top: 100, left: 100, edgeSep: 100});
 // //msc.encode(node, {attribute: "average_index", channel: "y", rangeExtent: 800, flipScale: true});
-msc.encode(link, {channel: "strokeWidth", attribute: "count", rangeExtent: 20});
+msc.encode(link, "strokeWidth", "count", {rangeExtent: 20});
 let linkWeight = scene.mark("text", {fillColor: "#006594", fontSize: "10px"});
 let lws = msc.repeat(linkWeight, data.linkTable);
-msc.encode(linkWeight, {attribute: "count", channel: "text"});
+msc.encode(linkWeight, "text", "count");
 msc.affix(linkWeight, link, "x");
 msc.affix(linkWeight, link, "y");
 
@@ -24,17 +24,4 @@ msc.affix(linkWeight, link, "y");
 //             break;
 //         }
 //     }        
-// }
-// for (let l of links.children) {
-//     let c = data.getNode(l.dataScope.getAttrVal("target")),
-//         p = data.getNode(l.dataScope.getAttrVal("source"));
-//     if (c["average_index"] == p["average_index"])
-//         l.visibility = "hidden";
-// }
-
-// for (let l of lws.children) {
-//     let c = data.getNode(l.dataScope.getAttrVal("target")),
-//         p = data.getNode(l.dataScope.getAttrVal("source"));
-//     if (c["average_index"] == p["average_index"])
-//         l.visibility = "hidden";
 // }

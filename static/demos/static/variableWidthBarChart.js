@@ -4,8 +4,8 @@ let rect = scn.mark("rect", {top:100, left: 100, width: 800, height: 300, fillCo
 let dt = await msc.csv("/datasets/csv/dummy.csv");
 
 let names = msc.divide(rect, dt, {orientation: "horizontal", attribute: "name"});
-let wdEncoding = msc.encode(rect, {attribute: "width", channel: "width"}),
-	htEncoding = msc.encode(rect, {attribute: "height", channel: "height"});
+let wdEncoding = msc.encode(rect, "width", "width"),
+	htEncoding = msc.encode(rect, "height", "height");
 
 // scn.setVertAlignment(rect, "top");
 names.layout.vertCellAlignment = "top";

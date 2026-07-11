@@ -9,8 +9,8 @@ countries.layout = msc.layout("grid", {numRows: 1, colGap: 15, rowGap: 10});
 let {newMark, collection} = msc.divide(rect, dt, {orientation: "vertical", attribute: "Medal_Type"});
 
 // let htEncoding = msc.encode(newMark, {attribute: "Count", channel: "width"});
-let htEncoding = msc.encode(newMark, {attribute: "Count", channel: "height"});
-let fillEnc = msc.encode(newMark, {attribute: "Medal_Type", channel: "fillColor", mapping: {"Gold": "#c9b037", "Silver": "#d7d7d7", "Bronze": "#ad8a56"}});
+let htEncoding = msc.encode(newMark, "height", "Count");
+let fillEnc = msc.encode(newMark, "fillColor", "Medal_Type", {mapping: {"Gold": "#c9b037", "Silver": "#d7d7d7", "Bronze": "#ad8a56"}});
 
 // scn.axis("width", "Count", {orientation: "bottom"});
 // scn.axis("y", "Country_Code", {orientation: "left"});

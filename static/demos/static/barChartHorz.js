@@ -8,7 +8,7 @@ quarters.layout = msc.layout("grid", {numRows: 4, rowGap: 1});
 let years = msc.repeat(quarters, dt, {attribute: "Year"});
 years.layout = msc.layout("grid", {numCols: 1, rowGap: 16});
 
-let enc = msc.encode(rect, {attribute: "% Change", channel: "width"});
+let enc = msc.encode(rect, "width", "% Change");
 // enc.rangeExtent = 500;
 
 scn.axis("y", "Quarter", {orientation: "left", tickVisible: true, pathVisible: true, titleVisible: false});

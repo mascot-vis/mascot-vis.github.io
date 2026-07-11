@@ -1,40 +1,100 @@
 {
-    "brush_slopeGraph": {
-        "name": "Brushable axis (Slope Graph)",
+    "hover_backgroundBar": {
+        "name": "Hover background bar",
         "type": "Select",
-        "title": "Obesity and Education",
+        "title": "Hover to reveal a background bar",
+        "about": "Hover over a bar to reveal an initially invisible background rectangle behind it. The background fades when the pointer moves away."
+    },
+    "select_scatterplot": {
+        "name": "Select by data attribute",
+        "type": "Select",
+        "title": "Select marks by attribute value",
+        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is not cumulative."
+    },
+    "cumuSelect_scatterplot": {
+        "name": "Select Cumulatively",
+        "type": "Select",
+        "title": "Select Cumulatively by data attribute",
+        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is cumulative."
+    },
+    "brush_slopeGraph": {
+        "name": "Select by 1D axis brushes",
+        "type": "Select",
+        "title": "Brush axes to highlight marks",
         "draft": false,
         "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo. <br><br>Interaction: Brush on either y-axis or both to highlight states within the selected value range and fade the rest. The brush can be resized and moved to adjust the selection interactively. Hover a line to emphasize it and show a tooltip with the state name."
     },
-    "select_scatterplot": {
-        "name": "Select points (Scatterplot)",
-        "type": "Select",
-        "title": "GDP per capita vs. Life expectancy",
-        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is cumulative."
-    },
     "brush_scatterplot": {
-        "name": "Brush 2D region (Scatterplot)",
+        "name": "Select by 2D rect brush",
         "type": "Select",
-        "title": "GDP per capita vs. Life expectancy",
+        "title": "Select multiple marks in 2D region",
         "about": "Drag a rectangular brush over the scatterplot to select points in a 2D region. Selected countries stay emphasized while points outside the brushed region fade. The rectangle can be resized and moved to adjust the selection interactively."
     },
-    "flowSelect_DAG": {
-        "name": "Flow select (Directed Graph)",
+    "brush_areaChart": {
+        "name": "Brush to highlight area",
         "type": "Select",
-        "title": "",
+        "title": "Brush to highlight a region of an area chart",
+        "about": "Drag a horizontal brush across the area chart to highlight a time range. The selected region lights up in red while the rest of the chart remains in blue. Clear the brush to reset."
+    },
+    "lassoSelect_scatterplot": {
+        "name": "Lasso select",
+        "type": "Select",
+        "title": "Select multiple marks in freeform area",
+        "about": "Click multiple points to create a polygon, press the escape key to close the polygon. Marks within the polygon are selected."
+    },
+    "flowSelect_DAG": {
+        "name": "Flow select",
+        "type": "Select",
+        "title": "Hover to highlight outgoing flow paths",
         "about": "Hover over a node to trace outgoing flow paths in the directed graph. Connected links are highlighted in orange so local dependency flow is easier to follow."
     },
+    "showLabels_multiLineChart": {
+        "name": "One label for each series",
+        "type": "Details on demand",
+        "title": "One label for each series",
+        "about": "Move cursor to reveal price labels for a particular date. The label is hidden if no price is available for that date."
+    },
+    "showTooltip_multiLineChart": {
+        "name": "One tooltip for all series",
+        "type": "Details on demand",
+        "title": "One tooltip for all series",
+        "about": "Move cursor to reveal a tooltip displaying values for a particular date."
+    },
+    "compare_scatterplot": {
+        "name": "Pin & Compare",
+        "type": "Cross-Event Data Access",
+        "title": "Select a baseline, then compare",
+        "about": "Click a country to pin it as the reference point, then hover over another country to compare their statistics."
+    },
     "coordinate_areaChart": {
-        "name": "Overview + detail (Area Chart)",
+        "name": "Overview + detail",
         "type": "Coordinate",
-        "title": "date vs. price",
+        "title": "Brush Overview to update detail view",
         "about": "This demo links two coordinated views: a focus area chart and a context chart below it. Brushing the lower overview updates the time window shown in the upper detail view. The brush can be resized and moved to explore different time ranges while the area chart updates accordingly."
     },
     "coordinate_splom": {
-        "name": "Brush + link (SPLOM)",
+        "name": "Brush + link",
         "type": "Coordinate",
-        "title": "",
+        "title": "Brush to highlight across all cells",
         "about": "Brush one cell in the scatterplot matrix to define an x/y range selection. The same subset is highlighted across all other cells to support multidimensional comparison. The brush can be resized and moved to adjust the selection interactively."
+    },
+    "coordinate_splom_pan": {
+        "name": "Coordinated panning",
+        "type": "Coordinate",
+        "title": "Pan one cell to update all cells",
+        "about": "Drag to pan any cell in the scatterplot matrix and all other cells update their axis domains in sync. This preserves the relative positioning of marks across views so multidimensional structure remains easy to compare."
+    },
+    "brush_showTable": {
+        "name": "Display brushed data in table",
+        "type": "Coordinate",
+        "title": "Display brushed data in table",
+        "about": "Brush the scatter plot to display the data of selected marks in a table."
+    },
+    "crossfilter_histograms": {
+        "name": "Crossfilter histograms",
+        "type": "Coordinate",
+        "title": "Brush one histogram to filter the others",
+        "about": "Three linked histograms show the distribution of flight distance, delay, and departure hour. Grey bars represent all 2000 flights; steelblue bars represent the current selection. Brush any histogram to crossfilter the other two — the blue bars update instantly to reflect the subset of flights that match the selected range."
     },
     "celeste": {
         "name": "Celeste: Topology",
@@ -67,51 +127,63 @@
     "reconfigure_edgeBundling": {
         "name": "Edge bundle strength",
         "type": "Reconfigure",
-        "title": "Character Connections",
+        "title": "Use slider to change bundling strength",
         "draft": false,
         "about": "Use the slider to reconfigure edge-bundling strength in the network visualization. Adjusting the parameter changes how tightly edges are bundled together."
     },
     "reconfigure_gridLayout": {
-        "name": "Layout parameters (Waffle Chart)",
+        "name": "Layout parameters",
         "type": "Reconfigure",
-        "title": "",
+        "title": "Adjust layout parameters",
         "about": "Interactive controls let you change waffle chart layout parameters such as column count, start corner, and fill direction. The grid recomputes immediately to show layout changes."
     },
     "reconfigure_rangeExtent": {
-        "name": "Scale range (Gantt Chart)",
+        "name": "Scale range",
         "type": "Reconfigure",
-        "title": "",
+        "title": "Drag axis to change range extent",
         "about": "Drag the x-axis labels or ticks to adjust the temporal range extent mapped to the x-axis in the Gantt view. The size of the bars and the axis content update accordingly."
     },
     "sort_lollipopChart": {
-        "name": "Mark order (Lollipop Chart)",
+        "name": "Mark order",
         "type": "Reconfigure",
-        "title": "",
+        "title": "Sort marks by attribute",
         "about": "Choose sorting attribute and order to reorder lollipop marks interactively. The chart can be sorted by crime rate or area in ascending or descending direction."
     },
+    "dynamic_binning": {
+        "name": "Dynamic binning",
+        "type": "Reconfigure",
+        "title": "Dynamically change number of bins",
+        "about": "Use the slider to dynamically adjust the number of bins in the histogram. The bar widths and heights update immediately to reflect the new binning."
+    },
     "encode_scatterPlot": {
-        "name": "Change axis attribute (Scatterplot)",
+        "name": "Change axis attribute",
         "type": "Encode",
-        "title": "Country Statistics",
+        "title": "Change data attribute mapped to axis",
         "draft": false,
         "about": "Dropdown menus let you remap which data attributes are encoded on the x and y axes. This supports rapid exploration of different variable relationships in the same scatterplot."
     },
     "filter_stackedAreaChart": {
-        "name": "Filter item (Stacked Area Chart)",
+        "name": "Filter marks",
         "type": "Filter",
-        "title": "",
+        "title": "Toggle mark visibility + auto re-layout",
         "about": "Toggle category checkboxes to filter industries included in the stacked area chart. This interaction isolates subsets so trends can be compared without visual clutter."
     },
     "navigate_bubblePlot": {
-        "name": "Zoom and pan (Bubble Plot)",
+        "name": "Zoom and pan",
         "type": "Navigate",
-        "title": "Habitable Planets",
+        "title": "Zoom and pan a bubble plot",
         "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo. <br><br>Interaction: Use the mouse wheel to zoom and drag the background to pan, updating the x and y domains for exploratory navigation."
     },
+    "dimpVis": {
+        "name": "Drag to navigate through time",
+        "type": "Navigate",
+        "title": "Drag mark to navigate through time",
+        "about": "A recreation of the <a href='https://vega.github.io/vega/examples/global-development/'>Vega demo</a> demonstrating the <a href='https://ieeexplore.ieee.org/document/6875985'>DimpVis technique</a>. Hovering over a mark (a country in a specific year) to show its trajectory over time. Dragging the mark navigates through time along the trajectory. All other marks are updated to reflect the new time."
+    },
     "derive_indexChart": {
-        "name": "Adjust baseline (Index Chart)",
+        "name": "Adjust baseline",
         "type": "Derive",
-        "title": "",
+        "title": "Mouse move to adjust baseline date",
         "about": "Move the pointer along the timeline to choose a baseline date, then view all series re-indexed relative to that point. The chart derives percentage change from the selected baseline for comparison."
     },
     "RC_VIS1": {

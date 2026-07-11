@@ -1,4 +1,4 @@
-let names = data.nodeTable.getUniqueAttributeValues("name"),
+let names = data.nodeTable.unique("name"),
     elems = names.map(d => msc.findElements(scene, [{attribute: "name", value: d}, {property: "type", value: "text"}])[0]),
     count = 0,
     round = 0;

@@ -21,14 +21,14 @@ scn.mark("image", {src: "/demos/img/democrat.png", x: 100, y: 300, width: 25, he
 scn.mark("line", {x1: 100, y1: 327, x2: 500, y2: 327, strokeColor: "#ddd"});
 scn.mark("text", {x: 135, y: 315, anchor: ["left", "middle"], fillColor: "#185a97", fontWeight: "bold", fontSize: "1em", text: "Topics Mentioned More by Democrats"});
 
-let enc = msc.encode(line.vertices[0], {attribute: "Republican", channel: "x"});
-msc.encode(line.vertices[1], {attribute: "Democrat", channel: "x", shareScale: enc});
+let enc = msc.encode(line.vertices[0], "x", "Republican");
+msc.encode(line.vertices[1], "x", "Democrat", {shareScale: enc});
 enc.rangeExtent = 400;
 
-msc.encode(topic, {attribute: "Topic", channel: "text"});
-msc.encode(rep, {attribute: "Republican", channel: "text"});
-msc.encode(dem, {attribute: "Democrat", channel: "text"});
-msc.encode(line, {attribute: "Comparison", channel: "strokeColor", mapping: {"Mentioned more by Republicans": "#f8ecf3", "Mentioned more by Democrats": "#e1f1fc"}});
+msc.encode(topic, "text", "Topic");
+msc.encode(rep, "text", "Republican");
+msc.encode(dem, "text", "Democrat");
+msc.encode(line, "strokeColor", "Comparison", {mapping: {"Mentioned more by Republicans": "#f8ecf3", "Mentioned more by Democrats": "#e1f1fc"}});
 
 msc.update(line.vertices[0], {shape: "circle", radius: 4, fillColor: "#a20e19"});
 msc.update(line.vertices[1], {shape: "circle", radius: 4, fillColor: "#185a97"});

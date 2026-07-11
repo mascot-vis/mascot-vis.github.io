@@ -10,10 +10,10 @@ let continents = msc.divide(rect, dt, { attribute: "continent", orientation: "ve
 let countries = msc.divide(continents.firstChild, dt, { attribute: "country", orientation: "horizontal" });
 
 msc.update(continents, {layout: msc.layout("treemap", {width: 85})});
-msc.encode(continents, { attribute: "value", channel: "height", rangeExtent: 370 });
-msc.encode(countries.firstChild, { attribute: "value", channel: "area" });
+msc.encode(continents, "height", "value", {rangeExtent: 370});
+msc.encode(countries.firstChild, "area", "value");
 
-msc.encode(countries.firstChild, { attribute: "continent", channel: "fillColor", scheme: "schemeSet2" });
+msc.encode(countries.firstChild, "fillColor", "continent", {scheme: "schemeSet2"});
 scn.legend("fillColor", "continent", { x: 950, y: 70 });
 scn.axis("x", "type", { orientation: "bottom", tickVisible: false, pathVisible: false });
 scn.axis("x", "year", { orientation: "bottom", pathY: 475, labelFormat: "%Y", tickVisible: false, labelOffset: 35 });

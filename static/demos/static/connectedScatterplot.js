@@ -6,8 +6,8 @@ let polyline = msc.densify(line, dt);
 polyline.curveMode = "natural";
 //msc.update(polyline.firstVertex, {shape: "circle", radius: 3.5, strokeColor: "black", strokeWidth: 1, fillColor: "white"});
 
-msc.encode(polyline.firstVertex, {attribute: "miles", channel: "x"});
-msc.encode(polyline.firstVertex, {attribute: "gas", channel: "y"});
+msc.encode(polyline.firstVertex, "x", "miles");
+msc.encode(polyline.firstVertex, "y", "gas");
 
 scn.axis("x", "miles", {orientation: "top", pathVisible: false});
 scn.axis("y", "gas", {orientation: "left", pathVisible: false});

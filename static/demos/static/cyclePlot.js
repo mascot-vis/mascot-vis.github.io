@@ -8,14 +8,14 @@ let coll = msc.repeat(glyph, dt, {attribute: "Decade", layout: msc.layout("grid"
 
 let polyLine = msc.densify(line1, dt, {attribute: "Date"});
 let vertex = polyLine.vertices[0];
-let xEnc = msc.encode(vertex, {attribute: "Scaled Date", channel: "x"});
-let yEnc = msc.encode(vertex, {attribute: "CO2", channel: "y"});
+let xEnc = msc.encode(vertex, "x", "Scaled Date");
+let yEnc = msc.encode(vertex, "y", "CO2");
 
-msc.encode(line2, {channel: "y", attribute: "CO2", shareScale: yEnc, aggregator: "mean"});
-msc.encode(line2.vertices[0], {channel: "x", attribute: "Scaled Date", aggregator: "min", shareScale: xEnc});
-msc.encode(line2.vertices[1], {channel: "x", attribute: "Scaled Date", aggregator: "max", shareScale: xEnc});
+msc.encode(line2, "y", "CO2", {shareScale: yEnc, aggregator: "mean"});
+msc.encode(line2.vertices[0], "x", "Scaled Date", {aggregator: "min", shareScale: xEnc});
+msc.encode(line2.vertices[1], "x", "Scaled Date", {aggregator: "max", shareScale: xEnc});
 
-let enc = msc.encode(polyLine, {attribute: "Decade", channel: "strokeColor", scheme: "schemeSpectral"});
+let enc = msc.encode(polyLine, "strokeColor", "Decade", {scheme: "schemeSpectral"});
 enc.domain = enc.getScale(polyLine).domain.sort((a,b) => b.localeCompare(a));
 
 scn.axis("x", "Decade", {orientation: "bottom", pathVisible: false});

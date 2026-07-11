@@ -2,13 +2,13 @@ let scene = msc.scene();
 let tree = await msc.treeJSON("/datasets/treejson/mascot_1.12.1.json");
 let rect = scene.mark("rect", {left: 100, top: 120, width: 800, height: 30, fillColor: "#B3DAFF", strokeColor: "white"});
 msc.stratify(rect, tree, {size: 80});
-let wdEnc = msc.encode(rect, {channel: "width", attribute: "size"});
+let wdEnc = msc.encode(rect, "width", "size");
 // //let colorMapping = {"Start": "#aaa", "Arrival": "#EE8636", "Emergency": "#D57DBE", "ICU": "#C43932", "Pass Away": "#84584E", "Floor": "#3B75AF", "Discharge-Alive": "#519E3E"}
 // //let colorMapping = {"Start": "#aaa", "breathing": "#EE8636", "pulse": "#D57DBE", "pupil": "#C43932", "blanket": "#84584E", "temp": "#3B75AF", "iv": "#519E3E"}
-msc.encode(rect, {attribute: "filetype", channel: "fillColor", scheme: "schemeSet3"});
+msc.encode(rect, "fillColor", "filetype", {scheme: "schemeSet3"});
 let text = scene.mark("text", {fillColor: "#003366", fontWeight: "bold", fontSize: "12px", visibility: "hidden"});
 msc.repeat(text, tree.nodeTable);
-msc.encode(text, {channel: "text", attribute: "name"});
+msc.encode(text, "text", "name");
 msc.affix(text, rect, "x");
 msc.affix(text, rect, "y");
 let visibleLabels = ['Mascot', 'dist', 'demos', 'src', 'datasets', 'csv', 'lib', 'thumbnails'];

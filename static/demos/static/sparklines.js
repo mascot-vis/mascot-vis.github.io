@@ -1,7 +1,7 @@
 let scn = msc.scene({fillColor: "#222"});
 let dt = await msc.csv("/datasets/csv/stocks.csv");
 let dt2 = await msc.csv("/datasets/csv/stocks-March-2010.csv");
-//dt.parseAttributeAsDate("date", "%b %Y");
+//dt.parseDate("date", "%b %Y");
 let line = scn.mark("line", {x1: 300, y1: 100, x2: 450, y2: 150, strokeColor: "#ccc"});
 
 let collection = msc.repeat(line, dt, {attribute: "company"});
@@ -9,15 +9,15 @@ collection.layout = msc.layout("grid", {numCols: 1, rowGap : 25});
 
 let polyLine = msc.densify(line, dt, {attribute: "date"});
 
-let xEnc = msc.encode(polyLine.firstVertex, {attribute: "date", channel: "x"});
-let yEnc = msc.encode(polyLine.firstVertex, {attribute: "price", channel: "y", includeZero: true});
+let xEnc = msc.encode(polyLine.firstVertex, "x", "date");
+let yEnc = msc.encode(polyLine.firstVertex, "y", "price", {includeZero: true});
 
 let symbol = scn.mark("text", {x: 220, y:100, fontSize: "23px", fillColor: "white", anchor: ["left", "top"]}),
     company = scn.mark("text", {x:220, y:125, fontSize: "15px", fillColor: "#888", anchor: ["left", "top"]});
 let glyph = scn.glyph(symbol, company);
 let coll = msc.repeat(glyph, dt2, {attribute: "company"});
-msc.encode(symbol, {attribute: "symbol", channel: "text"});
-msc.encode(company, {attribute: "company", channel: "text"});
+msc.encode(symbol, "text", "symbol");
+msc.encode(company, "text", "company");
 msc.affix(glyph, polyLine, "y", {elementAnchor: "bottom", baseAnchor: "bottom"});
 
 let price = scn.mark("text", {x: 470, y:100, fontSize: "20px", fillColor: "white", anchor: ["left", "top"]}),
@@ -25,10 +25,10 @@ let price = scn.mark("text", {x: 470, y:100, fontSize: "20px", fillColor: "white
     change = scn.mark("text", {x:475, y:125, fontSize: "15px", fillColor: "#bbb", anchor: ["left", "top"]});
 let glyph2 = scn.glyph(price, changeBg, change);
 msc.repeat(glyph2, dt2, {attribute: "company"});
-msc.encode(price, {attribute: "price", channel: "text"});
-msc.encode(change, {attribute: "change", channel: "text"});
+msc.encode(price, "text", "price");
+msc.encode(change, "text", "change");
 let colorMapping = {"up": "green", "down": "red"};
-msc.encode(changeBg, {attribute: "direction", channel: "fillColor", mapping: colorMapping});
+msc.encode(changeBg, "fillColor", "direction", {mapping: colorMapping});
 msc.affix(glyph2, polyLine, "y", {elementAnchor: "bottom", baseAnchor: "bottom"});
 
 // let r = msc.renderer("svg");

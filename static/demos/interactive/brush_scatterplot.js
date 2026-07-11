@@ -9,14 +9,14 @@ let collection = msc.repeat(circle, dt, { attribute: "Country" });
 // console.log("circle bounds", circle.bounds);
 // console.log('peer bounds', collection.children.map(d => d.bounds));
 
-// scn.onChange('channel', "x", circle), the dependency graph will automatically update the circle’s bounding box, but this works for one circle only. Modify the code so that it can handle all the circles after the repeat operation. 
-// scn.setChannels(circle, {“radius”: 25}) this should update the radius of all the repeated circles to 25, and trigger the dep graph propagation 
+// scn.onChange('channel', "x", circle), the dependency graph will automatically update the circle's bounding box, but this works for one circle only. Modify the code so that it can handle all the circles after the repeat operation. 
+// scn.setChannels(circle, {"radius": 25}) this should update the radius of all the repeated circles to 25, and trigger the dep graph propagation 
 // circle._radius = 25, this should only update the radius of one particular circle
 
 // //Country,GDP per capita,Life expectancy,Population,Continent
-let xEncoding = msc.encode(circle, { attribute: "GDP per capita", channel: "x" });
-let yEncoding = msc.encode(circle, { attribute: "Life expectancy", channel: "y" });
-let fillEncoding = msc.encode(circle, { attribute: "Continent", channel: "fillColor" });
+let xEncoding = msc.encode(circle, "x", "GDP per capita");
+let yEncoding = msc.encode(circle, "y", "Life expectancy");
+let fillEncoding = msc.encode(circle, "fillColor", "Continent");
 // scn.onChange('rangeExtent', xEncoding);
 // yEncoding.rangeExtent = 0;
 // scn.onChange('rangeExtent', yEncoding);
@@ -32,16 +32,16 @@ let legend = scn.legend("fillColor", "Continent", { x: 600, y: 250 });
 scn.gridlines("x", "GDP per capita");
 scn.gridlines("y", "Life expectancy");
 
-let trigger = { event: "brush", target: collection },
-    responder = { component: circle, channels: ["fillColor", "opacity"] },
-    evalFn = (ctx, compnt) => {
-        let xInt = ctx.get("xInterval"), yInt = ctx.get("yInterval");
-        return (!xInt && !yInt) || (compnt.x >= xInt[0] && compnt.x <= xInt[1] && compnt.y >= yInt[0] && compnt.y <= yInt[1]);
+let trigger = { event: "brush", source: collection },
+    responder = { object: circle, properties: ["fillColor", "opacity"] },
+    evalFn = (evtCtx, stateCtx, respObj) => {
+        let xInt = evtCtx.get("xCoords"), yInt = evtCtx.get("yCoords");
+        return (!xInt && !yInt) || (respObj.x >= xInt[0] && respObj.x <= xInt[1] && respObj.y >= yInt[0] && respObj.y <= yInt[1]);
     },
-    highlighter = (condMet, ctx, compnt) => {
-        if (!condMet) {
-            compnt.fillColor = '#eee';
-            compnt.opacity = 0.5;
+    highlighter = (evalResult, evtCtx, stateCtx, respObj) => {
+        if (!evalResult) {
+            respObj.fillColor = '#eee';
+            respObj.opacity = 0.5;
         }
     };
 let tg1 = msc.activate(trigger, responder, evalFn, highlighter);

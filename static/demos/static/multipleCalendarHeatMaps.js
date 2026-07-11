@@ -13,9 +13,9 @@ let rect = scn.mark("rect", { top: 100, left: 200, width: 12, height: 12, stroke
 let collection = msc.repeat(rect, dt);
 msc.classify(collection, { attribute: "year"});
 collection.layout = msc.layout("grid", { numCols: 1, rowGap: 30 });
-msc.encode(rect, { attribute: "amount", channel: "fillColor", scheme: "interpolateYlOrRd" });
-msc.encode(rect, { attribute: "weeknum", channel: "x", rangeExtent: 670 });
-let yEnc = msc.encode(rect, { attribute: "weekday", channel: "y", flipScale: true, rangeExtent: 100 });
+msc.encode(rect, "fillColor", "amount", {scheme: "interpolateYlOrRd"});
+msc.encode(rect, "x", "weeknum", {rangeExtent: 670});
+let yEnc = msc.encode(rect, "y", "weekday", {flipScale: true, rangeExtent: 100});
 yEnc.domain = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 // // for (let c of collection.children){

@@ -7,13 +7,13 @@ msc.repeat(line, dt, {attribute: "Color"});
 line = msc.densify(line, dt, {attribute: "Year"});
 msc.update(line, {curveMode: "bumpX"});
 let vertex = line.vertices[0];
-msc.encode(vertex, {attribute: "Year", channel:"x"});
-msc.encode(vertex, {attribute: "Rank", channel:"y", flipScale: true});
+msc.encode(vertex, "x", "Year");
+msc.encode(vertex, "y", "Rank", {flipScale: true});
 scn.axis("x", "Year", {orientation: "bottom", pathY: 420, labelFormat: "%Y", strokeColor: "#ccc", textColor: "#ccc"});
 scn.axis("y", "Rank", {orientation: "left", pathX: 80, strokeColor: "#ccc", textColor: "#ccc"});
 // // msc.update(coll, {"layout": undefined});
 let colorMapping = {"White (solid+pearl)": "#eee", "Red": "red", "Gold/yellow": "#c9b037", "Silver": "silver", "Green": "green", "Brown/beige": "brown", "Blue": "blue", "Black (solid+effect)": "black", "Other": "magenta", "Gray": "gray"}
-msc.encode(line, {attribute: "Color", channel:"strokeColor", mapping: colorMapping});
+msc.encode(line, "strokeColor", "Color", {mapping: colorMapping});
 scn.legend("strokeColor", "Color", {x: 760, y: 100, textColor: "#ccc"});
 
 

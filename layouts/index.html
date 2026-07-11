@@ -233,10 +233,14 @@
   }
 
   .mh-showcase-caption {
+    align-items: center;
     background: #fff;
     color: var(--mh-ink);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.85fr);
     min-height: 62px;
-    padding: 12px 18px 6px;
+    padding: 12px 18px 10px;
   }
 
   .mh-showcase-caption strong,
@@ -253,6 +257,45 @@
     color: var(--mh-muted);
     font-size: 13px;
     margin-top: 5px;
+  }
+
+  .mh-showcase-code {
+    background: #101725;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: #d9e0ee;
+    font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    margin: 0;
+    overflow: hidden;
+    padding: 9px 10px;
+    white-space: pre;
+  }
+
+  .mh-showcase-code code {
+    background: transparent;
+    color: inherit;
+    display: block;
+    font: inherit;
+    line-height: inherit;
+    overflow: visible;
+    padding: 0;
+    white-space: pre;
+  }
+
+  .mh-showcase-code span {
+    display: inline;
+  }
+
+  .mh-showcase-code .mh-code-fn {
+    color: #6ee7c6;
+  }
+
+  .mh-showcase-code .mh-code-str {
+    color: #ffc988;
+  }
+
+  .mh-showcase-code .mh-code-var {
+    color: #9fb4ff;
   }
 
   .mh-showcase-controls {
@@ -891,6 +934,10 @@
       grid-template-columns: 1fr;
     }
 
+    .mh-showcase-caption {
+      grid-template-columns: 1fr;
+    }
+
     .mh-code-panel pre {
       font-size: 12px;
       padding: 0 18px;
@@ -922,8 +969,12 @@
               <source src="/homepage.mov">
             </video>
             <figcaption class="mh-showcase-caption">
-              <strong>Construct expressive charts</strong>
-              <span>Compose marks, encodings, layouts, and guides.</span>
+              <div>
+                <strong>Construct expressive charts</strong>
+                <span>Compose marks, encodings, layouts, and guides.</span>
+              </div>
+              <pre class="mh-showcase-code"><code><span class="mh-code-var">marks</span> = scene.<span class="mh-code-fn">repeat</span>(mark, data)
+scene.<span class="mh-code-fn">encode</span>(marks, <span class="mh-code-str">"x"</span>, <span class="mh-code-str">"income"</span>)</code></pre>
             </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
@@ -931,22 +982,34 @@
               <source src="/homepage_atlas.mov">
             </video>
             <figcaption class="mh-showcase-caption">
-              <strong>Navigate rich visual spaces</strong>
-              <span>Use semantic scene objects as handles for exploration.</span>
+              <div>
+                <strong>Navigate rich visual spaces</strong>
+                <span>Use semantic scene objects as handles for exploration.</span>
+              </div>
+              <pre class="mh-showcase-code"><code><span class="mh-code-var">axis</span>.onDrag = () =&gt;
+  scene.<span class="mh-code-fn">update</span>(scale, marks)</code></pre>
             </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
             <img src="/demos/thumbnails/reconfigure_gridLayout.gif" alt="Grid layout reconfiguration demo">
             <figcaption class="mh-showcase-caption">
-              <strong>Reconfigure layouts</strong>
-              <span>Transform chart structure without rebuilding from scratch.</span>
+              <div>
+                <strong>Reconfigure layouts</strong>
+                <span>Transform chart structure without rebuilding from scratch.</span>
+              </div>
+              <pre class="mh-showcase-code"><code><span class="mh-code-var">collection</span>.layout =
+  msc.<span class="mh-code-fn">layout</span>(<span class="mh-code-str">"stack"</span>)</code></pre>
             </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
             <img src="/demos/thumbnails/brush_scatterplot.gif" alt="Scatterplot brushing interaction demo">
             <figcaption class="mh-showcase-caption">
-              <strong>Add direct interaction</strong>
-              <span>Brush, select, and update data graphics through the scene.</span>
+              <div>
+                <strong>Add direct interaction</strong>
+                <span>Brush, select, and update data graphics through the scene.</span>
+              </div>
+              <pre class="mh-showcase-code"><code><span class="mh-code-var">brush</span>.<span class="mh-code-fn">select</span>(marks)
+selection.<span class="mh-code-fn">setProperties</span>({ opacity })</code></pre>
             </figcaption>
           </figure>
         </div>

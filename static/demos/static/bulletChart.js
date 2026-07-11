@@ -16,12 +16,12 @@ let collection = msc.repeat(glyph, dt, {attribute: "Region"});
 
 collection.layout = msc.layout("grid", {numCols: 1, rowGap: 25});
 
-let enc = msc.encode(rect1.rightSegment, {attribute: "Good", channel:"x"});
-msc.encode(rect2.rightSegment, {attribute: "Satisfactory", channel:"x", shareScale: enc});
-msc.encode(rect3.rightSegment, {attribute: "Poor", channel:"x", shareScale: enc});
-msc.encode(measure.rightSegment, {attribute: "Measure", channel:"x", shareScale: enc});
+let enc = msc.encode(rect1.rightSegment, "x", "Good");
+msc.encode(rect2.rightSegment, "x", "Satisfactory", {shareScale: enc});
+msc.encode(rect3.rightSegment, "x", "Poor", {shareScale: enc});
+msc.encode(measure.rightSegment, "x", "Measure", {shareScale: enc});
 
-msc.encode(marker, {attribute: "Target", channel:"x", shareScale: enc});
+msc.encode(marker, "x", "Target", {shareScale: enc});
 scn.axis("x", "Good", {orientation: "bottom", title: "Sales"});
 scn.axis("y", "Region", {orientation: "left", pathVisible: false, tickVisible: false, titleVisible: false});
 

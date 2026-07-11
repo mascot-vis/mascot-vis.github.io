@@ -16,13 +16,13 @@ for (let g of graphs) {
         nodes.children.forEach(n => n.x += nodes.bounds.width/2);
         x = nodes.bounds.right + nodes.bounds.width/2 + 10;
     }
-    covScale = msc.encode(node, {channel: "fillColor", attribute: "new_cov",mapping: {true: "#ccc", false: "#777"}, scale: covScale}).scale;
+    covScale = msc.encode(node, "fillColor", "new_cov", {mapping: {true: "#ccc", false: "#777"}, scale: covScale}).scale;
     //covScale = msc.encode(node, {channel: "fillColor", attribute: "branch_growth", scheme: "interpolateGreys", scale: covScale}).scale;
-    mutScale = msc.encode(link, {channel: "strokeColor", attribute: "mutation", scale: mutScale}).scale;
-    timeScale = msc.encode(node, {attribute: "time", channel: "y", scale: timeScale, flipScale: true}).scale;
+    mutScale = msc.encode(link, "strokeColor", "mutation", {scale: mutScale}).scale;
+    timeScale = msc.encode(node, "y", "time", {scale: timeScale, flipScale: true}).scale;
     //growScale = msc.encode(node, {attribute: "branch_growth", channel: "radius", scale: growScale, range: [1, 6]}).scale;
-    msc.encode(link, {channel: "source", attribute: "source"});
-    msc.encode(link, {channel: "target", attribute: "target"});
+    msc.encode(link, "source", "source");
+    msc.encode(link, "target", "target");
 }
 timeScale.rangeExtent = 500;
 scene.axis("y", "time", {'labelFormat': '.2s', orientation: "left"});
