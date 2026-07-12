@@ -223,22 +223,48 @@
     position: relative;
   }
 
+  .mh-showcase-demo {
+    background: #fff;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.68fr);
+    padding: 12px 12px 0;
+  }
+
+  .mh-showcase-demo-full {
+    grid-template-columns: 1fr;
+  }
+
+  .mh-showcase-demo-bleed {
+    padding: 0;
+  }
+
   .mh-showcase-slide img,
   .mh-showcase-slide video {
     background: #f5f7fb;
+    border-radius: 6px;
     display: block;
     height: clamp(190px, 17vw, 270px);
     object-fit: cover;
     width: 100%;
   }
 
+  .mh-showcase-demo-full img {
+    aspect-ratio: 8240 / 3373;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .mh-showcase-demo-full .mh-showcase-gif {
+    aspect-ratio: 8240 / 3373;
+    border-radius: 6px 6px 0 0;
+    height: auto;
+    object-fit: contain;
+  }
+
   .mh-showcase-caption {
-    align-items: center;
     background: #fff;
     color: var(--mh-ink);
-    display: grid;
-    gap: 16px;
-    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.85fr);
     min-height: 62px;
     padding: 12px 18px 10px;
   }
@@ -260,14 +286,17 @@
   }
 
   .mh-showcase-code {
+    align-self: stretch;
     background: #101725;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     color: #d9e0ee;
+    display: flex;
+    align-items: center;
     font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     margin: 0;
-    overflow: hidden;
-    padding: 9px 10px;
+    overflow: auto;
+    padding: 12px;
     white-space: pre;
   }
 
@@ -934,7 +963,7 @@
       grid-template-columns: 1fr;
     }
 
-    .mh-showcase-caption {
+    .mh-showcase-demo {
       grid-template-columns: 1fr;
     }
 
@@ -952,7 +981,7 @@
       <h1>Mascot</h1>
       <p class="mh-slogan">A <span>Scene-Centric</span> Grammar for <span>Data Graphics</span></p>
       <p class="mh-lede">
-        Build, edit, and interact with expressive data graphics by manipulating semantic scene objects.
+        Build, edit, and add interaction to expressive data graphics by manipulating semantic scene objects.
       </p>
       <div class="mh-proof">
         <span>Semantic objects</span>
@@ -965,51 +994,36 @@
       <div class="mh-showcase-frame">
         <div class="mh-showcase-track" id="mhShowcaseTrack">
           <figure class="mh-showcase-slide">
-            <video autoplay muted loop playsinline preload="metadata">
-              <source src="/homepage.mov">
-            </video>
+            <div class="mh-showcase-demo mh-showcase-demo-full">
+              <img src="/images/generate.png" alt="A sequence showing a circle mark divided into segments, divided into rings, then encoded with color and thickness">
+            </div>
             <figcaption class="mh-showcase-caption">
               <div>
-                <strong>Construct expressive charts</strong>
-                <span>Compose marks, encodings, layouts, and guides.</span>
+                <strong>Construct Expressive Data Graphics</strong>
+                <span>Generate structures from a primitive mark.</span>
               </div>
-              <pre class="mh-showcase-code"><code><span class="mh-code-var">marks</span> = scene.<span class="mh-code-fn">repeat</span>(mark, data)
-scene.<span class="mh-code-fn">encode</span>(marks, <span class="mh-code-str">"x"</span>, <span class="mh-code-str">"income"</span>)</code></pre>
             </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
-            <video autoplay muted loop playsinline preload="metadata">
-              <source src="/homepage_atlas.mov">
-            </video>
+            <div class="mh-showcase-demo mh-showcase-demo-full mh-showcase-demo-bleed">
+              <img class="mh-showcase-gif" src="/images/modify.gif" alt="An animation showing a chart deconstructed into semantic objects, then updating dependent marks, guides, labels, and gridlines when the x-axis object changes">
+            </div>
             <figcaption class="mh-showcase-caption">
               <div>
-                <strong>Navigate rich visual spaces</strong>
-                <span>Use semantic scene objects as handles for exploration.</span>
+                <strong>Reactive Scene Modification</strong>
+                <span>Edit one semantic object, and Mascot updates the related marks, guides, and labels.</span>
               </div>
-              <pre class="mh-showcase-code"><code><span class="mh-code-var">axis</span>.onDrag = () =&gt;
-  scene.<span class="mh-code-fn">update</span>(scale, marks)</code></pre>
             </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
-            <img src="/demos/thumbnails/reconfigure_gridLayout.gif" alt="Grid layout reconfiguration demo">
+            <div class="mh-showcase-demo mh-showcase-demo-full mh-showcase-demo-bleed">
+              <img class="mh-showcase-gif" src="/images/stateful-interaction.gif" alt="An animation showing a selected scatterplot mark stored as interaction state, then reused when hovering another mark to draw a comparison">
+            </div>
             <figcaption class="mh-showcase-caption">
               <div>
-                <strong>Reconfigure layouts</strong>
-                <span>Transform chart structure without rebuilding from scratch.</span>
+                <strong>Specify Interaction with Semantic Objects</strong>
+                <span>Define both transient and stateful interactions using semantic scene objects.</span>
               </div>
-              <pre class="mh-showcase-code"><code><span class="mh-code-var">collection</span>.layout =
-  msc.<span class="mh-code-fn">layout</span>(<span class="mh-code-str">"stack"</span>)</code></pre>
-            </figcaption>
-          </figure>
-          <figure class="mh-showcase-slide">
-            <img src="/demos/thumbnails/brush_scatterplot.gif" alt="Scatterplot brushing interaction demo">
-            <figcaption class="mh-showcase-caption">
-              <div>
-                <strong>Add direct interaction</strong>
-                <span>Brush, select, and update data graphics through the scene.</span>
-              </div>
-              <pre class="mh-showcase-code"><code><span class="mh-code-var">brush</span>.<span class="mh-code-fn">select</span>(marks)
-selection.<span class="mh-code-fn">setProperties</span>({ opacity })</code></pre>
             </figcaption>
           </figure>
         </div>
@@ -1028,9 +1042,9 @@ selection.<span class="mh-code-fn">setProperties</span>({ opacity })</code></pre
 
   <section class="mh-shell mh-section" id="why">
     <div class="mh-heading mh-reveal">
-      <p class="mh-eyebrow">Why Mascot</p>
-      <h2>Work with the visualization itself.</h2>
-      <p>Instead of treating a chart as an opaque specification, Mascot exposes its meaningful parts as objects you can create, query, modify, and connect.</p>
+      <!-- <p class="mh-eyebrow">How Mascot is different</p> -->
+      <h2>How Mascot is different.</h2>
+      <p>Instead of asking how data is transformed into a visualization, Mascot asks how a graphical scene is constructed, modified, and given interactive behavior through semantic objects such as marks, collections, encodings, layouts, and axes. It gives those objects a model of their own and automatically manages the dependencies among them. This lets you work above low-level graphical primitives while enabling reactive scene modifications without low-level efforts to coordinate the objects.</p>
     </div>
 
     <div class="mh-feature-grid">
@@ -1045,8 +1059,8 @@ selection.<span class="mh-code-fn">setProperties</span>({ opacity })</code></pre
             <path d="M92 112 C142 130, 186 130, 230 104"/>
           </svg>
         </div>
-        <h3>Think in objects</h3>
-        <p>Reference a circle, collection, layout, or axis directly instead of translating intent into low-level graphics.</p>
+        <h3>Scene objects, not drawing commands</h3>
+        <p>Reference a mark, collection, layout, or axis directly instead of translating intent into low-level graphics operations.</p>
       </article>
 
       <article class="mh-feature mh-reveal">
@@ -1055,16 +1069,16 @@ selection.<span class="mh-code-fn">setProperties</span>({ opacity })</code></pre
           <div class="mh-bars"><i></i><i></i><i></i><i></i><i></i></div>
           <div class="mh-build-axis"></div>
         </div>
-        <h3>Build by composition</h3>
-        <p>Create a mark, repeat it with data, apply a layout, then add encodings and reference elements.</p>
+        <h3>Operations preserve relationships</h3>
+        <p>Modify one semantic object, and related marks, guides, labels, and layouts can update together.</p>
       </article>
 
       <article class="mh-feature mh-reveal">
         <div class="mh-flow" aria-hidden="true">
           <span>Trigger</span><b>&rarr;</b><span>Evaluate</span><b>&rarr;</b><span>Update</span>
         </div>
-        <h3>Add interaction naturally</h3>
-        <p>Describe what initiates a behavior, what responds, when it applies, and how the scene should change.</p>
+        <h3>Interactions use semantic state</h3>
+        <p>Specify transient and stateful behaviors in terms of scene objects, not ad hoc DOM elements or callbacks.</p>
       </article>
     </div>
   </section>
@@ -1337,7 +1351,7 @@ scene.<span class="mh-fn">encode</span>(bar, {
       function restart() {
         if (reducedMotion) return;
         if (timer) clearInterval(timer);
-        timer = setInterval(() => goTo(active + 1), 6000);
+        timer = setInterval(() => goTo(active + 1), 8000);
       }
 
       prev.addEventListener("click", () => {
