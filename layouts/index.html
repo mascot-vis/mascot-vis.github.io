@@ -55,13 +55,13 @@
   }
 
   .mh-hero {
-    min-height: calc(100vh - 72px);
+    min-height: auto;
     display: grid;
     grid-template-columns: 0.92fr 1.25fr;
     gap: 64px;
     align-items: center;
     padding-top: 76px;
-    padding-bottom: 80px;
+    padding-bottom: 36px;
   }
 
   .mh-eyebrow {
@@ -477,6 +477,35 @@
     margin: 18px 0 0;
   }
 
+  #why {
+    border-top: 1px solid rgba(102, 112, 133, 0.18);
+    margin-top: 36px;
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
+
+  #why .mh-heading {
+    margin-bottom: 0;
+  }
+
+  #why .mh-heading p {
+    max-width: none;
+  }
+
+  #how {
+    padding-top: 44px;
+    padding-bottom: 64px;
+  }
+
+  #scene {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  #interactions {
+    padding-top: 64px;
+  }
+
   .mh-feature-grid {
     display: grid;
     gap: 22px;
@@ -630,6 +659,10 @@
     grid-template-columns: 1.2fr 0.8fr;
   }
 
+  .mh-two-column.mh-copy-left {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
   .mh-builder,
   .mh-tabs {
     background: #fff;
@@ -705,17 +738,15 @@
   }
 
   .mh-scene-section {
-    background: #172033;
-    color: #fff;
-    padding: 110px 0;
+    padding: 108px 0;
   }
 
   .mh-scene-section h2 {
-    color: #fff;
+    color: var(--mh-ink);
   }
 
   .mh-scene-section .mh-eyebrow {
-    color: #91a0ff;
+    color: var(--mh-primary);
   }
 
   .mh-explorer-layout {
@@ -725,9 +756,10 @@
   }
 
   .mh-tree {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.92);
     border-radius: var(--mh-radius);
+    box-shadow: 0 12px 42px rgba(31, 42, 68, 0.06);
     padding: 14px;
   }
 
@@ -735,7 +767,7 @@
     background: none;
     border: 0;
     border-radius: 8px;
-    color: #b9c1d1;
+    color: var(--mh-muted);
     display: block;
     font: 500 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     padding: 12px 13px;
@@ -745,8 +777,8 @@
 
   .mh-tree-row:hover,
   .mh-tree-row.active {
-    background: rgba(255, 255, 255, 0.09);
-    color: #fff;
+    background: #eef1ff;
+    color: var(--mh-primary);
   }
 
   .mh-level-1 { padding-left: 28px; }
@@ -907,6 +939,10 @@
       grid-template-columns: 1fr;
     }
 
+    .mh-two-column.mh-copy-left {
+      grid-template-columns: 1fr;
+    }
+
     .mh-feature-grid {
       grid-template-columns: 1fr;
     }
@@ -1036,57 +1072,23 @@
     </div>
   </section>
 
-  <section class="mh-strip mh-shell mh-reveal" aria-label="Mascot capabilities">
-    <span>Marks</span><span>Collections</span><span>Encodings</span><span>Layouts</span><span>Axes</span><span>Interactions</span>
-  </section>
-
   <section class="mh-shell mh-section" id="why">
     <div class="mh-heading mh-reveal">
-      <!-- <p class="mh-eyebrow">How Mascot is different</p> -->
-      <h2>How Mascot is different.</h2>
-      <p>Instead of asking how data is transformed into a visualization, Mascot asks how a graphical scene is constructed, modified, and given interactive behavior through semantic objects such as marks, collections, encodings, layouts, and axes. It gives those objects a model of their own and automatically manages the dependencies among them. This lets you work above low-level graphical primitives while enabling reactive scene modifications without low-level efforts to coordinate the objects.</p>
-    </div>
-
-    <div class="mh-feature-grid">
-      <article class="mh-feature mh-reveal">
-        <div class="mh-mini" aria-hidden="true">
-          <div class="mh-mini-node mh-n1">mark</div>
-          <div class="mh-mini-node mh-n2">collection</div>
-          <div class="mh-mini-node mh-n3">encoding</div>
-          <div class="mh-mini-node mh-n4">axis</div>
-          <svg viewBox="0 0 320 180">
-            <path d="M83 61 C130 42, 166 42, 208 63"/>
-            <path d="M92 112 C142 130, 186 130, 230 104"/>
-          </svg>
-        </div>
-        <h3>Scene objects, not drawing commands</h3>
-        <p>Reference a mark, collection, layout, or axis directly instead of translating intent into low-level graphics operations.</p>
-      </article>
-
-      <article class="mh-feature mh-reveal">
-        <div class="mh-build" aria-hidden="true">
-          <div class="mh-seed"></div>
-          <div class="mh-bars"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="mh-build-axis"></div>
-        </div>
-        <h3>Operations preserve relationships</h3>
-        <p>Modify one semantic object, and related marks, guides, labels, and layouts can update together.</p>
-      </article>
-
-      <article class="mh-feature mh-reveal">
-        <div class="mh-flow" aria-hidden="true">
-          <span>Trigger</span><b>&rarr;</b><span>Evaluate</span><b>&rarr;</b><span>Update</span>
-        </div>
-        <h3>Interactions use semantic state</h3>
-        <p>Specify transient and stateful behaviors in terms of scene objects, not ad hoc DOM elements or callbacks.</p>
-      </article>
+      <h2>A Scene-Centric Approach</h2>
+      <p>Instead of asking <i>how data is transformed into a visualization</i>,<br>
+        Mascot asks <i>how a graphical scene is constructed, modified, and made interactive with data as a key input</i>.<br>
+        Mascot provides an explicit model for semantic objects such as marks, collections, encodings, layouts, and axes, and automatically manages the dependencies among them. This lets changes to one object update the related parts of the scene while keeping you above low-level graphical primitives.</p>
     </div>
   </section>
+
+  <!-- <section class="mh-strip mh-shell mh-reveal" aria-label="Mascot capabilities">
+    <span>Marks</span><span>Collections</span><span>Encodings</span><span>Layouts</span><span>Axes</span><span>Interactions</span>
+  </section> -->
 
   <section class="mh-shell mh-section mh-two-column" id="how">
     <div class="mh-builder mh-reveal">
       <div class="mh-builder-header">
-        <span>How Mascot builds a chart</span>
+        <span>Construct a chart step by step</span>
         <button id="mhRebuildButton" class="mh-text-button" type="button">Replay</button>
       </div>
       <div class="mh-builder-canvas">
@@ -1102,45 +1104,40 @@
     </div>
 
     <div class="mh-copy mh-reveal">
-      <p class="mh-eyebrow">Build like components</p>
-      <h2>Start simple. Add structure one operation at a time.</h2>
-      <p>Mascot separates the pieces of a visualization from the operations that create and modify them. The result is code that mirrors how designers think.</p>
+      <p class="mh-eyebrow">Construct expressive data graphics</p>
+      <h2>Start with objects. Add structure one operation at a time.</h2>
+      <p>Mascot builds scenes through semantic operations such as repeat, divide, encode, layout, and align. Instead of producing an opaque chart, each operation creates objects that can be referenced and modified later.</p>
       <div class="mh-pills">
         <span>repeat</span><span>divide</span><span>densify</span><span>encode</span><span>layout</span><span>align</span>
       </div>
     </div>
   </section>
 
-  <section class="mh-scene-section" id="scene">
-    <div class="mh-shell mh-reveal">
-      <div class="mh-heading">
-        <p class="mh-eyebrow">Scene explorer</p>
-        <h2>See the structure behind the chart.</h2>
+  <section class="mh-shell mh-section mh-two-column mh-copy-left" id="scene">
+    <div class="mh-copy mh-reveal">
+      <p class="mh-eyebrow">Reactive scene modification</p>
+      <h2>Select one object. Keep the scene in sync.</h2>
+      <p>Mascot understands dependencies among semantic objects, so changing an axis, encoding, layout, or collection can update the related marks, guides, and labels automatically.</p>
+    </div>
+
+    <div class="mh-explorer-layout mh-reveal">
+      <div class="mh-tree" id="mhSceneTree">
+        <button data-target="scene" class="mh-tree-row active" type="button">Scene</button>
+        <button data-target="x-axis" class="mh-tree-row mh-level-1" type="button">X axis</button>
+        <button data-target="y-axis" class="mh-tree-row mh-level-1" type="button">Y axis</button>
+        <button data-target="collection" class="mh-tree-row mh-level-1" type="button">Circle collection</button>
+        <button data-target="marks" class="mh-tree-row mh-level-2" type="button">42 circle marks</button>
+        <button data-target="encoding" class="mh-tree-row mh-level-1" type="button">Color encoding</button>
+        <button data-target="legend" class="mh-tree-row mh-level-1" type="button">Legend</button>
       </div>
-      <div class="mh-explorer-layout">
-        <div class="mh-tree" id="mhSceneTree">
-          <button data-target="scene" class="mh-tree-row active" type="button">Scene</button>
-          <button data-target="x-axis" class="mh-tree-row mh-level-1" type="button">X axis</button>
-          <button data-target="y-axis" class="mh-tree-row mh-level-1" type="button">Y axis</button>
-          <button data-target="collection" class="mh-tree-row mh-level-1" type="button">Circle collection</button>
-          <button data-target="marks" class="mh-tree-row mh-level-2" type="button">42 circle marks</button>
-          <button data-target="encoding" class="mh-tree-row mh-level-1" type="button">Color encoding</button>
-          <button data-target="legend" class="mh-tree-row mh-level-1" type="button">Legend</button>
-        </div>
-        <div class="mh-explorer-vis">
-          <svg id="mhExplorerSvg" viewBox="0 0 760 420" aria-label="Visualization with selectable semantic components"></svg>
-          <div class="mh-explorer-label" id="mhExplorerLabel">Scene</div>
-        </div>
+      <div class="mh-explorer-vis">
+        <svg id="mhExplorerSvg" viewBox="0 0 760 420" aria-label="Visualization with selectable semantic components"></svg>
+        <div class="mh-explorer-label" id="mhExplorerLabel">Scene</div>
       </div>
     </div>
   </section>
 
-  <section class="mh-shell mh-section" id="interactions">
-    <div class="mh-heading mh-reveal">
-      <p class="mh-eyebrow">Interactive behaviors</p>
-      <h2>Go beyond hover and brush.</h2>
-      <p>Use the same semantic scene components to express exploration, persistent state, direct manipulation, and freeform interaction.</p>
-    </div>
+  <section class="mh-shell mh-section mh-two-column" id="interactions">
     <div class="mh-tabs mh-reveal">
       <div class="mh-tab-list" role="tablist">
         <button class="mh-tab active" data-mode="hover" type="button">Hover</button>
@@ -1156,6 +1153,12 @@
         </div>
         <svg id="mhInteractionSvg" viewBox="0 0 700 390" aria-label="Interactive behavior demonstration"></svg>
       </div>
+    </div>
+
+    <div class="mh-copy mh-reveal">
+      <p class="mh-eyebrow">Specify interaction with semantic objects</p>
+      <h2>Use scene objects as interaction state.</h2>
+      <p>Define transient responses and persistent state in terms of semantic objects, so later events can reuse selections, pinned marks, axes, layouts, and other parts of the scene.</p>
     </div>
   </section>
 
