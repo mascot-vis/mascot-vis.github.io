@@ -494,16 +494,16 @@
 
   #how {
     padding-top: 44px;
-    padding-bottom: 64px;
+    padding-bottom: 44px;
   }
 
   #scene {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 44px;
+    padding-bottom: 44px;
   }
 
   #interactions {
-    padding-top: 64px;
+    padding-top: 44px;
   }
 
   .mh-feature-grid {
@@ -690,6 +690,34 @@
   .mh-builder-canvas {
     background: #fbfcff;
     padding: 12px 18px 0;
+  }
+
+  .mh-builder-figure {
+    background: #fbfcff;
+    padding: 20px;
+  }
+
+  .mh-builder-figure img {
+    aspect-ratio: 8240 / 3373;
+    display: block;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .mh-detail-figure {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: var(--mh-radius);
+    box-shadow: var(--mh-shadow);
+    overflow: hidden;
+    padding: 18px;
+  }
+
+  .mh-detail-figure img {
+    aspect-ratio: 8240 / 3373;
+    display: block;
+    object-fit: contain;
+    width: 100%;
   }
 
   #mhBuilderSvg,
@@ -1088,25 +1116,26 @@
   <section class="mh-shell mh-section mh-two-column" id="how">
     <div class="mh-builder mh-reveal">
       <div class="mh-builder-header">
-        <span>Construct a chart step by step</span>
+        <span>Construct a rose chart step by step</span>
         <button id="mhRebuildButton" class="mh-text-button" type="button">Replay</button>
       </div>
-      <div class="mh-builder-canvas">
-        <svg id="mhBuilderSvg" viewBox="0 0 700 430" aria-label="Animated construction of a bar chart"></svg>
+      <div class="mh-builder-figure">
+        <img id="mhGenerateStepImage" src="/images/generate-step-0.png" alt="A circle mark used as the first construction step for a rose chart">
       </div>
       <div class="mh-builder-steps">
-        <button data-step="0" class="active" type="button">1. Create</button>
-        <button data-step="1" type="button">2. Repeat</button>
-        <button data-step="2" type="button">3. Encode</button>
-        <button data-step="3" type="button">4. Add axis</button>
-        <button data-step="4" type="button">5. Interact</button>
+        <button data-step="0" class="active" type="button">1. Mark</button>
+        <button data-step="1" type="button">2. Divide by Month</button>
+        <button data-step="2" type="button">3. Divide by Type</button>
+        <button data-step="3" type="button">4. Encode Fill Color</button>
+        <button data-step="4" type="button">5. Encode Thickness</button>
       </div>
     </div>
 
     <div class="mh-copy mh-reveal">
-      <p class="mh-eyebrow">Construct expressive data graphics</p>
-      <h2>Start with objects. Add structure one operation at a time.</h2>
-      <p>Mascot builds scenes through semantic operations such as repeat, divide, encode, layout, and align. Instead of producing an opaque chart, each operation creates objects that can be referenced and modified later.</p>
+      <!-- <p class="mh-eyebrow">Construct expressive data graphics</p> -->
+      <!-- <h2>Start with objects. Add structure one operation at a time.</h2> -->
+      <h2>Construct expressive data graphics.</h2>
+      <p>Mascot builds scenes from primitive marks through semantic operations such as repeat, divide, encode, layout, and align. Instead of producing an opaque chart, each operation creates objects that can be referenced and modified later.</p>
       <div class="mh-pills">
         <span>repeat</span><span>divide</span><span>densify</span><span>encode</span><span>layout</span><span>align</span>
       </div>
@@ -1115,84 +1144,31 @@
 
   <section class="mh-shell mh-section mh-two-column mh-copy-left" id="scene">
     <div class="mh-copy mh-reveal">
-      <p class="mh-eyebrow">Reactive scene modification</p>
-      <h2>Select one object. Keep the scene in sync.</h2>
-      <p>Mascot understands dependencies among semantic objects, so changing an axis, encoding, layout, or collection can update the related marks, guides, and labels automatically.</p>
+      <h2>Reactive scene modification</h2>
+      <!-- <h2 class="mh-eyebrow">Select one object. Keep the scene in sync.</h2> -->
+      <p>Mascot understands dependencies among semantic objects, so when you change an axis, encoding, layout, or collection, the related marks, guides, and labels automatically update.</p>
     </div>
 
-    <div class="mh-explorer-layout mh-reveal">
-      <div class="mh-tree" id="mhSceneTree">
-        <button data-target="scene" class="mh-tree-row active" type="button">Scene</button>
-        <button data-target="x-axis" class="mh-tree-row mh-level-1" type="button">X axis</button>
-        <button data-target="y-axis" class="mh-tree-row mh-level-1" type="button">Y axis</button>
-        <button data-target="collection" class="mh-tree-row mh-level-1" type="button">Circle collection</button>
-        <button data-target="marks" class="mh-tree-row mh-level-2" type="button">42 circle marks</button>
-        <button data-target="encoding" class="mh-tree-row mh-level-1" type="button">Color encoding</button>
-        <button data-target="legend" class="mh-tree-row mh-level-1" type="button">Legend</button>
-      </div>
-      <div class="mh-explorer-vis">
-        <svg id="mhExplorerSvg" viewBox="0 0 760 420" aria-label="Visualization with selectable semantic components"></svg>
-        <div class="mh-explorer-label" id="mhExplorerLabel">Scene</div>
-      </div>
+    <div class="mh-detail-figure mh-reveal">
+      <img src="/images/modify.gif" alt="An animation showing a chart deconstructed into semantic objects, then updating dependent marks, guides, labels, and gridlines when the x-axis object changes">
     </div>
   </section>
 
   <section class="mh-shell mh-section mh-two-column" id="interactions">
-    <div class="mh-tabs mh-reveal">
-      <div class="mh-tab-list" role="tablist">
-        <button class="mh-tab active" data-mode="hover" type="button">Hover</button>
-        <button class="mh-tab" data-mode="stateful" type="button">Stateful</button>
-        <button class="mh-tab" data-mode="direct" type="button">Direct manipulation</button>
-        <button class="mh-tab" data-mode="lasso" type="button">Freeform selection</button>
-      </div>
-      <div class="mh-interaction-panel">
-        <div class="mh-interaction-copy">
-          <h3 id="mhInteractionTitle">Reveal details in context</h3>
-          <p id="mhInteractionBody">Hover a mark to connect visual appearance with its underlying data.</p>
-          <div class="mh-flow-line" id="mhInteractionFlow">pointer &rarr; mark &rarr; tooltip</div>
-        </div>
-        <svg id="mhInteractionSvg" viewBox="0 0 700 390" aria-label="Interactive behavior demonstration"></svg>
-      </div>
+    <div class="mh-detail-figure mh-reveal">
+      <img src="/images/stateful-interaction.gif" alt="An animation showing a selected scatterplot mark stored as interaction state, then reused when hovering another mark to draw a comparison">
     </div>
 
     <div class="mh-copy mh-reveal">
-      <p class="mh-eyebrow">Specify interaction with semantic objects</p>
-      <h2>Use scene objects as interaction state.</h2>
-      <p>Define transient responses and persistent state in terms of semantic objects, so later events can reuse selections, pinned marks, axes, layouts, and other parts of the scene.</p>
-    </div>
-  </section>
-
-  <section class="mh-shell mh-section" id="code">
-    <div class="mh-code-demo mh-reveal">
-      <div class="mh-code-panel">
-        <div class="mh-code-header"><span></span><span></span><span></span><b>mascot.js</b></div>
-        <pre><code><span class="mh-kw">const</span> scene = msc.<span class="mh-fn">scene</span>();
-
-<span class="mh-kw">const</span> bar = scene.<span class="mh-fn">mark</span>(<span class="mh-str">"rect"</span>, {
-  width: <span class="mh-num">20</span>,
-  fillColor: <span class="mh-str">"#5368ff"</span>
-});
-
-<span class="mh-kw">const</span> bars = scene.<span class="mh-fn">repeat</span>(
-  bar, data, { attribute: <span class="mh-str">"category"</span> }
-);
-
-bars.layout = msc.<span class="mh-fn">layout</span>(<span class="mh-str">"grid"</span>);
-scene.<span class="mh-fn">encode</span>(bar, {
-  attribute: <span class="mh-str">"value"</span>,
-  channel: <span class="mh-str">"height"</span>
-});</code></pre>
-      </div>
-      <div class="mh-code-result">
-        <div class="mh-result-badge">Live result</div>
-        <svg id="mhCodeChart" viewBox="0 0 620 430" aria-label="Bar chart rendered from Mascot-inspired code"></svg>
-      </div>
+      <h2>Specify interaction with semantic objects</h2>
+      <!-- <h2 class="mh-eyebrow">Use scene objects as interaction state.</h2> -->
+      <p>Define transient responses and persistent state in terms of semantic objects, and the underlying execution details are handled automatically.</p>
     </div>
   </section>
 
   <section class="mh-shell mh-final mh-reveal">
     <p class="mh-eyebrow">Build something expressive</p>
-    <h2>Use familiar visualization concepts without giving up control.</h2>
+    <h2>Explore the examples,<br>then build with the API.</h2>
     <div class="mh-final-actions">
       <a class="mh-button mh-button-primary" href="/gallery/">Explore the gallery</a>
       <a class="mh-button mh-button-secondary" href="/docs/global/func/">Read the docs</a>
@@ -1369,43 +1345,41 @@ scene.<span class="mh-fn">encode</span>(bar, {
       restart();
     }
 
+    const generateSteps = [
+      {
+        src: "/images/generate-step-0.png",
+        alt: "A circle mark used as the first construction step for a rose chart"
+      },
+      {
+        src: "/images/generate-step-1.png",
+        alt: "A circle mark divided into angular segments"
+      },
+      {
+        src: "/images/generate-step-2.png",
+        alt: "A segmented circle divided again into radial rings"
+      },
+      {
+        src: "/images/generate-step-3.png",
+        alt: "A divided radial chart with color encoding applied"
+      },
+      {
+        src: "/images/generate-step-4.png",
+        alt: "A rose chart with color and radial extent encodings applied"
+      }
+    ];
+
     function renderBuilder(step) {
-      const svg = $("#mhBuilderSvg");
-      clear(svg);
-      const data = [34, 72, 55, 92, 48, 80];
-      const baseY = 338;
-      svg.append(svgEl("rect", { x: 18, y: 18, width: 664, height: 390, rx: 18, fill: "#f7f9fd" }));
-      const title = svgEl("text", { x: 42, y: 52, fill: "#78839a", "font-size": 13, "font-weight": 700 });
-      title.textContent = ["Create one mark", "Repeat the mark with data", "Encode value as height", "Add reference elements", "Attach an interaction"][step];
-      svg.append(title);
-      if (step === 0) {
-        svg.append(svgEl("rect", { x: 300, y: 200, width: 54, height: 54, rx: 8, fill: "#5368ff" }));
-      } else {
-        data.forEach((v, i) => {
-          const h = step >= 2 ? scale(v, 0, 100, 35, 210) : 54;
-          const r = svgEl("rect", { x: 105 + i * 82, y: baseY - h, width: 50, height: h, rx: 8, fill: "#5368ff", opacity: step === 1 ? 0.78 : 1 });
-          if (step === 4) {
-            r.style.cursor = "pointer";
-            r.addEventListener("mouseenter", () => r.setAttribute("fill", "#25c6a1"));
-            r.addEventListener("mouseleave", () => r.setAttribute("fill", "#5368ff"));
-          }
-          svg.append(r);
-        });
-      }
-      if (step >= 3) {
-        svg.append(svgEl("line", { x1: 84, y1: baseY, x2: 614, y2: baseY, stroke: "#667085", "stroke-width": 2 }));
-        svg.append(svgEl("line", { x1: 84, y1: 104, x2: 84, y2: baseY, stroke: "#667085", "stroke-width": 2 }));
-        ["A", "B", "C", "D", "E", "F"].forEach((t, i) => {
-          const x = svgEl("text", { x: 130 + i * 82, y: 365, "text-anchor": "middle", fill: "#667085", "font-size": 12 });
-          x.textContent = t;
-          svg.append(x);
-        });
-      }
-      $$(".mh-builder-steps button").forEach((b, i) => b.classList.toggle("active", i === step));
+      const image = $("#mhGenerateStepImage");
+      if (!image) return;
+      const safeStep = Math.max(0, Math.min(generateSteps.length - 1, step));
+      image.src = generateSteps[safeStep].src;
+      image.alt = generateSteps[safeStep].alt;
+      $$(".mh-builder-steps button").forEach((b, i) => b.classList.toggle("active", i === safeStep));
     }
 
     function drawExplorer() {
       const svg = $("#mhExplorerSvg");
+      if (!svg) return;
       clear(svg);
       for (let i = 0; i < 5; i++) svg.append(svgEl("line", { x1: 88, y1: 70 + i * 62, x2: 685, y2: 70 + i * 62, stroke: "#e4e8f0", "stroke-width": 1, "data-kind": "scene" }));
       svg.append(svgEl("line", { x1: 90, y1: 344, x2: 680, y2: 344, stroke: "#667085", "stroke-width": 2, "data-kind": "x-axis" }));
@@ -1424,13 +1398,15 @@ scene.<span class="mh-fn">encode</span>(bar, {
     }
 
     function highlightExplorer(kind) {
+      const label = $("#mhExplorerLabel");
+      if (!label) return;
       $$("#mhExplorerSvg [data-kind]").forEach((el) => {
         const hit = kind === "scene" || (kind === "collection" && el.dataset.kind === "marks") || (kind === "encoding" && el.dataset.kind === "marks") || el.dataset.kind === kind;
         el.style.opacity = hit ? 1 : 0.13;
         if (hit && (kind === "marks" || kind === "collection")) el.setAttribute("stroke", "#172033");
         else if (el.tagName === "circle") el.setAttribute("stroke", "none");
       });
-      $("#mhExplorerLabel").textContent = kind.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
+      label.textContent = kind.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
     }
 
     const interactionModes = {
@@ -1442,11 +1418,15 @@ scene.<span class="mh-fn">encode</span>(bar, {
 
     function drawInteraction(mode) {
       const svg = $("#mhInteractionSvg");
+      if (!svg) return;
       clear(svg);
       const copy = interactionModes[mode];
-      $("#mhInteractionTitle").textContent = copy[0];
-      $("#mhInteractionBody").textContent = copy[1];
-      $("#mhInteractionFlow").textContent = copy[2];
+      const title = $("#mhInteractionTitle");
+      const body = $("#mhInteractionBody");
+      const flow = $("#mhInteractionFlow");
+      if (title) title.textContent = copy[0];
+      if (body) body.textContent = copy[1];
+      if (flow) flow.textContent = copy[2];
       for (let i = 0; i < 4; i++) svg.append(svgEl("line", { x1: 64, y1: 80 + i * 72, x2: 640, y2: 80 + i * 72, stroke: "#e4e8f0" }));
       svg.append(svgEl("line", { x1: 68, y1: 336, x2: 645, y2: 336, stroke: "#667085", "stroke-width": 2 }));
       const pts = [];
@@ -1499,7 +1479,8 @@ scene.<span class="mh-fn">encode</span>(bar, {
     const playButton = $("#mhPlayDemo");
     if (playButton) playButton.addEventListener("click", playHeroDemo);
     $$(".mh-builder-steps button").forEach((b) => b.addEventListener("click", () => renderBuilder(+b.dataset.step)));
-    $("#mhRebuildButton").addEventListener("click", () => {
+    const rebuildButton = $("#mhRebuildButton");
+    if (rebuildButton) rebuildButton.addEventListener("click", () => {
       let s = 0;
       renderBuilder(0);
       const id = setInterval(() => { s += 1; renderBuilder(s); if (s === 4) clearInterval(id); }, 650);
@@ -1519,7 +1500,6 @@ scene.<span class="mh-fn">encode</span>(bar, {
     renderBuilder(0);
     drawExplorer();
     drawInteraction("hover");
-    drawCodeChart();
     revealOnScroll();
   })();
 </script>
