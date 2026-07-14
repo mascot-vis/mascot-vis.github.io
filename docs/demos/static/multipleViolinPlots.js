@@ -1,15 +1,15 @@
 let scene = msc.scene();
 let csv = await msc.csv("/datasets/csv/iris_species.csv");
-let data = scene.transform("kde", csv, {attribute: "sepal_length", newAttribute: "sepal_length_density", groupBy: ["species"], min: 3, interval: 0.1, max: 8, bandwidth: 0.25});
+let data = scene.derive(csv, msc.transform("kde", {attribute: "sepal_length", newAttribute: "sepal_length_density", groupBy: ["species"], min: 3, interval: 0.1, max: 8, bandwidth: 0.25}));
 let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strokeColor: "white", strokeWidth: 1, fillColor: "#69B3A2"});
-let species = scene.repeat(rect, data, {attribute: "species"})
+let species = msc.repeat(rect, data, {attribute: "species"})
 species.layout = msc.layout("grid", {numCols: 3, rowGap: 15, "horzCellAlignment": "center" });
-let area = scene.densify(rect, data, {orientation: "vertical", attribute: "sepal_length"});
-let yEnc = scene.encode(area.topLeftVertex, {channel: "y", attribute: "sepal_length"});
-scene.encode(area.topRightVertex, {channel: "y", attribute: "sepal_length", shareScale: yEnc})
-scene.encode(area, {channel: "width", attribute: "sepal_length_density"});
-scene.encode(area, {channel: "fillColor", attribute: "species"});
-scene.setProperties(area, {curveMode: "basis", baseline: "center"})
+let area = msc.densify(rect, data, {orientation: "vertical", attribute: "sepal_length"});
+let yEnc = msc.encode(area.topLeftVertex, "y", "sepal_length");
+msc.encode(area.topRightVertex, "y", "sepal_length", {shareScale: yEnc})
+msc.encode(area, "width", "sepal_length_density");
+msc.encode(area, "fillColor", "species");
+msc.update(area, {curveMode: "basis", baseline: "center"})
 scene.axis("x", "species", {orientation: "bottom", pathVisible: false, tickVisible: false});
 scene.axis("y", "sepal_length", {orientation: "right", pathX: 800});
 scene.legend("fillColor", "species", {x: 200, y: 50});
@@ -21,11 +21,11 @@ let line = scene.mark("line", {x1: 300, y1: 20, x2: 300, y2: 480, strokeColor: "
     medianCircle = scene.mark("circle", {radius: 4, x: 300, y: 90, fillColor: "white", strokeWidth: 0});
 
 let glyph = scene.glyph(line, box, medianCircle);
-let collection = scene.repeat(glyph, csv, {attribute: "species"});
-collection.layout = msc.layout("grid", {numCols: 3});
-scene.encode(line.vertices[0], {attribute: "sepal_length", channel: "y", aggregator: "max", shareScale: yEnc});
-scene.encode(line.vertices[1], {attribute: "sepal_length", channel: "y", aggregator: "min", shareScale: yEnc});
-scene.encode(box.topSegment, {attribute: "sepal_length", channel: "y", aggregator: "percentile 75", shareScale: yEnc});
-scene.encode(box.bottomSegment, {attribute: "sepal_length", channel: "y", aggregator: "percentile 25", shareScale: yEnc});
-scene.encode(medianCircle, {attribute: "sepal_length", channel: "y", aggregator: "avg", shareScale: yEnc})
-scene.affix(glyph, area, "x");
+let collection = msc.repeat(glyph, csv, {attribute: "species"});
+//collection.layout = msc.layout("grid", {numCols: 3});
+msc.encode(line.vertices[0], "y", "sepal_length", {aggregator: "max", shareScale: yEnc});
+msc.encode(line.vertices[1], "y", "sepal_length", {aggregator: "min", shareScale: yEnc});
+msc.encode(box.topSegment, "y", "sepal_length", {aggregator: "percentile 75", shareScale: yEnc});
+msc.encode(box.bottomSegment, "y", "sepal_length", {aggregator: "percentile 25", shareScale: yEnc});
+msc.encode(medianCircle, "y", "sepal_length", {aggregator: "avg", shareScale: yEnc})
+msc.affix(glyph, area, "x");

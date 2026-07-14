@@ -2,12 +2,12 @@ let scn = msc.scene({fillColor: "#333"});
 let dt = await msc.csv("/datasets/csv/planets.csv");
 let circle = scn.mark("circle", {radius: 6, x: 200, y: 60, fillColor: "orange", strokeWidth: 1, strokeColor: "white", opacity: 0.3});
 
-let collection = scn.repeat(circle, dt, { attribute: "name" });
+let collection = msc.repeat(circle, dt, { attribute: "name" });
 
-let xEncoding = scn.encode(circle, { attribute: "hzd", channel: "x" });
-let yEncoding = scn.encode(circle, { attribute: "mass", channel: "y", flipScale: true, scaleType: "log" });
-let sizeEnc = scn.encode(circle, { attribute: "radius", channel: "radius" });
-let fillEncoding = scn.encode(circle, { attribute: "hzd", channel: "fillColor", scheme: "interpolateRdYlBu" });
+let xEncoding = msc.encode(circle, "x", "hzd");
+let yEncoding = msc.encode(circle, "y", "mass", {flipScale: true, scaleType: "log"});
+let sizeEnc = msc.encode(circle, "radius", "radius");
+let fillEncoding = msc.encode(circle, "fillColor", "hzd", {scheme: "interpolateRdYlBu"});
 
 xEncoding.rangeExtent = 500;
 yEncoding.rangeExtent = 600;

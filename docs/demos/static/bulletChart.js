@@ -12,20 +12,20 @@ let marker = scn.mark("line", {x1: 200, y1: 115, x2: 200, y2: 145, strokeColor: 
 let glyph = scn.glyph(rect1, rect2, rect3, measure, marker);
 //let glyph = scn.glyph(rect1, rect2);
 
-let collection = scn.repeat(glyph, dt, {attribute: "Region"});
+let collection = msc.repeat(glyph, dt, {attribute: "Region"});
 
 collection.layout = msc.layout("grid", {numCols: 1, rowGap: 25});
 
-let enc = scn.encode(rect1.rightSegment, {attribute: "Good", channel:"x"});
-scn.encode(rect2.rightSegment, {attribute: "Satisfactory", channel:"x", shareScale: enc});
-scn.encode(rect3.rightSegment, {attribute: "Poor", channel:"x", shareScale: enc});
-scn.encode(measure.rightSegment, {attribute: "Measure", channel:"x", shareScale: enc});
+let enc = msc.encode(rect1.rightSegment, "x", "Good");
+msc.encode(rect2.rightSegment, "x", "Satisfactory", {shareScale: enc});
+msc.encode(rect3.rightSegment, "x", "Poor", {shareScale: enc});
+msc.encode(measure.rightSegment, "x", "Measure", {shareScale: enc});
 
-scn.encode(marker, {attribute: "Target", channel:"x", shareScale: enc});
+msc.encode(marker, "x", "Target", {shareScale: enc});
 scn.axis("x", "Good", {orientation: "bottom", title: "Sales"});
 scn.axis("y", "Region", {orientation: "left", pathVisible: false, tickVisible: false, titleVisible: false});
 
-// let enc = scn.encode(rect1,{attribute: "Good", channel:"width"});
-// scn.encode(rect2,{attribute: "Satisfactory", channel:"width", shareScale: enc});
-// scn.encode(rect3,{attribute: "Poor", channel:"width", shareScale: enc});
-// scn.encode(measure,{attribute: "Measure", channel:"width", shareScale: enc});
+// let enc = msc.encode(rect1,{attribute: "Good", channel:"width"});
+// msc.encode(rect2,{attribute: "Satisfactory", channel:"width", shareScale: enc});
+// msc.encode(rect3,{attribute: "Poor", channel:"width", shareScale: enc});
+// msc.encode(measure,{attribute: "Measure", channel:"width", shareScale: enc});

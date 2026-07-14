@@ -1,20 +1,20 @@
 let scn = msc.scene();
 let dt = await msc.csv("/datasets/csv/elections-2020.csv");
-let bidenTbl = scn.transform("filter", dt, {attribute: "Biden_margin", type: "interval", value: [0, 100]}),
-    trumpTbl = scn.transform("filter", dt, {attribute: "Trump_margin", type: "interval", value: [0, 100]});
+let bidenTbl = scn.derive(dt, msc.transform("filter", {attribute: "Biden_margin", type: "interval", value: [0, 100]})),
+    trumpTbl = scn.derive(dt, msc.transform("filter", {attribute: "Trump_margin", type: "interval", value: [0, 100]}));
 let rect = scn.mark("rect", {top: 60, left: 150, width: 350, height: 500, strokeColor: "white", fillColor: "#1E71B8"});
-let {newMark:bidenRect, collection:bidenWins} = scn.divide(rect, bidenTbl, {orientation: "vertical", attribute: "State"});
-let htEnc = scn.encode(bidenRect, {attribute: "Biden", channel: "height", rangeExtent: 80});
-let wdEnc = scn.encode(bidenRect, {attribute: "Biden_margin", channel: "width"});
-scn.sortChildren(bidenWins, "width");
-scn.setLayoutParameters(bidenWins, {"horzCellAlignment": "right"});
+let {newMark:bidenRect, collection:bidenWins} = msc.divide(rect, bidenTbl, {orientation: "vertical", attribute: "State"});
+let htEnc = msc.encode(bidenRect, "height", "Biden", {rangeExtent: 80});
+let wdEnc = msc.encode(bidenRect, "width", "Biden_margin");
+msc.sortChildren(bidenWins, "width");
+msc.update(bidenWins.layout, {"horzCellAlignment": "right"});
 let rect1 = scn.mark("rect", {top: 60, left: 400, width: 350, height: 500, strokeColor: "white", fillColor: "#CC1A59"});
-let {newMark:trumpRect, collection:trumpWins} = scn.divide(rect1, trumpTbl, {orientation: "vertical", attribute: "State"});
-scn.encode(trumpRect, {attribute: "Trump", channel: "height", shareScale: htEnc});
-scn.encode(trumpRect, {attribute: "Trump_margin", channel: "width", shareScale: wdEnc});
-scn.sortChildren(trumpWins, "width");
-scn.align([bidenWins, trumpWins], "y", "bottom");
-scn.affix(bidenWins, trumpWins, "x", {elementAnchor: "right", baseAnchor: "left"});
+let {newMark:trumpRect, collection:trumpWins} = msc.divide(rect1, trumpTbl, {orientation: "vertical", attribute: "State"});
+msc.encode(trumpRect, "height", "Trump", {shareScale: htEnc});
+msc.encode(trumpRect, "width", "Trump_margin", {shareScale: wdEnc});
+msc.sortChildren(trumpWins, "width");
+msc.align([bidenWins, trumpWins], "y", "bottom");
+msc.affix(bidenWins, trumpWins, "x", {elementAnchor: "right", baseAnchor: "left"});
 scn.axis("width", "Trump_margin", {orientation: "bottom", tickValues: [0, 10, 20, 30, 40]});
 scn.axis("width", "Biden_margin", {orientation: "bottom", flip: true});
 // let y = trumpWins.bounds.bottom - htEncoding.scale.map(270);

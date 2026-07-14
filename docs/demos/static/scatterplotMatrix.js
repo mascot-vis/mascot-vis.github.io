@@ -5,20 +5,20 @@ let attributes = ["sepal length","sepal width","petal length","petal width"];
 
 let scatterplots = scn.composite();
 // let fillScale = msc.createScale("ordinalColor");
-// fillScale.domain = dt.getUniqueAttributeValues("species");
+// fillScale.domain = dt.unique("species");
 
 let fillEnc;
 for (let row of attributes) {
 	for (let col of attributes) {
 		let circle = scn.mark("circle", {radius: 6, x: 100, y: 80, fillColor: "orange", 
 			strokeWidth: 0, opacity: 0.3});
-		let sp = scn.repeat(circle, dt, {attribute: "id"});
-		scn.encode(circle, {attribute: row, channel: "x", rangeExtent: 135});
-		scn.encode(circle, {attribute: col, channel: "y", rangeExtent: 135});
+		let sp = msc.repeat(circle, dt, {attribute: "id"});
+		msc.encode(circle, "x", row, {rangeExtent: 135});
+		msc.encode(circle, "y", col, {rangeExtent: 135});
 		if (fillEnc)
-			scn.encode(circle, {attribute: "species", channel: "fillColor", shareScale: fillEnc});
+			msc.encode(circle, "fillColor", "species", {shareScale: fillEnc});
 		else
-			fillEnc = scn.encode(circle, {attribute: "species", channel: "fillColor"});
+			fillEnc = msc.encode(circle, "fillColor", "species");
 		scn.axis("x", row, {element: circle, titleOffset: 28});
 		scn.axis("y", col, {element: circle, titleOffset: 28});
 		scn.gridlines("x", row, {element: circle});

@@ -7,21 +7,21 @@ let line = scn.mark("line", {x1: 150, y1: 80, x2: 150, y2: 450, strokeColor: "#5
 let glyph = scn.glyph(line, box, medianLine);
 let dt = await msc.csv("/datasets/csv/genderPayGap.csv");
 
-let genders = scn.repeat(glyph, dt, {attribute: "Gender"});
+let genders = msc.repeat(glyph, dt, {attribute: "Gender"});
 genders.layout = msc.layout("grid", {numRows: 1, colGap: 15});
 
-let payGrades = scn.repeat(genders, dt, {attribute: "Pay Grade"});
-scn.sortChildren(payGrades, "Pay Grade", false, ["One", "Two", "Three", "Four", "Five"]);
+let payGrades = msc.repeat(genders, dt, {attribute: "Pay Grade"});
+msc.sortChildren(payGrades, "Pay Grade", false, ["One", "Two", "Three", "Four", "Five"]);
 payGrades.layout = msc.layout("grid", {numRows: 1, colGap: 45});
 
 
-let enc = scn.encode(line.vertices[0], {attribute: "Min", channel: "y"});
-scn.encode(line.vertices[1], {attribute: "Max", channel: "y", shareScale: enc});
-scn.encode(box.topSegment, {attribute: "75-Percentile", channel: "y", shareScale: enc});
-scn.encode(box.bottomSegment, {attribute: "25-Percentile", channel: "y", shareScale: enc});
-scn.encode(medianLine, {attribute: "Median", channel: "y", shareScale: enc});
+let enc = msc.encode(line.vertices[0], "y", "Min");
+msc.encode(line.vertices[1], "y", "Max", {shareScale: enc});
+msc.encode(box.topSegment, "y", "75-Percentile", {shareScale: enc});
+msc.encode(box.bottomSegment, "y", "25-Percentile", {shareScale: enc});
+msc.encode(medianLine, "y", "Median", {shareScale: enc});
 
-scn.encode(box, {attribute: "Gender", channel: "fillColor"});
+msc.encode(box, "fillColor", "Gender");
 scn.axis("x", "Pay Grade", {orientation: "bottom", pathVisible: false, tickVisible: false, labelOffset: 35, titleVisible: false});
 scn.axis("x", "Gender", {orientation: "bottom", pathVisible: false,tickVisible: false, titleVisible: false});
 scn.axis("y", "Max", {orientation: "left", "pathX": 100, labelFormat: ".2s", title: "annual income"});

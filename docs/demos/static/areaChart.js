@@ -6,10 +6,10 @@ let data = await msc.csv("/datasets/csv/bitcoin-price.csv");
 // fill.addStop(80, "#EFC030", 1.0);
 // fill.addStop(100, "#F9E5AF", 1.0);
 let rect = scene.mark("rect", {top:60, left: 100, width: 700, height: 450, strokeColor: "#ffcc00", strokeWidth: 0.25, fillColor: "#EFC030"});
-let area = scene.densify(rect, data, {orientation: "horizontal", attribute: "date"});
-let xEnc = scene.encode(area.topLeftVertex, {channel: "x", attribute: "date", rangeExtent: 700});
-scene.encode(area.bottomLeftVertex, {channel: "x", attribute: "date", shareScale: xEnc});
-scene.encode(area, {channel: "height", attribute: "value"});
+let area = msc.densify(rect, data, {orientation: "horizontal", attribute: "date"});
+let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 700});
+msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
+msc.encode(area, "height", "value");
 
 scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
 scene.axis("height", "value", {orientation: "left", labelFormat: ".2s"});

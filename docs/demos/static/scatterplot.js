@@ -2,17 +2,17 @@ let scn = msc.scene();
 let dt = await msc.csv("/datasets/csv/gdp-lifeExp.csv");
 let circle = scn.mark("circle", {radius: 6, x: 100, y: 80, fillColor: "orange", strokeWidth: 0});
 
-let collection = scn.repeat(circle, dt, { attribute: "Country" });
+let collection = msc.repeat(circle, dt, { attribute: "Country" });
 
 //Country,GDP per capita,Life expectancy,Population,Continent
-let xEncoding = scn.encode(circle, { attribute: "GDP per capita", channel: "x" });
-let yEncoding = scn.encode(circle, { attribute: "Life expectancy", channel: "y" });
-let fillEncoding = scn.encode(circle, { attribute: "Continent", channel: "fillColor" });
+let xEncoding = msc.encode(circle, "x", "GDP per capita");
+let yEncoding = msc.encode(circle, "y", "Life expectancy");
+let fillEncoding = msc.encode(circle, "fillColor", "Continent");
 
 xEncoding.rangeExtent = 450;
 yEncoding.rangeExtent = 450;
 
-scn.setProperties(circle, { opacity: "0.7" });
+msc.update(circle, { opacity: "0.7" });
 //yEncoding.includeZero = true;
 scn.axis("x", "GDP per capita", { orientation: "bottom", labelFormat: ".2s" });
 scn.axis("y", "Life expectancy", { orientation: "left" });

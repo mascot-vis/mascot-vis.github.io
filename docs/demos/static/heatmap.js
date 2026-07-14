@@ -2,12 +2,12 @@ let scn = msc.scene({fillColor: "#333"});
 let dt = await msc.csv("/datasets/csv/nbaRedraft.csv");
 let rect = scn.mark("rect", {top: 100, left: 80, width: 45, height: 8, strokeWidth: 0, fillColor: "#ddd"});
 
-let coll = scn.repeat(rect, dt);
-let xEnc = scn.encode(rect, {attribute: "Draft_Year", channel: "x", rangeExtent: 910});
-let yEnc = scn.encode(rect, {attribute: "Draft_Pick", channel: "y", flipScale: true, rangeExtent: 500});
+let coll = msc.repeat(rect, dt);
+let xEnc = msc.encode(rect, "x", "Draft_Year", {rangeExtent: 910});
+let yEnc = msc.encode(rect, "y", "Draft_Pick", {flipScale: true, rangeExtent: 500});
 
 let mapping = {"-20": "#d7d7d7", "-10": "#ecdba7", "20": "#b87187", "50": "#9d326a"};
-let fillEnc = scn.encode(rect, {attribute: "VORP", channel: "fillColor", mapping: mapping});
+let fillEnc = msc.encode(rect, "fillColor", "VORP", {mapping: mapping});
 //fillEnc.scale.scheme = "interpolateBrBG";
 scn.axis("x", "Draft_Year", {orientation: "top", pathVisible: false, strokeColor: "#ccc", textColor: "#ccc"});
 scn.axis("y", "Draft_Pick", {orientation: "left", strokeColor: "#ccc", textColor: "#ccc"});
