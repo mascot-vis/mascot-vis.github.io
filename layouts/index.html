@@ -506,6 +506,146 @@
     padding-top: 44px;
   }
 
+  .mh-concept {
+    padding-bottom: 64px;
+    padding-top: 44px;
+  }
+
+  .mh-concept-card {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: var(--mh-radius);
+    box-shadow: var(--mh-shadow);
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 310px 1fr;
+    overflow: hidden;
+    padding: 18px;
+  }
+
+  .mh-concept-tree {
+    background: #fff;
+    border: 1px solid var(--mh-line);
+    border-radius: var(--mh-radius);
+    padding: 14px;
+  }
+
+  .mh-concept-tree h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .mh-object-row {
+    align-items: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--mh-muted);
+    cursor: pointer;
+    display: flex;
+    font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    gap: 8px;
+    margin: 4px 0;
+    padding: 10px 11px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .mh-object-row::before {
+    background: #cfd6e5;
+    border-radius: 50%;
+    content: "";
+    height: 7px;
+    width: 7px;
+  }
+
+  .mh-object-row:hover,
+  .mh-object-row.active {
+    background: #eef1ff;
+    border-color: #cbd2ff;
+    color: var(--mh-primary);
+  }
+
+  .mh-object-row:hover::before,
+  .mh-object-row.active::before {
+    background: var(--mh-primary);
+  }
+
+  .mh-object-level-1 { padding-left: 26px; }
+  .mh-object-level-2 { padding-left: 46px; }
+
+  .mh-concept-note {
+    border-top: 1px solid var(--mh-line);
+    color: var(--mh-muted);
+    font-size: 13px;
+    margin: 14px 0 0;
+    padding-top: 14px;
+  }
+
+  .mh-concept-stage {
+    background: #fbfcff;
+    border: 1px solid var(--mh-line);
+    border-radius: var(--mh-radius);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 430px;
+    overflow: hidden;
+  }
+
+  .mh-concept-status {
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid var(--mh-line);
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 14px 18px;
+  }
+
+  .mh-concept-status strong {
+    display: block;
+    font-size: 16px;
+  }
+
+  .mh-concept-status span {
+    color: var(--mh-muted);
+    display: block;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .mh-concept-badge {
+    background: #eef1ff;
+    border-radius: 999px;
+    color: var(--mh-primary);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 10px;
+    white-space: nowrap;
+  }
+
+  #mhSceneObjectSvg {
+    display: block;
+    min-height: 340px;
+    width: 100%;
+  }
+
+  #mhSceneObjectSvg [data-object] {
+    transition: opacity 0.18s;
+  }
+
+  .mh-concept-actions {
+    background: #fff;
+    border-top: 1px solid var(--mh-line);
+    color: var(--mh-muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 13px 18px;
+  }
+
   .mh-feature-grid {
     display: grid;
     gap: 22px;
@@ -693,7 +833,7 @@
   }
 
   .mh-builder-figure {
-    background: #fbfcff;
+    background: #FFFAFC;
     padding: 20px;
   }
 
@@ -702,6 +842,10 @@
     display: block;
     object-fit: contain;
     width: 100%;
+  }
+
+  #mhGenerateStepImage {
+    background: #FFFAFC;
   }
 
   .mh-detail-figure {
@@ -963,7 +1107,8 @@
     .mh-two-column,
     .mh-code-demo,
     .mh-interaction-panel,
-    .mh-explorer-layout {
+    .mh-explorer-layout,
+    .mh-concept-card {
       grid-template-columns: 1fr;
     }
 
@@ -1045,7 +1190,7 @@
       <h1>Mascot</h1>
       <p class="mh-slogan">A <span>Scene-Centric</span> Grammar for <span>Data Graphics</span></p>
       <p class="mh-lede">
-        Build, edit, and add interaction to expressive data graphics by manipulating semantic scene objects.
+        Build expressive data graphics by manipulating scene objects.
       </p>
       <div class="mh-proof">
         <span>Semantic objects</span>
@@ -1100,12 +1245,48 @@
     </div>
   </section>
 
+  <section class="mh-shell mh-concept mh-reveal" aria-labelledby="mhConceptTitle">
+    <div class="mh-heading">
+      <!-- <p class="mh-eyebrow">The scene-centric idea</p> -->
+      <h2 id="mhConceptTitle">Everything is a scene object.</h2>
+      <p>In Mascot, a data graphic is not the output of compiling a specification, or the output of a series of rendering commands. It is a scene made of semantic objects you can inspect, select, and modify.</p>
+    </div>
+
+    <div class="mh-concept-card" id="mhSceneObjectDemo">
+      <div class="mh-concept-tree" aria-label="Scene object hierarchy">
+        <h3>Scene hierarchy</h3>
+        <button class="mh-object-row active" type="button" data-object="scene">Scene</button>
+        <button class="mh-object-row mh-object-level-1" type="button" data-object="axis">Axis</button>
+        <button class="mh-object-row mh-object-level-1" type="button" data-object="collection">Collection</button>
+        <button class="mh-object-row mh-object-level-2" type="button" data-object="mark">Mark</button>
+        <button class="mh-object-row mh-object-level-1" type="button" data-object="encoding">Encoding</button>
+        <button class="mh-object-row mh-object-level-1" type="button" data-object="layout">Layout</button>
+        <p class="mh-concept-note">Hover to inspect a scene object. Click Encoding or Layout to modify the scene.</p>
+      </div>
+
+      <div class="mh-concept-stage">
+        <div class="mh-concept-status">
+          <div>
+            <strong id="mhSceneObjectTitle">Scene</strong>
+            <span id="mhSceneObjectText">The chart is a hierarchy of editable objects, not a pile of anonymous graphical primitives.</span>
+          </div>
+          <div class="mh-concept-badge" id="mhSceneObjectBadge">hover objects</div>
+        </div>
+        <svg id="mhSceneObjectSvg" viewBox="0 0 820 360" role="img" aria-labelledby="mhSceneObjectSvgTitle">
+          <title id="mhSceneObjectSvgTitle">Interactive scene object diagram</title>
+        </svg>
+        <div class="mh-concept-actions">
+          <span id="mhSceneObjectEncodingState">Encoding: topic color</span>
+          <span id="mhSceneObjectLayoutState">Layout: ThemeRiver</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="mh-shell mh-section" id="why">
     <div class="mh-heading mh-reveal">
-      <h2>A Scene-Centric Approach</h2>
-      <p>Instead of asking <i>how data is transformed into a visualization</i>,<br>
-        Mascot asks <i>how a graphical scene is constructed, modified, and made interactive with data as a key input</i>.<br>
-        Mascot provides an explicit model for semantic objects such as marks, collections, encodings, layouts, and axes, and automatically manages the dependencies among them. This lets changes to one object update the related parts of the scene while keeping you above low-level graphical primitives.</p>
+      <h2>Think in Scene Objects</h2>
+      <p>Mascot is designed with two goals in mind: expressive power and high-level abstractions. It supports a wide range of data graphics from statistical charts and information graphics to rich interactive behaviors, while hiding low-level rendering and execution details so you can focus on your design intent.<br><br>At the core of Mascot is a grammar that treats marks, collections, encodings, layouts, and axes as first-class semantic objects, automatically managing the relationships between them as your designs evolve. This lets you think in terms of the graphics itself, not the mechanics of rendering, event handling, or dependency management.</p>
     </div>
   </section>
 
@@ -1162,12 +1343,12 @@
     <div class="mh-copy mh-reveal">
       <h2>Specify interaction with semantic objects</h2>
       <!-- <h2 class="mh-eyebrow">Use scene objects as interaction state.</h2> -->
-      <p>Define transient responses and persistent state in terms of semantic objects, and the underlying execution details are handled automatically.</p>
+      <p>Define transient responses and persistent state in terms of scene objects, and the underlying execution details are handled automatically.</p>
     </div>
   </section>
 
   <section class="mh-shell mh-final mh-reveal">
-    <p class="mh-eyebrow">Build something expressive</p>
+    <!-- <p class="mh-eyebrow">Build something expressive</p> -->
     <h2>Explore the examples,<br>then build with the API.</h2>
     <div class="mh-final-actions">
       <a class="mh-button mh-button-primary" href="/gallery/">Explore the gallery</a>
@@ -1377,6 +1558,192 @@
       $$(".mh-builder-steps button").forEach((b, i) => b.classList.toggle("active", i === safeStep));
     }
 
+    const sceneObjectCopy = {
+      scene: ["Scene", "The whole visualization is an editable scene made from related semantic objects.", "hover objects"],
+      axis: ["Axis", "Axes are scene objects, so timeline ticks, baselines, and gridlines stay coordinated when the layout changes.", "guide object"],
+      collection: ["Collection", "A collection groups the topic area marks so the scene can switch between a ThemeRiver and small multiples.", "mark group"],
+      mark: ["Mark", "Each topic remains the same area-path mark across both layouts.", "individual marks"],
+      encoding: ["Encoding", "Click Encoding to switch the color rule. The area marks and legend update from the same scene object.", "click to modify"],
+      layout: ["Layout", "Click Layout to decompose the ThemeRiver into small-multiple area charts without changing mark type or encoding.", "click to modify"]
+    };
+    const sceneObjectYears = ["2018", "", "2019", "", "2020", "", "2021", "", "2022", "", "2023", "", "2024", "", "2025", ""];
+    const sceneObjectData = [
+      { label: "Climate", group: "A", values: [18, 22, 31, 27, 42, 58, 47, 63, 52, 44, 57, 40, 62, 76, 68, 82] },
+      { label: "Health", group: "B", values: [28, 36, 30, 52, 62, 48, 71, 46, 38, 55, 42, 33, 36, 50, 44, 39] },
+      { label: "Housing", group: "C", values: [42, 34, 48, 38, 30, 44, 34, 49, 50, 64, 66, 54, 58, 70, 61, 73] },
+      { label: "Mobility", group: "D", values: [22, 28, 18, 30, 26, 20, 32, 43, 46, 35, 54, 61, 48, 37, 55, 46] }
+    ];
+    const sceneObjectState = { active: "scene", encoding: "topic", layout: "river" };
+
+    function sceneObjectColor(d, i) {
+      const topic = ["#5368ff", "#25c6a1", "#ff9f5a", "#9b7bff"][i % 4];
+      const emphasis = ["#2f4fd6", "#4f8cff", "#7fdcc7", "#c7f2e8"][i % 4];
+      return sceneObjectState.encoding === "topic" ? topic : emphasis;
+    }
+
+    function areaPath(top, bottom) {
+      const curve = (points) => {
+        if (!points.length) return "";
+        let d = "M" + points[0][0] + " " + points[0][1];
+        for (let i = 1; i < points.length; i++) {
+          const prev = points[i - 1], curr = points[i];
+          const midX = (prev[0] + curr[0]) / 2;
+          const midY = (prev[1] + curr[1]) / 2;
+          d += " Q" + prev[0] + " " + prev[1] + " " + midX + " " + midY;
+        }
+        const last = points[points.length - 1];
+        return d + " T" + last[0] + " " + last[1];
+      };
+      return curve(top) + " " + curve(bottom.slice().reverse()).replace(/^M/, "L") + " Z";
+    }
+
+    function streamLayers() {
+      const totals = sceneObjectYears.map((_, yearIndex) => sceneObjectData.reduce((sum, topic) => sum + topic.values[yearIndex], 0));
+      let maxTotal = Math.max.apply(null, totals);
+      return sceneObjectData.map((topic, topicIndex) => {
+        let previous = sceneObjectData.slice(0, topicIndex);
+        return {
+          topic,
+          top: topic.values.map((value, yearIndex) => {
+            const base = previous.reduce((sum, other) => sum + other.values[yearIndex], 0);
+            return { value: base + value, total: totals[yearIndex], maxTotal };
+          }),
+          bottom: topic.values.map((value, yearIndex) => {
+            const base = previous.reduce((sum, other) => sum + other.values[yearIndex], 0);
+            return { value: base, total: totals[yearIndex], maxTotal };
+          })
+        };
+      });
+    }
+
+    function sceneObjectHighlight(el, object) {
+      const obj = el.getAttribute("data-object");
+      const hit = object === "scene"
+        || obj === object
+        || (object === "collection" && obj === "mark")
+        || (object === "encoding" && obj === "mark")
+        || (object === "layout" && (obj === "mark" || obj === "axis"));
+      el.style.opacity = hit ? 1 : 0.18;
+    }
+
+    function drawSceneObjectDemo() {
+      const svg = $("#mhSceneObjectSvg");
+      if (!svg) return;
+      clear(svg);
+      const chart = { left: 76, top: 52, width: 520, height: 232, mid: 178 };
+      const x = (i) => scale(i, 0, sceneObjectYears.length - 1, chart.left, chart.left + chart.width);
+
+      const scene = svgEl("rect", {
+        x: 26, y: 24, width: 760, height: 300, rx: 10, fill: "#ffffff",
+        stroke: "#e5e8ef", "stroke-width": 1, "data-object": "scene"
+      });
+      svg.append(scene);
+
+      if (sceneObjectState.layout === "river") {
+        [-80, -40, 0, 40, 80].forEach((offset) => {
+          svg.append(svgEl("line", { x1: chart.left, y1: chart.mid + offset, x2: chart.left + chart.width, y2: chart.mid + offset, stroke: "#eef1f6", "stroke-width": 1, "data-object": "axis" }));
+        });
+        svg.append(svgEl("line", { x1: chart.left, y1: chart.mid, x2: chart.left + chart.width, y2: chart.mid, stroke: "#d7ddeb", "stroke-width": 1.5, "data-object": "axis" }));
+        sceneObjectYears.forEach((year, i) => {
+          if (!year) return;
+          const label = svgEl("text", { x: x(i), y: 312, "text-anchor": "middle", fill: "#667085", "font-size": 12, "data-object": "axis" });
+          label.textContent = year;
+          svg.append(label);
+        });
+        streamLayers().forEach((layer, topicIndex) => {
+          const maxTotal = layer.top[0].maxTotal;
+          const top = layer.top.map((d, yearIndex) => {
+            const y = chart.mid - scale(d.value - d.total / 2, -maxTotal / 2, maxTotal / 2, -106, 106);
+            return [x(yearIndex), y];
+          });
+          const bottom = layer.bottom.map((d, yearIndex) => {
+            const y = chart.mid - scale(d.value - d.total / 2, -maxTotal / 2, maxTotal / 2, -106, 106);
+            return [x(yearIndex), y];
+          });
+          svg.append(svgEl("path", { d: areaPath(top, bottom), fill: sceneObjectColor(layer.topic, topicIndex), opacity: 0.86, "data-object": "mark" }));
+        });
+        svg.append(svgEl("rect", {
+          x: chart.left - 16, y: chart.top - 10, width: chart.width + 32, height: chart.height + 24,
+          rx: 10, fill: "rgba(83, 104, 255, 0.03)", stroke: "#7f8cff",
+          "stroke-dasharray": "7 5", "stroke-width": 2, "data-object": "collection"
+        }));
+      } else {
+        const rows = sceneObjectData.map((topic, i) => ({ topic, y: 76 + i * 58 }));
+        rows.forEach((row, topicIndex) => {
+          const baseline = row.y + 32;
+          svg.append(svgEl("line", { x1: chart.left, y1: baseline, x2: chart.left + chart.width, y2: baseline, stroke: "#d7ddeb", "stroke-width": 1.3, "data-object": "axis" }));
+          sceneObjectYears.forEach((_, i) => {
+            svg.append(svgEl("line", { x1: x(i), y1: row.y + 3, x2: x(i), y2: baseline, stroke: "#f0f2f7", "stroke-width": 1, "data-object": "axis" }));
+          });
+          const top = row.topic.values.map((value, yearIndex) => [x(yearIndex), baseline - scale(value, 0, 70, 0, 44)]);
+          const bottom = row.topic.values.map((_, yearIndex) => [x(yearIndex), baseline]);
+          svg.append(svgEl("path", { d: areaPath(top, bottom), fill: sceneObjectColor(row.topic, topicIndex), opacity: 0.86, "data-object": "mark" }));
+          const label = svgEl("text", { x: chart.left - 18, y: baseline - 17, "text-anchor": "end", fill: "#667085", "font-size": 12, "font-weight": 700, "data-object": "layout" });
+          label.textContent = row.topic.label;
+          svg.append(label);
+        });
+        sceneObjectYears.forEach((year, i) => {
+          if (!year) return;
+          const label = svgEl("text", { x: x(i), y: 312, "text-anchor": "middle", fill: "#667085", "font-size": 12, "data-object": "axis" });
+          label.textContent = year;
+          svg.append(label);
+        });
+        svg.append(svgEl("rect", {
+          x: chart.left - 16, y: 46, width: chart.width + 32, height: 246,
+          rx: 10, fill: "rgba(83, 104, 255, 0.03)", stroke: "#7f8cff",
+          "stroke-dasharray": "7 5", "stroke-width": 2, "data-object": "collection"
+        }));
+      }
+
+      const legendX = 675;
+      const legendTitle = svgEl("text", {
+        x: legendX, y: 78, fill: "#172033", "font-size": 13,
+        "font-weight": 800, "data-object": "encoding"
+      });
+      legendTitle.textContent = sceneObjectState.encoding === "topic" ? "Encoding: topic" : "Encoding: emphasis";
+      svg.append(legendTitle);
+      const legendItems = sceneObjectData.map((topic, i) => [topic.label, sceneObjectColor(topic, i)]);
+      legendItems.forEach((item, i) => {
+        svg.append(svgEl("rect", { x: legendX, y: 98 + i * 24, width: 14, height: 14, rx: 4, fill: item[1], "data-object": "encoding" }));
+        const txt = svgEl("text", { x: legendX + 22, y: 110 + i * 24, fill: "#667085", "font-size": 12, "data-object": "encoding" });
+        txt.textContent = item[0];
+        svg.append(txt);
+      });
+
+      $$("#mhSceneObjectSvg [data-object]").forEach((el) => sceneObjectHighlight(el, sceneObjectState.active));
+      $("#mhSceneObjectEncodingState").textContent = "Encoding: " + (sceneObjectState.encoding === "topic" ? "topic color" : "emphasis color");
+      $("#mhSceneObjectLayoutState").textContent = "Layout: " + (sceneObjectState.layout === "river" ? "ThemeRiver" : "small multiples");
+    }
+
+    function setSceneObjectActive(object) {
+      if (!sceneObjectCopy[object]) return;
+      sceneObjectState.active = object;
+      const copy = sceneObjectCopy[object];
+      $("#mhSceneObjectTitle").textContent = copy[0];
+      $("#mhSceneObjectText").textContent = copy[1];
+      $("#mhSceneObjectBadge").textContent = copy[2];
+      $$(".mh-object-row").forEach((row) => row.classList.toggle("active", row.dataset.object === object));
+      $$("#mhSceneObjectSvg [data-object]").forEach((el) => sceneObjectHighlight(el, object));
+    }
+
+    function initSceneObjectDemo() {
+      if (!$("#mhSceneObjectDemo")) return;
+      drawSceneObjectDemo();
+      $$(".mh-object-row").forEach((row) => {
+        row.addEventListener("mouseenter", () => setSceneObjectActive(row.dataset.object));
+        row.addEventListener("focus", () => setSceneObjectActive(row.dataset.object));
+        row.addEventListener("click", () => {
+          const object = row.dataset.object;
+          if (object === "encoding") sceneObjectState.encoding = sceneObjectState.encoding === "topic" ? "emphasis" : "topic";
+          if (object === "layout") sceneObjectState.layout = sceneObjectState.layout === "river" ? "multiples" : "river";
+          setSceneObjectActive(object);
+          drawSceneObjectDemo();
+          setSceneObjectActive(object);
+        });
+      });
+      setSceneObjectActive("scene");
+    }
+
     function drawExplorer() {
       const svg = $("#mhExplorerSvg");
       if (!svg) return;
@@ -1497,6 +1864,7 @@
     }));
 
     initShowcase();
+    initSceneObjectDemo();
     renderBuilder(0);
     drawExplorer();
     drawInteraction("hover");
