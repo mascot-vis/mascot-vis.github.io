@@ -72,10 +72,12 @@ table.type("Sales");    // "number", "integer", "date", "string", or "boolean"
 table.summary("Sales"); // min, max, extent, mean, median, unique, etc.
 ```
 
-Do not import d3 or use d3 data helpers in generated Mascot code. Data loading
-should go through `msc.csv(...)`, `msc.csvString(...)`, `msc.table(...)`,
-`msc.graphJSON(...)`, or `msc.treeJSON(...)`. Data inspection should go through
-the DataTable API.
+Generated Mascot code should not import d3 or use d3 data helpers. Data loading
+must go through `msc.csv(...)`, `msc.csvString(...)`, `msc.table(...)`,
+`msc.graphJSON(...)`, or `msc.treeJSON(...)`. Data inspection must go through
+the DataTable API. Do not use `d3.csv`, `d3.csvParse`, `d3.group`,
+`d3.rollup`, `d3.sum`, `d3.mean`, `d3.extent`, `d3.timeParse`, `fetch`, or a
+manual CSV parser in generated code.
 
 Tables also support `table.values(attr)`, `table.unique(attr)`, `table.count()`,
 `table.rows(filters)`, `table.parseDate(attr, format)`, and
@@ -83,6 +85,14 @@ Tables also support `table.values(attr)`, `table.unique(attr)`, `table.count()`,
 for exact matches, sets, and numeric/date intervals, but chart construction
 should still use Mascot's data-driven operations instead of manually drawing one
 mark per row.
+
+When a filtered subset needs to drive a chart, convert the filtered rows back
+into a Mascot table before using repeat, divide, densify, or encode:
+
+```js
+let selectedRows = table.rows({Region: ["East", "West"]});
+let selectedTable = msc.table(selectedRows);
+```
 
 Common data flow:
 
