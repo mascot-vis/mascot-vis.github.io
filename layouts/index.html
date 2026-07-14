@@ -56,12 +56,76 @@
 
   .mh-hero {
     min-height: auto;
-    display: grid;
-    grid-template-columns: 0.92fr 1.25fr;
-    gap: 64px;
     align-items: center;
+    display: grid;
+    gap: 72px;
+    grid-template-columns: 0.92fr 1.08fr;
     padding-top: 76px;
-    padding-bottom: 36px;
+    padding-bottom: 58px;
+  }
+
+  .mh-hero-copy {
+    max-width: 780px;
+  }
+
+  .mh-hero-visual {
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+    border-radius: var(--mh-radius);
+    box-shadow: 0 22px 60px rgba(31, 42, 68, 0.08);
+    overflow: hidden;
+    padding: 14px;
+  }
+
+  .mh-hero-mosaic {
+    display: grid;
+    grid-template-columns: 1.05fr 0.9fr 0.95fr;
+    grid-template-rows: 138px 116px 128px;
+    gap: 12px;
+  }
+
+  .mh-mosaic-tile {
+    background: #fff;
+    border: 1px solid #e5e8ef;
+    border-radius: 12px;
+    box-shadow: 0 14px 32px rgba(31, 42, 68, 0.08);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mh-mosaic-tile img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .mh-mosaic-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .mh-mosaic-top {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .mh-demo-carousel {
+    padding: 14px;
+  }
+
+  .mh-demo-carousel .mh-showcase-frame {
+    background: transparent;
+  }
+
+  .mh-demo-carousel .mh-showcase-slide .mh-mosaic-tile img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mh-demo-carousel .mh-showcase-controls {
+    padding-top: 10px;
   }
 
   .mh-eyebrow {
@@ -1152,7 +1216,6 @@
     }
 
     .mh-hero {
-      gap: 34px;
       padding-top: 58px;
     }
 
@@ -1172,6 +1235,10 @@
       grid-template-columns: 1fr;
     }
 
+    .mh-hero-mosaic {
+      grid-template-rows: 120px 104px 112px;
+    }
+
     .mh-showcase-demo {
       grid-template-columns: 1fr;
     }
@@ -1185,10 +1252,10 @@
 
 <div class="mascot-home" id="top">
   <section class="mh-hero mh-shell">
-    <div class="mh-reveal">
+    <div class="mh-hero-copy mh-reveal">
       <!-- <p class="mh-eyebrow">A scene-centric grammar for data graphics</p> -->
       <h1>Mascot</h1>
-      <p class="mh-slogan">A <span>Scene-Centric</span> Grammar for <span>Data Graphics</span></p>
+      <p class="mh-slogan">A <span>Scene-Centric</span> Grammar for Expressive <span>Data Graphics</span></p>
       <p class="mh-lede">
         Build expressive data graphics by manipulating scene objects.
       </p>
@@ -1199,48 +1266,81 @@
       </div>
     </div>
 
-    <div class="mh-stage mh-showcase mh-reveal" aria-label="Mascot visualization showcase">
+    <div class="mh-hero-visual mh-stage mh-showcase mh-demo-carousel mh-reveal" aria-label="Mascot demo gallery showcase">
       <div class="mh-showcase-frame">
         <div class="mh-showcase-track" id="mhShowcaseTrack">
           <figure class="mh-showcase-slide">
-            <div class="mh-showcase-demo mh-showcase-demo-full">
-              <img src="/images/generate.png" alt="A sequence showing a circle mark divided into segments, divided into rings, then encoded with color and thickness">
+            <div class="mh-hero-mosaic">
+              <figure class="mh-mosaic-tile mh-mosaic-large">
+                <img src="/demos/thumbnails/towerChart.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile mh-mosaic-top">
+                <img src="/demos/thumbnails/reconfigure_edgeBundling.gif?v=2" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/sunburst.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/compare_scatterplot.gif" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/parallelCoordinates.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/circlePacking.png" alt="">
+              </figure>
             </div>
-            <figcaption class="mh-showcase-caption">
-              <div>
-                <strong>Construct Expressive Data Graphics</strong>
-                <span>Generate structures from a primitive mark.</span>
-              </div>
-            </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
-            <div class="mh-showcase-demo mh-showcase-demo-full mh-showcase-demo-bleed">
-              <img class="mh-showcase-gif" src="/images/modify.gif" alt="An animation showing a chart deconstructed into semantic objects, then updating dependent marks, guides, labels, and gridlines when the x-axis object changes">
+            <div class="mh-hero-mosaic">
+              <figure class="mh-mosaic-tile mh-mosaic-large">
+                <img src="/demos/thumbnails/roseChart.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile mh-mosaic-top">
+                <img src="/demos/thumbnails/navigate_bubblePlot.gif" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/ridgelinePlot.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/multipleCalendarHeatMaps.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/multiplePieCharts.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/arcDiagram.png" alt="">
+              </figure>
             </div>
-            <figcaption class="mh-showcase-caption">
-              <div>
-                <strong>Reactive Scene Modification</strong>
-                <span>Edit one semantic object, and Mascot updates the related marks, guides, and labels.</span>
-              </div>
-            </figcaption>
           </figure>
           <figure class="mh-showcase-slide">
-            <div class="mh-showcase-demo mh-showcase-demo-full mh-showcase-demo-bleed">
-              <img class="mh-showcase-gif" src="/images/stateful-interaction.gif" alt="An animation showing a selected scatterplot mark stored as interaction state, then reused when hovering another mark to draw a comparison">
+            <div class="mh-hero-mosaic">
+              <figure class="mh-mosaic-tile mh-mosaic-large">
+                <img src="/demos/thumbnails/flowSelect_DAG.gif" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile mh-mosaic-top">
+                <img src="/demos/thumbnails/forceDirected.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/brush_slopeGraph.gif" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/mosaicPlot.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/isotype.png" alt="">
+              </figure>
+              <figure class="mh-mosaic-tile">
+                <img src="/demos/thumbnails/bumpChart.png" alt="">
+              </figure>
             </div>
-            <figcaption class="mh-showcase-caption">
-              <div>
-                <strong>Specify Interaction with Semantic Objects</strong>
-                <span>Define both transient and stateful interactions using semantic scene objects.</span>
-              </div>
-            </figcaption>
           </figure>
         </div>
-        <div class="mh-showcase-controls" aria-label="Showcase carousel controls">
-          <button class="mh-showcase-arrow" id="mhShowcasePrev" type="button" aria-label="Previous showcase item">&lsaquo;</button>
-          <div class="mh-showcase-dots" id="mhShowcaseDots" aria-label="Showcase slides"></div>
-          <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next showcase item">&rsaquo;</button>
-        </div>
+      </div>
+      <div class="mh-showcase-controls" aria-label="Demo mosaic carousel controls">
+        <button class="mh-showcase-arrow" id="mhShowcasePrev" type="button" aria-label="Previous demo mosaic">&lsaquo;</button>
+        <div class="mh-showcase-dots" id="mhShowcaseDots" aria-label="Demo mosaic slides"></div>
+        <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next demo mosaic">&rsaquo;</button>
       </div>
     </div>
   </section>
