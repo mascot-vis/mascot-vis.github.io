@@ -28,7 +28,6 @@
       radial-gradient(circle at 90% 10%, rgba(37, 198, 161, 0.08), transparent 26%),
       var(--mh-bg);
     color: var(--mh-ink);
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.6;
     margin-top: -1.5rem;
     overflow: hidden;
@@ -60,8 +59,8 @@
     display: grid;
     gap: 72px;
     grid-template-columns: 0.92fr 1.08fr;
-    padding-top: 76px;
-    padding-bottom: 58px;
+    padding-top: 60px;
+    padding-bottom: 34px;
   }
 
   .mh-hero-copy {
@@ -80,7 +79,7 @@
   .mh-hero-mosaic {
     display: grid;
     grid-template-columns: 1.05fr 0.9fr 0.95fr;
-    grid-template-rows: 138px 116px 128px;
+    grid-template-rows: 122px 104px 112px;
     gap: 12px;
   }
 
@@ -115,6 +114,14 @@
     padding: 14px;
   }
 
+  .mh-demo-caption {
+    color: var(--mh-muted);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin: 0 0 10px;
+  }
+
   .mh-demo-carousel .mh-showcase-frame {
     background: transparent;
   }
@@ -147,7 +154,8 @@
   }
 
   .mascot-home h1 {
-    font-size: clamp(48px, 6vw, 82px);
+    color: #111b3f;
+    font-size: clamp(60px, 7.4vw, 104px);
     font-weight: 800;
   }
 
@@ -157,9 +165,9 @@
 
   .mh-slogan {
     color: var(--mh-muted);
-    font-size: clamp(25px, 3vw, 40px);
-    font-weight: 800;
-    line-height: 1.14;
+    font-size: clamp(23px, 2.55vw, 34px);
+    font-weight: 700;
+    line-height: 1.18;
     margin: 18px 0 0;
     max-width: 680px;
   }
@@ -182,7 +190,7 @@
   .mh-heading p,
   .mh-copy p {
     color: var(--mh-muted);
-    font-size: 18px;
+    font-size: 20px;
     max-width: 720px;
   }
 
@@ -191,8 +199,7 @@
     max-width: 620px;
   }
 
-  .mh-actions,
-  .mh-final-actions {
+  .mh-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -231,18 +238,12 @@
     color: var(--mh-ink);
   }
 
-  .mh-proof,
   .mh-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .mh-proof {
-    margin-top: 28px;
-  }
-
-  .mh-proof span,
   .mh-pills span {
     background: rgba(255, 255, 255, 0.72);
     border: 1px solid var(--mh-line);
@@ -541,6 +542,14 @@
     margin: 18px 0 0;
   }
 
+  .mh-heading .mh-eyebrow {
+    color: var(--mh-muted);
+    font-size: 14px;
+    letter-spacing: 0.13em;
+    margin: 0 0 18px;
+    max-width: none;
+  }
+
   #why {
     border-top: 1px solid rgba(102, 112, 133, 0.18);
     margin-top: 36px;
@@ -641,7 +650,7 @@
   .mh-concept-note {
     border-top: 1px solid var(--mh-line);
     color: var(--mh-muted);
-    font-size: 13px;
+    font-size: 14px;
     margin: 14px 0 0;
     padding-top: 14px;
   }
@@ -674,7 +683,7 @@
   .mh-concept-status span {
     color: var(--mh-muted);
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 2px;
   }
 
@@ -704,7 +713,7 @@
     color: var(--mh-muted);
     display: flex;
     flex-wrap: wrap;
-    font-size: 13px;
+    font-size: 14px;
     gap: 8px;
     justify-content: space-between;
     padding: 13px 18px;
@@ -878,8 +887,24 @@
 
   .mh-builder-header {
     border-bottom: 1px solid var(--mh-line);
+    display: block;
     font-weight: 700;
-    padding: 18px 20px;
+    padding: 18px 20px 18px;
+    position: relative;
+  }
+
+  .mh-builder-title {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .mh-builder-header .mh-text-button {
+    position: absolute;
+    right: 20px;
+    top: 18px;
   }
 
   .mh-text-button {
@@ -945,7 +970,10 @@
   }
 
   .mh-builder-steps {
-    border-top: 1px solid var(--mh-line);
+    border-top: 0;
+    flex-wrap: nowrap;
+    overflow: auto;
+    padding: 0;
   }
 
   .mh-builder-steps button,
@@ -956,8 +984,8 @@
     color: #667085;
     cursor: pointer;
     font: inherit;
-    font-size: 12px;
-    padding: 9px 12px;
+    font-size: 11px;
+    padding: 8px 9px;
     white-space: nowrap;
   }
 
@@ -1141,20 +1169,6 @@
     top: 22px;
   }
 
-  .mh-final {
-    padding: 100px 20px 120px;
-    text-align: center;
-  }
-
-  .mh-final h2 {
-    margin: 0 auto 30px;
-    max-width: 900px;
-  }
-
-  .mh-final-actions {
-    justify-content: center;
-  }
-
   .mh-reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -1200,7 +1214,7 @@
     }
 
     .mascot-home h1 {
-      font-size: 62px;
+      font-size: 72px;
     }
 
     .mh-slogan {
@@ -1259,14 +1273,14 @@
       <p class="mh-lede">
         Build expressive data graphics by manipulating scene objects.
       </p>
-      <div class="mh-proof">
-        <span>Semantic objects</span>
-        <span>Direct manipulation</span>
-        <span>Stateful interactions</span>
+      <div class="mh-actions">
+        <a class="mh-button mh-button-primary" href="/gallery/">Explore the gallery</a>
+        <a class="mh-button mh-button-secondary" href="/docs/global/func/">Read the docs</a>
       </div>
     </div>
 
     <div class="mh-hero-visual mh-stage mh-showcase mh-demo-carousel mh-reveal" aria-label="Mascot demo gallery showcase">
+      <p class="mh-demo-caption">Built using Mascot scene objects</p>
       <div class="mh-showcase-frame">
         <div class="mh-showcase-track" id="mhShowcaseTrack">
           <figure class="mh-showcase-slide">
@@ -1343,13 +1357,14 @@
         <button class="mh-showcase-arrow" id="mhShowcaseNext" type="button" aria-label="Next demo mosaic">&rsaquo;</button>
       </div>
     </div>
+
   </section>
 
-  <section class="mh-shell mh-concept mh-reveal" aria-labelledby="mhConceptTitle">
+  <section class="mh-shell mh-concept mh-reveal" id="scene-centric" aria-labelledby="mhConceptTitle">
     <div class="mh-heading">
-      <!-- <p class="mh-eyebrow">The scene-centric idea</p> -->
-      <h2 id="mhConceptTitle">Everything is a scene object.</h2>
-      <p>In Mascot, a data graphic is not the output of compiling a specification, or the output of a series of rendering commands. It is a scene made of semantic objects you can inspect, select, and modify.</p>
+      <p class="mh-eyebrow">A scene-centric approach</p>
+      <h2 id="mhConceptTitle">Everything is a scene object</h2>
+      <p>In Mascot, a data graphic is not just the output of a specification or rendering pipeline. It is a scene made of semantic objects you can inspect, select, and modify.</p>
     </div>
 
     <div class="mh-concept-card" id="mhSceneObjectDemo">
@@ -1361,6 +1376,7 @@
         <button class="mh-object-row mh-object-level-2" type="button" data-object="mark">Mark</button>
         <button class="mh-object-row mh-object-level-1" type="button" data-object="encoding">Encoding</button>
         <button class="mh-object-row mh-object-level-1" type="button" data-object="layout">Layout</button>
+        <button class="mh-object-row mh-object-level-1" type="button" data-object="annotation">Annotation</button>
         <p class="mh-concept-note">Hover to inspect a scene object. Click Encoding or Layout to modify the scene.</p>
       </div>
 
@@ -1397,26 +1413,28 @@
   <section class="mh-shell mh-section mh-two-column" id="how">
     <div class="mh-builder mh-reveal">
       <div class="mh-builder-header">
-        <span>Construct a rose chart step by step</span>
+        <div class="mh-builder-title">
+          <span>Construct a rose chart step by step</span>
+          <div class="mh-builder-steps">
+            <button data-step="0" class="active" type="button">1. Mark</button>
+            <button data-step="1" type="button">2. Divide by Month</button>
+            <button data-step="2" type="button">3. Divide by Type</button>
+            <button data-step="3" type="button">4. Encode Fill Color</button>
+            <button data-step="4" type="button">5. Encode Thickness</button>
+          </div>
+        </div>
         <button id="mhRebuildButton" class="mh-text-button" type="button">Replay</button>
       </div>
       <div class="mh-builder-figure">
         <img id="mhGenerateStepImage" src="/images/generate-step-0.png" alt="A circle mark used as the first construction step for a rose chart">
-      </div>
-      <div class="mh-builder-steps">
-        <button data-step="0" class="active" type="button">1. Mark</button>
-        <button data-step="1" type="button">2. Divide by Month</button>
-        <button data-step="2" type="button">3. Divide by Type</button>
-        <button data-step="3" type="button">4. Encode Fill Color</button>
-        <button data-step="4" type="button">5. Encode Thickness</button>
       </div>
     </div>
 
     <div class="mh-copy mh-reveal">
       <!-- <p class="mh-eyebrow">Construct expressive data graphics</p> -->
       <!-- <h2>Start with objects. Add structure one operation at a time.</h2> -->
-      <h2>Construct expressive data graphics.</h2>
-      <p>Mascot builds scenes from primitive marks through semantic operations such as repeat, divide, encode, layout, and align. Instead of producing an opaque chart, each operation creates objects that can be referenced and modified later.</p>
+      <h2>Construct expressive data graphics</h2>
+      <p>Mascot builds scenes from primitive marks through semantic operations such as repeat, divide, encode, layout, and align. Each operation creates objects that can be referenced and modified later.</p>
       <div class="mh-pills">
         <span>repeat</span><span>divide</span><span>densify</span><span>encode</span><span>layout</span><span>align</span>
       </div>
@@ -1447,14 +1465,6 @@
     </div>
   </section>
 
-  <section class="mh-shell mh-final mh-reveal">
-    <!-- <p class="mh-eyebrow">Build something expressive</p> -->
-    <h2>Explore the examples,<br>then build with the API.</h2>
-    <div class="mh-final-actions">
-      <a class="mh-button mh-button-primary" href="/gallery/">Explore the gallery</a>
-      <a class="mh-button mh-button-secondary" href="/docs/global/func/">Read the docs</a>
-    </div>
-  </section>
 </div>
 
 <script>
@@ -1664,6 +1674,7 @@
       collection: ["Collection", "A collection groups the topic area marks so the scene can switch between a ThemeRiver and small multiples.", "mark group"],
       mark: ["Mark", "Each topic remains the same area-path mark across both layouts.", "individual marks"],
       encoding: ["Encoding", "Click Encoding to switch the color rule. The area marks and legend update from the same scene object.", "click to modify"],
+      annotation: ["Annotation", "Annotations are scene objects too, so explanatory callouts can stay anchored to the relevant marks as the layout changes.", "linked notes"],
       layout: ["Layout", "Click Layout to decompose the ThemeRiver into small-multiple area charts without changing mark type or encoding.", "click to modify"]
     };
     const sceneObjectYears = ["2018", "", "2019", "", "2020", "", "2021", "", "2022", "", "2023", "", "2024", "", "2025", ""];
@@ -1722,8 +1733,29 @@
         || obj === object
         || (object === "collection" && obj === "mark")
         || (object === "encoding" && obj === "mark")
-        || (object === "layout" && (obj === "mark" || obj === "axis"));
+        || (object === "layout" && (obj === "mark" || obj === "axis" || obj === "annotation"));
       el.style.opacity = hit ? 1 : 0.18;
+      if (obj === "collection") {
+        el.style.opacity = object === "collection" ? 1 : 0;
+      }
+    }
+
+    function appendSceneBand(svg, x1, x2, y, height, labelY, labelText) {
+      const group = svgEl("g", { "data-object": "annotation" });
+      group.append(svgEl("rect", {
+        x: x1, y, width: x2 - x1, height,
+        fill: "rgba(83, 104, 255, 0.12)"
+      }));
+      if (labelText) {
+        const label = svgEl("text", {
+          x: (x1 + x2) / 2, y: labelY,
+          "text-anchor": "middle",
+          fill: "#5368ff", "font-size": 12, "font-weight": 800
+        });
+        label.textContent = labelText;
+        group.append(label);
+      }
+      svg.append(group);
     }
 
     function drawSceneObjectDemo() {
@@ -1732,6 +1764,9 @@
       clear(svg);
       const chart = { left: 76, top: 52, width: 520, height: 232, mid: 178 };
       const x = (i) => scale(i, 0, sceneObjectYears.length - 1, chart.left, chart.left + chart.width);
+      const riverY = (d) => chart.mid - scale(d.value - d.total / 2, -d.maxTotal / 2, d.maxTotal / 2, -106, 106);
+      const focusStart = x(6) - 12;
+      const focusEnd = x(10) + 12;
 
       const scene = svgEl("rect", {
         x: 26, y: 24, width: 760, height: 300, rx: 10, fill: "#ffffff",
@@ -1750,14 +1785,15 @@
           label.textContent = year;
           svg.append(label);
         });
-        streamLayers().forEach((layer, topicIndex) => {
-          const maxTotal = layer.top[0].maxTotal;
+        appendSceneBand(svg, focusStart, focusEnd, 24, 300, chart.top - 10, "Focus interval");
+        const riverLayers = streamLayers();
+        riverLayers.forEach((layer, topicIndex) => {
           const top = layer.top.map((d, yearIndex) => {
-            const y = chart.mid - scale(d.value - d.total / 2, -maxTotal / 2, maxTotal / 2, -106, 106);
+            const y = riverY(d);
             return [x(yearIndex), y];
           });
           const bottom = layer.bottom.map((d, yearIndex) => {
-            const y = chart.mid - scale(d.value - d.total / 2, -maxTotal / 2, maxTotal / 2, -106, 106);
+            const y = riverY(d);
             return [x(yearIndex), y];
           });
           svg.append(svgEl("path", { d: areaPath(top, bottom), fill: sceneObjectColor(layer.topic, topicIndex), opacity: 0.86, "data-object": "mark" }));
@@ -1793,6 +1829,7 @@
           rx: 10, fill: "rgba(83, 104, 255, 0.03)", stroke: "#7f8cff",
           "stroke-dasharray": "7 5", "stroke-width": 2, "data-object": "collection"
         }));
+        appendSceneBand(svg, focusStart, focusEnd, 24, 300, chart.top - 10, "Focus interval");
       }
 
       const legendX = 675;

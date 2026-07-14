@@ -14,6 +14,43 @@
   font-weight: $headings-font-weight;
 }
 
+.navbar-utility {
+  align-items: center;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.navbar-version {
+  align-self: center;
+  align-items: center;
+  background: rgba($primary, 0.08);
+  border: 1px solid rgba($primary, 0.16);
+  border-radius: 999px;
+  color: $primary;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0.25rem 0.45rem;
+}
+
+.navbar-utility #mode {
+  align-items: center;
+  align-self: center;
+  display: inline-flex;
+  height: 20px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+}
+
+.navbar-utility #mode svg {
+  display: block;
+}
+
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:active {

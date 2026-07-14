@@ -1,7 +1,7 @@
 {
   "name": "@mascot-vis/mascot-vis.github.io",
   "description": "Website for Mascot.js",
-  "version": "0.2.3",
+  "version": "4.0.",
   "hugo-bin": {
     "buildTags": "extended"
   },

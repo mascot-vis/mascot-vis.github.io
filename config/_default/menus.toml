@@ -82,10 +82,10 @@
   identifier = "tutorials"
   url = "/tutorials/"
 
-[[main]]
-  name = "Getting Started"
-  url = "/tutorials/example/"
-  weight = 9
+# [[main]]
+#   name = "Getting Started"
+#   url = "/tutorials/example/"
+#   weight = 9
 
 [[main]]
   name = "Gallery"

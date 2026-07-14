@@ -61,6 +61,12 @@ body.dark .navbar-light .navbar-brand {
   color: $navbar-dark-color !important;
 }
 
+body.dark .navbar-version {
+  background: rgba($link-color-dark, 0.14);
+  border-color: rgba($link-color-dark, 0.24);
+  color: $link-color-dark;
+}
+
 body.dark .navbar-light .navbar-nav .nav-link {
   color: $navbar-dark-color;
 }
