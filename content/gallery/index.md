@@ -34,11 +34,40 @@ iframe {
     border: 1px solid #ccc;
 }
 
+.gallery-loading {
+    align-items: center;
+    background: #fff;
+    color: #1d2d35;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 700;
+    justify-content: center;
+    left: 0;
+    min-height: calc(100vh - 3.5625rem);
+    min-height: calc(100dvh - 3.5625rem);
+    position: fixed;
+    right: 0;
+    top: 3.5625rem;
+    z-index: 2;
+}
+
+.gallery-loading.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
 @media (min-width: 768px) {
     iframe {
         top: 4rem;
         height: calc(100vh - 4rem);
         height: calc(100dvh - 4rem);
+    }
+
+    .gallery-loading {
+        min-height: calc(100vh - 4rem);
+        min-height: calc(100dvh - 4rem);
+        top: 4rem;
     }
 }
 </style>
@@ -47,11 +76,20 @@ iframe {
     (function () {
         function initGallerySync() {
             const frame = document.getElementById("galleryFrame");
+            const loading = document.getElementById("galleryLoading");
             if (!frame) return;
 
             const basePath = "/gallery-static.html";
             let syncingFromIframe = false;
             let syncingFromParent = false;
+
+            function showLoading() {
+                if (loading) loading.classList.remove("is-hidden");
+            }
+
+            function hideLoading() {
+                if (loading) loading.classList.add("is-hidden");
+            }
 
             function buildIframeUrlFromParent() {
                 const parentUrl = new URL(window.location.href);
@@ -74,6 +112,7 @@ iframe {
                 if (current === target) return;
 
                 syncingFromParent = true;
+                showLoading();
                 frame.setAttribute("src", target);
                 syncingFromParent = false;
             }
@@ -109,6 +148,7 @@ iframe {
             }
 
             frame.addEventListener("load", function () {
+                hideLoading();
                 syncParentFromIframe();
 
                 try {
@@ -132,6 +172,7 @@ iframe {
     })();
 </script>
 
+<div id="galleryLoading" class="gallery-loading" role="status" aria-live="polite">Loading Demos</div>
 <iframe id="galleryFrame" src="/gallery-static.html"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
