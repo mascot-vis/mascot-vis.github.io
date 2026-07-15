@@ -33,10 +33,27 @@
     width: 22px;
   }
 
-  .navbar .navbar-utility #mode span,
   .navbar .navbar-utility #mode svg {
     display: block;
     line-height: 1;
+  }
+
+  .navbar .navbar-utility #mode .toggle-dark {
+    display: block;
+    line-height: 1;
+  }
+
+  .navbar .navbar-utility #mode .toggle-light {
+    display: none;
+    line-height: 1;
+  }
+
+  body.dark .navbar .navbar-utility #mode .toggle-light {
+    display: block;
+  }
+
+  body.dark .navbar .navbar-utility #mode .toggle-dark {
+    display: none;
   }
 
   body.dark .navbar .navbar-version {
