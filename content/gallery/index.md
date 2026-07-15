@@ -39,8 +39,10 @@ iframe {
     background: #fff;
     color: #1d2d35;
     display: flex;
+    flex-direction: column;
     font-size: 1.25rem;
     font-weight: 700;
+    gap: 16px;
     justify-content: center;
     left: 0;
     min-height: calc(100vh - 3.5625rem);
@@ -51,10 +53,25 @@ iframe {
     z-index: 2;
 }
 
+.gallery-loading-icon {
+    animation: galleryLoadingSpin 1s linear infinite;
+    border: 3px solid #e5e8ef;
+    border-top-color: #3C692F;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+}
+
 .gallery-loading.is-hidden {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
+}
+
+@keyframes galleryLoadingSpin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (min-width: 768px) {
@@ -172,7 +189,10 @@ iframe {
     })();
 </script>
 
-<div id="galleryLoading" class="gallery-loading" role="status" aria-live="polite">Loading Demos</div>
+<div id="galleryLoading" class="gallery-loading" role="status" aria-live="polite">
+    <span class="gallery-loading-icon" aria-hidden="true"></span>
+    <span>Loading Demos</span>
+</div>
 <iframe id="galleryFrame" src="/gallery-static.html"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
