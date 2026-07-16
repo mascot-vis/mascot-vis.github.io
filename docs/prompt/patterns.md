@@ -14,6 +14,10 @@ Use these idioms when generating Mascot.js code. They capture the order and styl
 8. Add axes, gridlines, and legends from the scene.
 9. Render with `msc.renderer("svg", "svgElement").render(scn)`.
 
+Generated code should stay inside the Mascot API. Do not use d3, Vega,
+Observable helpers, `fetch`, or manual CSV parsing for data loading,
+aggregation, filtering, dates, or summaries.
+
 ## Inspect Tables Before Choosing Fields
 
 When the natural-language request is underspecified, inspect the DataTable
@@ -45,6 +49,23 @@ let selectedRows = table.rows({Region: ["East", "West"]});
 Use `table.summary(attr)` for min, max, extent, mean, and median. Use
 `table.unique(attr)` for distinct values. Do not use `d3.csv`, `d3.csvParse`,
 `d3.group`, `d3.rollup`, `d3.sum`, `d3.mean`, or `d3.extent` in generated code.
+
+Common replacements:
+
+```js
+// Use Mascot import helpers, not d3.csv or fetch.
+let table = await msc.csv("/datasets/csv/sales.csv");
+
+// Use DataTable summaries, not d3.extent/d3.mean/d3.sum.
+let summary = table.summary("Sales");
+let minSales = summary.min;
+let maxSales = summary.max;
+let meanSales = summary.mean;
+
+// Use Mascot tables for filtered data.
+let filteredRows = table.rows({Region: "West"});
+let filteredTable = msc.table(filteredRows);
+```
 
 Do not use removed helper names such as `getRowCount`, `getAttributeSummary`,
 `numericAttributes`, `categoricalAttributes`, or `parseAttributeAsDate`.

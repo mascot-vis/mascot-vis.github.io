@@ -129,12 +129,14 @@
         "type": "Reconfigure",
         "title": "Use slider to change bundling strength",
         "draft": false,
+        "ui": true,
         "about": "Use the slider to reconfigure edge-bundling strength in the network visualization. Adjusting the parameter changes how tightly edges are bundled together."
     },
     "reconfigure_gridLayout": {
         "name": "Layout parameters",
         "type": "Reconfigure",
         "title": "Adjust layout parameters",
+        "ui": true,
         "about": "Interactive controls let you change waffle chart layout parameters such as column count, start corner, and fill direction. The grid recomputes immediately to show layout changes."
     },
     "reconfigure_rangeExtent": {
@@ -147,25 +149,29 @@
         "name": "Mark order",
         "type": "Reconfigure",
         "title": "Sort marks by attribute",
+        "ui": true,
         "about": "Choose sorting attribute and order to reorder lollipop marks interactively. The chart can be sorted by crime rate or area in ascending or descending direction."
     },
     "dynamic_binning": {
         "name": "Dynamic binning",
         "type": "Reconfigure",
         "title": "Dynamically change number of bins",
+        "ui": true,
         "about": "Use the slider to dynamically adjust the number of bins in the histogram. The bar widths and heights update immediately to reflect the new binning."
     },
-    "encode_scatterPlot": {
+    "encode_scatterplot": {
         "name": "Change axis attribute",
         "type": "Encode",
         "title": "Change data attribute mapped to axis",
         "draft": false,
+        "ui": true,
         "about": "Dropdown menus let you remap which data attributes are encoded on the x and y axes. This supports rapid exploration of different variable relationships in the same scatterplot."
     },
     "filter_stackedAreaChart": {
         "name": "Filter marks",
         "type": "Filter",
         "title": "Toggle mark visibility + auto re-layout",
+        "ui": true,
         "about": "Toggle category checkboxes to filter industries included in the stacked area chart. This interaction isolates subsets so trends can be compared without visual clutter."
     },
     "navigate_bubblePlot": {

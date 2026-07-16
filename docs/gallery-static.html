@@ -213,6 +213,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        z-index: 950;
       }
       #ctrlPanel {
         width: 250px;
@@ -242,7 +243,7 @@
         height: calc(100% - 40px);
       }
       #codeControls {
-        width: 520px;
+        width: auto;
         height: 30px;
         position: absolute;
         top: 0;
@@ -250,6 +251,16 @@
         margin: 8px 10px 0 0;
         font-size: 8.5pt;
         vertical-align: top;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 4px;
+      }
+      .rendererControls {
+        display: none;
+      }
+      .hiddenControl {
+        display: none;
       }
       .CodeMirror {
         width: 100%;
@@ -309,16 +320,15 @@
       <div id="infoTab" style="padding: 15px"></div>
       <div id="codeControls">
         <button onclick="window.loadScript()">run</button>
-        <button id="benchmarkBtn" onclick="window.benchmark()" style="display: none">
-          benchmark
-        </button>
         <button onclick="window.save()">save</button>
-        <button onclick="window.showDepGraph()">show graph</button>
-        <span style="margin-left: 10px;">Renderer:</span>
-        <input type="radio" id="SVG" name="renderer" value="svg" checked />
-        <label for="SVG">SVG</label>
-        <input type="radio" id="WebGL" name="renderer" value="webgl" disabled />
-        <label for="WebGL">WebGL</label>
+        <button class="hiddenControl" onclick="window.showDepGraph()">show graph</button>
+        <span class="rendererControls">
+          <span style="margin-left: 10px;">Renderer:</span>
+          <input type="radio" id="SVG" name="renderer" value="svg" checked />
+          <label for="SVG">SVG</label>
+          <input type="radio" id="WebGL" name="renderer" value="webgl" disabled />
+          <label for="WebGL">WebGL</label>
+        </span>
       </div>
     </div>
 
@@ -389,9 +399,9 @@
           btn.classList.toggle("active", btn.dataset.category === category);
         });
 
-        const isInteractive = category === "interactive";
-        document.getElementById("ctrlPanel").style.display = isInteractive ? "block" : "none";
-        document.getElementById("benchmarkBtn").style.display = isInteractive ? "inline-block" : "none";
+        if (category !== "interactive") {
+          document.getElementById("ctrlPanel").style.display = "none";
+        }
 
         rebuildDemoList();
         rebuildGallery();
@@ -587,10 +597,19 @@
       }
 
       function loadCtrls(demo) {
+        const ctrlPanel = document.getElementById("ctrlPanel");
+        ctrlPanel.innerHTML = "";
+        const hasUi = interactiveMetaData[demo] && interactiveMetaData[demo].ui;
+        if (!hasUi) {
+          ctrlPanel.style.display = "none";
+          loadDemo(demo);
+          return;
+        }
+
+        ctrlPanel.style.display = "block";
         fetch("demos/interactive/" + demo + "_UI.js")
           .then((response) => (response.ok ? response.text() : undefined))
           .then((data) => {
-            document.getElementById("ctrlPanel").innerHTML = "";
             if (data) eval(data);
             loadDemo(demo);
           })
@@ -725,6 +744,13 @@
           visualizeDepGraph(r);
         });
       };
+
+      document.addEventListener("keydown", function (event) {
+        if (event.metaKey && !event.ctrlKey && !event.altKey && event.key.toLowerCase() === "g") {
+          event.preventDefault();
+          window.showDepGraph();
+        }
+      }, true);
 
       function refresh() {
         document.getElementById("depGraphVis").style.visibility = "hidden";
