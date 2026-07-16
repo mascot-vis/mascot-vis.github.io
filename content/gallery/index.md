@@ -96,7 +96,7 @@ iframe {
             const loading = document.getElementById("galleryLoading");
             if (!frame) return;
 
-            const basePath = "/gallery-static.html";
+            const basePath = "/gallery.html";
             let syncingFromIframe = false;
             let syncingFromParent = false;
 
@@ -139,7 +139,7 @@ iframe {
 
                 try {
                     const frameLoc = frame.contentWindow.location;
-                    if (!frameLoc || !frameLoc.pathname.endsWith("/gallery-static.html")) return;
+                    if (!frameLoc || !frameLoc.pathname.endsWith("/gallery.html")) return;
 
                     const parentUrl = new URL(window.location.href);
                     const frameMode = new URLSearchParams(frameLoc.search).get("category");
@@ -193,7 +193,7 @@ iframe {
     <span class="gallery-loading-icon" aria-hidden="true"></span>
     <span>Loading Demos</span>
 </div>
-<iframe id="galleryFrame" src="/gallery-static.html"></iframe>
+<iframe id="galleryFrame" src="/gallery.html"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
     
