@@ -20,10 +20,41 @@ let transformSpec = msc.transform(type, args, params);
 `msc.csv(...)`, `msc.csvString(...)`, and `msc.table(...)` return a DataTable.
 `msc.ROW_ID` is the internal row-id attribute name (`"mascot_rowId"`).
 
-Use Mascot's import functions for data loading. Do not import or call d3 in
-generated code. In particular, do not use `d3.csv`, `d3.csvParse`, `d3.group`,
-`d3.rollup`, `d3.sum`, `d3.mean`, `d3.extent`, or `d3.timeParse`. Mascot uses
-d3 internally, but d3 is not part of the allowed generated-code API.
+Hard rule for generated code: use Mascot's data import and DataTable APIs only.
+Do not import or call d3, lodash, Arquero, Vega, Observable helpers, `fetch`, or
+manual CSV parsers. Mascot uses d3 internally, but d3 is not part of the allowed
+generated-code API.
+
+Use these replacements instead of common d3 patterns:
+
+```js
+// CSV file
+let table = await msc.csv("/datasets/csv/sales.csv");
+
+// CSV text that is already available in memory
+let tableFromText = msc.csvString(csvText);
+
+// Rows that are already available as an array of objects
+let tableFromRows = msc.table(rows);
+
+// Filtered table for downstream Mascot operations
+let westRows = table.rows({Region: "West"});
+let westTable = msc.table(westRows);
+```
+
+Do not use these in generated code:
+
+```js
+d3.csv(...);
+d3.csvParse(...);
+d3.group(...);
+d3.rollup(...);
+d3.sum(...);
+d3.mean(...);
+d3.extent(...);
+d3.timeParse(...);
+fetch(...);
+```
 
 Supported transform type strings are:
 
@@ -137,6 +168,22 @@ Use `table.unique(attr)` instead of `d3.group(...)` when the code only needs the
 distinct values for an attribute. Use encoding aggregators such as
 `aggregator: "sum"` when the visualization should aggregate values through a
 visual channel.
+
+For grouping and aggregation, prefer Mascot's data-driven operations and
+encoding aggregators instead of manually computing grouped arrays. For example,
+repeat by the grouping attribute, then encode the quantitative attribute with an
+aggregator:
+
+```js
+let bars = msc.repeat(rect, table, {attribute: "Category"});
+bars.layout = msc.layout("grid", {numCols: 1, rowGap: 8});
+
+msc.encode(rect, {
+  attribute: "Sales",
+  channel: "width",
+  aggregator: "sum"
+});
+```
 
 Use `table.parseDate(attr, format)` when a date column needs a specific time
 format string such as `"%Y-%m-%d"`. Date values are stored internally as
