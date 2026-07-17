@@ -424,6 +424,7 @@
 
       function setCategoryInUrl(category) {
         const url = new URL(window.location.href);
+        url.searchParams.delete("mode");
         url.searchParams.set("category", category);
         const query = url.searchParams.toString();
         const nextUrl = url.pathname + (query ? "?" + query : "") + url.hash;
@@ -582,12 +583,16 @@
           });
       }
 
-      function loadJson(responseText) {
-        const jsonRegex = /msc\.(tree|graph)json\("(.+)"\);/;
+      function getJsonDataPath(responseText) {
+        const jsonRegex = /msc\.(tree|graph)json\(\s*["']([^"']+)["']\s*\)/i;
         const jsonMatch = jsonRegex.exec(responseText);
-        if (!jsonMatch) return;
+        return jsonMatch ? jsonMatch[2] : undefined;
+      }
 
-        const jsonPath = jsonMatch[2];
+      function loadJson(responseText) {
+        const jsonPath = getJsonDataPath(responseText);
+        if (!jsonPath) return;
+
         fetch(jsonPath)
           .then((resp) => resp.text())
           .then((text) => {
@@ -638,10 +643,7 @@
             $("#jsonTabLi").hide();
             $("#dataTabLi").show();
             loadDataTable(this.responseText);
-          } else if (
-            this.responseText.indexOf(".treejson") > 0 ||
-            this.responseText.indexOf(".graphjson") > 0
-          ) {
+          } else if (getJsonDataPath(this.responseText)) {
             $("#jsonTabLi").show();
             $("#dataTabLi").hide();
             loadJson(this.responseText);
@@ -756,9 +758,9 @@
         document.getElementById("depGraphVis").style.visibility = "hidden";
         const demo = window.location.hash.replace("#", "");
 
-        const modeFromQuery = getCategoryFromQuery();
-        if (modeFromQuery && modeFromQuery !== currentMode) {
-          setCategory(modeFromQuery, true);
+        const categoryFromQuery = getCategoryFromQuery();
+        if (categoryFromQuery && categoryFromQuery !== currentMode) {
+          setCategory(categoryFromQuery, true);
         }
 
 
@@ -768,7 +770,7 @@
           return;
         }
 
-        if (!modeFromQuery) {
+        if (!categoryFromQuery) {
           const inferredMode = inferCategoryFromHash(demo);
           if (inferredMode !== currentMode) {
             setCategory(inferredMode, true);
@@ -842,8 +844,9 @@
           allStaticKeys = new Set(Object.keys(staticMetaData));
           allInteractiveKeys = new Set(Object.keys(interactiveMetaData));
 
-          const modeFromQuery = getCategoryFromQuery();
-          setCategory(modeFromQuery || "static", true);
+          const categoryFromQuery = getCategoryFromQuery();
+          setCategory(categoryFromQuery || "static", true);
+          setCategoryInUrl(currentMode);
           refresh();
           window.updateShowGalleryBtn();
         });
