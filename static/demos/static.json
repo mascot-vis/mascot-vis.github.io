@@ -325,13 +325,20 @@
         "mark": "Nodes and Links",
         "draft": false,
         "title": "UMD vs. UNC Basketball Game",
-        "about": "This visualization shows a visual summary of a set of event sequences in a basketball game in the form of a directed acyclic graph, computed using the SentenTree algorithm."
+        "about": "This visualization shows a visual summary of play-by-play event logs of a basketball match in the form of a directed acyclic graph, computed using the SentenTree algorithm."
     },
     "ForceDirected": {
         "name": "Force-Directed Graph",
         "mark": "Nodes and Links",
         "title": "Les Miserables Social Network",
         "about": ""
+    },
+    "Sankey": {
+        "name": "Sankey Diagram",
+        "mark": "Nodes and Links",
+        "draft": false,
+        "title": "U.S. Energy Flow",
+        "about": "A Sankey diagram showing how energy flows from primary sources (coal, natural gas, solar, wind) through electricity generation to end-use sectors (residential, commercial, industrial) and finally to specific uses (heating, lighting, appliances, machinery, processes). Node height and link thickness are proportional to flow volume."
     },
     "EdgeBundling": {
         "name": "Hierarchical Edge Bundling",
@@ -370,8 +377,20 @@
     "Isotype": {
         "name": "Isotype",
         "mark": "Images and Icons",
-        "title": "100 People Grouped by Age",
-        "about": ""
+        "title": "Age Distribution as Human Icons",
+        "about": "An isotype chart showing 100 people grouped by age bin. Each repeated human icon represents one person, and the icons are classified into age groups using a grid layout within each group."
+    },
+    "IconArray1": {
+        "name": "Icon Array (table)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "An icon array created by repeating one human image mark over a small data table, with each icon's image encoded from a 'group' attribute (Colored vs. Grey) via the src channel and a mapping."
+    },
+    "IconArray2": {
+        "name": "Icon Array (counts)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "An icon array built from group counts specified directly in code (e.g. {colored: 15, gray: 20}) rather than a table, using msc.repeat's new count-map support. Each icon's image is encoded from the resulting 'group' attribute via the src channel and a mapping."
     },
     "GridAreaChart": {
         "name": "Area Charts 1",

@@ -46,7 +46,7 @@
         "name": "Flow select",
         "type": "Select",
         "title": "Hover to highlight outgoing flow paths",
-        "about": "Hover over a node to trace outgoing flow paths in the directed graph. Connected links are highlighted in orange so local dependency flow is easier to follow."
+        "about": "This visualization shows a visual summary of play-by-play event logs of a basketball match in the form of a directed acyclic graph, computed using the SentenTree algorithm. Hover over a node to trace outgoing flow paths in the directed graph. Connected links are highlighted in orange so local dependency flow is easier to follow."
     },
     "showLabels_multiLineChart": {
         "name": "One label for each series",

@@ -24,12 +24,14 @@ The GridLayout class represents a layout that positions objects in a grid. To cr
 | --- | --- | --- | --- |
 |**cellBounds** <img width="70px" src="../../readonly.png">| the bounds of the grid cells | Array of [Rectangle](../../basic/rectangle/) | [] |
 |**colGap**| the vertical gap between adjacent columns in the grid | Number | 5 |
+|**colOffset**| the number of pixels to shift every other row vertically in the grid | Number | 0 |
 |**dir**| the direction in which the items are added to each grid cell | Array | ["l2r", "t2b"] |
 |**group** <img width="70px" src="../../readonly.png">| the group that uses this layout | [Group](../../group/group/) |  |
 |**horzCellAlignment**| the horizontal [alignment](../../global/constants/#anchor) of item in each grid cell | String | "left" |
 |**numCols**| the number of columns in the grid | Number | undefined |
 |**numRows**| the number of rows in the grid | Number | undefined |
 |**rowGap**| the horizontal gap between adjacent rows in the grid | Number | 5 |
+|**rowOffset**| the number of pixels to shift every other row horizontally in the grid | Number | 0 |
 |**type** <img width="70px" src="../../readonly.png"> | the type of the layout | String | "grid" | 
 |**vertCellAlignment**| the vertical [alignment](../../global/constants/#anchor) of item in each grid cell | String | "bottom" |
 

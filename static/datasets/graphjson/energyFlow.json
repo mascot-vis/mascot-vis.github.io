@@ -2,55 +2,68 @@
   "nodes": [
     {
       "id": "Coal",
-      "col": 1
+      "col": 1,
+      "value": 800
     },
     {
       "id": "Electricity",
-      "col": 2
+      "col": 2,
+      "value": 2000
     },
     {
       "id": "Natural Gas",
-      "col": 1
+      "col": 1,
+      "value": 600
     },
     {
       "id": "Solar",
-      "col": 1
+      "col": 1,
+      "value": 200
     },
     {
       "id": "Wind",
-      "col": 1
+      "col": 1,
+      "value": 400
     },
     {
       "id": "Residential",
-      "col": 3
+      "col": 3,
+      "value": 1000
     },
     {
       "id": "Commercial",
-      "col": 3
+      "col": 3,
+      "value": 600
     },
     {
       "id": "Industrial",
-      "col": 3
+      "col": 3,
+      "value": 400
     },
     {
       "id": "Heating",
-      "col": 4
+      "col": 4,
+      "value": 600
     },
     {
       "id": "Lighting",
-      "col": 4
+      "col": 4,
+      "value": 550
     },
     {
       "id": "Appliances",
-      "col": 4
+      "col": 4,
+      "value": 450
     },
     {
       "id": "Machinery",
-      "col": 4
+      "col": 4,
+      "value": 300
     },
     {
       "id": "Processes",
-      "col": 4
+      "col": 4,
+      "value": 100
     }
   ],
   "links": [
