@@ -21,3 +21,12 @@ npm run start
 ```bash
 npm run build
 ```
+
+### 5. Update website after Mascot new release
+Whenever a new version of Mascot is released, run the updateDemos script 
+
+```bash
+./updateDemos.sh
+```
+
+Also update the version number in package.json and then do a build.

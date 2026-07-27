@@ -4,8 +4,7 @@ let data = scene.derive(csv, msc.transform("kde", {attribute: "sepal_length", ne
 let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strokeColor: "white", strokeWidth: 1, fillColor: "#69B3A2"});
 let setose = msc.densify(rect, data, {orientation: "vertical", attribute: "sepal_length"});
 msc.update(setose, {baseline: "center", curveMode: "basis"});
-let yEnc = msc.encode(setose.topLeftVertex, "y", "sepal_length");
-msc.encode(setose.topRightVertex, "y", "sepal_length", {shareScale: yEnc});
+let yEnc = msc.encode(setose.anyVertex, "y", "sepal_length");
 let wdEnc = msc.encode(setose, "width", "sepal_length_density");
 yEnc.rangeExtent = 400;
 scene.axis("y", "sepal_length", {orientation: "left"});

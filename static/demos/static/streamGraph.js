@@ -11,8 +11,7 @@ let anyArea = msc.densify(rect, data, {orientation: "horizontal", attribute: "da
 let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "vertical", attribute: "industry"});
 let htEnc = msc.encode(area, "height", "unemployments");
 msc.encode(area, "fillColor", "industry");
-let yEnc = msc.encode(area.topLeftVertex, "x", "date");
-msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: yEnc});
+msc.encode(area.anyVertex, "x", "date");
 // // htEnc.scale.domain = [0,8000];
 // htEnc.rangeExtent = 150;
 msc.update(areas.layout, {vertCellAlignment: "middle"});

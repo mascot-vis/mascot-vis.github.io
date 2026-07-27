@@ -13,8 +13,7 @@ msc.update(areas.layout, {vertCellAlignment: "bottom"});
 
 msc.encode(area, "fillColor", "industry", {mapping: {"Manufacturing": "#7fc97f", "Leisure and hospitality": "#beaed4", "Business services": "#fdc086", "Construction": "#ffff99"}});
 msc.encode(area, "height", "unemployments");
-let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 700});
-msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
+msc.encode(area.anyVertex, "x", "date", {rangeExtent: 700});
 
 scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y"});
 scene.axis("height", "unemployments", {orientation: "left", titleOffset: 50});

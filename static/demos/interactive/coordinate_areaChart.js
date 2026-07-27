@@ -6,17 +6,15 @@ let rect1 = scene.mark("rect", {top:60, left: 100, width: 800, height: 350, stro
 let detail = msc.densify(rect1, data, {orientation: "horizontal", attribute: "date"}),
     overview = msc.densify(rect2, data, {orientation: "horizontal", attribute: "date"});
 
-let detailEnc = msc.encode(detail.topLeftVertex, "x", "date");
-msc.encode(detail.bottomLeftVertex, "x", "date", {shareScale: detailEnc});
+let detailEnc = msc.encode(detail.anyVertex, "x", "date");
 msc.encode(detail, "height", "price");
-scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", element: detail.bottomLeftVertex, titleVisible: false});
+scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", element: detail.anyVertex, titleVisible: false});
 scene.axis("height", "price", {orientation: "left", element: detail, titleVisible: false});
 let detailEncDomain = detailEnc.domain.slice();
 
-let overviewEnc = msc.encode(overview.topLeftVertex, "x", "date");
-msc.encode(overview.bottomLeftVertex, "x", "date", {shareScale: overviewEnc});
+let overviewEnc = msc.encode(overview.anyVertex, "x", "date");
 msc.encode(overview, "height", "price");
-scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", element: overview.bottomLeftVertex, titleVisible: false});
+scene.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%y", element: overview.anyVertex, titleVisible: false});
 
 scene.mask(detail);
 
@@ -24,7 +22,7 @@ let trigger = { event: "brushX", source: overview },
     responder = { object: detailEnc, properties: ["domain"] };
 let updater = (evalResult, evtCtx, stateCtx, respObj) => {
     if (evtCtx.get("xCoords")) {
-        let domain = evtCtx.get("xCoords").map(d => new Date(overviewEnc.getAttrValue(d, overview.topLeftVertex)));
+        let domain = evtCtx.get("xCoords").map(d => new Date(overviewEnc.getAttrValue(d, overview.anyVertex)));
         respObj.domain = domain;
     } else
         respObj.domain = detailEncDomain;
