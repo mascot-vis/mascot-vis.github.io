@@ -43,6 +43,7 @@ The Rect class represents a rectangular mark. To create a Rect object, use the _
 ### Properties inherited from Path
 | property |  explanation  | type | default value |
 | --- | --- | --- | --- |
+|**anyVertex** <img width="70px" src="../../readonly.png">| returns any vertex of the path | [Vertex](../../basic/vertex/) |
 |**curveMode**| how the segments are drawn  | String | "linear" |
 |**firstSegment** <img width="70px" src="../../readonly.png"> | returns the first segment of the path | [Segment](../../basic/segment/) |
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |

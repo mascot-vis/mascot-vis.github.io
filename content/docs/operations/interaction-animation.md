@@ -13,15 +13,18 @@ weight: 5
 toc: true
 ---
 
-These operations specify event-driven interactions and optional animation effects.
+### msc.activate(trigger, responder, evaluator, updater)
 
-### msc.activate(tg, responder, responderEval, responderUpdate, animation)
+Mascot's interaction grammar has four components: trigger, responder, evaluator, updater. Only `trigger`, `responder`, and `updater` are required; `evaluator` may be `undefined`.
 
-Registers an interaction trigger and connects it to a responder component.
-
-- `tg` (Object): contains `target`, `event`, and an optional `cumulative` flag
-- `responder` (Object): contains `component` and either `properties` or `channels`
-- `responderEval` (Function, optional): evaluates whether the responder update should be applied
-- `responderUpdate` (Function or Array): applies the interaction effect to the responder component
-- `animation` (Object or Array, optional): animation settings paired with the responder update function or functions
+- `trigger` (what starts the interaction): `{source, event}`
+  - `source`: the element(s) whose event is listened for, a UI widget ID, or a state-variable reference (`scene.state.var("name")`) 
+  - `event`: a string representing the triggering event, e.g., "click", "hover", "brush"
+- `responder` (what gets updated): `{object, properties}`
+  - `object`: a visual element (i.e., mark, collection, axis, legend), an encoding, the state context, or a data transform. Mascot accepts either a single object or an array of objects.
+  - `properties`: an array of property, channel, or state-variable names from the object to update.  
+- `evaluator` (Function, optional): `(evtCtx, stateCtx, element) => Boolean`. If provided, every instance of the responder object is evaluated by this function. The evaluation result is used in the `updater` to determine what effects apply to the object. If omitted, the `updater` runs unconditionally on every peer.
+- `updater` (Function): `(evalResult, evtCtx, stateCtx, respObj) => void`. It mutates `respObj`'s channels/properties.
+  - `evalResult`: the result (per instance of responder object) from `evaluator`; if no `evaluator` was provided, defaults to undefined. 
+  - `respObj`: an instance of the responder object.
 - Return type: `Trigger`
