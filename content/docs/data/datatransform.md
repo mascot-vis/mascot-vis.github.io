@@ -13,52 +13,98 @@ weight: 80
 toc: true
 ---
 
-### Binning
-
-The binning transformation divides the value range of a field into intervals, and counts the number of values within each interval. To apply the transformation, here is an example: 
+Data transforms are defined with `msc.transform(...)` and applied with
+`scene.derive(...)`:
 
 ```js
-    let t = datatable.transform("bin", ["col1"]);
+let scene = msc.scene();
+let table = await msc.csv("data.csv");
+let spec = msc.transform("filter", { attribute: "year", type: "interval", value: [1955, 1955] });
+let filtered = scene.derive(table, spec);
 ```
-The returned result `t` is a [DataTable](../../data/datatable/). Each tuple (i.e., row) represents a bin or an interval. There are three fields (i.e., columns): "x0" (lower bound of the bin, inclusive), "x1" (upper bound of the bin, exclusive except the last bin), and "col1_count" (the number of values in the bin).
 
+`scene.derive(...)` always returns a new [DataTable](../../data/datatable/).
 
-| parameter |  required? | explanation   | default value |
-| --- | --- | --- | --- |
-| binWidth | optional | width of bin | computed using [Sturge's formula](https://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width) |
-| min | optional | minimum bin value | minimum field value |
-| max | optional | maximum bin value | minimum field value |
+### Binning
+
+The binning transformation assigns each input row to a numeric interval. This is used in visualizations such as histograms (example demos: [histogram](../../../gallery/#Histogram), [dynamic binning](../../../gallery/?category=interactive#dynamic_binning)).
+
+```js
+let binSpec = msc.transform("bin", { attribute: "weight(lbs)", numBins: 8 });
+let binned = scene.derive(table, binSpec);
+```
+
+The binning transformation exposes generated attribute names you can use in encodings:
+
+- `binSpec.binIdAttr`: bin id attribute (for grouping/repeat)
+- `binSpec.startAttr`: bin start value
+- `binSpec.endAttr`: bin end value
+- `binSpec.actualNumBins`: final number of bins after boundary adjustment
+
+| property | required? | explanation |
+| --- | --- | --- |
+| `attribute` | required | numeric attribute to bin |
+| `numBins` | optional | target number of bins |
+| `min` | optional | lower bound override |
+| `max` | optional | upper bound override |
 {.table-striped}
 
 ### Filtering
-The filtering transformation removes tuples in a data table that do not satisfy user defined criteria. The filtering criteria are defined as an array of [predicates](../../global/predicate/). To apply the transformation, here is an example: 
+
+The filtering transformation keeps only rows that satisfy a predicate spec. Example demos: [tower chart](../../../gallery/#TowerChart) and [DimpVis](../../../gallery/?category=interactive#dimpVis)
 
 ```js
-    let t = datatable.transform("filter", [{field: "col1", value: "value1"}]);
+let yearFilter = msc.transform("filter", {
+    attribute: "year",
+    type: "interval",
+    value: [1955, 1955]
+});
+let yearData = scene.derive(table, yearFilter);
 ```
-The returned result `t` is a [DataTable](../../data/datatable/), where the rows are a subset of the rows in the original data table. 
 
-### Kernel Density Estimation
-The KDE transformation estimates the probability density of a field using an Epanechnikov kernel:
-
-```js
-    let t = datatable.transform("kde", ["col1"]);
-```
-The returned result `t` is a [DataTable](../../data/datatable/). Each tuple (i.e., row) has two fields (i.e., columns): "col1" (value samples from the input field), and "col1_density" (the estimated probability density for the value sample).
-
-| parameter | required? |  explanation   | default value |
-| --- | --- | --- | --- |
-| min | optional | minimum value  | minimum field value|
-| max | optional | maximum value  | maximum field value |
-| bandwidth | required | smoothing parameter | |
-| interval | required | width of bin | |
+| property | required? | explanation |
+| --- | --- | --- |
+| `attribute` | required | attribute to filter |
+| `type` | optional | filter mode (for example `"interval"`) |
+| `value` | optional | filter value (for interval: `[min, max]`) |
 {.table-striped}
 
-### Sorting
-The sorting transformation orders tuples in a data table by the values of the specified fields in the defined order. By default, sorting is in ascending order. For example, the following code sorts the table rows first by `"col1"` then by `"col2"`.
+### Kernel Density Estimation
+
+The KDE transformation estimates a density curve for a numeric attribute. Example demos: [density plot](../../../gallery/#DensityPlot) and [ridgeline plot](../../../gallery/#ridgelinePlot).
 
 ```js
-    datatable.transform("sort", ["col1", "col2"]);
+let density = scene.derive(table, msc.transform("kde", {
+    attribute: "weight(lbs)",
+    newAttribute: "weight_density",
+    min: 1500,
+    max: 5000,
+    interval: 100,
+    bandwidth: 10
+}));
 ```
 
-The original data table is transformed and the return type is void. 
+| property | required? | explanation |
+| --- | --- | --- |
+| `attribute` | required | numeric attribute to estimate density for |
+| `newAttribute` | required | output density attribute name |
+| `bandwidth` | required | smoothing bandwidth |
+| `interval` | required | sampling step |
+| `min` | optional | lower sampling bound |
+| `max` | optional | upper sampling bound |
+| `groupBy` | optional | compute separate densities per group |
+{.table-striped}
+
+### Custom transform
+
+The custom transformation lets you define transform logic directly. Example demos: [histograms cross filtering](../../../gallery/?category=interactive#crossfilter_histograms) and [index chart](../../../gallery/?category=interactive#derive_indexChart). The callback receives the
+input table, output table, and mutable spec object:
+
+```js
+let tableSpec = msc.transform("custom", (inTbl, outTbl, spec) => {
+    let rows = spec.selectedRows ? spec.selectedRows.slice(0, 25) : inTbl.rows().slice(0, 25);
+    outTbl.load(rows);
+}, { selectedRows: null });
+
+let derived = scene.derive(table, tableSpec);
+```
