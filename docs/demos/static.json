@@ -392,6 +392,12 @@
         "title": "Icon Array",
         "about": "An icon array built from group counts specified directly in code (e.g. {colored: 15, gray: 20}) rather than a table, using msc.repeat's new count-map support. Each icon's image is encoded from the resulting 'group' attribute via the src channel and a mapping."
     },
+    "IsotypeComparison": {
+        "name": "Isotype Comparison Chart",
+        "mark": "Images and Icons",
+        "title": "An Unprecedented Death Toll in Qatar",
+        "about": "Recreates a Washington Post Wonkblog isotype chart comparing migrant worker deaths in Qatar to worker deaths during the construction of six recent Olympics/World Cup host venues, using one constant-size repeated human icon per worker death (the defining Isotype convention: quantity shown via icon count, never icon size). The Qatar section nests 1,200 icons into 12 blocks of 100 (each a 20x5 grid, arranged in a 3x4 grid); the six comparison groups mirror that structure with a repeated title+subtitle glyph column-aligned to its icon block via msc.affix. Counts are illustrative approximations of the original infographic. Sources for the original figures: <a href=\"https://www.theguardian.com\">The Guardian</a>, Building and Wood Workers International, WorkSafe British Columbia, Al Jazeera, The New York Times, International Trade Union Confederation."
+    },
     "GridAreaChart": {
         "name": "Area Charts 1",
         "mark": "Small Multiples",

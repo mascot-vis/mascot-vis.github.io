@@ -640,19 +640,28 @@
           loadScript(this.responseText);
 
           if (this.responseText.indexOf(".csv") > 0) {
-            $("#jsonTabLi").hide();
-            $("#dataTabLi").show();
+            $("#jsonTabLi").parent().hide();
+            $("#dataTabLi").parent().show();
             loadDataTable(this.responseText);
           } else if (getJsonDataPath(this.responseText)) {
-            $("#jsonTabLi").show();
-            $("#dataTabLi").hide();
+            $("#jsonTabLi").parent().show();
+            $("#dataTabLi").parent().hide();
             loadJson(this.responseText);
+          } else {
+            $("#jsonTabLi").parent().hide();
+            $("#dataTabLi").parent().hide();
           }
 
           $("#btmPanel").tabs("option", "active", 0);
 
           const md = getCategoryMetaData(currentMode);
-          if (md && md[demo]) d3.select("#infoTab").html(md[demo].about || "");
+          if (md && md[demo]) {
+            d3.select("#infoTab").html(md[demo].about || "");
+            document.querySelectorAll("#infoTab a").forEach((a) => {
+              a.setAttribute("target", "_blank");
+              a.setAttribute("rel", "noopener noreferrer");
+            });
+          }
         });
 
         oReq.open("GET", getDemoPath(demo));
