@@ -1673,7 +1673,7 @@
       axis: ["Axis", "Axes are scene objects, so timeline ticks, baselines, and gridlines stay coordinated when the layout changes.", "guide object"],
       collection: ["Collection", "A collection groups the topic area marks so the scene can switch between a ThemeRiver and small multiples.", "mark group"],
       mark: ["Mark", "Each topic remains the same area-path mark across both layouts.", "individual marks"],
-      encoding: ["Encoding", "Click Encoding to switch the color rule. The area marks and legend update from the same scene object.", "click to modify"],
+      encoding: ["Encoding", "Click Encoding to switch the data attribute used for color encoding.", "click to modify"],
       annotation: ["Annotation", "Annotations are scene objects too, so explanatory callouts can stay anchored to the relevant marks as the layout changes.", "linked notes"],
       layout: ["Layout", "Click Layout to decompose the ThemeRiver into small-multiple area charts without changing mark type or encoding.", "click to modify"]
     };
@@ -1686,10 +1686,28 @@
     ];
     const sceneObjectState = { active: "scene", encoding: "topic", layout: "river" };
 
+    function sceneObjectAverage(topic) {
+      const sum = topic.values.reduce((a, b) => a + b, 0);
+      return sum / topic.values.length;
+    }
+
+    function sceneObjectValueDomain() {
+      const averages = sceneObjectData.map(sceneObjectAverage);
+      return { min: Math.min.apply(null, averages), max: Math.max.apply(null, averages) };
+    }
+
+    function sceneObjectValueColor(avg, domain) {
+      const t = domain.max === domain.min ? 0.5 : (avg - domain.min) / (domain.max - domain.min);
+      const from = [219, 230, 255];
+      const to = [31, 58, 168];
+      const rgb = from.map((c, idx) => Math.round(c + (to[idx] - c) * t));
+      return "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+    }
+
     function sceneObjectColor(d, i) {
       const topic = ["#5368ff", "#25c6a1", "#ff9f5a", "#9b7bff"][i % 4];
-      const emphasis = ["#2f4fd6", "#4f8cff", "#7fdcc7", "#c7f2e8"][i % 4];
-      return sceneObjectState.encoding === "topic" ? topic : emphasis;
+      if (sceneObjectState.encoding === "topic") return topic;
+      return sceneObjectValueColor(sceneObjectAverage(d), sceneObjectValueDomain());
     }
 
     function areaPath(top, bottom) {
@@ -1837,18 +1855,38 @@
         x: legendX, y: 78, fill: "#172033", "font-size": 13,
         "font-weight": 800, "data-object": "encoding"
       });
-      legendTitle.textContent = sceneObjectState.encoding === "topic" ? "Encoding: topic" : "Encoding: emphasis";
+      legendTitle.textContent = sceneObjectState.encoding === "topic" ? "Encoding: topic" : "Encoding: value";
       svg.append(legendTitle);
-      const legendItems = sceneObjectData.map((topic, i) => [topic.label, sceneObjectColor(topic, i)]);
+      const legendItems = sceneObjectData.map((topic, i) => {
+        const label = sceneObjectState.encoding === "topic"
+          ? topic.label
+          : topic.label + " (" + Math.round(sceneObjectAverage(topic)) + ")";
+        return [label, sceneObjectColor(topic, i)];
+      });
       legendItems.forEach((item, i) => {
         svg.append(svgEl("rect", { x: legendX, y: 98 + i * 24, width: 14, height: 14, rx: 4, fill: item[1], "data-object": "encoding" }));
         const txt = svgEl("text", { x: legendX + 22, y: 110 + i * 24, fill: "#667085", "font-size": 12, "data-object": "encoding" });
         txt.textContent = item[0];
         svg.append(txt);
       });
+      if (sceneObjectState.encoding === "value") {
+        const domain = sceneObjectValueDomain();
+        const scaleY = 98 + legendItems.length * 24 + 14;
+        const scaleLabel = svgEl("text", { x: legendX, y: scaleY, fill: "#667085", "font-size": 11, "data-object": "encoding" });
+        scaleLabel.textContent = "Low → high avg";
+        svg.append(scaleLabel);
+        const steps = 5;
+        for (let s = 0; s < steps; s++) {
+          const avg = domain.min + ((domain.max - domain.min) * s) / (steps - 1);
+          svg.append(svgEl("rect", {
+            x: legendX + s * 16, y: scaleY + 8, width: 14, height: 10, rx: 2,
+            fill: sceneObjectValueColor(avg, domain), "data-object": "encoding"
+          }));
+        }
+      }
 
       $$("#mhSceneObjectSvg [data-object]").forEach((el) => sceneObjectHighlight(el, sceneObjectState.active));
-      $("#mhSceneObjectEncodingState").textContent = "Encoding: " + (sceneObjectState.encoding === "topic" ? "topic color" : "emphasis color");
+      $("#mhSceneObjectEncodingState").textContent = "Encoding: " + (sceneObjectState.encoding === "topic" ? "topic color" : "value color (avg magnitude)");
       $("#mhSceneObjectLayoutState").textContent = "Layout: " + (sceneObjectState.layout === "river" ? "ThemeRiver" : "small multiples");
     }
 
@@ -1871,7 +1909,7 @@
         row.addEventListener("focus", () => setSceneObjectActive(row.dataset.object));
         row.addEventListener("click", () => {
           const object = row.dataset.object;
-          if (object === "encoding") sceneObjectState.encoding = sceneObjectState.encoding === "topic" ? "emphasis" : "topic";
+          if (object === "encoding") sceneObjectState.encoding = sceneObjectState.encoding === "topic" ? "value" : "topic";
           if (object === "layout") sceneObjectState.layout = sceneObjectState.layout === "river" ? "multiples" : "river";
           setSceneObjectActive(object);
           drawSceneObjectDemo();
