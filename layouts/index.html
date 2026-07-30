@@ -93,11 +93,23 @@
     position: relative;
   }
 
+  .mh-mosaic-tile a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
   .mh-mosaic-tile img {
     display: block;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.2s ease;
     width: 100%;
+  }
+
+  .mh-mosaic-tile a:hover img,
+  .mh-mosaic-tile a:focus-visible img {
+    transform: scale(1.04);
   }
 
   .mh-mosaic-large {
@@ -1286,66 +1298,102 @@
           <figure class="mh-showcase-slide">
             <div class="mh-hero-mosaic">
               <figure class="mh-mosaic-tile mh-mosaic-large">
-                <img src="/demos/thumbnails/sankey.png" alt="">
+                <a href="/gallery/#Sankey" aria-label="Open Sankey Diagram demo">
+                  <img src="/demos/thumbnails/sankey.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile mh-mosaic-top">
-                <img src="/demos/thumbnails/reconfigure_edgeBundling.gif?v=2" alt="">
+                <a href="/gallery/#reconfigure_edgeBundling" aria-label="Open Edge bundle strength demo">
+                  <img src="/demos/thumbnails/reconfigure_edgeBundling.gif?v=2" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/towerChart.png" alt="">
+                <a href="/gallery/#TowerChart" aria-label="Open Tower Chart demo">
+                  <img src="/demos/thumbnails/towerChart.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/compare_scatterplot.gif" alt="">
+                <a href="/gallery/#compare_scatterplot" aria-label="Open Pin &amp; Compare demo">
+                  <img src="/demos/thumbnails/compare_scatterplot.gif" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/parallelCoordinates.png" alt="">
+                <a href="/gallery/#ParallelCoordinates" aria-label="Open Parallel Coordinates demo">
+                  <img src="/demos/thumbnails/parallelCoordinates.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/isotype.png" alt="">
+                <a href="/gallery/#Isotype" aria-label="Open Isotype demo">
+                  <img src="/demos/thumbnails/isotype.png" alt="">
+                </a>
               </figure>
             </div>
           </figure>
           <figure class="mh-showcase-slide">
             <div class="mh-hero-mosaic">
               <figure class="mh-mosaic-tile mh-mosaic-large">
-                <img src="/demos/thumbnails/roseChart.png" alt="">
+                <a href="/gallery/#RoseChart" aria-label="Open Rose Chart demo">
+                  <img src="/demos/thumbnails/roseChart.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile mh-mosaic-top">
-                <img src="/demos/thumbnails/navigate_bubblePlot.gif" alt="">
+                <a href="/gallery/#navigate_bubblePlot" aria-label="Open Zoom and pan demo">
+                  <img src="/demos/thumbnails/navigate_bubblePlot.gif" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/ridgelinePlot.png" alt="">
+                <a href="/gallery/#ridgelinePlot" aria-label="Open Ridgeline Plot demo">
+                  <img src="/demos/thumbnails/ridgelinePlot.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/multipleCalendarHeatMaps.png" alt="">
+                <a href="/gallery/#MultipleCalendarHeatMaps" aria-label="Open Calendar Heatmap demo">
+                  <img src="/demos/thumbnails/multipleCalendarHeatMaps.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/multiplePieCharts.png" alt="">
+                <a href="/gallery/#MultiplePieCharts" aria-label="Open Pie Charts demo">
+                  <img src="/demos/thumbnails/multiplePieCharts.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/arcDiagram.png" alt="">
+                <a href="/gallery/#ArcDiagram" aria-label="Open Arc Diagram demo">
+                  <img src="/demos/thumbnails/arcDiagram.png" alt="">
+                </a>
               </figure>
             </div>
           </figure>
           <figure class="mh-showcase-slide">
             <div class="mh-hero-mosaic">
               <figure class="mh-mosaic-tile mh-mosaic-large">
-                <img src="/demos/thumbnails/flowSelect_DAG.gif" alt="">
+                <a href="/gallery/#flowSelect_DAG" aria-label="Open Flow select demo">
+                  <img src="/demos/thumbnails/flowSelect_DAG.gif" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile mh-mosaic-top">
-                <img src="/demos/thumbnails/forceDirected.png" alt="">
+                <a href="/gallery/#ForceDirected" aria-label="Open Force-Directed Graph demo">
+                  <img src="/demos/thumbnails/forceDirected.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/brush_slopeGraph.gif" alt="">
+                <a href="/gallery/#brush_slopeGraph" aria-label="Open Select by 1D axis brushes demo">
+                  <img src="/demos/thumbnails/brush_slopeGraph.gif" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/mosaicPlot.png" alt="">
+                <a href="/gallery/#MosaicPlot" aria-label="Open Mosaic Plot demo">
+                  <img src="/demos/thumbnails/mosaicPlot.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/iconArray2.png" alt="">
+                <a href="/gallery/#IconArray2" aria-label="Open Icon Array demo">
+                  <img src="/demos/thumbnails/iconArray2.png" alt="">
+                </a>
               </figure>
               <figure class="mh-mosaic-tile">
-                <img src="/demos/thumbnails/bumpChart.png" alt="">
+                <a href="/gallery/#BumpChart" aria-label="Open Bump Chart demo">
+                  <img src="/demos/thumbnails/bumpChart.png" alt="">
+                </a>
               </figure>
             </div>
           </figure>
