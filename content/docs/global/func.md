@@ -29,29 +29,30 @@ Add the following code to the &lt;head&gt; element in your HTML document:
 <script src="https://mascot-vis.github.io/dist/mascot-min.js"></script>
 ```
 
-Below is an example webpage demonstrating how to create a multi-line chart using Mascot.js
+Below is an example webpage demonstrating how to create a multi-line chart using Mascot.js. The sample dataset ([stocks.csv](https://mascot-vis.github.io/datasets/csv/stocks.csv)) needs to be downloaded and placed under the "data" directory right next to the HTML.
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Mascot example</title>
+    <title>Mascot.js example</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://mascot-vis.github.io/lib/pixi.min.js"></script>
     <script src="https://mascot-vis.github.io/dist/mascot-min.js"></script>
 </head>
 <body>
     <svg id="svgEle" style="width: 100%; height: 99%; margin: 0; padding: 0; position: absolute; top: 0; left: 0; background: white;"></svg>
     <script>
         let scn = msc.scene();
-        msc.csv("data/stocks.csv").then((dt)=> {
+        msc.csv("data/stocks.csv").then((dt) => {
             let line = scn.mark("line", {x1: 200, y1: 100, x2: 800, y2: 400, strokeColor: "green"});
             let collection = msc.repeat(line, dt, {attribute: "company"});
             let polyLine = msc.densify(line, dt, {attribute: "date"});
             let vertex = polyLine.vertices[0];
-            msc.encode(vertex, {attribute: "date", channel: "x", rangeExtent: 600});
-            msc.encode(vertex, {attribute: "price", channel: "y"});
-            msc.encode(polyLine, {attribute: "company", channel: "strokeColor"});
+            msc.encode(vertex, "x", "date", {rangeExtent: 600});
+            msc.encode(vertex, "y", "price");
+            msc.encode(polyLine, "strokeColor", "company");
             scn.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
             scn.axis("y", "price", {orientation: "left"});
             scn.legend("strokeColor", "company", {x: 850, y: 100});
