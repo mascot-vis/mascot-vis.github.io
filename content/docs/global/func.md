@@ -49,9 +49,8 @@ Below is an example webpage demonstrating how to create a multi-line chart using
             let line = scn.mark("line", {x1: 200, y1: 100, x2: 800, y2: 400, strokeColor: "green"});
             let collection = msc.repeat(line, dt, {attribute: "company"});
             let polyLine = msc.densify(line, dt, {attribute: "date"});
-            let vertex = polyLine.vertices[0];
-            msc.encode(vertex, "x", "date", {rangeExtent: 600});
-            msc.encode(vertex, "y", "price");
+            msc.encode(polyLine.anyVertex, "x", "date", {rangeExtent: 600});
+            msc.encode(polyLine.anyVertex, "y", "price");
             msc.encode(polyLine, "strokeColor", "company");
             scn.axis("x", "date", {orientation: "bottom", labelFormat: "%m/%d/%y"});
             scn.axis("y", "price", {orientation: "left"});
