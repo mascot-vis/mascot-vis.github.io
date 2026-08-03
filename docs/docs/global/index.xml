@@ -24,13 +24,16 @@ Channel &amp;ldquo;x&amp;rdquo;
 &amp;ldquo;outerRadius&amp;rdquo;
 &amp;ldquo;area&amp;rdquo;
 &amp;ldquo;fillColor&amp;rdquo;
+&amp;ldquo;fillGradient&amp;rdquo;
 &amp;ldquo;strokeColor&amp;rdquo;
+&amp;ldquo;strokeGradient&amp;rdquo;
 &amp;ldquo;strokeWidth&amp;rdquo;
 &amp;ldquo;opacity&amp;rdquo;
 &amp;ldquo;text&amp;rdquo;
 &amp;ldquo;fontSize&amp;rdquo;
 &amp;ldquo;angle&amp;rdquo;
-&amp;ldquo;radialDistance&amp;rdquo;
+&amp;ldquo;polarRadius&amp;rdquo;
+&amp;ldquo;polarAngle&amp;rdquo;
 &amp;ldquo;thickness&amp;rdquo;
 CurveMode &amp;ldquo;natural&amp;rdquo;
 &amp;ldquo;basis&amp;rdquo;
@@ -53,6 +56,4 @@ Mark Type &amp;ldquo;area&amp;rdquo;
 &amp;ldquo;line&amp;rdquo;
 &amp;ldquo;path&amp;rdquo;
 &amp;ldquo;pie&amp;rdquo;
-&amp;ldquo;pointText&amp;rdquo;
-&amp;ldquo;polygon&amp;rdquo;
-Layout Type &amp;ldquo;grid&amp;rdquo;</description></item></channel></rss>
+&amp;ldquo;pointText&amp;rdquo;</description></item></channel></rss>

@@ -250,6 +250,30 @@ Direct mark type strings:
 
 Do not create marks from the top-level Mascot module. Marks are created from a scene with `scn.mark(...)`.
 
+### `polarRadius` / `polarAngle` axis and gridlines (radar-chart style)
+
+Both channels work with `scn.axis()`/`scn.gridlines()`, the same way `radialDistance` already did for radar charts, as long as a matching `msc.encode(..., "polarRadius"/"polarAngle", attribute, ...)` already exists on the target.
+
+```js
+// polarRadius: one radial spoke per axis() call, at a fixed angle
+scn.axis("polarRadius", "ppm", {rotation: 0, tickValues: [380, 390, 400], labelFormat: "d"});
+// concentric rings, one gridlines() call for all of them
+scn.gridlines("polarRadius", "ppm", {values: [380, 390, 400]});
+
+// polarAngle: one circular axis for all ticks at once, at a fixed radius
+scn.axis("polarAngle", "month", {
+  radius: 260,                              // fixed radius the circular baseline/ticks sit at
+  tickValues: [1, 2, 3, /* ... */ 12],       // numeric -- must be on the same scale as the data encoding
+  labelValues: ["Jan", "Feb", "Mar" /* ... */], // optional, independent of tickValues -- lets tick position
+                                                 // (numeric) and displayed text (e.g. names) differ
+  pathVisible: false, tickVisible: false     // hide the circular baseline/tick marks, show labels only
+});
+// one spoke (radial line) per value, out to a fixed radius
+scn.gridlines("polarAngle", "month", {values: [1, 2, 3, /* ... */ 12], radius: 268});
+```
+
+`polarAngle`'s `radius` option (both on `axis()` and `gridlines()`) has no auto-computed default the way `polarRadius`'s ring/spoke extent does -- pass it explicitly.
+
 ## Data Join and Generative Operations
 
 ```js
@@ -299,13 +323,18 @@ Common encoding parameters:
   scaleType: "linear",
   scheme: "interpolateViridis",
   shareScale: anotherEncoding,
-  flipScale: false
+  flipScale: false,
+  origin: [cx, cy]
 }
 ```
 
 Common channels used in current examples:
 
-`x`, `y`, `width`, `height`, `area`, `radius`, `radialDistance`, `angle`, `text`, `fillColor`, `strokeColor`, `strokeWidth`, `fillGradient`, and `src`.
+`x`, `y`, `width`, `height`, `area`, `radius`, `polarRadius`, `polarAngle`, `angle`, `text`, `fillColor`, `strokeColor`, `strokeWidth`, `fillGradient`, and `src`.
+
+`polarRadius` and `polarAngle` work on path/polygon vertices *and* on a plain `repeat()` collection of marks. Two things to know: (1) encode `polarAngle` before `polarRadius` -- the radius encoding reads whatever angle is currently stored, so the reverse order silently produces wrong positions; (2) pass an explicit `origin: [cx, cy]` unless the target is a `Polygon` (from `msc.densify()` on a `circle`), which already has its own fixed center to fall back on -- a generic `Path` (from `msc.densify()` on a `line`) or a bare `repeat()` collection has no center of its own.
+
+`radialDistance` is a deprecated alias for `polarRadius` -- still works (normalized automatically, e.g. in `encode()`/`scene.axis()`/`scene.gridlines()`), but logs a console warning and shouldn't be used in new code.
 
 Encoding helper functions are available when needed:
 

@@ -77,6 +77,7 @@ This operation is now a standalone function and you can find it at the [Create a
 | **axis**(channel, attribute, params)| create an [axis](../../guide/axis/) <br>channel (String): the visual channel<br>attribute (String): the data attribute<br>params (Object, optional): contains one or more of the [axis properties](../../guide/axis/#properties) | [Axis](../../guide/axis/) |
 | **gridlines**(channel, attribute, params)| create a set of [gridlines](../../guide/gridlines/)<br>channel (String): the visual channel<br>attribute (String): the data attribute<br>params (Object, optional): contains one or more of the [gridline properties](../../guide/gridlines/#properties) | [Gridlines](../../guide/gridlines/) |
 | **legend**(channel, attribute, params)| create a [legend](../../guide/legend/) <br>channel (String): the visual channel<br>attribute (String): the data attribute<br>params (Object, optional): contains one or more of the [legend properties](../../guide/legend/#properties) | [Legend](../../guide/legend/) |
+| **trajectory**(element, params)| draw the spiral curve a [SpiralLayout](../../layout/spiral/) places its children along <br>element ([Mark](../../marks/mark/) or Collection): the laid-out collection, or any mark inside it<br>params (Object, optional): contains one or more of the [trajectory properties](../../guide/trajectory/#properties) | [SpiralTrajectory](../../guide/trajectory/) |
 {.table-striped}
 
 ### Methods: Manage and Manipulate Items

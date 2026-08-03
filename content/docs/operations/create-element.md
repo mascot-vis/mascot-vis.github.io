@@ -27,12 +27,15 @@ Creates a [layout](../../layout/layout/).
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 
-### msc.linearGradient(params)
+### msc.gradient(type, params)
 
-Creates a [linear gradient](../../basic/lineargradient/).
+Creates a gradient to use as a stroke or fill color.
 
-- `params` (Object): contains `x1`, `y1`, `x2`, and `y2` properties
-- Return type: [LinearGradient](../../basic/lineargradient/)
+- `type` (String): `"linear"` (default) for a [LinearGradient](../../basic/lineargradient/), or `"path"` for a [PathGradient](../../basic/pathgradient/)
+- `params`:
+  - for `"linear"` (Object): contains `x1`, `y1`, `x2`, and `y2` properties
+  - for `"path"` (Array): a sequence of colors, one per vertex of the mark it's assigned to
+- Return type: [LinearGradient](../../basic/lineargradient/) or [PathGradient](../../basic/pathgradient/)
 
 <hr style="border: 0; border-top: 1px solid #cccccc;">
 

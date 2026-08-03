@@ -21,6 +21,10 @@ The SpiralLayout class represents a layout that positions objects along an Archi
     let sl = msc.layout("spiral", {x: 200, y: 200, startRadius: 10, radiusStep: 8, angleStep: 40});
     collection.layout = sl;
 
+To draw the spiral curve itself as a visual guide (e.g. to show the underlying "track" the children are placed along), use [`scene.trajectory(collection)`](../../guide/trajectory/):
+
+    scene.trajectory(collection);
+
 ### Properties
 | property | explanation | type | default value |
 | --- | --- | --- | --- |

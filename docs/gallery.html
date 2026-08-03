@@ -855,12 +855,8 @@
 
           const categoryFromQuery = getCategoryFromQuery();
           setCategory(categoryFromQuery || "static", true);
-          // Run refresh() (which infers category from the hash via
-          // inferCategoryFromHash when no ?category= query param is present)
-          // BEFORE writing a category into the URL. Writing it first would
-          // make getCategoryFromQuery() inside refresh() always return the
-          // hardcoded "static" default above, permanently disabling hash-based
-          // inference for interactive demo ids loaded without ?category=interactive.
+          
+          // Run refresh() before writing a category into the URL. 
           refresh();
           setCategoryInUrl(currentMode);
           window.updateShowGalleryBtn();

@@ -42,13 +42,16 @@ toc: true
 "outerRadius"<br>
 "area"<br>
 "fillColor"<br>
+"fillGradient"<br>
 "strokeColor"<br>
+"strokeGradient"<br>
 "strokeWidth"<br>
 "opacity"<br>
 "text"<br>
 "fontSize"<br>
 "angle"<br>
-"radialDistance"<br>
+"polarRadius"<br>
+"polarAngle"<br>
 "thickness"<br>
 
 ### CurveMode

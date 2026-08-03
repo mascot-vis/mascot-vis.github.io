@@ -223,6 +223,12 @@
         "title": "Features of Cars",
         "about": "This visualization shows the the features of 406 cars. Original visualization appeared in Robert Spence's book <a href='https://books.google.com/books?id=uOosBQAAQBAJ&dq=406+cars+visualization&source=gbs_navlinks_s' target='_blank'>Information Visualization: an Introduction</a>, page 69."
     },
+    "PolarLineGraph": {
+        "name": "Polar Line Graph",
+        "mark": "Lines and Paths",
+        "title": "Rising CO2: Polar Keeling Curve",
+        "about": "Monthly atmospheric CO2 concentration at Mauna Loa Observatory (2006-2026, 240 months), plotted in true polar coordinates: angle encodes month-of-year (12 spokes, January at top, clockwise) and radial distance encodes the ppm concentration itself. Source: NOAA Global Monitoring Laboratory. Inspired by <a href='https://www.scientificamerican.com/article/here-s-the-carbon-dioxide-spiral/' target='_blank'>Ed Hawkin's Carbon Dioxide Spiral</a>."
+    },
     "RangeChart": {
         "name": "Range Chart",
         "mark": "Lines and Paths",
@@ -380,17 +386,23 @@
         "title": "Age Distribution as Human Icons",
         "about": "An isotype chart showing 100 people grouped by age bin. Each repeated human icon represents one person, and the icons are classified into age groups using a grid layout within each group."
     },
-    "IconArray1": {
-        "name": "Icon Array (table)",
-        "mark": "Images and Icons",
-        "title": "Icon Array",
-        "about": "An icon array created by repeating one human image mark over a small data table, with each icon's image encoded from a 'group' attribute (Colored vs. Grey) via the src channel and a mapping."
-    },
     "IconArray2": {
-        "name": "Icon Array (counts)",
+        "name": "Icon Array (counts, image)",
         "mark": "Images and Icons",
         "title": "Icon Array",
         "about": "An icon array built from group counts specified directly in code (e.g. {colored: 15, gray: 20}) rather than a table, using msc.repeat's new count-map support. Each icon's image is encoded from the resulting 'group' attribute via the src channel and a mapping."
+    },
+    "IconArrayCircularLayout": {
+        "name": "Icon Array (counts, symbol)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "The same icon-array data as the Icon Array demos above, but using the 'symbol' mark -- an inline SVG path geometry -- instead of an external image file, arranged with the 'circular' layout instead of a grid. Each icon's shape is encoded from a 'group' attribute (filled vs. empty) via the path channel and a mapping, swapping between a filled and outline heart authored in the same viewBox. Five panels compare every value of CircularLayout's markRotation option (inward, outward, tangentialClockwise, tangentialCounterClockwise, upright), each of which orients the hearts differently as they go around the ring without ever changing their exact position."
+    },
+    "IconArray1": {
+        "name": "Icon Array (table, image)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "An icon array created by repeating one human image mark over a small data table, with each icon's image encoded from a 'group' attribute (Colored vs. Grey) via the src channel and a mapping."
     },
     "IsotypeComparison": {
         "name": "Isotype Comparison Chart",

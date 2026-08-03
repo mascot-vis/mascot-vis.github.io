@@ -13,10 +13,10 @@ weight: 21
 toc: true
 ---
 
-The LinearGradient class represents a linear color gradient to be used for the stroke or fill color property. To create a LinearGradient object, use the [_linearGradient_ function](../../global/func/):
+The LinearGradient class represents a linear color gradient to be used for the stroke or fill color property. It paints along a single straight vector, so it's a good fit for straight or roughly-monotonic shapes; for a curve that loops or spirals, see [PathGradient](../../basic/pathgradient/) instead. To create a LinearGradient object, use the [_gradient_ function](../../operations/create-element/#msc-gradienttype-params):
 
 ```js
-    let lg = msc.linearGradient({x1: 0, y1: 0, x2: 100, y2: 0});
+    let lg = msc.gradient("linear", {x1: 0, y1: 0, x2: 100, y2: 0});
 ```
 
 
