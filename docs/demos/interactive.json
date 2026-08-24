@@ -124,6 +124,19 @@
         "draft": true,
         "about": "An infographic-style system walkthrough showing how data moves through Celeste services and storage layers. Visual emphasis and labeling make flow paths and component roles easy to inspect."
     },
+    "reconfigure_dustMagnet": {
+        "name": "Dust and magnet",
+        "type": "Reconfigure",
+        "title": "Drag magnets to re-arrange data dusts",
+        "about": "A recreation of the <a href='https://doi.org/10.1109/INFOVIS.2005.1532128' target='_blank'>Dust &amp; Magnet technique</a> (Yi, Melton, Stasko &amp; Jacko, 2005) applied to Fisher's iris flowers. Each flower is a dust particle, pulled toward each of the four measurement magnets in proportion to how large its value is for that measurement -- a flower with a long petal drifts toward the petal-length magnet, one with a narrow sepal drifts away from the sepal-width magnet. <br><br>Interaction: Drag any magnet to a new position and every flower re-settles at the weighted centroid of the (moved) magnets, revealing multivariate clusters and correlations that a single fixed axis layout can't show at once."
+    },
+    "dynamic_binning": {
+        "name": "Dynamic binning",
+        "type": "Reconfigure",
+        "title": "Dynamically change number of bins",
+        "ui": true,
+        "about": "Use the slider to dynamically adjust the number of bins in the histogram. The bar widths and heights update immediately to reflect the new binning."
+    },
     "reconfigure_edgeBundling": {
         "name": "Edge bundle strength",
         "type": "Reconfigure",
@@ -139,12 +152,6 @@
         "ui": true,
         "about": "Interactive controls let you change waffle chart layout parameters such as column count, start corner, and fill direction. The grid recomputes immediately to show layout changes."
     },
-    "reconfigure_rangeExtent": {
-        "name": "Scale range",
-        "type": "Reconfigure",
-        "title": "Drag axis to change range extent",
-        "about": "Drag the x-axis labels or ticks to adjust the temporal range extent mapped to the x-axis in the Gantt view. The size of the bars and the axis content update accordingly."
-    },
     "sort_lollipopChart": {
         "name": "Mark order",
         "type": "Reconfigure",
@@ -152,12 +159,11 @@
         "ui": true,
         "about": "Choose sorting attribute and order to reorder lollipop marks interactively. The chart can be sorted by crime rate or area in ascending or descending direction."
     },
-    "dynamic_binning": {
-        "name": "Dynamic binning",
+    "reconfigure_rangeExtent": {
+        "name": "Scale range",
         "type": "Reconfigure",
-        "title": "Dynamically change number of bins",
-        "ui": true,
-        "about": "Use the slider to dynamically adjust the number of bins in the histogram. The bar widths and heights update immediately to reflect the new binning."
+        "title": "Drag axis to change range extent",
+        "about": "Drag the x-axis labels or ticks to adjust the temporal range extent mapped to the x-axis in the Gantt view. The size of the bars and the axis content update accordingly."
     },
     "encode_scatterplot": {
         "name": "Change axis attribute",

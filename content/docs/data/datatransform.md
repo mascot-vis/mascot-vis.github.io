@@ -108,3 +108,28 @@ let tableSpec = msc.transform("custom", (inTbl, outTbl, spec) => {
 
 let derived = scene.derive(table, tableSpec);
 ```
+
+### Unpivot
+
+The unpivot transformation reshapes a table from "wide" to "long" (also known as melting, in tools like pandas or R's reshape2): each row of the input table becomes one row per folded (`valueVars`) attribute in the output, pairing that attribute's name and value into two new columns (`varName` and `valueName`) while carrying the id attributes (`idVars`) along unchanged. At least one of `idVars`/`valueVars` must be given; whichever is omitted defaults to every attribute not listed in the other.
+
+```js
+let unpivoted = msc.transform("unpivot", {
+    idVars: ["id", "species"],
+    valueVars: ["sepal length", "sepal width", "petal length", "petal width"],
+    varName: "attrs"
+});
+let long = scene.derive(table, unpivoted);
+```
+
+Given Fisher's iris table (150 rows, one row per flower), this produces a 600-row table with columns `id`, `species`, `attrs` (one of `"sepal length"`, `"sepal width"`, `"petal length"`, `"petal width"`), and `value` (that attribute's numeric value for the flower) -- ready to `repeat` over `attrs` for a small-multiples or Dust & Magnet–style view across all four measurements at once.
+
+| property | required? | explanation |
+| --- | --- | --- |
+| `idVars` | optional* | attributes to keep as-is on every generated row |
+| `valueVars` | optional* | attributes to fold into rows |
+| `varName` | optional | name of the generated column holding each folded attribute's name (default `"attribute"`) |
+| `valueName` | optional | name of the generated column holding each folded attribute's value (default `"value"`) |
+
+\* at least one of `idVars`/`valueVars` is required.
+{.table-striped}

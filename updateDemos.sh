@@ -7,6 +7,7 @@ cp -r -f ../Mascot/demos/static/*.js static/demos/static/
 cp -r -f ../Mascot/demos/interactive/*.js static/demos/interactive/
 cp -r -f ../Mascot/demos/img/*.png static/demos/img/
 cp -r -f ../Mascot/demos/thumbnails/*.png static/demos/thumbnails/
+cp -r -f ../Mascot/demos/thumbnails/*.gif static/demos/thumbnails/
 cp -f ../Mascot/datasets/csv/*.csv static/datasets/csv/
 cp -f ../Mascot/datasets/graphjson/*.json static/datasets/graphjson/
 cp -f ../Mascot/datasets/treejson/*.json static/datasets/treejson/

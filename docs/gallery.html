@@ -734,14 +734,14 @@
         const scn = code.split("=")[0].replace("let", "").trim();
         let out = code;
         out += "const a = document.getElementById('download');";
-        out +=
-          currentMode === "interactive"
-            ? "let spec = " + scn + ".toJSON();"
-            : "let spec = msc.serialize(" + scn + ");";
+        // Both modes save the same .msc format. The interactive branch used to call
+        // scene.toJSON() and write .alscn, but toJSON() was removed when serialization
+        // moved to utils/serialize.js, and nothing reads .alscn. Note that interactions
+        // themselves are not serialized -- an interactive demo saves as a static scene.
+        out += "let spec = msc.serialize(" + scn + ");";
         out +=
           "a.href = URL.createObjectURL(new Blob([JSON.stringify(spec, null, 2)], {type: 'application/json'}));";
-        out +=
-          "a.setAttribute('download', '" + demo + (currentMode === "interactive" ? ".alscn" : ".msc") + "');";
+        out += "a.setAttribute('download', '" + demo + ".msc');";
         out += "a.click();";
         eval(makeAsync(out));
       };

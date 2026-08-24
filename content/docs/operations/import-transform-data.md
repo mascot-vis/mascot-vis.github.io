@@ -57,7 +57,7 @@ Imports graph data in JSON format as a [Network](../../data/network/).
 
 Defines a predefined transform spec for use with `scene.derive(...)`.
 
-- `type` (String): predefined transform type such as `"bin"`, `"filter"`, or `"kde"`
+- `type` (String): predefined transform type such as `"bin"`, `"filter"`, `"kde"`, or `"unpivot"`
 - `params` (Object): configuration object for the transform type
 - Return type: Object
 
