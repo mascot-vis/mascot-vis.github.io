@@ -128,7 +128,7 @@
         "name": "Dust and magnet",
         "type": "Reconfigure",
         "title": "Drag magnets to re-arrange data dusts",
-        "about": "A recreation of the <a href='https://doi.org/10.1109/INFOVIS.2005.1532128' target='_blank'>Dust &amp; Magnet technique</a> (Yi, Melton, Stasko &amp; Jacko, 2005) applied to Fisher's iris flowers. Each flower is a dust particle, pulled toward each of the four measurement magnets in proportion to how large its value is for that measurement -- a flower with a long petal drifts toward the petal-length magnet, one with a narrow sepal drifts away from the sepal-width magnet. <br><br>Interaction: Drag any magnet to a new position and every flower re-settles at the weighted centroid of the (moved) magnets, revealing multivariate clusters and correlations that a single fixed axis layout can't show at once."
+        "about": "A recreation of the <a href='https://journals.sagepub.com/doi/10.1057/palgrave.ivs.9500099' target='_blank'>Dust &amp; Magnet technique</a> (Yi, Melton, Stasko &amp; Jacko, 2005) applied to Fisher's iris flowers. Each flower is a dust particle, pulled toward each of the four measurement magnets in proportion to how large its value is for that measurement -- a flower with a long petal drifts toward the petal-length magnet, one with a narrow sepal drifts away from the sepal-width magnet. <br><br>Interaction: Drag any magnet to a new position and every flower re-settles at the weighted centroid of the (moved) magnets, revealing multivariate clusters and correlations that a single fixed axis layout can't show at once."
     },
     "dynamic_binning": {
         "name": "Dynamic binning",
