@@ -31,7 +31,12 @@ Encodes a data attribute using a visual channel on an element.
   - `includeZero` (Boolean, optional): whether the scale domain includes 0, defaults to `false`
   - `rangeExtent` (Number, optional): range extent
   - `mapping` (Object, optional): user-defined mapping between field values and visual properties
-  - `scheme` (String, optional): color scheme
+  - `scheme` (String, optional): color scheme; only the schemes in [d3-scale-chromatic](https://d3js.org/d3-scale-chromatic) are supported, specified by their d3 name (e.g., `"schemeTableau10"`, `"interpolateYlOrRd"`). Use a `scheme*` name for categorical data and an `interpolate*` name for continuous data. The available schemes are:
+    - Categorical: `schemeCategory10`, `schemeAccent`, `schemeDark2`, `schemePaired`, `schemePastel1`, `schemePastel2`, `schemeSet1`, `schemeSet2`, `schemeSet3`, `schemeTableau10`
+    - Diverging: `BrBG`, `PRGn`, `PiYG`, `PuOr`, `RdBu`, `RdGy`, `RdYlBu`, `RdYlGn`, `Spectral` (as `interpolate*` or `scheme*`, e.g., `interpolateRdBu`)
+    - Sequential (single hue): `Blues`, `Greens`, `Greys`, `Oranges`, `Purples`, `Reds` (as `interpolate*` or `scheme*`, e.g., `interpolateBlues`)
+    - Sequential (multi-hue): `BuGn`, `BuPu`, `GnBu`, `OrRd`, `PuBuGn`, `PuBu`, `PuRd`, `RdPu`, `YlGnBu`, `YlGn`, `YlOrBr`, `YlOrRd` (as `interpolate*` or `scheme*`); `Cividis`, `Viridis`, `Inferno`, `Magma`, `Plasma`, `Warm`, `Cool`, `CubehelixDefault`, `Turbo` (as `interpolate*` only, e.g., `interpolateViridis`)
+    - Cyclical: `Rainbow`, `Sinebow` (as `interpolate*` only, e.g., `interpolateRainbow`)
   - `startAngle` (Number, optional): start angle in degrees when encoding with the `"angle"` channel, defaults to `90`
   - `angleDirection` (String, optional): direction to encode angles, defaults to `"clockwise"`
 - Return type: [Encoding](../../encode/encoding/)
