@@ -19,6 +19,8 @@ These operations specify spatial constraints between elements or connect related
 
 Affixes an element to a base element along a channel.
 
+If both `elem` and `base` have been [repeated](../generative/#msc-repeatelem-data-params) (i.e., each has multiple peers), they must have the same number of peers so that each `elem` peer can be affixed to a corresponding `base` peer. 
+
 - `elem`: [Mark](../../marks/mark/)
 - `base`: [Mark](../../marks/mark/)
 - `channel`: `"x"`, `"y"`, `"angle"`, or `"radialDistance"`
