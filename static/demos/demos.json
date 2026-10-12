@@ -1,0 +1,1314 @@
+{
+    "hover_backgroundBar": {
+        "name": "Hover background bar",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "type": "Select",
+        "title": "Hover to reveal a background bar",
+        "about": "Hover over a bar to reveal an initially invisible background rectangle behind it. The background fades when the pointer moves away.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "select_scatterplot": {
+        "name": "Select by data attribute",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Select marks by attribute value",
+        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is not cumulative.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "cumuSelect_scatterplot": {
+        "name": "Select Cumulatively",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Select Cumulatively by data attribute",
+        "about": "Click a circle to select and highlight matching countries in the scatterplot while dimming the rest. Selection is cumulative.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "brush_slopeGraph": {
+        "name": "Select by 1D axis brushes",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Brush axes to highlight marks",
+        "draft": false,
+        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo. <br><br>Interaction: Brush on either y-axis or both to highlight states within the selected value range and fade the rest. The brush can be resized and moved to adjust the selection interactively. Hover a line to emphasize it and show a tooltip with the state name.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "brush_scatterplot": {
+        "name": "Select by 2D rect brush",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Select multiple marks in 2D region",
+        "about": "Drag a rectangular brush over the scatterplot to select points in a 2D region. Selected countries stay emphasized while points outside the brushed region fade. The rectangle can be resized and moved to adjust the selection interactively.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "brush_areaChart": {
+        "name": "Brush to highlight area",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Brush to highlight a region of an area chart",
+        "about": "Drag a horizontal brush across the area chart to highlight a time range. The selected region lights up in red while the rest of the chart remains in blue. Clear the brush to reset.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "lassoSelect_scatterplot": {
+        "name": "Lasso select",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Select",
+        "title": "Select multiple marks in freeform area",
+        "about": "Click multiple points to create a polygon, press the escape key to close the polygon. Marks within the polygon are selected.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "flowSelect_DAG": {
+        "name": "Flow select",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Select",
+        "title": "Hover to highlight outgoing flow paths",
+        "about": "This visualization shows a visual summary of play-by-play event logs of a basketball match in the form of a directed acyclic graph, computed using the SentenTree algorithm. Hover over a node to trace outgoing flow paths in the directed graph. Connected links are highlighted in orange so local dependency flow is easier to follow.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 2
+    },
+    "showLabels_multiLineChart": {
+        "name": "One label for each series",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Details on demand",
+        "title": "One label for each series",
+        "about": "Move cursor to reveal price labels for a particular date. The label is hidden if no price is available for that date.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "showTooltip_multiLineChart": {
+        "name": "One tooltip for all series",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Details on demand",
+        "title": "One tooltip for all series",
+        "about": "Move cursor to reveal a tooltip displaying values for a particular date.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "compare_scatterplot": {
+        "name": "Pin & Compare",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Cross-Event Data Access",
+        "title": "Select a baseline, then compare",
+        "about": "Click a country to pin it as the reference point, then hover over another country to compare their statistics.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "coordinate_areaChart": {
+        "name": "Overview + detail",
+        "mark": "Polygons and Areas",
+        "composition": "multiple views",
+        "data structure": "tabular",
+        "type": "Coordinate",
+        "title": "Brush Overview to update detail view",
+        "about": "This demo links two coordinated views: a focus area chart and a context chart below it. Brushing the lower overview updates the time window shown in the upper detail view. The brush can be resized and moved to explore different time ranges while the area chart updates accordingly.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "coordinate_splom": {
+        "name": "Brush + link",
+        "mark": "Circles and Pies",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "type": "Coordinate",
+        "title": "Brush to highlight across all cells",
+        "about": "Brush one cell in the scatterplot matrix to define an x/y range selection. The same subset is highlighted across all other cells to support multidimensional comparison. The brush can be resized and moved to adjust the selection interactively.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 9
+    },
+    "coordinate_splom_pan": {
+        "name": "Coordinated panning",
+        "mark": "Circles and Pies",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "type": "Coordinate",
+        "title": "Pan one cell to update all cells",
+        "about": "Drag to pan any cell in the scatterplot matrix and all other cells update their axis domains in sync. This preserves the relative positioning of marks across views so multidimensional structure remains easy to compare.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "brush_showTable": {
+        "name": "Display brushed data in table",
+        "mark": "Circles and Pies",
+        "composition": "multiple views",
+        "data structure": "tabular",
+        "type": "Coordinate",
+        "title": "Display brushed data in table",
+        "about": "Brush the scatter plot to display the data of selected marks in a table.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "crossfilter_histograms": {
+        "name": "Crossfilter histograms",
+        "mark": "Bars and Rectangles",
+        "composition": "multiple views",
+        "data structure": "tabular",
+        "type": "Coordinate",
+        "title": "Brush one histogram to filter the others",
+        "about": "Three linked histograms show the distribution of flight distance, delay, and departure hour. Grey bars represent all 2000 flights; steelblue bars represent the current selection. Brush any histogram to crossfilter the other two — the blue bars update instantly to reflect the subset of flights that match the selected range.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 5
+    },
+    "celeste": {
+        "name": "Celeste: Topology",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": true,
+        "about": "A force-directed topology view of the Celeste system with type-based node coloring and labeled components. The layout supports interactive graph exploration as clusters and links settle into structure.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "celeste_1": {
+        "name": "Celeste_1",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": true,
+        "about": "An alternate force-directed architecture graph for Celeste that emphasizes component types with color and a legend. The simulation enables interactive inspection of connectivity patterns in the system.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "celeste_2": {
+        "name": "Celeste: Chord",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": true,
+        "about": "A chord diagram of Celeste port relationships in a circular layout. Hovering ribbons and labels highlights specific connections and reveals details through tooltip feedback.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "celeste_infographics": {
+        "name": "Celeste: Infographics",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Select",
+        "title": "Celeste",
+        "draft": true,
+        "about": "An infographic-style system walkthrough showing how data moves through Celeste services and storage layers. Visual emphasis and labeling make flow paths and component roles easy to inspect.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "reconfigure_dustMagnet": {
+        "name": "Dust and magnet",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Reconfigure",
+        "title": "Drag magnets to re-arrange data dusts",
+        "about": "A recreation of the <a href='https://journals.sagepub.com/doi/10.1057/palgrave.ivs.9500099' target='_blank'>Dust &amp; Magnet technique</a> (Yi, Melton, Stasko &amp; Jacko, 2005) applied to Fisher's iris flowers. Each flower is a dust particle, pulled toward each of the four measurement magnets in proportion to how large its value is for that measurement -- a flower with a long petal drifts toward the petal-length magnet, one with a narrow sepal drifts away from the sepal-width magnet. <br><br>Interaction: Drag any magnet to a new position and every flower re-settles at the weighted centroid of the (moved) magnets, revealing multivariate clusters and correlations that a single fixed axis layout can't show at once.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 1
+    },
+    "dynamic_binning": {
+        "name": "Dynamic binning",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "type": "Reconfigure",
+        "title": "Dynamically change number of bins",
+        "ui": true,
+        "about": "Use the slider to dynamically adjust the number of bins in the histogram. The bar widths and heights update immediately to reflect the new binning.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "reconfigure_edgeBundling": {
+        "name": "Edge bundle strength",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "Reconfigure",
+        "title": "Use slider to change bundling strength",
+        "draft": false,
+        "ui": true,
+        "about": "Use the slider to reconfigure edge-bundling strength in the network visualization. Adjusting the parameter changes how tightly edges are bundled together.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 7
+    },
+    "reconfigure_gridLayout": {
+        "name": "Layout parameters",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "type": "Reconfigure",
+        "title": "Adjust layout parameters",
+        "ui": true,
+        "about": "Interactive controls let you change waffle chart layout parameters such as column count, start corner, and fill direction. The grid recomputes immediately to show layout changes.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "sort_lollipopChart": {
+        "name": "Mark order",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Reconfigure",
+        "title": "Sort marks by attribute",
+        "ui": true,
+        "about": "Choose sorting attribute and order to reorder lollipop marks interactively. The chart can be sorted by crime rate or area in ascending or descending direction.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "reconfigure_rangeExtent": {
+        "name": "Scale range",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Reconfigure",
+        "title": "Drag axis to change range extent",
+        "about": "Drag the x-axis labels or ticks to adjust the temporal range extent mapped to the x-axis in the Gantt view. The size of the bars and the axis content update accordingly.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "encode_scatterplot": {
+        "name": "Change axis attribute",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Encode",
+        "title": "Change data attribute mapped to axis",
+        "draft": false,
+        "ui": true,
+        "about": "Dropdown menus let you remap which data attributes are encoded on the x and y axes. This supports rapid exploration of different variable relationships in the same scatterplot.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "filter_stackedAreaChart": {
+        "name": "Filter marks",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Filter",
+        "title": "Toggle mark visibility + auto re-layout",
+        "ui": true,
+        "about": "Toggle category checkboxes to filter industries included in the stacked area chart. This interaction isolates subsets so trends can be compared without visual clutter.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "navigate_bubblePlot": {
+        "name": "Zoom and pan",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Navigate",
+        "title": "Zoom and pan a bubble plot",
+        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo. <br><br>Interaction: Use the mouse wheel to zoom and drag the background to pan, updating the x and y domains for exploratory navigation.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "dimpVis": {
+        "name": "Drag to navigate through time",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Navigate",
+        "title": "Drag mark to navigate through time",
+        "about": "A recreation of the <a href='https://vega.github.io/vega/examples/global-development/'>Vega demo</a> demonstrating the <a href='https://ieeexplore.ieee.org/document/6875985'>DimpVis technique</a>. Hovering over a mark (a country in a specific year) to show its trajectory over time. Dragging the mark navigates through time along the trajectory. All other marks are updated to reflect the new time.",
+        "behavior": [
+            "interactive"
+        ],
+        "featured": 6
+    },
+    "derive_indexChart": {
+        "name": "Adjust baseline",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "Derive",
+        "title": "Mouse move to adjust baseline date",
+        "about": "Move the pointer along the timeline to choose a baseline date, then view all series re-indexed relative to that point. The chart derives percentage change from the selected baseline for comparison.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "RC_VIS1": {
+        "name": "RC_VIS",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "type": "RC-VIS",
+        "title": "Character Connections",
+        "draft": true,
+        "about": "An edge-bundled character network with a control to tune bundling strength. Hover interactions emphasize each node's local connections while de-emphasizing the rest of the graph.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "IP_Theft": {
+        "name": "IP_Theft",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "type": "RC-VIS",
+        "title": "Infographic",
+        "draft": true,
+        "about": "A staged infographic narrative of IP theft scenarios. Use keyboard navigation to step through attack phases and reveal each sequence progressively.",
+        "behavior": [
+            "interactive"
+        ]
+    },
+    "BarChartHorz": {
+        "name": "Bar Chart (Horizontal)",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Real GDP Change in the US",
+        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis",
+        "behavior": [
+            "static"
+        ]
+    },
+    "BarChartVert": {
+        "name": "Bar Chart (Vertical)",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Real GDP Change in the US",
+        "about": "Percent Change of U.S. Real Gross Domestic Product from Preceding Period. Data source: U.S. Bureau of Economic Analysis",
+        "behavior": [
+            "static"
+        ]
+    },
+    "BoxPlot": {
+        "name": "Box Plot",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Monthly gasoline sales Jan - Dec 2020",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "BulletChart": {
+        "name": "Bullet Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Revenue Performance & Target",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "DivergingBarChart": {
+        "name": "Diverging Bar Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Survey Responses by Age Group",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "GanttChart": {
+        "name": "Gantt Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Timeline for Event Organization",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "GroupedBarChart": {
+        "name": "Grouped Bar Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "2012 Olympic Medals by Country",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Heatmap": {
+        "name": "Heat Map",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Twenty Years of NBA Draft Picks",
+        "about": "This chart colors each player by VORP (Value over Replacement Player), which converts the BPM rate into an estimate of each player's overall contribution to the team, measured vs. what a theoretical 'replacement player' would provide, where the 'replacement player' is defined as a player onminimum salary or not a normal vmember of a team's rotation. A VORP of -20 is used for players that did not play enough minutes. Original visualization by <a href='http://russellgoldenberg.com/' target='_blank'>Russell Goldenberg</a> at <a href='https://pudding.cool/2017/03/redraft/' target='_blank'>The Pudding</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Histogram": {
+        "name": "Histogram",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Car Weight Distribution",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "IciclePlot": {
+        "name": "Icicle Plot",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Mascot.js file system",
+        "about": "A visualization of the folders and files in the Mascot code repository (version 1.12.1). The size of each rectangle represents the file size.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MosaicPlot": {
+        "name": "Mosaic Plot",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Share of Women in Job Levels",
+        "about": "This mosaic plot shows that the percentage of women declines as the job level goes higher. <a href='http://www.womanindata.co.uk/2017/02/workout-wednesday-week-8-marimekko.html' target='_blank'>Original visualization</a> by Emma Whyte.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "StackedBarChart": {
+        "name": "Stacked Bar Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Olympic medals by country",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "TowerChart": {
+        "name": "Tower Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Presidential Election 2020",
+        "about": "This tower chart shows the results of the 2020 presidential election.<br>Blue represents Biden, red represents Trump.<br>Each rectangle represents a state that a candidate has won.<br>The x axis represents the margin of victory for each candidate in terms of popular vote (%).<br>The y axis represents the number of electoral votes.<br>Data source: <a href='https://www.archives.gov/electoral-college/2020' target='_blank'>National Archives</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Treemap": {
+        "name": "Treemap",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Population of Major Countries",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "TreemapBarChart": {
+        "name": "Treemap Bar Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Imports and Exports",
+        "draft": true,
+        "about": "Original visualization https://gist.github.com/eesur/5fbda7f410d31da35e42 ",
+        "behavior": [
+            "static"
+        ]
+    },
+    "WaffleChart": {
+        "name": "Waffle Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Age Demographics in 100 People",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "WaterfallChart": {
+        "name": "Waterfall Chart",
+        "mark": "Bars and Rectangles",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Monthly Changes in Account Balance",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "BubblePlot": {
+        "name": "Bubble Plot",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Habitable Planets",
+        "about": "A visualization showing 1626 planets and which ones are habitable. Temperature should not be too hot or too cold. The mass also plays a role: a small planet can't have an atmosphere, while a large one will have a crushing atmosphere.<br> <a href='http://www.nationalgeographic.com/astrobiology/goldilocks-worlds/' target='_blank'>Original visualization</a> by John Tomanio and Xaquin G.V., NGM STAFF. <br>Source: Abel Méndez, Planetary Habitability Laboratory, University of Puerto Rico at Arecibo.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "CirclePacking": {
+        "name": "Circle Packing Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Population of Major Countries",
+        "about": "",
+        "behavior": [
+            "static"
+        ],
+        "featured": 12
+    },
+    "DotPlot": {
+        "name": "Dot Plot",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Age Demographics of 100 People",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "DoughnutChart": {
+        "name": "Doughnut Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "How do Americans Spend Their Time?",
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "PieChart": {
+        "name": "Pie Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "How do Americans Spend Their Time?",
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "PointRangePlot": {
+        "name": "Point-Range Plot",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Mean and Standard Deviation",
+        "draft": true,
+        "about": "Average time spent across a number of common activities by Americans between 15 and 64. Data source: <a href='https://ourworldindata.org/time-use' target='_blank'>Our World in Data</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "RadialBarChart": {
+        "name": "Radial Bar Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "RoseChart": {
+        "name": "Rose Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Nightingale's Rose Diagram",
+        "about": "A reproduction of <a href='https://www.historyofinformation.com/detail.php?entryid=3815' target='_blank'>Florence Nightingale’s rose diagram</a>. <br>Data Source: Nightingale, F., Farr, W., & Smith, A. (1859). A contribution to the sanitary history of the British army during the late war with Russia. John W. Parker and Son.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Scatterplot": {
+        "name": "Scatterplot",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "GDP per capita vs. Life expectancy",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Sunburst": {
+        "name": "Sunburst Chart",
+        "mark": "Circles and Pies",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Mascot.js file system",
+        "about": "A visualization of the folders and files in the Mascot code repository (version 1.12.1). The size of each rectangle represents the file size.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "BumpChart": {
+        "name": "Bump Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Color popularity in new cars",
+        "about": "This bump chart shows how the rankings of new car colors change over the years in North America. The magenta color denotes 'other' colors. <br> <a href='https://public.tableau.com/profile/rody.zakovich#!/vizhome/TheUntanglingofColorPopularityamongNewCarsinNorthAmerica/TheUntanglingofColorPopularityforNewCars' target='_blank'>Original visualization</a> by Rody Zakovich",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ConnectedScatterplot": {
+        "name": "Connected Scatter Plot",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Driving Shifts into Reverse",
+        "about": "the shifting relationship between the price of gas and the average number of miles driven in a year, adapted from <a href='http://www.nytimes.com/imagepages/2010/05/02/business/02metrics.html' target='_blank'>Driving Shifts Into Reverse</a> by Hannah Fairfield, The New York Times (May 2, 2010)",
+        "behavior": [
+            "static"
+        ]
+    },
+    "CyclePlot": {
+        "name": "Cycle Plot",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "CO2 Concentration Cycle Plot",
+        "about": "Six decades of carbon dioxide concentration in the atmosphere from 1958 to 2022, with mean concentration for each decade.",
+        "behavior": [
+            "static"
+        ],
+        "featured": 10
+    },
+    "DumbbellChart": {
+        "name": "Dumbbell Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Partisan Reactions on Mass Shooting",
+        "about": "This infographics shows the topics mentioned by the two parties after the Orlando nightclub shooting with a focus on the differences in terms of the number of times these topics are mentioned. <br> <a href='https://public.tableau.com/profile/lindsey.poulter8872#!/vizhome/OrlandoKillings/Dashboard' target='_blank'>Original visualization</a> by Lindsey Poulter<br>Image credit: <a href='https://www.flickr.com/photos/donkeyhotey/' target='_blank'>DonkeyHotey</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "LineGraph": {
+        "name": "Line Graph 1",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Daily Temperature (Max, Min, Mean)",
+        "about": "Daily temperature in Boston for 2015.<br>The light blue band indicates the range between the maximum and minimum temperatures.<br>The solid line represents the daily mean temperature.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "LineGraph2": {
+        "name": "Line Graph 2",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Covid Cases: Reported and Forecast",
+        "about": "Reported COVID-19 cases between 7/12/21 to 7/26/21 and forecase by four different models between 7/26/21 and 8/21/21.<br>The four models are: <a href='https://github.com/oskali/mit_cassandra' target='_blank'>MIT-Cassandra</a>, <a href='https://covid19.uclaml.org/' target='_blank'>UCLA</a>, <a href='https://systems.jhu.edu/research/public-health/predicting-covid-19-risk/' target='_blank'>JHU-CSSE</a>, and <a href='https://www.microsoft.com/en-us/ai/ai-for-health' target='_blank'>Microsoft</a>.<br>Data Source: Google Search for COVID-19 statistics and <a href='https://www.cdc.gov/coronavirus/2019-ncov/science/forecasting/forecasts-cases.html' target='_blank'>CDC</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "LollipopChart": {
+        "name": "Lollipop Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "London Borough Crime Rate",
+        "about": "Overall crime rate (number of crimes per 1000 people) in London between May 2019 and April 2022. Data source: <a href='https://crimerate.co.uk/london' target='_blank'>crimerate.co.uk</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultiLineGraph": {
+        "name": "Multi-Line Graph",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Stock Market",
+        "about": "Monthly Stock Prices of four companies: Amazon, Apple, IBM and Microsoft from Jan 1, 2000 to Mar 1, 2010. Original visualization was composed using d3.js on <a href='https://bl.ocks.org/d3noob/08af723fe615c08f9536f656b55755b4' target='_blank'>d3noob.org</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultiLineGraph2": {
+        "name": "Multi-Line Graph 2",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "CO2 Concentrations",
+        "about": "Six decades of carbon dioxide concentration in the atmosphere from 1958 to 2022. Original visualization by <a href='https://blog.datawrapper.de/weekly-chart-carbon-dioxide/' target='_blank'>Gregor Aisch for Datawrapper</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ParallelCoordinates": {
+        "name": "Parallel Coordinates",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Features of Cars",
+        "about": "This visualization shows the the features of 406 cars. Original visualization appeared in Robert Spence's book <a href='https://books.google.com/books?id=uOosBQAAQBAJ&dq=406+cars+visualization&source=gbs_navlinks_s' target='_blank'>Information Visualization: an Introduction</a>, page 69.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "PolarLineGraph": {
+        "name": "Polar Line Graph",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Rising CO2: Polar Keeling Curve",
+        "about": "Monthly atmospheric CO2 concentration at Mauna Loa Observatory (2006-2026, 240 months), plotted in true polar coordinates: angle encodes month-of-year (12 spokes, January at top, clockwise) and radial distance encodes the ppm concentration itself. Source: NOAA Global Monitoring Laboratory. Inspired by <a href='https://www.scientificamerican.com/article/here-s-the-carbon-dioxide-spiral/' target='_blank'>Ed Hawkin's Carbon Dioxide Spiral</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "RangeChart": {
+        "name": "Range Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Boston Weather 2015",
+        "about": "This visualization shows daily maximum and minimum temperature for a year in Boston. <br> <a href='http://weather-radials.com/' target='_blank'>Original visualization</a> by <a href='http://kekeritz.com/' target='_blank'>Timm Kekeritz</a> of Raureif was in the Polar space, we demonstrate how to create similar designs in the Cartesian space.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "SlopeGraph": {
+        "name": "Slope Graph",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Obesity and Education",
+        "about": "This visualization shows that on average, percentage of obesity is inversely correlated with the percentage of population having a bachelor degree or higher. Each line represents a U.S. state. The left axis represents the obesity percentages, the right axis represents the percentages of people with a higher education. <br> <a href='http://www.thefunctionalart.com/2012/03/functional-art-has-cover_21.html' target='_blank'>Original visualization</a> created by Alberto Cairo.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "StringlineChart": {
+        "name": "Stringline Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Caltrain Schedule",
+        "about": "This visualization shows the Caltrian timetable following the style of <a href='https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003zP' target='_blank'>E. J. Marey's graphical schedule</a>. Each line is a train, and the slope represents the speed of the train. The lines are colored by the type of train.",
+        "behavior": [
+            "static"
+        ],
+        "featured": 4
+    },
+    "AreaChart": {
+        "name": "Area Chart 1",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Bitcoin prices: 2013 to 2018",
+        "about": "This visualization shows the evolution of the bitcoin price from 2013-04-28 to 2018-04-23. The original visualization was composed using d3.js on <a href='https://www.d3-graph-gallery.com/graph/area_basic.html' target='_blank'>d3-graph-gallery.com</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "AreaChart2": {
+        "name": "Area Chart 2",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "NYT Net Income: 2009 - 2022",
+        "about": "This chart shows the New York Times' quarterly net income (in Millions of US $) history from 2009 to 2022. Data source: <a href='https://www.macrotrends.net/stocks/charts/NYT/new-york-times/net-income' target='_blank'>macrotrends.net</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "DensityPlot": {
+        "name": "Density Plot",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Car Weight Distribution",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "RadarChart": {
+        "name": "Radar Chart",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ridgelinePlot": {
+        "name": "Ridgeline Plot",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "How People Perceive Probability",
+        "about": "On the /r/samplesize thread of reddit, questions like What probability would you assign to the phrase “Highly likely” were asked. Answers between 0 and 100 were recorded, and this visualization shows the distribution for each question. This idea originally comes from a <a href='https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/psychology-of-intelligence-analysis/art15.html' target='_blank'>publication of the CIA</a>. <a href='https://github.com/zonination' target='_blank'>Zoni Nation</a> <a href='https://github.com/zonination/perceptions' target='_blank'>reproduced it using R. </a> This visualization is based on an example from <a href='https://www.d3-graph-gallery.com/graph/ridgeline_basic.html' target='_blank'>d3-graph-gallery.com</a>",
+        "behavior": [
+            "static"
+        ],
+        "featured": 8
+    },
+    "StackedAreaChart": {
+        "name": "Stacked Area Chart",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Unemployment by Industry",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010. The original visualization was composed using d3.js on <a href='https://observablehq.com/@d3/stacked-area-chart' target='_blank'>observablehq.com</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "StackedAreaChart2": {
+        "name": "Stacked Area Chart 2",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Mobile OS Shares",
+        "draft": true,
+        "about": "This visualization shows the percentage usage of various moible operating systems from 2008 to 2014.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "StellarChart": {
+        "name": "Stellar Chart",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "Monthly Gasoline Sales",
+        "about": "Adjusted monthly gasoline sales in the U.S. in 2020.<br>Numbers are shown in millions of dollars.<br>Data source: <a href='https://www.census.gov/retail/mrts/historic_releases.html' target='_blank'>U.S. Census Bureau</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "StreamGraph": {
+        "name": "StreamGraph",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "Unemployment by Industry",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010. The original visualization was composed using d3.js on <a href='https://observablehq.com/@d3/streamgraph' target='_blank'>observablehq.com</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ViolinPlot": {
+        "name": "Violin Plot",
+        "mark": "Polygons and Areas",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Setosa Sepal Length Distribution",
+        "about": "This visualization shows the distribution for the sepal length of setosa, a type of iris plant. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ArcDiagram": {
+        "name": "Arc Diagram",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "title": "Arc Diagram",
+        "about": "An arc diagram showing the connections between Les Miserables characters, ordered first by group, then alphabetically.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Dendrogram": {
+        "name": "Dendrogram (Vertical)",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Les Miserables Character Grouping",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Dendrogram1": {
+        "name": "Dendrogram (Radial)",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Les Miserables Character Grouping",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "DirectedAcyclicGraph": {
+        "name": "Directed Acyclic Graph",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "draft": false,
+        "title": "UMD vs. UNC Basketball Game",
+        "about": "This visualization shows a visual summary of play-by-play event logs of a basketball match in the form of a directed acyclic graph, computed using the SentenTree algorithm.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ForceDirected": {
+        "name": "Force-Directed Graph",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "title": "Les Miserables Social Network",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Sankey": {
+        "name": "Sankey Diagram",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "draft": false,
+        "title": "U.S. Energy Flow",
+        "about": "A Sankey diagram showing how energy flows from primary sources (coal, natural gas, solar, wind) through electricity generation to end-use sectors (residential, commercial, industrial) and finally to specific uses (heating, lighting, appliances, machinery, processes). Node height and link thickness are proportional to flow volume.",
+        "behavior": [
+            "static"
+        ],
+        "featured": 11
+    },
+    "EdgeBundling": {
+        "name": "Hierarchical Edge Bundling",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "title": "Les Miserables Social Network",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "SeedGraph": {
+        "name": "Graph Partitioning",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "draft": true,
+        "title": "",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "SemanticSubstrates": {
+        "name": "Semantic Substrates",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "title": "",
+        "draft": true,
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "SeqSynopsis": {
+        "name": "Sequence Synopsis",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "network",
+        "draft": false,
+        "title": "Sequence Synopsis",
+        "about": "Sequential patterns mined using the Sequence Synopsis approached described in <a href='https://lliquid.github.io/homepage/files/ss_vast17.pdf'>this paper</a>",
+        "behavior": [
+            "static"
+        ]
+    },
+    "TidyTree": {
+        "name": "'Tidy' Tree",
+        "mark": "Nodes and Links",
+        "composition": "single chart",
+        "data structure": "hierarchical",
+        "title": "Node-link tree",
+        "about": "Node-link visualization of a tree usign the Reingold-Tilford 'tidy' layout algorithm.",
+        "draft": true,
+        "behavior": [
+            "static"
+        ]
+    },
+    "Isotype": {
+        "name": "Isotype",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Age Distribution as Human Icons",
+        "about": "An isotype chart showing 100 people grouped by age bin. Each repeated human icon represents one person, and the icons are classified into age groups using a grid layout within each group.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "IconArray2": {
+        "name": "Icon Array (counts, image)",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "Icon Array",
+        "about": "An icon array built from group counts specified directly in code (e.g. {colored: 15, gray: 20}) rather than a table, using msc.repeat's new count-map support. Each icon's image is encoded from the resulting 'group' attribute via the src channel and a mapping.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "IconArrayCircularLayout": {
+        "name": "Icon Array (counts, symbol)",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "key-value",
+        "title": "Icon Array",
+        "about": "The same icon-array data as the Icon Array demos above, but using the 'symbol' mark -- an inline SVG path geometry -- instead of an external image file, arranged with the 'circular' layout instead of a grid. Each icon's shape is encoded from a 'group' attribute (filled vs. empty) via the path channel and a mapping, swapping between a filled and outline heart authored in the same viewBox. Five panels compare every value of CircularLayout's markRotation option (inward, outward, tangentialClockwise, tangentialCounterClockwise, upright), each of which orients the hearts differently as they go around the ring without ever changing their exact position.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "IconArray1": {
+        "name": "Icon Array (table, image)",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "list",
+        "title": "Icon Array",
+        "about": "An icon array created by repeating one human image mark over a small data table, with each icon's image encoded from a 'group' attribute (Colored vs. Grey) via the src channel and a mapping.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "IsotypeComparison": {
+        "name": "Isotype Comparison Chart",
+        "mark": "Images and Icons",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "An Unprecedented Death Toll in Qatar",
+        "about": "Recreates a Washington Post Wonkblog isotype chart comparing migrant worker deaths in Qatar to worker deaths during the construction of six recent Olympics/World Cup host venues, using one constant-size repeated human icon per worker death (the defining Isotype convention: quantity shown via icon count, never icon size). The Qatar section nests 1,200 icons into 12 blocks of 100 (each a 20x5 grid, arranged in a 3x4 grid); the six comparison groups mirror that structure with a repeated title+subtitle glyph column-aligned to its icon block via msc.affix. Counts are illustrative approximations of the original infographic. Sources for the original figures: <a href=\"https://www.theguardian.com\">The Guardian</a>, Building and Wood Workers International, WorkSafe British Columbia, Al Jazeera, The New York Times, International Trade Union Confederation.",
+        "behavior": [
+            "static"
+        ],
+        "featured": 3
+    },
+    "GridAreaChart": {
+        "name": "Area Charts 1",
+        "mark": "Polygons and Areas",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Unemployment: 2000 to 2010",
+        "about": "This visualization shows the evolution of the number of unemployed people in four industries (Manufacturing, Leisure and hospitality, Business services and Construction) from 2000 to 2010.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleAreaCharts": {
+        "name": "Area Charts 2",
+        "mark": "Polygons and Areas",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Red and Blue America",
+        "about": "This visualization shows how the partisan voter index (PVI) for each U.S. state changed in the elections from 1980 to 2012. <a href='http://graphics.wsj.com/elections/2016/field-guide-red-blue-america/'>Original visualization</a> by Randy Yeip, Stuart A. Thompson and Will Welch.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleBarCharts": {
+        "name": "Bar Charts",
+        "mark": "Bars and Rectangles",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Unemployment Rates by State",
+        "about": "This visualization shows how the unemployment rate for each U.S. state changed from 1980 to 2015 at five-year intervals. <br>The height of bar represents the difference of unemployment rate from the national average. Data source: <a href='https://fred.stlouisfed.org/release?rid=112' target='_blank'>Federal Reserve Bank</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleBoxPlots": {
+        "name": "Box Plots",
+        "mark": "Bars and Rectangles",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Gender Pay Gap",
+        "about": "This box and whisker plot shows the disparity in annual income for women vs. men across pay grades. <br> <a href='http://www.stephen-few.com/nysi.php' target='_blank'>Original visualization from Now You See It</a> by Stephen Few.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleCalendarHeatMaps": {
+        "name": "Calendar Heatmap",
+        "mark": "Bars and Rectangles",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Calendar Heatmaps",
+        "about": "Original visualization: https://gist.github.com/eesur/5fbda7f410d31da35e42",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleLineGraphs": {
+        "name": "Line Graphs",
+        "mark": "Lines and Paths",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Stock Market",
+        "about": "Monthly Stock Prices of four companies: Amazon, Apple, IBM and Microsoft from Jan 1, 2000 to Mar 1, 2010.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultiplePieCharts": {
+        "name": "Pie Charts",
+        "mark": "Circles and Pies",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Household Spending Patterns",
+        "about": "Comparing household spending patterns in the UK and New Zealand in 1980 and 2008. Data source is <a href='https://www.ieltstrainingtips.com/the-charts-below-show-household-spending-patterns-in-two-countries-between-1980-and-2008/' target='_blank'>here</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleRadarCharts": {
+        "name": "Radar Charts",
+        "mark": "Polygons and Areas",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "ScatterplotMatrix": {
+        "name": "Scatterplot Matrix",
+        "mark": "Circles and Pies",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Iris Species: Sepal and Petal",
+        "about": "Four measurements (sepal length, sepal width, petal length, petal width) for 150 flowers representing three species of iris (Iris setosa, versicolor and virginica)",
+        "behavior": [
+            "static"
+        ]
+    },
+    "Sparklines": {
+        "name": "Sparklines",
+        "mark": "Lines and Paths",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Stock Price Sparklines",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "GridStackedAreaChart": {
+        "name": "Stacked Area Charts",
+        "mark": "Polygons and Areas",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Unemployment by Industry",
+        "about": "",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleViolinPlots": {
+        "name": "Violin Plots",
+        "mark": "Polygons and Areas",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Iris Sepal Length Distribution",
+        "about": "This visualization shows the distributions for the sepal length of three types of iris plant: setosa, versicolor and virginica. The data is from <a href='https://archive.ics.uci.edu/ml/datasets/Iris' target='_blank'>Iris Data Set</a>.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "MultipleWaffleCharts": {
+        "name": "Waffle Charts",
+        "mark": "Bars and Rectangles",
+        "composition": "small multiples",
+        "data structure": "tabular",
+        "title": "Life Expectancy in Each Country",
+        "about": "This visualization shows whether each country's life expectancy is above or below 60, grouped by continent.",
+        "behavior": [
+            "static"
+        ]
+    }
+}

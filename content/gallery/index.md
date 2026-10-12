@@ -91,14 +91,16 @@ iframe {
 
 <script>
     (function () {
+        // The gallery itself (static/gallery.html) keeps its state in the query string
+        // (?demo=...&mark=...&behavior=...&q=...) and navigates with history.pushState.
+        // This wrapper forwards the parent URL's query/hash to the iframe on load, and
+        // mirrors the iframe's URL back into the parent so links can be shared.
         function initGallerySync() {
             const frame = document.getElementById("galleryFrame");
             const loading = document.getElementById("galleryLoading");
             if (!frame) return;
 
             const basePath = "/gallery.html";
-            let syncingFromIframe = false;
-            let syncingFromParent = false;
 
             function showLoading() {
                 if (loading) loading.classList.remove("is-hidden");
@@ -108,57 +110,36 @@ iframe {
                 if (loading) loading.classList.add("is-hidden");
             }
 
-            function buildIframeUrlFromParent() {
-                const parentUrl = new URL(window.location.href);
-                const mode = parentUrl.searchParams.get("category");
-                const frameUrl = new URL(basePath, window.location.origin);
-
-                if (mode === "static" || mode === "interactive") {
-                    frameUrl.searchParams.set("category", mode);
-                }
-
-                frameUrl.hash = window.location.hash || "";
-                return frameUrl.pathname + frameUrl.search + frameUrl.hash;
+            function iframeTargetFromParent() {
+                return basePath + window.location.search + window.location.hash;
             }
 
+            function currentIframeUrl() {
+                try {
+                    const loc = frame.contentWindow.location;
+                    if (loc && loc.pathname.endsWith(basePath)) return loc.pathname + loc.search + loc.hash;
+                } catch (err) {
+                    // Ignore cross-context access issues while iframe is loading.
+                }
+                return frame.getAttribute("src") || "";
+            }
+
+            // Parent URL -> iframe (initial load, and Back/Forward on parent-only entries).
             function syncIframeFromParent() {
-                if (syncingFromIframe) return;
-
-                const target = buildIframeUrlFromParent();
-                const current = frame.getAttribute("src") || "";
-                if (current === target) return;
-
-                syncingFromParent = true;
+                const target = iframeTargetFromParent();
+                if (currentIframeUrl() === target) return;
                 showLoading();
                 frame.setAttribute("src", target);
-                syncingFromParent = false;
             }
 
+            // Iframe URL -> parent (keeps the address bar shareable).
             function syncParentFromIframe() {
-                if (syncingFromParent) return;
-
                 try {
-                    const frameLoc = frame.contentWindow.location;
-                    if (!frameLoc || !frameLoc.pathname.endsWith("/gallery.html")) return;
-
-                    const parentUrl = new URL(window.location.href);
-                    const frameMode = new URLSearchParams(frameLoc.search).get("category");
-
-                    if (frameMode === "static" || frameMode === "interactive") {
-                        parentUrl.searchParams.set("category", frameMode);
-                    } else {
-                        parentUrl.searchParams.delete("category");
-                    }
-
-                    parentUrl.hash = frameLoc.hash || "";
-
-                    const next = parentUrl.pathname + parentUrl.search + parentUrl.hash;
+                    const loc = frame.contentWindow.location;
+                    if (!loc || !loc.pathname.endsWith(basePath)) return;
+                    const next = window.location.pathname + loc.search + loc.hash;
                     const current = window.location.pathname + window.location.search + window.location.hash;
-                    if (next === current) return;
-
-                    syncingFromIframe = true;
-                    window.history.replaceState(null, "", next);
-                    syncingFromIframe = false;
+                    if (next !== current) window.history.replaceState(null, "", next);
                 } catch (err) {
                     // Ignore cross-context access issues while iframe is loading.
                 }
@@ -169,15 +150,27 @@ iframe {
                 syncParentFromIframe();
 
                 try {
-                    frame.contentWindow.addEventListener("hashchange", syncParentFromIframe);
+                    const win = frame.contentWindow;
+                    // The gallery uses pushState/replaceState, which fire no events, so wrap them.
+                    ["pushState", "replaceState"].forEach(function (name) {
+                        const original = win.history[name];
+                        win.history[name] = function () {
+                            const result = original.apply(this, arguments);
+                            syncParentFromIframe();
+                            return result;
+                        };
+                    });
+                    win.addEventListener("popstate", syncParentFromIframe);
+                    win.addEventListener("hashchange", syncParentFromIframe);
                 } catch (err) {
                     // Ignore cross-context access issues while iframe is loading.
                 }
             });
 
-            window.addEventListener("hashchange", syncIframeFromParent);
             window.addEventListener("popstate", syncIframeFromParent);
+            window.addEventListener("hashchange", syncIframeFromParent);
 
+            // Load the iframe with the parent's query/hash, e.g. /gallery/?demo=IsotypeComparison.
             syncIframeFromParent();
         }
 
@@ -193,7 +186,7 @@ iframe {
     <span class="gallery-loading-icon" aria-hidden="true"></span>
     <span>Loading Demos</span>
 </div>
-<iframe id="galleryFrame" src="/gallery.html"></iframe>
+<iframe id="galleryFrame"></iframe>
 
 <!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"> --> 
     
