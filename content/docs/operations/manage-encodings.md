@@ -3,7 +3,7 @@ title: "Create and Manage Encodings"
 description: ""
 lead: ""
 date: 2026-06-01T00:00:00+00:00
-lastmod: 2026-06-01T00:00:00+00:00
+lastmod: 2026-10-27T00:00:00+00:00
 draft: false
 images: []
 menu:
@@ -38,6 +38,15 @@ Encodes a data attribute using a visual channel on an element.
     - Sequential (multi-hue): `BuGn`, `BuPu`, `GnBu`, `OrRd`, `PuBuGn`, `PuBu`, `PuRd`, `RdPu`, `YlGnBu`, `YlGn`, `YlOrBr`, `YlOrRd` (as `interpolate*` or `scheme*`); `Cividis`, `Viridis`, `Inferno`, `Magma`, `Plasma`, `Warm`, `Cool`, `CubehelixDefault`, `Turbo` (as `interpolate*` only, e.g., `interpolateViridis`)
     - Cyclical: `Rainbow`, `Sinebow` (as `interpolate*` only, e.g., `interpolateRainbow`)
   - `startAngle` (Number, optional): start angle in degrees when encoding with the `"angle"` channel, defaults to `90`
+
+#### The "length" channel
+
+The `"length"` channel encodes a data attribute as the [length of paths](../../marks/path/#properties):
+
+- For paths laid along a guide path (the pieces of a [divided](../generative/#mscdivideelem-data-params) path, or paths in a [stack layout along a path](../../layout/stack/#stacking-along-a-path)), the lengths are parts of a whole, like pie slices: the scale's domain is [0, sum of the values] and, by default, its range is the guide's length minus the gaps, so the paths fill the guide exactly. The range is recomputed when the layout changes (e.g. its gap). There is one scale per divided path.
+- Elsewhere (e.g. paths in a grid), each length is on its own, like a bar: the largest value gets the length of the path as created, and each path is resized from its start.
+
+With `rangeExtent`, the largest value (or, along a guide, the values' total) maps to that many pixels instead. The channel only applies to paths.
   - `angleDirection` (String, optional): direction to encode angles, defaults to `"clockwise"`
 - Return type: [Encoding](../../encode/encoding/)
 

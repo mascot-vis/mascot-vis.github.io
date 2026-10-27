@@ -3,7 +3,7 @@ title: "Constants"
 description: ""
 lead: ""
 date: 2020-10-06T08:49:15+00:00
-lastmod: 2020-10-06T08:49:15+00:00
+lastmod: 2026-10-27T00:00:00+00:00
 draft: false
 images: []
 menu: 
@@ -53,6 +53,7 @@ toc: true
 "polarRadius"<br>
 "polarAngle"<br>
 "thickness"<br>
+"length"<br>
 
 ### CurveMode
 "natural"<br>

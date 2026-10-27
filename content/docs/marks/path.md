@@ -3,7 +3,7 @@ title: "Path"
 description: ""
 lead: ""
 date: 2020-10-06T08:49:31+00:00
-lastmod: 2020-10-06T08:49:31+00:00
+lastmod: 2026-10-27T00:00:00+00:00
 draft: false
 images: []
 menu:
@@ -26,6 +26,17 @@ The Path class represents a geometric path consisting of multiple [vertices](../
               });
 ```
 
+The geometry can also be given as SVG path data, the format of the `d` attribute of an SVG `<path>` element:
+
+```js
+    let snake = scene.mark("path", {
+                  d: "M 100 245 V 336 a 21 21 0 0 0 42 0 V 160",
+                  strokeWidth: 26, strokeColor: "#ddd"
+              });
+```
+
+All path commands are supported, absolute and relative (M, L, H, V, C, S, Q, T, A, Z); curves and arcs are sampled into short straight segments, so the result is an ordinary path with vertices. A path mark is a single line, so the data can have only one moveto (M) at the start, and Z is allowed only at the end, where it makes the path closed. If both `vertices` and `d` are given, `vertices` is used.
+
 A straight line is also represented as a path object in Mascot. The following code returns a Path object with two vertices.
 
 ```js
@@ -39,6 +50,7 @@ A straight line is also represented as a path object in Mascot. The following co
 |**curveMode**| how the segments are drawn, [possible values](../../global/constants/#curvemode) | String | "linear" |
 |**firstSegment** <img width="70px" src="../../readonly.png">| returns the first segment of the path | [Segment](../../basic/segment/) |
 |**firstVertex** <img width="70px" src="../../readonly.png">| returns the first vertex of the path | [Vertex](../../basic/vertex/) |
+|**pathLength**| the length of the path in pixels. For a path in a [stack layout along a path](../../layout/stack/#stacking-along-a-path) (e.g. a piece of a [divided](../../operations/generative/#mscdivideelem-data-params) path), it is the length the path takes along the guide path, and setting it re-lays the paths end to end. Elsewhere, setting it resizes the path: from its start, the path is cut short, or its last segment is extended, to the new length (measured on the shape the path had before its length was first set). Encoded by the ["length" channel](../../operations/manage-encodings/#the-length-channel). | Number | the length of its vertices |
 |**segments** <img width="70px" src="../../readonly.png"> | the segments on the path | Array of [Segment](../../basic/segment/) |
 |**vertices** <img width="70px" src="../../readonly.png">| the vertices along the path | Array of [Vertex](../../basic/vertex/) |  |
 |**vxFillColor**| the fill color of the vertices on this path | Color | "#555555" |

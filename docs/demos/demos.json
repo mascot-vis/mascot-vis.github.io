@@ -1310,5 +1310,28 @@
         "behavior": [
             "static"
         ]
+    },
+    "SnakeChart": {
+        "name": "Snake Chart",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "title": "2020 Presidential Election Margins",
+        "about": "States ordered by margin along one winding band, each piece sized by electoral votes and colored by margin; the band's halfway point marks 269 votes. Draft: relies on path divide, a length channel, a diverging color scale and along-path affix, which are not implemented yet. Data source: elections-2020-snake.csv.",
+        "behavior": [
+            "static"
+        ]
+    },
+    "SnakeChart2": {
+        "name": "Snake Chart 2",
+        "mark": "Lines and Paths",
+        "composition": "single chart",
+        "data structure": "tabular",
+        "draft": true,
+        "title": "2020 Presidential Election Margins",
+        "about": "The same snake chart built the other way around: one path per state, repeated and laid end to end along a snake-shaped guide by a stack layout, sorted by margin, sized by electoral votes and colored by margin; a line marks 270 votes. Data source: elections-2020-snake.csv.",
+        "behavior": [
+            "static"
+        ]
     }
 }

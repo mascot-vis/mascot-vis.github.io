@@ -35,6 +35,7 @@ Channel &amp;ldquo;x&amp;rdquo;
 &amp;ldquo;polarRadius&amp;rdquo;
 &amp;ldquo;polarAngle&amp;rdquo;
 &amp;ldquo;thickness&amp;rdquo;
+&amp;ldquo;length&amp;rdquo;
 CurveMode &amp;ldquo;natural&amp;rdquo;
 &amp;ldquo;basis&amp;rdquo;
 &amp;ldquo;bumpX&amp;rdquo;
@@ -55,5 +56,4 @@ Mark Type &amp;ldquo;area&amp;rdquo;
 &amp;ldquo;circle&amp;rdquo;
 &amp;ldquo;line&amp;rdquo;
 &amp;ldquo;path&amp;rdquo;
-&amp;ldquo;pie&amp;rdquo;
-&amp;ldquo;pointText&amp;rdquo;</description></item></channel></rss>
+&amp;ldquo;pie&amp;rdquo;</description></item></channel></rss>
