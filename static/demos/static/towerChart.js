@@ -17,6 +17,13 @@ msc.align([bidenWins, trumpWins], "y", "bottom");
 msc.affix(bidenWins, trumpWins, "x", {elementAnchor: "right", baseAnchor: "left"});
 scn.axis("width", "Trump_margin", {orientation: "bottom", tickValues: [0, 10, 20, 30, 40]});
 scn.axis("width", "Biden_margin", {orientation: "bottom", flip: true});
-// let y = trumpWins.bounds.bottom - htEncoding.scale.map(270);
-// scn.mark("line", {x1: 50, y1: y, x2: 760, y2: y, strokeWidth: 3, strokeColor: "orange"});
-// scn.mark("text", {x: 760, y: y, anchor: ["right", "bottom"], text: "270 electoral votes required to win", fontSize: "16pt", fillColor: "#c87259"});
+
+let winLine = scn.mark("line", {strokeWidth: 2, strokeColor: "orange"});    // horizontal
+msc.affix(winLine, bidenWins, "y1", {baseAnchor: {value: 270, encoding: htEnc}});
+msc.affix(winLine, bidenWins, "y2", {baseAnchor: {value: 270, encoding: htEnc}});
+msc.affix(winLine, bidenWins, "x1", {baseAnchor: "left", offset: -20});
+msc.affix(winLine, trumpWins, "x2", {baseAnchor: "right", offset: 20});
+
+let winLabel = scn.mark("text", {text: "270 electoral votes to win", fontSize: "14px", fillColor: "#c87259"});
+msc.affix(winLabel, trumpWins, "x", {elementAnchor: "right", baseAnchor: "right", offset: 20});
+msc.affix(winLabel, bidenWins, "y", {elementAnchor: "bottom", baseAnchor: {value: 270, encoding: htEnc}, offset: -4});

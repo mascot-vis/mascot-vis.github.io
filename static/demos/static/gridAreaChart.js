@@ -10,8 +10,7 @@ msc.encode(anyArea, "fillColor", "industry");
 // msc.update(anyArea, {"baseline": "middle"});
 // msc.update(industries.layout, {"vertCellAlignment": "middle"});
 let htEnc = msc.encode(anyArea, "height", "unemployments");
-let xEnc = msc.encode(anyArea.topLeftVertex, "x", "date");
-msc.encode(anyArea.bottomLeftVertex, "x", "date", {shareScale: xEnc});
+msc.encode(anyArea.anyVertex, "x", "date");
 htEnc.domain = [0,2500];
 htEnc.rangeExtent = 200;
 // for (let area of industries.children){

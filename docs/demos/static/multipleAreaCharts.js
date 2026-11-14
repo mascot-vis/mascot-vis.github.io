@@ -9,8 +9,7 @@ let area = msc.densify(rect, data, {attribute: "Year", orientation: "horizontal"
 let xEnc = msc.encode(area, "x", "MapX", {rangeExtent: 950});
 let yEnc = msc.encode(area, "y", "MapY", {rangeExtent: 550});
 
-let xvEnc = msc.encode(area.topLeftVertex, "x", "Year");
-msc.encode(area.bottomLeftVertex, "x", "Year", {shareScale: xvEnc});
+msc.encode(area.anyVertex, "x", "Year");
 msc.encode(area, "height", "PVI Score");
 msc.encode(area, "fillGradient", "PVI Score", {mapping: {"45": "#B6293E", "0.005": "#B6293E", "0": "white", "-0.005": "#477EC0", "-45": "#477EC0"}});
 

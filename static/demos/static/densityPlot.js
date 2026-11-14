@@ -5,8 +5,7 @@ let data = scene.derive(csv, msc.transform("kde", {attribute: "weight(lbs)", new
 
 let rect = scene.mark("rect", {top:60, left: 200, width: 700, height: 400, strokeColor: "#222", strokeWidth: 1, fillColor: "orange", opacity: 0.75});
 let pg = msc.densify(rect, data, {orientation: "horizontal", attribute: "weight(lbs)"});
-msc.encode(pg.topLeftVertex, "x", "weight(lbs)");
-msc.encode(pg.bottomLeftVertex, "x", "weight(lbs)");
+msc.encode(pg.anyVertex, "x", "weight(lbs)");
 msc.encode(pg, "height", "weight_density");
 pg.curveMode = "basis";
 

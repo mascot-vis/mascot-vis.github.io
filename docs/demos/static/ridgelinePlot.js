@@ -6,8 +6,7 @@ let Levels = msc.repeat(rect, data, {attribute: "Category"});
 msc.sortChildren(Levels, "Category", false, ["Almost Certainly", "Highly Likely", "Very Good Chance", "Probable", "Likely", "Probably", "We Believe", "Better Than Even", "About Even", "We Doubt", "Improbable", "Unlikely", "Probably Not", "Little Chance", "Almost No Chance", "Highly Unlikely", "Chances Are Slight"]);
 // Levels.layout = msc.layout("grid", {numCols: 1, rowGap: -70});
 let anyLevel = msc.densify(Levels.firstChild, data, {orientation: "horizontal", attribute: "Probability"});
-let xEncoding = msc.encode(anyLevel.topLeftVertex, "x", "Probability");
-msc.encode(anyLevel.bottomLeftVertex, "x", "Probability", {shareScale: xEncoding});
+msc.encode(anyLevel.anyVertex, "x", "Probability");
 let htEncoding = msc.encode(anyLevel, "height", "Probability_density");
 Levels.layout = msc.layout("grid", {numCols: 1, rowGap: -70});
 msc.update(anyLevel, {curveMode: "basis"})

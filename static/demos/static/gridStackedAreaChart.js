@@ -9,8 +9,7 @@ let {newMark:area, collection:areas} = msc.divide(anyArea, data, {orientation: "
 
 msc.encode(area, "fillColor", "gender", {mapping: {"male": "#60bdf0", "female": "#f768a1"}});
 let htEncoding = msc.encode(area, "height", "unemployments");
-let xEnc = msc.encode(area.topLeftVertex, "x", "date", {rangeExtent: 400});
-msc.encode(area.bottomLeftVertex, "x", "date", {shareScale: xEnc});
+msc.encode(area.anyVertex, "x", "date", {rangeExtent: 400});
 htEncoding.domain = [0,4500];
 htEncoding.rangeExtent = 200;
 

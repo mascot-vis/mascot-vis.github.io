@@ -3,7 +3,7 @@ title: "Create and Manage Encodings"
 description: ""
 lead: ""
 date: 2026-06-01T00:00:00+00:00
-lastmod: 2026-06-01T00:00:00+00:00
+lastmod: 2026-10-27T00:00:00+00:00
 draft: false
 images: []
 menu:
@@ -31,8 +31,22 @@ Encodes a data attribute using a visual channel on an element.
   - `includeZero` (Boolean, optional): whether the scale domain includes 0, defaults to `false`
   - `rangeExtent` (Number, optional): range extent
   - `mapping` (Object, optional): user-defined mapping between field values and visual properties
-  - `scheme` (String, optional): color scheme
+  - `scheme` (String, optional): color scheme; only the schemes in [d3-scale-chromatic](https://d3js.org/d3-scale-chromatic) are supported, specified by their d3 name (e.g., `"schemeTableau10"`, `"interpolateYlOrRd"`). Use a `scheme*` name for categorical data and an `interpolate*` name for continuous data. The available schemes are:
+    - Categorical: `schemeCategory10`, `schemeAccent`, `schemeDark2`, `schemePaired`, `schemePastel1`, `schemePastel2`, `schemeSet1`, `schemeSet2`, `schemeSet3`, `schemeTableau10`
+    - Diverging: `BrBG`, `PRGn`, `PiYG`, `PuOr`, `RdBu`, `RdGy`, `RdYlBu`, `RdYlGn`, `Spectral` (as `interpolate*` or `scheme*`, e.g., `interpolateRdBu`)
+    - Sequential (single hue): `Blues`, `Greens`, `Greys`, `Oranges`, `Purples`, `Reds` (as `interpolate*` or `scheme*`, e.g., `interpolateBlues`)
+    - Sequential (multi-hue): `BuGn`, `BuPu`, `GnBu`, `OrRd`, `PuBuGn`, `PuBu`, `PuRd`, `RdPu`, `YlGnBu`, `YlGn`, `YlOrBr`, `YlOrRd` (as `interpolate*` or `scheme*`); `Cividis`, `Viridis`, `Inferno`, `Magma`, `Plasma`, `Warm`, `Cool`, `CubehelixDefault`, `Turbo` (as `interpolate*` only, e.g., `interpolateViridis`)
+    - Cyclical: `Rainbow`, `Sinebow` (as `interpolate*` only, e.g., `interpolateRainbow`)
   - `startAngle` (Number, optional): start angle in degrees when encoding with the `"angle"` channel, defaults to `90`
+
+#### The "length" channel
+
+The `"length"` channel encodes a data attribute as the [length of paths](../../marks/path/#properties):
+
+- For paths laid along a guide path (the pieces of a [divided](../generative/#mscdivideelem-data-params) path, or paths in a [stack layout along a path](../../layout/stack/#stacking-along-a-path)), the lengths are parts of a whole, like pie slices: the scale's domain is [0, sum of the values] and, by default, its range is the guide's length minus the gaps, so the paths fill the guide exactly. The range is recomputed when the layout changes (e.g. its gap). There is one scale per divided path.
+- Elsewhere (e.g. paths in a grid), each length is on its own, like a bar: the largest value gets the length of the path as created, and each path is resized from its start.
+
+With `rangeExtent`, the largest value (or, along a guide, the values' total) maps to that many pixels instead. The channel only applies to paths.
   - `angleDirection` (String, optional): direction to encode angles, defaults to `"clockwise"`
 - Return type: [Encoding](../../encode/encoding/)
 

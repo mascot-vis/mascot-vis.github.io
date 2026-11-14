@@ -20,7 +20,7 @@ The Legend class represents a legend for a color encoding. To create a Legend ob
 ### Properties
 | property |  explanation   | type | default value |
 | --- | --- | --- | --- |
-|**channel** <img width="70px" src="../../readonly.png">| the visual channel of the legend<br>possible values: "fillColor", "strokeColor" | String | | 
+|**channel** <img width="70px" src="../../readonly.png">| the visual channel of the legend<br>possible values: "fillColor", "strokeColor", "fillGradient", "strokeGradient" | String | | 
 |**field** <img width="70px" src="../../readonly.png">| the data field of the legend | String | | 
 |**fieldType** <img width="70px" src="../../readonly.png">| the type of the data field of the legend | String | | 
 |**id** <img width="70px" src="../../readonly.png">| the unique id of the legend | String |  | 

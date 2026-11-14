@@ -3,7 +3,7 @@ title: "Join Elements with Data"
 description: ""
 lead: ""
 date: 2026-06-01T00:00:00+00:00
-lastmod: 2026-06-01T00:00:00+00:00
+lastmod: 2026-10-27T00:00:00+00:00
 draft: false
 images: []
 menu:
@@ -64,6 +64,17 @@ Divides an element by a data attribute and returns both the new mark and the res
   - `attribute`: data attribute used to divide the element, defaults to tuple ID
   - `orientation`: orientation for the divide operation
 - Return type: object containing `newMark` ([Mark](../../marks/mark/)) and `collection` ([Collection](../../group/collection/))
+
+The attribute must be a string, integer or date attribute.
+
+**Dividing a path.** An open [path](../../marks/path/) is divided into consecutive pieces along its length, one per attribute value; `orientation` does not apply. The pieces are paths with the same style as the original, and the returned collection has a [stack layout along the path](../../layout/stack/#stacking-along-a-path), so the pieces stay end to end when they are re-ordered, re-sized with the ["length" channel](../manage-encodings/#the-length-channel), or given a gap. Until their lengths are set or encoded, the pieces share the path equally. Closed paths and data-bound paths (e.g. the line of a line chart) cannot be divided.
+
+```js
+    let snake = scene.mark("path", {d: "M 100 245 V 336 a 21 21 0 0 0 42 0 V 160", strokeWidth: 26});
+    let {newMark: piece, collection: states} = msc.divide(snake, table, {attribute: "State"});
+    msc.update(states.layout, {gap: 1});
+    msc.encode(piece, "length", "EV");
+```
 
 {{< figure src="../divide.svg" alt="divide operation" width="700px" caption="The divide operation splits a mark into N peers within the same spatial area. Output structure depends on the mark type and the `orientation` parameter. N is the number of unique values in the specified attribute." class="border-0 mx-auto text-center" >}}
 

@@ -10,5 +10,5 @@ let text = scn.mark("text", {fillColor: "white", fontWeight: "bold", fontSize: "
 msc.repeat(text, data, {attribute: "Month"});
 msc.encode(text, "text", "Month");
 
-msc.affix(text, arc, "radialDistance", {elementAnchor: "top", baseAnchor: "top", offset: -10});
+msc.affix(text, arc, "polarRadius", {elementAnchor: "top", baseAnchor: "top", offset: -10});
 msc.affix(text, arc, "angle");

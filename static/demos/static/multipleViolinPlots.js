@@ -5,8 +5,7 @@ let rect = scene.mark("rect", {top:60, left: 200, width: 200, height: 400, strok
 let species = msc.repeat(rect, data, {attribute: "species"})
 species.layout = msc.layout("grid", {numCols: 3, rowGap: 15, "horzCellAlignment": "center" });
 let area = msc.densify(rect, data, {orientation: "vertical", attribute: "sepal_length"});
-let yEnc = msc.encode(area.topLeftVertex, "y", "sepal_length");
-msc.encode(area.topRightVertex, "y", "sepal_length", {shareScale: yEnc})
+let yEnc = msc.encode(area.anyVertex, "y", "sepal_length");
 msc.encode(area, "width", "sepal_length_density");
 msc.encode(area, "fillColor", "species");
 msc.update(area, {curveMode: "basis", baseline: "center"})

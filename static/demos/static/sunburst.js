@@ -9,5 +9,5 @@ scn.legend("fillColor", "filetype", {x: 700, y: 100});
 // let text = scn.mark("text", {fillColor: "black", fontWeight: "bold", fontSize: "12px"});
 // msc.repeat(text, tree.nodeTable);
 // msc.encode(text, {channel: "text", attribute: "event_attribute"});
-// msc.affix(text, coll.firstChild, "radialDistance", {itemAnchor: "top", baseAnchor: "top", offset: -10});
+// msc.affix(text, coll.firstChild, "polarRadius", {itemAnchor: "top", baseAnchor: "top", offset: -10});
 // msc.affix(text, coll.firstChild, "angle");

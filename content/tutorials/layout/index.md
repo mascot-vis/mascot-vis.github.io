@@ -29,3 +29,5 @@ You can also pass a layout as an argument when performing the [repeat](../../doc
 ```js
 let collection = msc.repeat(rect, table, {attribute: "col", layout: tl});
 ```
+
+If none of Mascot's built-in layouts produce the arrangement you need, [CustomLayout](../../docs/layout/custom/) lets you supply your own `compute(child, index, children, layout)` positioning function while still fully participating in the same reactive layout pipeline.

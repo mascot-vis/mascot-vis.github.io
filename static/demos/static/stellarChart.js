@@ -3,7 +3,7 @@ let circle = scn.mark("circle", {radius: 240, x: 400, y: 300, fillColor:"red", o
 let dt = await msc.csv("/datasets/csv/monthlySales.csv");
 
 let polygon = msc.densify(circle, dt, {attribute: "Month"});
-msc.encode(polygon.firstVertex, "radialDistance", "Sales");
+msc.encode(polygon.firstVertex, "polarRadius", "Sales");
 
 let polarAngles = polygon.vertices.map(d => d.polarAngle);
 polarAngles.push(polarAngles[0] + (polarAngles[0] < polarAngles[1] ? 360 : - 360));
@@ -17,5 +17,5 @@ for (let i = 0; i < polarAngles.length - 1; i++) {
 newVertices.forEach((d,i) => polygon.addVertex(d[0], d[1], 1 + i * 2));
 
 for (let i = 0; i < 360; i+= 30)
-    scn.axis("radialDistance", "Sales", {rotation: i, showTitle: false, strokeColor: "#bbb", textColor: "#bbb", labelFormat: ".2s", tickValues:[10000, 20000, 30000, 40000]});
-scn.gridlines("radialDistance", "Sales", {values: [10000, 20000, 30000, 40000]});
+    scn.axis("polarRadius", "Sales", {rotation: i, showTitle: false, strokeColor: "#bbb", textColor: "#bbb", labelFormat: ".2s", tickValues:[10000, 20000, 30000, 40000]});
+scn.gridlines("polarRadius", "Sales", {values: [10000, 20000, 30000, 40000]});

@@ -1,0 +1,52 @@
+State,Abbr,EV,Margin,Label,Tipping
+D.C.,DC,3,86.75,DC,no
+Vermont,VT,3,35.41,VT,no
+Massachusetts,MA,11,33.46,Massachusetts,no
+Maryland,MD,10,33.21,Maryland,no
+Hawaii,HI,4,29.46,HI,no
+California,CA,55,29.16,California,no
+New York,NY,29,23.13,New York,no
+Rhode Island,RI,4,20.77,RI,no
+Connecticut,CT,7,20.07,CT,no
+Washington,WA,12,19.20,Washington,no
+Delaware,DE,3,18.97,DE,no
+Illinois,IL,20,16.99,Illinois,no
+Oregon,OR,7,16.09,OR,no
+New Jersey,NJ,14,15.94,New Jersey,no
+Colorado,CO,9,13.50,CO,no
+New Mexico,NM,5,10.79,NM,no
+Virginia,VA,13,10.11,Virginia,no
+Maine,ME,4,9.07,ME,no
+New Hampshire,NH,4,7.35,NH,no
+Minnesota,MN,10,7.11,Minnesota,no
+Michigan,MI,16,2.78,Michigan,no
+Nevada,NV,6,2.39,NV,no
+Pennsylvania,PA,20,1.16,Pennsylvania,no
+Wisconsin,WI,10,0.63,Wisconsin,yes
+Arizona,AZ,11,0.31,Arizona,no
+Georgia,GA,16,0.24,Georgia,no
+North Carolina,NC,15,-1.34,North Carolina,no
+Florida,FL,29,-3.36,Florida,no
+Texas,TX,38,-5.58,Texas,no
+Ohio,OH,18,-8.03,Ohio,no
+Iowa,IA,6,-8.20,IA,no
+Alaska,AK,3,-10.06,AK,no
+South Carolina,SC,9,-11.68,SC,no
+Kansas,KS,6,-14.65,KS,no
+Missouri,MO,10,-15.39,Missouri,no
+Indiana,IN,11,-16.07,Indiana,no
+Montana,MT,3,-16.37,MT,no
+Mississippi,MS,6,-16.55,MS,no
+Louisiana,LA,8,-18.61,LA,no
+Nebraska,NE,5,-19.06,NE,no
+Utah,UT,6,-20.48,UT,no
+Tennessee,TN,11,-23.21,Tennessee,no
+Alabama,AL,9,-25.46,AL,no
+Kentucky,KY,8,-25.94,KY,no
+South Dakota,SD,3,-26.16,SD,no
+Arkansas,AR,6,-27.62,AR,no
+Idaho,ID,4,-30.77,ID,no
+Oklahoma,OK,7,-33.09,OK,no
+North Dakota,ND,3,-33.36,ND,no
+West Virginia,WV,5,-38.93,WV,no
+Wyoming,WY,3,-43.38,WY,no

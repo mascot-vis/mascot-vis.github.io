@@ -1,22 +1,41 @@
+let scn = msc.scene();
+let dt = await msc.csv("/datasets/csv/survey_response.csv");
 
-// let scene = msc.scene();
-// let dt = await msc.csv("/datasets/csv/gdp-lifeExp.csv");
-// let rect = scene.mark("rect", {left:200, top: 100, width: 100, height: 100, strokeWidth: 1, strokeColor: "white", fillColor: "#ccc", opacity: 0.5});
-// let coll = msc.repeat(rect, dt, {attribute: "Continent", layout: msc.layout("grid")});
-//msc.update(coll.layout, {"numCols": 1});
+let pie = scn.mark("circle", {
+  x: 220,
+  y: 180,
+  radius: 70,
+  fillColor: "#ddd",
+  strokeColor: "#fff",
+  strokeWidth: 1
+});
 
-// let coll = msc.divide(rect, dt, {attribute: "Continent", orientation: "horizontal"});
-// scene.axis("x", "Continent", {orientation: "bottom", tickVisible: false, pathVisible: false});
-// msc.update(coll.layout, {"orientation": "vertical"});
-// let rect = scene.mark("rect", {left:200, top: 300, width: 10, height: 10, strokeWidth: 0, fillColor: "#ccc"});
-// let c = msc.repeat(rect, dt);
-// // scene.classify(c, {attribute: "Continent", layout: msc.layout("grid", {numCols: 6, rowGap: 2, colGap: 2, dir: ["l2r", "b2t"]})});
-// // c.layout = msc.layout("grid", {numRows: 1, colGap: 30});
-// scene.classify(c, {attribute: "Continent", layout: msc.layout("grid", {numRows: 1, rowGap: 2, colGap: 2, dir: ["l2r", "b2t"]})});
-// c.layout = msc.layout("grid", {numCols: 1, colGap: 30});
-// msc.encode(rect, {channel: "fillColor", attribute: "Life expectancy group", mapping: {"below60": "#EEBC41", "above60": "#ABC88D"}});
-// // scene.axis("x", "Continent", {orientation: "bottom", tickVisible: false, pathVisible: false});
-// scene.axis("y", "Continent", {orientation: "left", tickVisible: false, pathVisible: false});
-// scene.legend("fillColor", "Life expectancy group", {"x": 800, "y": 200});
-// msc.update(c.firstChild, {layout: msc.layout("grid", {numCols: 6, rowGap: 2, colGap: 2, dir: ["l2r", "b2t"]})});
-// msc.update(c, {layout: msc.layout("grid", {numRows: 1, colGap: 30})});
+let ageGroups = msc.repeat(pie, dt, {attribute: "Age Group"});
+ageGroups.layout = msc.layout("grid", {
+  numCols: 2,
+  colGap: 120,
+  rowGap: 110
+});
+
+let {newMark: responseSlice} = msc.divide(pie, dt, {
+  attribute: "Response"
+});
+
+msc.encode(responseSlice, "angle", "Percentage", {
+  aggregator: "sum",
+  startAngle: 90,
+  angleDirection: "clockwise"
+});
+msc.encode(responseSlice, "fillColor", "Response");
+
+let labels = scn.mark("text", {
+  fillColor: "#333",
+  fontSize: "14px",
+  fontWeight: "bold"
+});
+msc.repeat(labels, dt, {attribute: "Age Group"});
+msc.encode(labels, "text", "Age Group");
+msc.affix(labels, ageGroups, "x");
+msc.affix(labels, ageGroups, "y", {offset: -95});
+
+scn.legend("fillColor", "Response", {x: 650, y: 100});

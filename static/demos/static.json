@@ -223,6 +223,12 @@
         "title": "Features of Cars",
         "about": "This visualization shows the the features of 406 cars. Original visualization appeared in Robert Spence's book <a href='https://books.google.com/books?id=uOosBQAAQBAJ&dq=406+cars+visualization&source=gbs_navlinks_s' target='_blank'>Information Visualization: an Introduction</a>, page 69."
     },
+    "PolarLineGraph": {
+        "name": "Polar Line Graph",
+        "mark": "Lines and Paths",
+        "title": "Rising CO2: Polar Keeling Curve",
+        "about": "Monthly atmospheric CO2 concentration at Mauna Loa Observatory (2006-2026, 240 months), plotted in true polar coordinates: angle encodes month-of-year (12 spokes, January at top, clockwise) and radial distance encodes the ppm concentration itself. Source: NOAA Global Monitoring Laboratory. Inspired by <a href='https://www.scientificamerican.com/article/here-s-the-carbon-dioxide-spiral/' target='_blank'>Ed Hawkin's Carbon Dioxide Spiral</a>."
+    },
     "RangeChart": {
         "name": "Range Chart",
         "mark": "Lines and Paths",
@@ -325,13 +331,20 @@
         "mark": "Nodes and Links",
         "draft": false,
         "title": "UMD vs. UNC Basketball Game",
-        "about": "This visualization shows a visual summary of a set of event sequences in a basketball game in the form of a directed acyclic graph, computed using the SentenTree algorithm."
+        "about": "This visualization shows a visual summary of play-by-play event logs of a basketball match in the form of a directed acyclic graph, computed using the SentenTree algorithm."
     },
     "ForceDirected": {
         "name": "Force-Directed Graph",
         "mark": "Nodes and Links",
         "title": "Les Miserables Social Network",
         "about": ""
+    },
+    "Sankey": {
+        "name": "Sankey Diagram",
+        "mark": "Nodes and Links",
+        "draft": false,
+        "title": "U.S. Energy Flow",
+        "about": "A Sankey diagram showing how energy flows from primary sources (coal, natural gas, solar, wind) through electricity generation to end-use sectors (residential, commercial, industrial) and finally to specific uses (heating, lighting, appliances, machinery, processes). Node height and link thickness are proportional to flow volume."
     },
     "EdgeBundling": {
         "name": "Hierarchical Edge Bundling",
@@ -370,8 +383,32 @@
     "Isotype": {
         "name": "Isotype",
         "mark": "Images and Icons",
-        "title": "100 People Grouped by Age",
-        "about": ""
+        "title": "Age Distribution as Human Icons",
+        "about": "An isotype chart showing 100 people grouped by age bin. Each repeated human icon represents one person, and the icons are classified into age groups using a grid layout within each group."
+    },
+    "IconArray2": {
+        "name": "Icon Array (counts, image)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "An icon array built from group counts specified directly in code (e.g. {colored: 15, gray: 20}) rather than a table, using msc.repeat's new count-map support. Each icon's image is encoded from the resulting 'group' attribute via the src channel and a mapping."
+    },
+    "IconArrayCircularLayout": {
+        "name": "Icon Array (counts, symbol)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "The same icon-array data as the Icon Array demos above, but using the 'symbol' mark -- an inline SVG path geometry -- instead of an external image file, arranged with the 'circular' layout instead of a grid. Each icon's shape is encoded from a 'group' attribute (filled vs. empty) via the path channel and a mapping, swapping between a filled and outline heart authored in the same viewBox. Five panels compare every value of CircularLayout's markRotation option (inward, outward, tangentialClockwise, tangentialCounterClockwise, upright), each of which orients the hearts differently as they go around the ring without ever changing their exact position."
+    },
+    "IconArray1": {
+        "name": "Icon Array (table, image)",
+        "mark": "Images and Icons",
+        "title": "Icon Array",
+        "about": "An icon array created by repeating one human image mark over a small data table, with each icon's image encoded from a 'group' attribute (Colored vs. Grey) via the src channel and a mapping."
+    },
+    "IsotypeComparison": {
+        "name": "Isotype Comparison Chart",
+        "mark": "Images and Icons",
+        "title": "An Unprecedented Death Toll in Qatar",
+        "about": "Recreates a Washington Post Wonkblog isotype chart comparing migrant worker deaths in Qatar to worker deaths during the construction of six recent Olympics/World Cup host venues, using one constant-size repeated human icon per worker death (the defining Isotype convention: quantity shown via icon count, never icon size). The Qatar section nests 1,200 icons into 12 blocks of 100 (each a 20x5 grid, arranged in a 3x4 grid); the six comparison groups mirror that structure with a repeated title+subtitle glyph column-aligned to its icon block via msc.affix. Counts are illustrative approximations of the original infographic. Sources for the original figures: <a href=\"https://www.theguardian.com\">The Guardian</a>, Building and Wood Workers International, WorkSafe British Columbia, Al Jazeera, The New York Times, International Trade Union Confederation."
     },
     "GridAreaChart": {
         "name": "Area Charts 1",
